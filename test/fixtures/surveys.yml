@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  agree: false
+  disagree: false
+  hesitat: false
+  engagment: one
+  user: one
+
+two:
+  agree: false
+  disagree: false
+  hesitat: false
+  engagment: two
+  user: two
