@@ -1,18 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-success">
-  <a class="navbar-brand" href="#">Sahy hifidy</a>
+  <a class="navbar-brand" href="<%= home_path %>">Sahy hifidy</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= new_daty_path %>">Créer date</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="<%= new_candidat_path %>">Créer un candidat</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="<%= regions_path %>">Region</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= new_candidat_path %>">Sondage</a>
       </li>
     </ul>
     <span class="navbar-text">

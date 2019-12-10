@@ -1,2 +1,9 @@
-<h1>Engagments#index</h1>
-<p>Find me in app/views/engagments/index.html.erb</p>
+<h1>Liste des engagments pour la promesse "<%= @promesse.content %>" </h1>
+<% i = 1 %>
+<% @engagement.each do |engagement| %>
+	<p>
+		Engagement <%= i %> : <%= engagement.content %> <%= link_to "Edit", edit_promess_engagment_path(@promesse.id, engagement.id) %> | <%= link_to "Effacer", promess_engagment_path(@promesse.id, engagement.id), method:"delete" %>
+		<% i += 1 %>
+	</p>
+<% end %>
+<%= link_to "Créer un engagement", new_promess_engagment_path(@promesse.id) %>

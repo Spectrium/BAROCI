@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<p>
+			Nom de l'élue : <%= @candidat.name %> </br>
+			Mouvence : <%= @candidat.parti %> </br>
+			Région : <%= @candidat.region.name %> </br>
+			Commune : <%= @candidat.commune.name %> </br>
+		</p>
+	</div>
+	<p>
+		Promesse et ces engagements: </br>
+		<ul>
+		<% @candidat.promesses.each do |promesse| %>
+			<li>
+				<%= promesse.content %> <%= link_to "Voir", promess_engagments_path(promesse.id) %> | <%= link_to "Créer des engagements", new_promess_engagment_path(promesse.id) %> | <%= link_to "Modifier la promesse", edit_candidat_promess_path(@candidat.id,promesse.id) %><br><br>
+			</li>
+		<% end %>
+		</ul>
+	</p>
+	<%= link_to "Créer des promesses", new_candidat_promess_path(@candidat.id) %><br><br>
+	<%= link_to "Editer candidat", edit_candidat_path(@candidat.id) %><br><br>
+	<%= link_to "Effacer candidat", candidat_path(@candidat.id), method:"delete" %>
+</div>
