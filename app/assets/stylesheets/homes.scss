@@ -1,0 +1,42 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// .carousel-item {
+//     height: 100vh;
+//     min-height: 350px;
+//     background: no-repeat center center scroll;
+//     -webkit-background-size: cover;
+//     -moz-background-size: cover;
+//     -o-background-size: cover;
+//     background-size: cover;
+// }
+
+.parallax {
+    /* The image used */
+    background: image-url("header.jpg");
+
+    /* Set a specific height */
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cartmada{
+    width: 65%;
+}
+
+.listreg{
+    width: 33%;
+}
+
+.flexbox{
+    display: flex;
+}
+
+.margsec{
+    margin-top: 10%;
+}

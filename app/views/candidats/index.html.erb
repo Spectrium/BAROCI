@@ -1,0 +1,11 @@
+<h1>Liste des candidats dans la commune <%= @commune.name %></h1>
+<% @candidat.each do |candidat|%>
+	<p>
+		Nom de l'élue : <%= candidat.name %></br>
+		Mouvence : <%= candidat.parti %> </br>
+		Résultat : <%= candidat.resultat %> </br>
+		<%= link_to "Voir", commune_candidat_path(@commune.id, candidat.id) %>
+	</p>
+<% end %>
+<%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id) %>
+<p> tonga </p>
