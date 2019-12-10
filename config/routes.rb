@@ -4,12 +4,17 @@ Rails.application.routes.draw do
   root 'homes#index', as: "home"
 
   resources :users
-  resources :surveys
   resources :daties
+  resources :comments
   resources :regions do 
     resources :communes
   end
-  resources :comments
+  resources :communes do
+    resources :surveys
+    resources :candidats do
+      resources :promesses
+    end
+  end
   resources :promesses do
     resources :engagments
   end

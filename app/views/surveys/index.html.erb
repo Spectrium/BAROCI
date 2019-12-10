@@ -1,2 +1,11 @@
-<h1>Surveys#index</h1>
-<p>Find me in app/views/surveys/index.html.erb</p>
+<h1>Notre Candidat élu et ses promesses</h1>
+
+<h5>Le candidat <%= @candidat_valid.name %> est élu avec un résultat de <%= @candidat_valid.resultat %> % </h5> <br>
+<p>Voici tous ses promesses et ces engagements </p>
+<ul>
+	<% @promesse.each do |promesse| %>
+		<li>
+			<%= promesse.content %>
+		</li>
+	<% end %>
+</ul>
