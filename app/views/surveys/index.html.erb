@@ -2,10 +2,31 @@
 
 <h5>Le candidat <%= @candidat_valid.name %> est élu avec un résultat de <%= @candidat_valid.resultat %> % </h5> <br>
 <p>Voici tous ses promesses et ces engagements </p>
-<ul>
+<ol>
 	<% @promesse.each do |promesse| %>
 		<li>
 			<%= promesse.content %>
+			<ul>
+				<% promesse.engagments.each do |engagement| %>
+					<li>
+						<%= engagement.content %>
+					</li>
+						<%= form_tag url_for(action:'create'), method:'post' do %>
+							
+							<input type="hidden" name="name" value="1" >
+							<input type="submit" value="like">
+						<%end%>
+						<%= form_tag url_for(action:'create'), method:'post' do %>
+							<input type="hidden" name="name" value="2" >
+							<input type="submit" value="dislike">
+						<%end%>
+						<%= form_tag url_for(action:'create'), method:'post' do %>
+							<input type="hidden" name="name" value="3" >
+							<input type="submit" value="hesitate">
+						<%end%>
+
+				<% end %>
+			</ul>
 		</li>
 	<% end %>
-</ul>
+</ol>

@@ -11,5 +11,13 @@ class SurveysController < ApplicationController
   	@candidat_valid = Candidat.find_by(resultat: max)
   	@promesse = Promess.where(candidat: @candidat_valid)
   end
+
+  def new
+  	
+  end
+
+  def create
+  	
+  end
   
 end
