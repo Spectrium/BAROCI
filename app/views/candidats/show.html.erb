@@ -3,6 +3,7 @@
 		<p>
 			Nom de l'élue : <%= @candidat.name %> </br>
 			Mouvence : <%= @candidat.parti %> </br>
+			Mouvence : <%= @candidat.resultat %> </br>
 			Région : <%= @candidat.region.name %> </br>
 			Commune : <%= @candidat.commune.name %> </br>
 		</p>
@@ -17,7 +18,7 @@
 		<% end %>
 		</ul>
 	</p>
-	<%= link_to "Créer des promesses", new_candidat_promess_path(@candidat.id) %><br><br>
+	<%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id) %><br><br>
 	<%= link_to "Editer candidat", edit_candidat_path(@candidat.id) %><br><br>
 	<%= link_to "Effacer candidat", candidat_path(@candidat.id), method:"delete" %>
 </div>

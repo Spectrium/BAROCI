@@ -1,11 +1,13 @@
 class CandidatsController < ApplicationController
 
   def index
-    @candidat = Candidat.all
+    @commune = Commune.find(params[:commune_id])
+    @candidat = @commune.candidats.all
   end
 
   def show
-  	@candidat = Candidat.find(params[:id])
+    @commune = Commune.find(params[:commune_id])
+  	@candidat = @commune.candidats.find(params[:id])
   end
 
   def new

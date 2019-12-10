@@ -9,9 +9,12 @@ class PromessesController < ApplicationController
   end
 
   def create
-  	@promesse = Promess.new(content: params[:content], candidat_id: params[:candidat_id])
+    @commune = Commune.find(params[:commune_id])
+    @candidat = @commune.candidats.find(params[:candidat_id])
+
+  	@promesse = Promess.new(content: params[:content], candidat_id: @candidat.id)
   	if @promesse.save
-  		redirect_to candidat_path(params[:candidat_id])
+      redirect_to commune_candidat_path(@commune.id, @candidat.id)
   	else
   		render "new"
   	end
