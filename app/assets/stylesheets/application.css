@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+ body{
+    margin: 0px;
+ }
+
+ .padfoot{
+     padding-top: 2%;
+ }
+
+ .disp{
+     display: flex;
+     justify-content: space-around;
+ }
+
+ .inscri{
+     margin-top: 25px;
+ }
+
+/* .fot{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+} */
