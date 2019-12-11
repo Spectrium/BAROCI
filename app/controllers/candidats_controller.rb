@@ -50,7 +50,7 @@ class CandidatsController < ApplicationController
   	@candidat.commune = commune_candidat
 
   	if @candidat.save
-  		redirect_to candidat_path(@candidat.id)
+  		redirect_to commune_candidat_path(commune_candidat.id, @candidat.id)
   	else
   		render "new"
   	end
@@ -62,7 +62,7 @@ class CandidatsController < ApplicationController
 
   def update
   	@candidat = Candidat.find(params[:id])
-  	@candidat.update(name: full_name, parti: mouvence, résultat: resultat)
+  	@candidat.update(name: params[:full_name], parti: params[:mouvence], resultat: params[:resultat])
   	@region = Region.all
   	r = 0
   	@region.each do |region|
@@ -91,13 +91,13 @@ class CandidatsController < ApplicationController
   	if c == 1
   		commune_candidat = Commune.find_by(name: params[:commune])
   	else
-  		commune_candidat = Commune.create(name: params[:commune], region_id: region_candidat.region_id)
+  		commune_candidat = Commune.create(name: params[:commune], region_id: region_candidat.id)
   	end
   	@candidat.region = region_candidat
   	@candidat.commune = commune_candidat
   	
   	if @candidat.save
-  		redirect_to candidat_path(@candidat.id)
+  		redirect_to commune_candidat_path(commune_candidat.id, @candidat.id)
   	else
   		render "edit"
   	end
