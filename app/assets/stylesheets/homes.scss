@@ -11,32 +11,36 @@
 //     background-size: cover;
 // }
 
-.parallax {
-    /* The image used */
-    background: image-url("header.jpg");
+// .parallax {
+//     /* The image used */
+//     background: image-url("header.jpg");
 
-    /* Set a specific height */
-    min-height: 500px;
+//     /* Set a specific height */
+//     min-height: 500px;
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+//     /* Create the parallax scrolling effect */
+//     background-attachment: fixed;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
 
-.cartmada{
-    width: 65%;
-}
+// .cartmada{
+//     width: 65%;
+// }
 
-.listreg{
-    width: 33%;
-}
+// .listreg{
+//     width: 33%;
+// }
 
-.flexbox{
-    display: flex;
-}
+// .flexbox{
+//     display: flex;
+// }
 
-.margsec{
-    margin-top: 10%;
+// .margsec{
+//     margin-top: 10%;
+// }
+
+.bac{
+    background-image: url('slider-bg.png');
 }
