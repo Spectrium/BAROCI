@@ -10,9 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require all
-//= require custom
-//= require modernizer
+//= require bootstrap.min
+//= require jquery.onepagenav
+//= require tooltip
+//= require typed
+//= require typewriter
+//= require wow.min
 
 //= require rails-ujs
 //= require activestorage
