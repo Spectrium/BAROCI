@@ -17,16 +17,22 @@
   </head>
 
   <body>
-  <%= render  "layouts/navbar.html.erb" %>
+  <div class="arong">
+    <div>
+      <%= render  "layouts/navbar.html.erb" %>
+    </div>
 
-    <%= yield %>
+    <div>
+      <%= yield %>
+    </div>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
     <div class="fot" >
-    <%= render  "layouts/footer.html.erb" %>
+      <%= render  "layouts/footer.html.erb" %>
     </div>
+  </div>
     
   </body>
 </html>
