@@ -28,9 +28,9 @@ Rails.application.routes.draw do
     resources :suivis
   end
 
-  resources :candidats do
-    resources :promesses 
-  end
+  # resources :candidats do
+  #   resources :promesses 
+  # end
   resources :communes do
   resources :candidats, only: [:show] do
   resources :avatars, only: [:create]

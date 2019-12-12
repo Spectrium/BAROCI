@@ -40,11 +40,16 @@
   <div class="card-body">
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
-  <div>
-    <%= form_tag promess_pictures_path(@promesse), multipart: true do %>
-    <%= file_field_tag :picture %>
-    <%= submit_tag "mettre à jour" %>
+
+  <% if user_signed_in? %>
+    <% if current_user.is_admins == true %> 
+      <div>
+        <%= form_tag promess_pictures_path(@promesse), multipart: true do %>
+        <%= file_field_tag :picture %>
+        <%= submit_tag "mettre à jour" %>
+        <% end %>
+      </div>
     <% end %>
-  </div>
+  <% end %>
 </div>
 

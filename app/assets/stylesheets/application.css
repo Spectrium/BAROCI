@@ -20,6 +20,9 @@ body {
   width:100%;
   display: table;
 }
+.dropdown-edit{
+	left: 100px;
+}
 .contain{
 	padding-top: 10px;
 }
