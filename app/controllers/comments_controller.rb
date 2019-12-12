@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
-  before_action :authenticate_user!
-  before_action :is_user
+  before_action :authenticate_user!, except: [:new]
+  before_action :is_user, except: [:new, :create, :index]
   before_action :is_admin, only: [:destroy]
 
   def index
@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
 
   private
   def is_user
-  	@comment = Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
     if user_signed_in?
       if current_user == @comment.user
         return true
@@ -56,7 +56,8 @@ class CommentsController < ApplicationController
 
   def is_admin
     if user_signed_in?
-      if current_user.is_admins == true
+  	  @comment = Comment.find(params[:id])
+      if current_user.is_admins == true || @comment.user == current_user
         return true
       else
         redirect_to home_path
