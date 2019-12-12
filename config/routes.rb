@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'pictures/create'
   get 'avatars/create'
   devise_for :users
   root 'homes#index', as: "home"
@@ -38,6 +39,9 @@ end
 
   resources :candidats, only: [:new, :create]
 
+resources :promesses, only: [:show] do
+resources :pictures, only: [:create]
+end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

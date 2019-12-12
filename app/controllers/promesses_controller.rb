@@ -4,6 +4,10 @@ class PromessesController < ApplicationController
 
   end
 
+  def show
+    @promesse = Promess.find(params[:id])
+  end
+
   def new
   	@promesse = Promess.new
   end
