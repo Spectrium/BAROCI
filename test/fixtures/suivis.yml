@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start: false
+  trasition: false
+  finished: false
+  promess: one
+
+two:
+  start: false
+  trasition: false
+  finished: false
+  promess: two
