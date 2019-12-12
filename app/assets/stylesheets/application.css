@@ -39,3 +39,10 @@ body {
  #marg-left{
      padding: 12px;
  }
+
+ #logo{
+    width: 6em;
+    position: absolute;
+    bottom: -2em;
+    height: 7em;
+ }
