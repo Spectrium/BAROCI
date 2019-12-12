@@ -20,9 +20,9 @@ body {
   width:100%;
   display: table;
 }
-
-
+.contain{
+	padding-top: 10px;
+}
 #sticky-footer {
-  padding-top: 10px;
   display: table-footer-group;
 }
