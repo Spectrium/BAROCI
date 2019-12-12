@@ -1,0 +1,11 @@
+<%= @user.full_name  %> <br>
+<%= @user.age  %><br>
+<%= @user.email %><br>
+
+<% if @user == current_user %>
+	<%= link_to 'modifier profil', edit_user_path(@user.id)  %> <br>
+<% end %>
+
+<% if current_user.is_admins == true %>
+	<%= link_to 'Supprimer ce compte', user_path(@user.id) , method: 'delete', data:{confirm:'Etes-vous sure bordel de merde'} %>
+<% end %>

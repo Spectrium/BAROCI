@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
 
+  before_action :authenticate_user!
+  before_action :is_user
+  before_action :is_admin, only: [:destroy]
+
   def index
   end
 
@@ -23,7 +27,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-  	@comment = Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
   	@comment.update(content: params[:content], user_id: current_user.id, engagment_id: params[:engagment_id])
   	if @comment.save
   		redirect_to new_engagment_comment_path(params[:engagment_id])
@@ -36,6 +40,28 @@ class CommentsController < ApplicationController
   	@comment = Comment.find(params[:id])
   	@comment.destroy
   	redirect_to new_engagment_comment_path(params[:engagment_id])
+  end
+
+  private
+  def is_user
+  	@comment = Comment.find(params[:id])
+    if user_signed_in?
+      if current_user == @comment.user
+        return true
+      else
+        redirect_to home_path
+      end
+    end
+  end
+
+  def is_admin
+    if user_signed_in?
+      if current_user.is_admins == true
+        return true
+      else
+        redirect_to home_path
+      end
+    end
   end
 
 end

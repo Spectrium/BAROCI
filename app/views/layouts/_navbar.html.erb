@@ -5,23 +5,37 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="<%= new_daty_path %>">Créer date</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<%= new_candidat_path %>">Créer un candidat</a>
-      </li>
+
+      <% if user_signed_in? %>
+        <% if current_user.is_admins == true %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= new_daty_path %>">Créer date</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= new_candidat_path %>">Créer un candidat</a>
+          </li>
+        <%end%>
+      <%end%>
+      
       <li class="nav-item">
         <a class="nav-link" href="<%= regions_path %>">Region</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%=  daties_path %>">Baroci</a>
       </li>
     </ul>
     <span class="navbar-text">
       <div class="dropdown">
         <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Connection
+        <% if user_signed_in? %>
+          Profil
+        <%else%>
+          Se connecter
+        <%end%>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <% if user_signed_in? %>
+            <a class="dropdown-item" href="<%= user_path(current_user.id)  %>">Mon profil</a>
             <a class="dropdown-item" href="/users/sign_out">Se Deconnecter</a>
             <%else%>
             <a class="dropdown-item" href="/users/sign_in">Se Connecter</a>
