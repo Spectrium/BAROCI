@@ -35,4 +35,8 @@ end
     Candidat.create(name: Faker::FunnyName.name, parti: Faker::Kpop.boy_bands, resultat: 10, commune_id: rand(Commune.first.id .. Commune.last.id), region_id: (Region.first.id))
 end
 
+5.times do |i|
+    Promess.create(content: Faker::Kpop.boy_bands, candidat_id: rand(Candidat.first.id .. Candidat.last.id))
+end
+
 puts "vita"

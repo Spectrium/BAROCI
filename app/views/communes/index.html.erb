@@ -1,7 +1,15 @@
 <h1>Communes#index</h1>
 <% @commune.each do |commune|%>
-	<%= link_to commune.name, commune_candidats_path(commune.id) %>
-	<%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'btn btn-primary' %>
-	<%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'btn btn-danger' %> <br> <br> 	
+	<%= link_to commune.name, commune_candidats_path(commune.id) %><br>
+	<% if user_signed_in? %>
+		<% if current_user.is_admins == true %>
+			<%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'btn btn-primary' %>
+			<%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'btn btn-danger' %> <br> <br>
+		<% end %>
+	<% end %>
 <% end %>
-<%= link_to "créé une commune", new_region_commune_path(@region.id) ,class:'btn btn-success' %> <br> <br> 
+<% if user_signed_in? %>
+	<% if current_user.is_admins == true %>
+		<%= link_to "créé une commune", new_region_commune_path(@region.id) ,class:'btn btn-success' %> <br> <br>
+	<% end %>
+<% end %>

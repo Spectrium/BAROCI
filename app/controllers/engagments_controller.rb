@@ -1,5 +1,7 @@
 class EngagmentsController < ApplicationController
 
+  before_action :is_admin, ecxept: [:index]
+
   def index
     @promesse = Promess.find(params[:promess_id])
   	@engagement = @promesse.engagments.all
@@ -43,6 +45,18 @@ class EngagmentsController < ApplicationController
   	@comment.destroy_all
   	@engagement.destroy
   	redirect_to promess_engagments_path(@promesse.id)
+  end
+
+  private
+
+  def is_admin
+    if user_signed_in?
+      if current_user.is_admins == true
+        return true
+      else
+        redirect_to home_path
+      end
+    end
   end
 
 end

@@ -1,0 +1,18 @@
+<h2>Commentaire sur l'engagement "<%= @engagement.content %>"</h2>
+
+<% @comment.each do |comment| %>
+	<%= comment.user.full_name %><br>
+	<%= comment.content %>
+	<% if user_signed_in? %>
+		<% if comment.user == current_user || current_user.is_admins == true %>
+			 | <%= link_to "Modifier", edit_engagment_comment_path(@engagement.id, comment.id) %> | <%= link_to "Supprimer", engagment_comment_path(@engagement.id, comment.id), method:"delete" %> <br><br>
+		<% end %>
+	<% end %>
+	<br><br>
+<% end %>
+
+<%= form_tag url_for(action:'create'), method:'post' do %>
+	Votre commentaire
+	<input type="text" name="content" >
+	<input type="submit" value="Ajouter" >
+<%end%>

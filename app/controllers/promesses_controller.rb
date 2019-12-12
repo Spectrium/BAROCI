@@ -1,7 +1,18 @@
 class PromessesController < ApplicationController
 
+  before_action :is_admin, except: [:index]
+
   def index
 
+  end
+
+  def show
+    @promesse = Promess.find(params[:id])
+    @promess = @promesse.pictures.all
+    # @pictur = @promess.find(params[:pictures_id])
+    # @picture = @pictur.record_id
+    # @prome = Promess.find(@picture)
+   
   end
 
   def new
@@ -36,6 +47,18 @@ class PromessesController < ApplicationController
 
   def destroy
   	@promesse = Promess.find(params[:id])
+  end
+
+  private
+
+  def is_admin
+    if user_signed_in?
+      if current_user.is_admins == true
+        return true
+      else
+        redirect_to home_path
+      end
+    end
   end
 
 end
