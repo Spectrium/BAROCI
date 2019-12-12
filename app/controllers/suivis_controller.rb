@@ -14,24 +14,24 @@ class SuivisController < ApplicationController
 		@suividone = Suivi.find_by(promess_id: params[:promess_id])
 		if val == "0"
 			if @suividone == nil
-				@suivi = Suivi.new(start: true, finished: false , promess_id: params[:promess_id])
+				@suivi = Suivi.new(start: true, finished: false, transition: false, promess_id: params[:promess_id])
 				@suivi.save
 			else
 				if @suividone.start == true
 					@suividone.destroy
 				else
-					@suividone.update(start: true, finished: false)
+					@suividone.update(start: true, finished: false, transition: false)
 				end
 			end
 		else
 			if @suividone == nil
-				@suivi = Suivi.new(start: false, finished: true , promess_id: params[:promess_id])
+				@suivi = Suivi.new(start: false, finished: true, transition: false, promess_id: params[:promess_id])
 				@suivi.save
 			else
 				if @suividone.finished == true
 					@suividone.destroy
 				else
-					@suividone.update(start: false, finished: true)
+					@suividone.update(start: false, finished: true, transition: false)
 				end
 			end
 		end
