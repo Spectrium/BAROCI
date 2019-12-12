@@ -7,11 +7,7 @@
             <%= image_tag (@promesse.pictures[0]), class:"img-display carousel-display card-img-top proimg",alt: '#{@car.model.name} #{@car.model.name}' %>
           <%else%>
           tsisy
-            <%
-=begin%>
- <%= image_tag (@car.image_url),class:"img-display carousel-display",alt: '#{@car.model.name} #{@car.model.name}' %> 
-<%
-=end%>
+
           <%end%>
         </div>
         <% for i in 1..(@promesse.pictures.length-1)%>
@@ -20,11 +16,7 @@
             <%= image_tag (@promesse.pictures[i]), class:"img-display carousel-display card-img-top proimg",alt: '#{@car.model.name} #{@car.model.name}' %>
           <%else%>
           tsisy
-            <%
-=begin%>
- <%= image_tag (@car.image_url),class:"img-display carousel-display",alt: '#{@car.model.name} #{@car.model.name}' %> 
-<%
-=end%>
+  
           <%end%>
         </div>
         <%end%>
@@ -47,4 +39,28 @@
     <% end %>
   </div>
 </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  voirs plus
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tous les promesses</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @promess.each do |promess|%>
+       <a href="#"> <%= image_tag  promess, class:"tailleimg" %></a>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+
 
