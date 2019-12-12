@@ -9,23 +9,16 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
+ *= require bootstrap
+ *= require cardio
+ *= require et-icons
+ *= require normalize
+ *= require owl
  
- *= require style
- *= require colors
- *= require versions
- *= require responsive
- *= require custom
- *= require prettyPhoto
- *= require font-awesome.min
- *= require bootstrap.min
- *= require animate
- *= require flaticon
- *= require owl.carousel
- *
  *= require_tree .
  *= require_self
  */
 
  #marg-left{
-     margin-left: 23em;
+     padding: 12px;
  }
