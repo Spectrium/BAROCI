@@ -14,28 +14,14 @@
  *= require_self
  */
 
- body{
-    margin: 0px;
- }
-
- .padfoot{
-     padding-top: 2%;
- }
-
- .disp{
-     display: flex;
-     justify-content: space-around;
- }
-
- .inscri{
-     margin-top: 25px;
- }
-
- .arong{
-     display: flex;
-     flex-direction: column;    
- }
-
-/* .fot{
-    justify-content: flex-end;
-} */
+html, body {
+	height: 100%;
+	margin: 0; padding: 0;
+}
+body {
+	display : table;
+	width: 100%;
+}
+.footer {
+	display : table-row;
+}

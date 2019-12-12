@@ -18,22 +18,18 @@
   </head>
 
   <body>
-  <div class="arong">
-    <div>
       <%= render  "layouts/navbar.html.erb" %>
-    </div>
-
-    <div>
-      <%= yield %>
-    </div>
+      
+      <div>
+        <%= yield %>
+      </div>
 
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
-
-    <div class="fot" >
-      <%= render  "layouts/footer.html.erb" %>
-    </div>
-  </div>
-    
+      <div class="footer">
+        <%= render  "layouts/footer.html.erb" %>
+      </div>
+      
   </body>
+
 </html>

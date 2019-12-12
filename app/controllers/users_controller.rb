@@ -37,8 +37,8 @@ class UsersController < ApplicationController
     private
     def is_user
     	if user_signed_in?
-    		# @user = User.find(params[:id])
-    		if params[:id] == current_user.id || current_user.is_admins == true
+    		@user = User.find(params[:id])
+    		if @user == current_user || current_user.is_admins == true
     			return true
     		else
     			redirect_to "/"
