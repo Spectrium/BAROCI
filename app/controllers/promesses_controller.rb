@@ -7,6 +7,11 @@ class PromessesController < ApplicationController
 
   def show
     @promesse = Promess.find(params[:id])
+    @promess = @promesse.pictures.all
+    # @pictur = @promess.find(params[:pictures_id])
+    # @picture = @pictur.record_id
+    # @prome = Promess.find(@picture)
+   
   end
 
   def new

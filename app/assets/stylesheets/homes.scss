@@ -11,46 +11,36 @@
 //     background-size: cover;
 // }
 
-.parallax {
-    /* The image used */
-    background: image-url("header.jpg");
+// .parallax {
+//     /* The image used */
+//     background: image-url("header.jpg");
 
-    /* Set a specific height */
-    min-height: 500px;
+//     /* Set a specific height */
+//     min-height: 500px;
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+//     /* Create the parallax scrolling effect */
+//     background-attachment: fixed;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
 
-.parallax1 {
-    /* The image used */
-    background: image-url("saina.jpg");
+// .cartmada{
+//     width: 65%;
+// }
 
-    /* Set a specific height */
-    min-height: 500px;
+// .listreg{
+//     width: 33%;
+// }
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+// .flexbox{
+//     display: flex;
+// }
 
-.cartmada{
-    width: 65%;
-}
+// .margsec{
+//     margin-top: 10%;
+// }
 
-.listreg{
-    width: 33%;
-}
-
-.flexbox{
-    display: flex;
-}
-
-.margsec{
-    margin-top: 10%;
+.bc{
+    background-image: url("header.jpg");
 }
