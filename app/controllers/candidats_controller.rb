@@ -1,5 +1,5 @@
 class CandidatsController < ApplicationController
-
+  before_action :is_admin,except: [:show,:index]
   def index
     @commune = Commune.find(params[:commune_id])
     @candidat = @commune.candidats.all
@@ -111,5 +111,14 @@ class CandidatsController < ApplicationController
   	@candidat.destroy
   	redirect_to home_path
   end
-
+  private
+  def is_admin
+    if user_signed_in?
+      if current_user.is_admins == true
+        return true
+      else
+        redirect_to home_path
+      end
+    end
+  end
 end

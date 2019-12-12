@@ -1,4 +1,7 @@
 class SuivisController < ApplicationController
+
+	before_action :is_admin, except: [:index]
+
 	def index
 		@commune = Commune.find(params[:commune_id])
   		@candidat = @commune.candidats.find(params[:candidat_id])
@@ -43,4 +46,16 @@ class SuivisController < ApplicationController
 	def destroy
 		
 	end
+
+	private
+
+  def is_admin
+    if user_signed_in?
+      if current_user.is_admins == true
+        return true
+      else
+        redirect_to home_path
+      end
+    end
+  end
 end

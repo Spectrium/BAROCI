@@ -1,10 +1,17 @@
 <h1>Regions#index</h1>
 <% @region.each do |region|%>
-<%= link_to region.name,region_communes_path(region.id)%>
-<%= link_to "edit", edit_region_path(region.id),class:'btn btn-primary' %>
-<%= link_to "supprimé", region_path(region.id) , method: "delete",class:'btn btn-danger' %> <br> <br> 	
+	<%= link_to region.name,region_communes_path(region.id)%><br>
+	<% if user_signed_in? %>
+		<% if current_user.is_admins == true %>
+			<%= link_to "edit", edit_region_path(region.id),class:'btn btn-primary' %>
+			<%= link_to "supprimé", region_path(region.id) , method: "delete",class:'btn btn-danger' %> <br> <br>
+		<% end %>
+	<% end %>	
 <% end %>
-<%= link_to "créé une région", new_region_path ,class:'btn btn-success' %> <br> <br> 	
-
-
+	
+<% if user_signed_in? %>
+	<% if current_user.is_admins == true %>
+		<%= link_to "créé une région", new_region_path ,class:'btn btn-success' %> <br> <br> 
+	<% end %>
+<% end %>
 

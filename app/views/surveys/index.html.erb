@@ -28,7 +28,25 @@
 							<input type="text" name="name" value="3" hidden>
 							<input type="submit" value="hesitate">(<%= number.where(hesitat: true).count %>)
 						<%end%>
-						<%= link_to "Commentaire", new_engagment_comment_path(engagement.id) %>(<%= engagement.comments.count %>)
+						<%= link_to "Commentaire", new_engagment_comment_path(engagement.id) %>(<%= engagement.comments.count %>) <br>
+
+
+
+
+
+						resultat engagment
+						<% total = engagement.surveys.count %>
+						<% survey = Survey.where(engagment: engagement) %>
+						<% surveyagree = survey.where(agree: true) %>
+						<% surveydisagree = survey.where(disagree: true) %>
+						<% surveyhes = survey.where(hesitat: true) %>
+						<% if total != 0 %>
+
+							Agree : <%= (surveyagree.count * 100)/total %> %
+							Disagree : <%= (surveydisagree.count * 100)/total %>%
+							Hesitate : <%= (surveyhes.count * 100)/total %>%
+					
+						<% end %>
 				<% end %>
 			</ul>
 		</li>
