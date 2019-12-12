@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'portraits/create'
   get 'pictures/create'
   get 'avatars/create'
   devise_for :users
@@ -28,9 +29,9 @@ Rails.application.routes.draw do
     resources :suivis
   end
 
-  resources :candidats do
-    resources :promesses 
-  end
+  # resources :candidats do
+  #   resources :promesses 
+  # end
   resources :communes do
   resources :candidats, only: [:show] do
   resources :avatars, only: [:create]
@@ -41,6 +42,10 @@ end
 
 resources :promesses, only: [:show] do
 resources :pictures, only: [:create]
+end
+
+resources :users, only: [:show] do
+resources :portraits, only: [:create]
 end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

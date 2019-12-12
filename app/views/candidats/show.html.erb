@@ -16,7 +16,7 @@
         <div class="tab-content py-4">
           <div class="tab-pane active" id="profile">
             <h5 class="mb-3">User Profile</h5>
-            <div class="row">
+            <div id="about" class="row">
               <div class="col-md-6">
                   <div class="row">
                     <p>
@@ -26,6 +26,7 @@
                       <strong>Région :</strong> <%= @candidat.region.name %> </br>
                       <strong>Commune :</strong> <%= @candidat.commune.name %> </br>
                     </p>
+
                   </div>
               </div>
 
@@ -53,13 +54,14 @@
                                       <input type="text" name="commune" value="<%= @commune.id %>" hidden>
                                       <input type="text" name="name" value="1" hidden>
                                       <input type="submit" value="Fait" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.finished == true %> class="btn btn-success" <%  else%> class="btn btn-warning"<%  end%><%  else%> class="btn btn-warning" <% end%>  >
-                                    <%end%><br><br>
+                                    <%end%><br>
                                   </li>
                                 <% end %>
-                                </ul><br>
-                                  <%= link_to "Créer une promesse", new_candidat_promess_path(@candidat.id) %> 
+                                </ul>
                                   <% end %>
+                                  <%= link_to "Voir les progressions des promesses", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id) %> <br>
                               <% end %>
+                                  <%= link_to "Créer une promesse", new_commune_candidat_promess_path(@commune.id,@candidat.id) %> <br>
                             </p>
                       </td>
                   </tr>
@@ -75,24 +77,31 @@
         </div>
         <div class="col-lg-4 order-lg-1 text-center">
         <% if @candidat.avatars.attached?%>
-          <%= image_tag @candidat.avatars[0], alt: 'avatar', class:"mx-auto img-fluid img-circle d-block" %>
+          <%= image_tag @candidat.avatars.last, alt: 'avatar', class:"mx-auto img-fluid img-circle d-block" %>
         <%else%>
           <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
         <%end%>
-            <h6 class="mt-2">Upload a different photo</h6>
-              <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %>
-              <%= file_field_tag :avatar %>
-              <%= submit_tag "mettre à jour" %>
-              <% end %>
+        <% if user_signed_in? %>
+          <% if current_user.is_admins == true %> 
+            <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %>
+            <%= file_field_tag  :avatar, class:"btn choice" %>
+            <%= submit_tag "mettre à jour", class:"btn btn-primary" %>
+            <% end %>
+          <% end %>
+        <% end %>
         </div>
     </div>
 </div>
-  <% if user_signed_in? %>
-    <% if current_user.is_admins == true %>
-			<%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id) %><br><br>
-			<%= link_to "Editer candidat", edit_commune_candidat_path(@commune.id, @candidat.id) %><br><br>
-			<%= link_to "Effacer candidat", commune_candidat_path(@commune.id, @candidat.id), method:"delete" %><br><br>
-		<% end %>
-	<% end %>
+
+  <div class="boutton-flex">
+    <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn btn-outline-secondary" %>
+    <% if user_signed_in? %>
+      <% if current_user.is_admins == true %>
+        <%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id), class:"btn btn-outline-secondary" %>
+        <%= link_to "Editer candidat", edit_commune_candidat_path(@commune.id, @candidat.id), class:"btn btn-outline-secondary" %>
+        <%= link_to "Effacer candidat", commune_candidat_path(@commune.id, @candidat.id), method:"delete", class:"btn btn-outline-danger" %>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>
-<p><%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id) %></p>
