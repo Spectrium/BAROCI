@@ -62,10 +62,24 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-#Grapql gem hanaovana graphique amin'ny resultats sondage 
+#Grapql gem hanaovana graphique ny base de données amin'ny resultats sondage 
 gem 'graphql'
 
 group :development do
   gem 'graphiql-rails'
   gem 'faker'
 end
+
+
+#gem chart sary graphique avy amin'ny javascript
+gem 'chartjs-ror', '~> 2.2'
+gem 'googlecharts', '~> 1.6', '>= 1.6.12'
+gem 'chartkick', '~> 3.3'
+gem 'highcharts-rails', '~> 6.0', '>= 6.0.3'
+
+
+#slim gem hanaovana erb mora soratana
+gem 'slim', '~> 3.0', '>= 3.0.6'
+
+#gem correction postgresql
+gem 'wdm', '>= 0.1.0'
