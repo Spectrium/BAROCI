@@ -1,34 +1,49 @@
+    <div class="sticky-top">
+         <div class="header-bottom wow fadeIn">
+            <div class="container">
+               <nav class="main-menu">
+                  <div class="navbar-header">
+                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                  </div>
+				  
+                  <div id="navbar" class="navbar-collapse collapse">
+                     <ul class="nav navbar-nav">
+                        <li><a class="active" href="<%= home_path %>">Home</a></li>
+                        <li><a href="<%= new_daty_path %>">Créer date</a></li>
+                        <li><a href="<%= new_candidat_path %>">Créer un candidat</a></li>
+                        <li><a href="<%= regions_path %>">Région</a></li>
+                        <li><a href="<%= daties_path %>">Baroci</a></li>
+                     </ul>
+                  </div>
+               </nav>
 
-<div class="sticky-top">
-  <div class="header-bottom wow fadeIn">
-      <div class="container">
-         <nav class="main-menu">
-            <div class="navbar-header">
-               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i class="fa fa-bars" aria-hidden="true"></i></button>
-            </div>
-	  
-            <div id="navbar" class="navbar-collapse collapse">
-               <ul class="nav navbar-nav">
-                  <li><a class="active" href="<%= home_path %>">Home</a></li>
-                  <li><a data-scroll href="<%= new_daty_path %>">Créer date</a></li>
-                  <li><a data-scroll href="<%= new_candidat_path %>">Créer un candidat</a></li>
-                  <li><a data-scroll href="<%= regions_path %>">Région</a></li>
-                  <li><a data-scroll href="<%= daties_path %>">Baroci</a></li>
+            <span class="navbar-text">
+               <div class="dropdown">
+               <button class="btn btn-primary dropdown-toggle" id="marg-left" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ 
+               <% if user_signed_in? %>
+                  Profil
+                  <%else%>
+                  Se connecter
+               <%end%>
 
-               </ul>
-            </div>
-         </nav>
+               </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-         <div class="serch-bar">
-            <div id="custom-search-input">
-               <div class="input-group col-md-12">
-                  <input type="text" class="form-control input-lg" placeholder="Search" />
-                  <span class="input-group-btn">
-                  <button class="btn btn-info btn-lg" type="button">
-                  <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                  </span>
+               <% if user_signed_in? %>
+                  <ul class="dropdown-menu">
+                        <li><a class="dropdown-item text-dark" href="<%= user_path(current_user.id) %>">Mon profil</a></li>
+                        <li><a class="dropdown-item text-dark" href="<%= destroy_user_session_path %>" data-method="delete">Se Deconnecter</a></li>
+                     <%else%>
+                        <li><a class="dropdown-item text-dark" href="<%= user_session_path %>">Se Connecter</a></li>
+                        <li><a class="dropdown-item text-dark" href="<%= new_user_registration_path %>">S'inscrire</a></li>
+                  </ul>
+            
+               <%end%>
+
                </div>
+               </div>
+            </span>
             </div>
          </div>
       </div>
