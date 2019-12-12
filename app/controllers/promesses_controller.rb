@@ -1,7 +1,6 @@
 class PromessesController < ApplicationController
-
+  before_action :authenticate_user!, except: [:show]
   before_action :is_admin, except: [:index]
-
   def index
 
   end

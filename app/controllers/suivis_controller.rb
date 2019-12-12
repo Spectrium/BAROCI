@@ -1,6 +1,6 @@
 class SuivisController < ApplicationController
-
-	before_action :is_admin, except: [:index]
+	before_action :authenticate_user!
+	before_action :is_admin
 
 	def index
 		@commune = Commune.find(params[:commune_id])

@@ -1,5 +1,5 @@
 class EngagmentsController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index]
   before_action :is_admin, ecxept: [:index]
 
   def index

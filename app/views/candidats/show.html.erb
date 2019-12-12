@@ -23,123 +23,48 @@
                     <p>
                       Nom de l'élue : <%= @candidat.name %> </br>
                       Mouvence : <%= @candidat.parti %> </br>
-                      Mouvence : <%= @candidat.resultat %> </br>
+                      Résultat : <%= @candidat.resultat %> </br>
                       Région : <%= @candidat.region.name %> </br>
                       Commune : <%= @candidat.commune.name %> </br>
                     </p>
                   </div>
-                    <h6>Hobbies</h6>
-                    <p>
-                        Indie music, skiing and hiking. I love the great outdoors.
-                    </p>
               </div>
-              <div class="col-md-6">
-                  <h6>Recent badges</h6>
-                  <a href="#" class="badge badge-dark badge-pill">html5</a>
-                  <a href="#" class="badge badge-dark badge-pill">react</a>
-                  <a href="#" class="badge badge-dark badge-pill">codeply</a>
-                  <a href="#" class="badge badge-dark badge-pill">angularjs</a>
-                  <a href="#" class="badge badge-dark badge-pill">css3</a>
-                  <a href="#" class="badge badge-dark badge-pill">jquery</a>
-                  <a href="#" class="badge badge-dark badge-pill">bootstrap</a>
-                  <a href="#" class="badge badge-dark badge-pill">responsive-design</a>
-                  <hr>
-                  <span class="badge badge-primary"><i class="fa fa-user"></i> 900 Followers</span>
-                  <span class="badge badge-success"><i class="fa fa-cog"></i> 43 Forks</span>
-                  <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span>
-              </div>
-              <div class="col-md-12">
-                  <h5 class="mt-2"><span class="fa fa-clock-o ion-clock float-right"></span> Recent Activity</h5>
-                  <table class="table table-sm table-hover table-striped">
-                      <tbody>                                    
-                          <tr>
-                              <td>
-                                  <strong>Abby</strong> joined ACME Project Team in <strong>`Collaboration`</strong>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>
-                                  <strong>Gary</strong> deleted My Board1 in <strong>`Discussions`</strong>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>
-                                  <strong>Kensington</strong> deleted MyBoard3 in <strong>`Discussions`</strong>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>
-                                  <strong>John</strong> deleted My Board1 in <strong>`Discussions`</strong>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td>
-                                  <strong>Skell</strong> deleted his post Look at Why this is.. in <strong>`Discussions`</strong>
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
+
                 </div>
                 <!--/row-->
                 </div>
-                <div class="tab-pane" id="messages">
-                    <div class="alert alert-info alert-dismissable">
-                        <a class="panel-close close" data-dismiss="alert">×</a> This is an <strong>.alert</strong>. Use this to show important messages to the user.
-                    </div>
-                    <table class="table table-hover table-striped">
-                        <tbody>                                    
-                            <tr>
-                                <td>
-                                   <ul>
-                                    <% @candidat.promesses.each do |promesse| %>
-                                      <li>
-                                        <%= promesse.content %> <%= link_to "Voir", promess_engagments_path(promesse.id) %> | <%= link_to "Créer des engagements", new_promess_engagment_path(promesse.id) %> | <%= link_to "Modifier la promesse", edit_candidat_promess_path(@candidat.id,promesse.id) %><br><br>
-                                      </li>
-                                    <% end %>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                   	<ul>
-                                        <% @candidat.promesses.each do |promesse| %>
-                                          <li>
-                                            <%= link_to promesse.content, promess_engagments_path(@candidat.id,promesse.id) %> | <%= link_to "Créer des engagements", new_promess_engagment_path(promesse.id) %> | <%= link_to "Modifier la promesse", edit_commune_candidat_promess_path(@commune.id, @candidat.id,promesse.id) %>
-
-                                            <%= form_tag promess_suivis_path(promesse.id), method:'post' do %>
-                                              <input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
-                                              <input type="text" name="commune" value="<%= @commune.id %>" hidden>
-                                              <input type="text" name="name" value="0" hidden>
-                                              <input type="submit" value="En cours" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.start == true %> class="btn btn-primary" <%  else%> class="btn btn-warning"<%  end%><%  else%> class="btn btn-warning" <% end%> >
-                                            <%end%>
-                                            <%= form_tag promess_suivis_path(promesse.id), method:'post' do %>
-                                              <input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
-                                              <input type="text" name="commune" value="<%= @commune.id %>" hidden>
-                                              <input type="text" name="name" value="1" hidden>
-                                              <input type="submit" value="Fait" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.finished == true %> class="btn btn-success" <%  else%> class="btn btn-warning"<%  end%><%  else%> class="btn btn-warning" <% end%>  >
-                                            <%end%><br><br>
-                                          </li>
-                                        <% end %>
-                                        </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                   <span class="float-right font-weight-bold">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                   <span class="float-right font-weight-bold">9/4</span> Vestibulum tincidunt ullamcorper eros eget luctus. 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                   <span class="float-right font-weight-bold">9/4</span> Maxamillion ais the fix for tibulum tincidunt ullamcorper eros. 
-                                </td>
-                            </tr>
-                        </tbody> 
+                <div class="tab-pane" id="messages"> 
+                  <tr>
+                      <td>
+                         	<p>
+                            <ul>
+                            <% @candidat.promesses.each do |promesse| %>
+                              <li>
+                                <%= link_to promesse.content, promess_engagments_path(promesse.id) %> 
+                                <% if user_signed_in? %>
+                                  <% if current_user.is_admins == true %> | <%= link_to "Créer des engagements", new_promess_engagment_path(promesse.id) %> | <%= link_to "Modifier la promesse", edit_commune_candidat_promess_path(@commune.id, @candidat.id,promesse.id) %> 
+                                    <%= form_tag promess_suivis_path(promesse.id), method:'post' do %>
+                                      <input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
+                                      <input type="text" name="commune" value="<%= @commune.id %>" hidden>
+                                      <input type="text" name="name" value="0" hidden>
+                                      <input type="submit" value="En cours" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.start == true %> class="btn btn-primary" <%  else%> class="btn btn-warning"<%  end%><%  else%> class="btn btn-warning" <% end%> >
+                                    <%end%>
+                                    <%= form_tag promess_suivis_path(promesse.id), method:'post' do %>
+                                      <input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
+                                      <input type="text" name="commune" value="<%= @commune.id %>" hidden>
+                                      <input type="text" name="name" value="1" hidden>
+                                      <input type="submit" value="Fait" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.finished == true %> class="btn btn-success" <%  else%> class="btn btn-warning"<%  end%><%  else%> class="btn btn-warning" <% end%>  >
+                                    <%end%><br><br>
+                                  </li>
+                                <% end %>
+                                </ul><br>
+                                  <%= link_to "Créer une promesse", new_candidat_promess_path(@candidat.id) %> 
+                                  <% end %>
+                              <% end %>
+                            </p>
+                      </td>
+                  </tr>
+              </tbody> 
                     </table>
                 </div>
                 <div class="tab-pane" id="edit">
@@ -163,36 +88,12 @@
         </div>
     </div>
 </div>
-
-	<p>
-		Promesse et ces engagements: </br>
-		<ul>
-		<% @candidat.promesses.each do |promesse| %>
-			<li>
-				<%= link_to promesse.content, promess_engagments_path(promesse.id) %> 
-				<% if user_signed_in? %>
-					<% if current_user.is_admins == true %> | <%= link_to "Créer des engagements", new_promess_engagment_path(promesse.id) %> | <%= link_to "Modifier la promesse", edit_commune_candidat_promess_path(@commune.id, @candidat.id,promesse.id) %> 
-						<%= form_tag promess_suivis_path(promesse.id), method:'post' do %>
-							<input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
-							<input type="text" name="commune" value="<%= @commune.id %>" hidden>
-							<input type="text" name="name" value="0" hidden>
-							<input type="submit" value="En cours" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.start == true %> class="btn btn-primary" <%  else%> class="btn btn-warning"<%  end%><%  else%> class="btn btn-warning" <% end%> >
-						<%end%>
-						<%= form_tag promess_suivis_path(promesse.id), method:'post' do %>
-							<input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
-							<input type="text" name="commune" value="<%= @commune.id %>" hidden>
-							<input type="text" name="name" value="1" hidden>
-							<input type="submit" value="Fait" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.finished == true %> class="btn btn-success" <%  else%> class="btn btn-warning"<%  end%><%  else%> class="btn btn-warning" <% end%>  >
-						<%end%><br><br>
-					</li>
-				<% end %>
-				</ul><br>
-			</p>
+  <% if user_signed_in? %>
+    <% if current_user.is_admins == true %>
 			<%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id) %><br><br>
 			<%= link_to "Editer candidat", edit_commune_candidat_path(@commune.id, @candidat.id) %><br><br>
 			<%= link_to "Effacer candidat", commune_candidat_path(@commune.id, @candidat.id), method:"delete" %><br><br>
 		<% end %>
 	<% end %>
-
 </div>
-	<p><%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id) %></p>
+<p><%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id) %></p>
