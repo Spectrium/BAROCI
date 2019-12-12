@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :comments
   has_many :surveys
+
+  has_one_attached :portrait
 end
