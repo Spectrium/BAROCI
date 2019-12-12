@@ -7,7 +7,8 @@ class CandidatsController < ApplicationController
 
   def show
     @commune = Commune.find(params[:commune_id])
-  	@candidat = @commune.candidats.find(params[:id])
+	@candidat = @commune.candidats.find(params[:id])
+	@avatar = @candidat.avatars.all  
   end
 
   def new
