@@ -19,18 +19,20 @@
 	  <% end %>
     </tr>
   </thead>
+  <% i = 1 %>
   <% @commune.each do |commune|%>
-  <tbody>
-    <tr>
-      <th scope="row"><%=commune.id%></th>
-      <td><%= link_to commune.name, commune_candidats_path(commune.id) %></td>
-    <% if user_signed_in? %>
-      <% if current_user.is_admins == true %>
-        <td>Ot<%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'btn btn-primary' %>to</td>
-        <td><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'btn btn-danger' %></td>
-      <% end %>
-	  <% end %>
-    </tr>
-  </tbody>
+    <tbody>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%= link_to commune.name, commune_candidats_path(commune.id) %></td>
+        <% if user_signed_in? %>
+          <% if current_user.is_admins == true %>
+            <td><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'boutton edit' %></td>
+            <td><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'boutton supprimer' %></td>
+          <% end %>
+    	  <% end %>
+      </tr>
+    </tbody>
+    <% i += 1 %>
   <% end %>
 </table>

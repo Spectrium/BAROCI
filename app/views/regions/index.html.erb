@@ -35,19 +35,21 @@
     <% end%>
     </tr>
   </thead>
+  <% i = 1 %>
   <% @region.each do |region|%>
-  <tbody>
-    <tr>
-      <th><%= region.id%></th>
-      <td><%= link_to region.name,region_communes_path(region.id)%><br></td>
-	  <% if user_signed_in? %>
-      <% if current_user.is_admins == true %>
-        <td><%= link_to "Editer", edit_region_path(region.id),class:'boutton edit' %></td>
-        <td><%= link_to "Supprimer", region_path(region.id) , method: "delete",class:'boutton supprimer' %></td>
-  	  <% end %>
-	  <% end %>
-    </tr>
-  </tbody>
+    <tbody>
+      <tr>
+        <th><%= i %></th>
+        <td><%= link_to region.name,region_communes_path(region.id)%><br></td>
+    	  <% if user_signed_in? %>
+          <% if current_user.is_admins == true %>
+            <td><%= link_to "Editer", edit_region_path(region.id),class:'boutton edit' %></td>
+            <td><%= link_to "Supprimer", region_path(region.id) , method: "delete",class:'boutton supprimer' %></td>
+      	  <% end %>
+    	  <% end %>
+      </tr>
+    </tbody>
+    <% i += 1 %>
   <% end %>
 </table>
 </div>
