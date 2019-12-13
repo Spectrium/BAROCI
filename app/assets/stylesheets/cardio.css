@@ -3,7 +3,6 @@ body {
 	font-family: 'Roboto', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	overflow-x: hidden;
-	color: #2a3237;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -49,7 +48,7 @@ body {
 p {
 	font-size: 18px;
 	line-height: 1.5;
-	color: #8a8e91;
+	color: #ffffff;
 }
 
 h1,
@@ -61,30 +60,52 @@ h6 {
 	font-family: 'Roboto', 'Avenir Next', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 	position: relative;
 	margin: 10px 0;
+	color: #ffffff;
 }
 
 h1 {
 	font-size: 60px;
+	color: #ffffff;
 }
 
 h2 {
 	font-size: 48px;
+	color: #ffffff;
+
 }
 
 h3 {
 	font-size: 30px;
+	color: #ffffff;
 }
 
 h4 {
 	font-size: 24px;
+	color: #ffffff;
 }
 
 h5 {
 	font-size: 18px;
+	color: #ffffff;
 }
 
 h6 {
 	font-size: 16px;
+	color: #ffffff;
+}
+
+li {
+	font-size: 16px;
+	color: #ffffff;
+}
+input{
+	
+	border:none;
+	padding:6px 0 6px 0;
+	border-radius:8px;
+	background:#478bf9;
+	font:bold 13px Arial;
+	color:#fff;
 }
 
 ul.white-list {
@@ -154,7 +175,6 @@ header .typed-cursor {
 
 a {
 	text-decoration: none;
-	color: #00a8ff;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
