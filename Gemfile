@@ -65,4 +65,5 @@ gem 'faker'
 gem 'table_print'
 gem 'jquery-rails'
 gem 'chartkick'
+gem 'bootstrap-glyphicons', '~> 0.0.1'
 

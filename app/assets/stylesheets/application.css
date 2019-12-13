@@ -53,3 +53,14 @@ body {
     bottom: -2em;
     height: 7em;
  }
+
+ .icon{
+   width: 2em;
+   margin-top:8px;
+   transition: transform .2s;
+   margin: 0 auto;
+ }
+
+ .icon:hover{
+   transform: scale(1.5);
+ }
