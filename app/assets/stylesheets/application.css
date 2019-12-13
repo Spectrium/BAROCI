@@ -77,4 +77,7 @@ body {
    position: initial;
  }
 
- 
+ .image-car{
+   width: 54em;
+   height: 31em;
+ }
