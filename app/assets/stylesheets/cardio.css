@@ -321,6 +321,7 @@ section {
 
 .intro-table-first {
 	background-image: url('table-1.jpg');
+	background-attachment: fixed;
 }
 
 .intro-table-hover {
@@ -343,6 +344,7 @@ section {
 
 .intro-table-third {
 	background-image: url('table-3.jpg');
+	background-attachment: fixed;
 }
 
 .intro-table-hover .expand {
