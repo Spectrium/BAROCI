@@ -44,6 +44,12 @@ body {
      padding: 12px;
  }
 
+ #nav{
+  position: initial;
+  top: 0;
+  margin-top: 0px;
+  background-color: #292626;
+ }
 
  #logo{
     width: 6em;
@@ -66,3 +72,9 @@ body {
  .icon:hover{
    transform: scale(1.5);
  }
+
+ .tay{
+   position: initial;
+ }
+
+ 
