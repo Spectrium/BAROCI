@@ -40,12 +40,6 @@ body {
      padding: 12px;
  }
 
- #nav{
-  position: relative;
-  top: 0;
-  margin-top: 0px;
-  background-color: #292626;
- }
 
  #logo{
     width: 6em;
@@ -54,13 +48,6 @@ body {
     height: 7em;
  }
 
- .icon{
-   width: 2em;
-   margin-top:8px;
-   transition: transform .2s;
-   margin: 0 auto;
- }
-
- .icon:hover{
-   transform: scale(1.5);
- }
+.push-top{
+  margin-top: 111px;
+}

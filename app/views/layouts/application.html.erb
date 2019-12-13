@@ -28,13 +28,15 @@
   </head>
 
   <body>
-  <div class="preloader">
+ <!--  <div class="preloader">
 		<%= image_tag  "loader.gif", alt:"chargement de la page" %>
-	</div>
+	</div> -->
+
     <%= render  "layouts/navbar.html.erb" %>
 
+  <div class="push-top">
     <%= yield %>
-
+  </div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
         <%= render  "layouts/footer.html.erb" %>
