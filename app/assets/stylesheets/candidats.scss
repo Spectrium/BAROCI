@@ -8,6 +8,19 @@
     height: 20%;
 }
 
+#about{
+	margin-left: 20px;
+}
+
+.boutton-flex{
+	margin: 20px auto 0 auto;
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+}
+.margin{
+	margin: 80px;
+	}
 .pic{
     background-image: url('team-cover1.jpg');
     background-size: cover;

@@ -64,3 +64,5 @@ gem 'devise'
 gem 'faker'
 gem 'table_print'
 gem 'jquery-rails'
+gem 'chartkick'
+

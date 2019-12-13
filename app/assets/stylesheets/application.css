@@ -19,6 +19,23 @@
  *= require_self
  */
 
+
+html,
+body {
+  height: 100%;
+  width:100%;
+  display: table;
+}
+.dropdown-edit{
+	left: 100px;
+}
+.contain{
+	padding-top: 10px;
+}
+#sticky-footer {
+  display: table-footer-group;
+}
+
  #marg-left{
      padding: 12px;
  }

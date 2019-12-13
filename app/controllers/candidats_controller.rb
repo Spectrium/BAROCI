@@ -6,8 +6,15 @@ class CandidatsController < ApplicationController
   end
 
   def show
-    @commune = Commune.find(params[:commune_id])
+  @commune = Commune.find(params[:commune_id])
 	@candidat = @commune.candidats.find(params[:id])
+  @candidats = @commune.candidats.all
+  tab = []
+  @candidats.each do |candidat|
+    tab << candidat.resultat
+  end
+  @tab = tab.max
+  @candidat_valid = Candidat.find_by(resultat: tab.max)
 	@avatar = @candidat.avatars.all  
   end
 
@@ -103,6 +110,7 @@ class CandidatsController < ApplicationController
   		render "edit"
   	end
   end
+
 
   def destroy
   	@candidat = Candidat.find(params[:id])

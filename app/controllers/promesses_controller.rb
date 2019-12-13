@@ -24,6 +24,7 @@ class PromessesController < ApplicationController
 
   	@promesse = Promess.new(content: params[:content], candidat_id: @candidat.id)
   	if @promesse.save
+      @suivi = Suivi.create(start: false, transition: true, finished: false, promess_id: @promesse.id)
       redirect_to commune_candidat_path(@commune.id, @candidat.id)
   	else
   		render "new"
@@ -46,6 +47,15 @@ class PromessesController < ApplicationController
 
   def destroy
   	@promesse = Promess.find(params[:id])
+    @engagement = @promesse.engagments.all
+    @engagement.each do |engagement|
+       engagement.surveys.destroy_all
+    end
+    @suivi = @promesse.suivis.all
+    @engagement.destroy_all
+    @suivi.destroy_all
+    @promesse.destroy
+    redirect_to commune_candidat_path(params[:commune_id], params[:candidat_id])
   end
 
   private

@@ -11,7 +11,7 @@
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    	
+
      	<!-- Favicons (created with http://realfavicongenerator.net/)-->
 	<link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
@@ -24,6 +24,7 @@
 	<meta name="theme-color" content="#ffffff"> 
       <!-- Font Awesome -->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.1.0/css/font-awesome.min.css">
+
   </head>
 
   <body>
@@ -34,8 +35,11 @@
 
     <%= yield %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+        <%= render  "layouts/footer.html.erb" %>
+
+  </body>
 
     <div class="fot" >
     <%= render "layouts/footer.html.erb" %>

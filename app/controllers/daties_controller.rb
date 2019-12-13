@@ -4,7 +4,7 @@ class DatiesController < ApplicationController
 
   def index
   	@date = Daty.last
-    limite = (@date.end_date - @date.start_date).to_f
+    # limite = (@date.end_date - @date.start_date).to_f
     ##calcul de difference de temps
     ##calcul second
     # if limite < 60
@@ -17,7 +17,7 @@ class DatiesController < ApplicationController
     #     @min = s.to_i
     #   else
     #     mm = s/60
-        
+
 
   end
 
