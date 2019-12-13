@@ -21,10 +21,6 @@
 .margin{
 	margin-top: 80px;
 	}
-.pic{
-    background-image: url('team-cover1.jpg');
-    background-size: cover;
-}
 
 .content{
 	padding: 10px;
@@ -49,3 +45,52 @@
 	border-radius: 10px;
 
 }
+
+.image-r{
+	width: 100%;
+}
+.image-width{
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+}
+
+.candidat-container{
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 30px;
+}
+.candidat-content{
+	border: solid 1px #aaa;
+	border-radius: 10px;
+	width: 400px;
+	margin: 10px;
+}
+.candidat-content:hover{
+	box-shadow: 2px 2px 2px 2px #bbb;
+}
+.left{
+	text-align: left;
+}
+.pad{
+	padding: 10px;
+}
+ .boutt{
+ 	align-items: center;
+ 	color: #1bb1ff;
+ 	border: solid 1px #1bb1ff;
+ 	border-radius: 10px;
+ 	padding: 0 20px;
+ }
+ .bottom{
+ 	text-align: center;
+ }
+ .btn-sondage{
+ 	margin: 0 auto;
+ 	padding: 10px;
+ 	color: #1bb1ff;
+ 	border: solid 1px #1bb1ff;
+ 	border-radius: 10px;
+ }
+ .btn-sondage:hover{
+ 	text-decoration: underline;
+ }
