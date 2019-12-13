@@ -1,8 +1,8 @@
-<section id="team" class="section gray-bg">
+<section  class="section gray-bg">
 		<div class="container">
 			<div class="row title text-center">
-				<h1>Liste des candidats dans la commune <%= @commune.name %></h1>
-				<h4 class="light muted">Commune <%= @commune.name %></h4>
+				<h1 class="t-color">Liste des candidats dans la commune <%= @commune.name %></h1>
+				<h4 class="t-color">Commune <%= @commune.name %></h4>
 			</div>
 			<div class="candidat-container">
 			<% @candidat.each do |candidat|%>
@@ -17,12 +17,12 @@
 						</div>
 						<div class="pad">
 							<div class="left">
-								<p>Nom du candidat : <%= candidat.name %></p>
-								<p>Mouvence : <%= candidat.parti %></p>
+								<p class="t-color">Nom du candidat : <%= candidat.name %></p>
+								<p class="t-color">Mouvence : <%= candidat.parti %></p>
 							</div>
 							
 							<div class="title">
-								<h4>Résultat : <%= candidat.resultat %></h4>
+								<h4 class="t-color">Résultat : <%= candidat.resultat %></h4>
 							</div>
 							<button data-toggle="modal" data-target="#modal1" class="boutt"><%= link_to "Voir", commune_candidat_path(@commune.id, candidat.id) %></button>
 						</div>
