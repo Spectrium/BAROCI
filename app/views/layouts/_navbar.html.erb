@@ -13,23 +13,23 @@
 			<a class="navbar-brand" href="<%= home_path %>"><%= image_tag  "logo.png", id:"logo" %></a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right main-nav">
-				<li><a class="active" href="<%= home_path %>">Home</a></li>
+				<li><a class="active hov" href="<%= home_path %>">Home</a></li>
 				<% if user_signed_in?%>	
 					<% if current_user.is_admins == true%>
 	                  <li><a data-scroll href="<%= new_daty_path %>">Créer date</a></li>
 	                  <li><a data-scroll href="<%= new_candidat_path %>">Créer un candidat</a></li>
 	                <% end %>
 	            <% end %>  
-              <li><a data-scroll href="<%= regions_path %>">Région</a></li>
-              <li><a data-scroll href="<%= daties_path %>">Baroci</a></li>
-			  <li><a data-scroll href="#">A propos</a></li>
+              <li><a data-scroll href="<%= regions_path %>" class="hov">Région</a></li>
+              <li><a data-scroll href="<%= daties_path %>" class="hov">Baroci</a></li>
+			  <li><a data-scroll href="#" class="hov">A propos</a></li>
            <li>
        
 
            <li class="dropdown">
-			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			  <button class="btn btn-outline-primary dropdown-toggle hov" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 			    <% if user_signed_in?%>
              		Mon profil
 	            <% else %>

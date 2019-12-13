@@ -20,7 +20,7 @@
  */
 
 body{
-  background-color: #67797b91;
+  background-color: #252222;
 }
 
 
@@ -90,4 +90,11 @@ body {
 
  .foot{
   margin-top: 3em;
+ }
+
+ .hov{
+   color:white;
+ }
+ .hov:hover{
+   color: rgb(243, 45, 233);
  }
