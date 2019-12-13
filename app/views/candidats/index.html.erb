@@ -1,45 +1,37 @@
-<h1>Liste des candidats dans la commune <%= @commune.name %></h1>
-<% @candidat.each do |candidat|%>
-	<p>
-		Nom de l'élue : <%= candidat.name %></br>
-		Mouvence : <%= candidat.parti %> </br>
-		Résultat : <%= candidat.resultat %> </br>
-		<%= link_to "Voir", commune_candidat_path(@commune.id, candidat.id) %>
-	</p>
-<% end %>
-<%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id) %>
-
 <section id="team" class="section gray-bg">
 		<div class="container">
 			<div class="row title text-center">
-				<h2 class="margin-top">Liste des candidats</h2>
+				<h1>Liste des candidats dans la commune <%= @commune.name %></h1>
 				<h4 class="light muted">Commune <%= @commune.name %></h4>
 			</div>
-			<div class="row">
+			<div class="candidat-container">
 			<% @candidat.each do |candidat|%>
-				<div class="col-md-4">
-					<div class="team text-center">
-						<div class="cover pic">
-						<%if candidat.avatars.attached?%>
-						<%= image_tag  candidat.avatars[0] %>
-						<%else%>
-						tsisy
-						<%end%>
-							<div class="overlay text-center">
-								<h3 class="white">Nom de l'élue : <%= candidat.name %></h3>
-								<h5 class="light light-white">Mouvence : <%= candidat.parti %></h5>
+				<div class="candidat-content">
+					<div>
+						<div class="image-r">
+							<%if candidat.avatars.attached?%>
+								<%= image_tag  candidat.avatars.last, class:"image-width" %>
+							<%else%>
+								<img src="//placehold.it/150" alt="avatar">
+							<%end%>
+						</div>
+						<div class="pad">
+							<div class="left">
+								<p>Nom du candidat : <%= candidat.name %></p>
+								<p>Mouvence : <%= candidat.parti %></p>
 							</div>
+							
+							<div class="title">
+								<h4>Résultat : <%= candidat.resultat %></h4>
+							</div>
+							<button data-toggle="modal" data-target="#modal1" class="boutt"><%= link_to "Voir", commune_candidat_path(@commune.id, candidat.id) %></button>
 						</div>
-						<img src="img/team/team3.jpg" alt="Team Image" class="avatar">
-						<div class="title">
-							<h4>Résultat : <%= candidat.resultat %></h4>
-							<h5 class="muted regular"></h5>
-						</div>
-						<button data-toggle="modal" data-target="#modal1" class="btn btn-blue-fill"><%= link_to "Voir", commune_candidat_path(@commune.id, candidat.id) %></button>
 					</div>
 				</div>
-				<% end %>
+			<% end %>
 			</div>
-			
+		</div>
+		<div class="bottom">
+			<%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn-sondage" %>
 		</div>
 	</section>
