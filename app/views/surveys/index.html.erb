@@ -16,21 +16,21 @@
 							
 							<input type="text" name="engagement" value="<%= engagement.id %>" hidden>
 							<input type="text" name="name" value="1" hidden>
-							<input type="submit" value="like">(<%= number.where(agree: true).count %>)
+							<input type="submit" value="D'accord">(<%= number.where(agree: true).count %>)
 						<%end%>
 						<%= form_tag url_for(action:'create'), method:'post' do %>
 							<input type="text" name="engagement" value="<%= engagement.id %>" hidden>
 							<input type="text" name="name" value="2" hidden>
-							<input type="submit" value="dislike">(<%= number.where(disagree: true).count %>)
+							<input type="submit" value="Pas d'accord">(<%= number.where(disagree: true).count %>)
 						<%end%>
 						<%= form_tag url_for(action:'create'), method:'post' do %>
 							<input type="text" name="engagement" value="<%= engagement.id %>" hidden>
 							<input type="text" name="name" value="3" hidden>
-							<input type="submit" value="hesitate">(<%= number.where(hesitat: true).count %>)
+							<input type="submit" value="Hesiter">(<%= number.where(hesitat: true).count %>)
 						<%end%>
 						<%= link_to "Commentaire", new_engagment_comment_path(engagement.id) %>(<%= engagement.comments.count %>) <br>
 
-						resultat engagment
+						<strong>Résultat sur le sondage des engagements : </strong>
 						<% total = engagement.surveys.count %>
 						<% survey = Survey.where(engagment: engagement) %>
 						<% surveyagree = survey.where(agree: true) %>
@@ -38,9 +38,9 @@
 						<% surveyhes = survey.where(hesitat: true) %>
 						<% if total != 0 %>
 
-							Agree : <%= (surveyagree.count * 100)/total %> %
-							Disagree : <%= (surveydisagree.count * 100)/total %>%
-							Hesitate : <%= (surveyhes.count * 100)/total %>%
+							D'accord : <%= (surveyagree.count * 100)/total %> %
+							Pas d'accord : <%= (surveydisagree.count * 100)/total %>%
+							Hesitation : <%= (surveyhes.count * 100)/total %>%
 
 						<% end %>
 				<% end %>
