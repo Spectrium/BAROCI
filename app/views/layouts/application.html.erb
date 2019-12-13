@@ -29,10 +29,12 @@
 
 
   <body>
+
     <%= render  "layouts/navbar.html.erb" %>
 
+  <div class="push-top">
     <%= yield %>
-
+  </div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
         <%= render  "layouts/footer.html.erb" %>

@@ -1,9 +1,13 @@
-<div class="container">
+<div class="container aaaa">
 	<div class="row">
-		<%= form_tag url_for(action:'update'), method:'put' do %><br>
-			Nom de la region<br>
-			<input type="text" name="name" value="<%= @region.name %>" ><br>
-			<input type="submit" value="Enregistrer"><br>
+		<%= form_tag url_for(action:'update'), method:'put' do %>
+		<div class="form-group">
+			<label for="edit-region">Nom de la region</label>	
+			<input type="text" name="name" id="edit-region" class="form-control " value="<%= @region.name %>" >
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Enregistrer" class="submit-edit form-control">
+		</div>
 		<%end%>
 	</div>
 </div>

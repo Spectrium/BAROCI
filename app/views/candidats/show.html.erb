@@ -64,13 +64,13 @@
 
                                 <% end %>
 
-
                                   <%= link_to "Voir les progressions des promesses", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id) %> <br>
-                            <% end %>
-
-                          
-                            
-
+                            <% end %>  
+                            <% if @total != 0 %>
+                              Pas encore commencer : <%= (@suivi2 *100)/@total %>%<br>
+                              En cours : <%= (@suivi1 *100)/@total %>%<br>
+                              fini : <%= (@suivi3 *100)/@total %>%<br>
+                            <% end %>  
                           </p>
                       </td>
                   </tr>
