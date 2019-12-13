@@ -19,6 +19,10 @@
  *= require_self
  */
 
+body{
+  background-color: #67797b91;
+}
+
 
 html,
 body {
@@ -51,3 +55,14 @@ body {
 .push-top{
   margin-top: 111px;
 }
+ 
+ .icon{
+   width: 2em;
+   margin-top:8px;
+   transition: transform .2s;
+   margin: 0 auto;
+ }
+
+ .icon:hover{
+   transform: scale(1.5);
+ }
