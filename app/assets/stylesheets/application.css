@@ -20,7 +20,7 @@
  */
 
 body{
-  background-color: #67797b91;
+  background-color: #252222;
 }
 
 
@@ -77,4 +77,24 @@ body {
    position: initial;
  }
 
- 
+ .image-car{
+   width: 32em;
+   height: 23em;
+ }
+
+ #logo-spectre{
+  margin-left: 23em;
+  width: 4em;
+  align-content: center;
+ }
+
+ .foot{
+  margin-top: 3em;
+ }
+
+ .hov{
+   color:white;
+ }
+ .hov:hover{
+   color: rgb(243, 45, 233);
+ }
