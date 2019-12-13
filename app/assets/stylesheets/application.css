@@ -78,6 +78,16 @@ body {
  }
 
  .image-car{
-   width: 54em;
-   height: 31em;
+   width: 32em;
+   height: 23em;
+ }
+
+ #logo-spectre{
+  margin-left: 23em;
+  width: 4em;
+  align-content: center;
+ }
+
+ .foot{
+  margin-top: 3em;
  }
