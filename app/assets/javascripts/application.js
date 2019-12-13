@@ -19,6 +19,7 @@
 
  //= require jquery3
 //= require jquery_ujs
+//= require chart-pie-demo
 
 //= require rails-ujs
 //= require activestorage
@@ -26,3 +27,4 @@
 //= require_tree .
 //= require chartkick
 //= require Chart.bundle
+
