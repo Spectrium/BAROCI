@@ -19,6 +19,10 @@
  *= require_self
  */
 
+body{
+  background-color: #67797b91;
+}
+
 
 html,
 body {
@@ -38,6 +42,13 @@ body {
 
  #marg-left{
      padding: 12px;
+ }
+
+ #nav{
+  position: relative;
+  top: 0;
+  margin-top: 0px;
+  background-color: #292626;
  }
 
  #logo{
