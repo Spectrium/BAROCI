@@ -118,3 +118,11 @@ body {
  .color-text{
    color: white;
  }
+
+ .image-logo{
+   float: right;
+ }
+
+ img.log{
+   width:12em;
+ }
