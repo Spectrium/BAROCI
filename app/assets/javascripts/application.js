@@ -20,6 +20,7 @@
  //= require jquery3
 //= require jquery_ujs
 //= require chart-pie-demo
+//= require form
 
 //= require rails-ujs
 //= require activestorage

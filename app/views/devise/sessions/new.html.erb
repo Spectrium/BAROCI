@@ -1,36 +1,52 @@
-<div class="disp">
-<div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Courgette|Pacifico:400,700" rel="stylesheet">
+    <title> Sign up </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" href="sign.css" rel="stylesheet">
+  </head>
+  
+  <body id="sign-in">
+    <div class="signup-form">
+      <div class="form-header">
+          <h2>Se connecter</h2>
+          <p>Fill out this form to start your free trial!</p>
+      
 
-  <div class="container">
-    
-    <div class="connexion col-md-4">
-    <h3 class="text-center white">Se connecter</h3>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-group">
-        <%= f.label :email, class:"white" %><br />
-        <%= f.email_field :email, autofocus: true, class: 'form-control', autocomplete: "email" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label 'Mot de passe',class:"white" %><br />
-        <%= f.password_field :password, class: 'form-control', autocomplete: "current-password" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
         <div class="form-group">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, class:"white" %>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label :email, class:"pos" %><br />
+              <%= f.email_field :email, autofocus: true, id:"inputEmail", class:"form-control",placeholder:"Adresse email" ,autocomplete: "email" %>
+            </div> 
+
+            <br />
+            <div class="field">
+              <%= f.label :mot_de_passe, class:"pos" %><br />
+              <%= f.password_field :password, autocomplete: "current-password", id:"inputPassword", class:"form-control", placeholder:"Mot de passe" %>
+            </div> 
+            
+            <br />
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>  
+
+            <div class="actions">
+              <%= f.submit "Se connecter", class:"btn btn-lg btn-primary btn-block" %>
+            </div>
+
+          <% end %>
+          <%= render "devise/shared/links" %> 
         </div>
-      <% end %>
-
-      <div class="actions text-center">
-        <%= f.submit "Se connecter", class: 'btn-connexion' %>
       </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
     </div>
-    </div>
-    </div>
-</div>
+  </body>

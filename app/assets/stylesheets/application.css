@@ -9,11 +9,13 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
+
  *= require bootstrap
  *= require cardio
  *= require et-icons
  *= require normalize
  *= require owl
+ *= require form
  
  *= require_tree .
  *= require_self
@@ -23,140 +25,10 @@ body{
   background-color: #252222;
 }
 
-
 html,
 body {
   height: 100%;
   width:100%;
-  display: table;
-}
-.dropdown-edit{
-	left: 100px;
-}
-.contain{
-	padding-top: 10px;
-}
-#sticky-footer {
-  display: table-footer-group;
 }
 
- #marg-left{
-     padding: 12px;
- }
 
- #nav{
-  position: initial;
-  top: 0;
-  margin-top: 0px;
-  background-color: #292626;
- }
-
- #logo{
-    width: 6em;
-    position: absolute;
-    bottom: -2em;
-    height: 7em;
- }
-
-.push-top{
-  margin-top: 111px;
-}
- 
- .icon{
-   width: 2em;
-   margin-top:8px;
-   transition: transform .2s;
-   margin: 0 auto;
- }
-
- .icon:hover{
-   transform: scale(1.5);
- }
-
- .tay{
-   position: initial;
- }
-
- .image-car{
-   width: 32em;
-   height: 23em;
- }
-
- #logo-spectre{
-  margin-left: 23em;
-  width: 4em;
-  align-content: center;
- }
-
- .foot{
-  margin-top: 3em;
- }
-
- .hov{
-   color:white;
- }
- .hov:hover{
-   color: rgb(243, 45, 233);
- }
-
- .back-2{
-   background-color: rgb(44, 39, 39);
- }
-
- .back-1{
-  background-color: rgb(44, 39, 39);
- }
-
- .back-3{
-   background-color:rgb(44, 39, 39);
- }
-
- .heading{
-   color: rgb(37, 208, 226);
- }
-
- .color-text{
-   color: white;
- }
-
- .image-logo{
-   display: flex;
-   flex-direction: initial;
- }
-
- img.log{
-   width:112px;
-   height: 7em;
-   margin-top: 1em;
-   margin-left: 15em;
- }
-
- .titre-2{
-   margin-top: 1em;
- }
-
- .footer-container{
-  padding: 1em 12em 0em 2em;
- }
-
- #youtube{
-   width: 3em;
- }
-.alignement{
-  display: flex;
-  flex-direction: row;
-}
-
-.ma{
-  position:relative;
-  margin: 8em;
-}
-
-#cadre{
-  margin-left: 1em
-}
-
-.apt{
-  padding: 1em;
-  border-radius: 1em;
-}

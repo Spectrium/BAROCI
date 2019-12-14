@@ -22,7 +22,10 @@
 							</div>
 							
 							<div class="title">
-								<h4 class="t-color">Résultat : <%= candidat.resultat %></h4>
+							 <h4 class="dark">Résultat : <span class="float-right"><%= candidat.resultat %>%</span></h4>
+								<div class="progress mb-4">
+									<div class="progress-bar bg-danger" role="progressbar" style="width: <%= candidat.resultat %>%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
 							</div>
 							<button data-toggle="modal" data-target="#modal1" class="boutt"><%= link_to "Voir", commune_candidat_path(@commune.id, candidat.id) %></button>
 						</div>
