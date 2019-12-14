@@ -296,11 +296,11 @@ section {
 
 .section {
 	padding: 40px 0;
-	background: #fff;
+	background: #3a2c2c;
 }
 
 .section-padded {
-	padding: 10px 0 40px;
+	padding: 10px 0 0px;
 }
 
 .cut-top {
@@ -480,7 +480,7 @@ section {
 	height: 320px;
 	margin: 80px 0;
 	text-align: center;
-	border: 1px solid #a134f5;
+	border: 1px solid #ffd401;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 }
@@ -491,9 +491,10 @@ section {
 	display: inline-block;
 	margin-bottom: 40px;
 	padding: 10px;
-	background: white;
+	background: #3a2c2c;
 	-webkit-transition: all 0.3s ease;
 	transition: all 0.3s ease;
+	border-radius: 20px;
 }
 
 .service .heading {
@@ -575,6 +576,7 @@ section {
 	background-size: cover;
 	-webkit-transition: background-image 0.6s linear 0.3s;
 	transition: background-image 0.6s linear 0.3s;
+
 }
 
 .owl-pricing img {
@@ -589,7 +591,6 @@ section {
 
 .pricing {
 	position: relative;
-	width: 100%;
 }
 
 .pricings .pricing .box-main,
@@ -676,7 +677,6 @@ section {
 /* Footer */
 
 footer {
-	padding: 28px 0 40px;
 	background: url('footer.jpg');
 	-webkit-background-size: cover;
 	background-size: cover;

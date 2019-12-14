@@ -100,7 +100,7 @@ body {
  }
 
  .back-2{
-   background-color: rgb(22, 103, 114);
+   background-color: rgb(44, 39, 39);
  }
 
  .back-1{
@@ -108,7 +108,7 @@ body {
  }
 
  .back-3{
-   background-color: rgb(153, 24, 121);
+   background-color:rgb(44, 39, 39);
  }
 
  .heading{
@@ -120,9 +120,43 @@ body {
  }
 
  .image-logo{
-   float: right;
+   display: flex;
+   flex-direction: initial;
  }
 
  img.log{
-   width:12em;
+   width:112px;
+   height: 7em;
+   margin-top: 1em;
+   margin-left: 15em;
  }
+
+ .titre-2{
+   margin-top: 1em;
+ }
+
+ .footer-container{
+  padding: 1em 12em 0em 2em;
+ }
+
+ #youtube{
+   width: 3em;
+ }
+.alignement{
+  display: flex;
+  flex-direction: row;
+}
+
+.ma{
+  position:relative;
+  margin: 8em;
+}
+
+#cadre{
+  margin-left: 1em
+}
+
+.apt{
+  padding: 1em;
+  border-radius: 1em;
+}
