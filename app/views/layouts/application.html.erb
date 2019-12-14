@@ -11,46 +11,25 @@
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-     	<!-- Favicons (created with http://realfavicongenerator.net/)-->
-	<link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
-	<link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="img/favicons/manifest.json">
-	<link rel="shortcut icon" href="img/favicons/favicon.ico">
-	<meta name="msapplication-TileColor" content="#00a8ff">
-	<meta name="msapplication-config" content="img/favicons/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff"> 
-      <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/48ba21fe93.js"></script>
+      
+      <meta name="msapplication-TileColor" content="#00a8ff">
+      <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+      <meta name="theme-color" content="#ffffff"> 
+          <!-- Font Awesome -->
+      <script src="https://kit.fontawesome.com/48ba21fe93.js"></script>
   </head>
 
   <body>
-
-    <%= render  "layouts/navbar.html.erb" %>
-
-    <div class="push-top">
+      <%= render  "layouts/navbar.html.erb" %>
       <%= yield %>
-    </div>
-  </body>
-
-    <div class="fot" >
       <%= render "layouts/footer.html.erb" %>
+  </body>
+    <div class="preloader">
+      <%= image_tag  "loader.gif" %>
     </div>
-
     	<!-- Scripts -->
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/wow.min.js"></script>
-	<script src="js/typewriter.js"></script>
-	<script src="js/jquery.onepagenav.js"></script>
-	<script src="js/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  
-
   </body>
 </html>

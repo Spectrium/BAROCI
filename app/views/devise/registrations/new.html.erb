@@ -1,6 +1,6 @@
  <section class="my-form">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
     <div class="container">
       <h1>Inscription</h1>
       <ul>
@@ -15,8 +15,7 @@
               <%= f.password_field :password, class: 'form-control', autocomplete: "new-password",placeholder:"Mots de passe" %>
               <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password",placeholder:"Confirmer mots de passe" %>
           </div>
-        </li>    
-       
+        </li>       
         <li>
           <input type="checkbox" id="terms">
             <% if devise_mapping.rememberable? %>

@@ -206,3 +206,7 @@
 .owl-twitter .owl-controls .owl-page:hover span {
   background: white;
 }
+
+.owl-pagination{
+  margin-bottom: -3px;
+}

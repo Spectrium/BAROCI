@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require bootstrap.min
 //= require jquery.onepagenav
 //= require tooltip
 //= require typed
@@ -19,7 +18,6 @@
 
  //= require jquery3
 //= require jquery_ujs
-//= require chart-pie-demo
 //= require form
 
 //= require rails-ujs
