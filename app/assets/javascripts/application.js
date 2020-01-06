@@ -10,20 +10,32 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery.onepagenav
-//= require tooltip
-//= require typed
-//= require typewriter
-//= require wow.min
-
- //= require jquery3
-//= require jquery_ujs
-//= require form
 
 //= require rails-ujs
+
 //= require activestorage
 //= require turbolinks
-//= require_tree .
-//= require chartkick
-//= require Chart.bundle
 
+//= require assets/js/jquery-3.2.1.min
+//= require assets/js/popper.min
+//= require assets/js/bootstrap.min
+//= require revolution/js/jquery.themepunch.tools.min
+//= require revolution/js/jquery.themepunch.revolution.min
+//= require revolution/js/extensions/revolution.extension.actions.min
+//= require revolution/js/extensions/revolution.extension.video.min
+//= require revolution/js/extensions/revolution.extension.slideanims.min
+//= require revolution/js/extensions/revolution.extension.layeranimation.min
+//= require revolution/js/extensions/revolution.extension.navigation.min
+//= require revolution/js/extensions/revolution.extension.slideanims.min
+//= require counterup/jquery.waypoints.min
+//= require counterup/jquery.counterup.min
+//= require counterup/apear
+//= require counterup/countto
+//= require owl-carousel/owl.carousel.min
+//= require magnify-popup/jquery.magnific-popup.min
+
+
+//= require assets/js/smoothscroll
+//= require assets/js/theme
+
+//= require_tree .
