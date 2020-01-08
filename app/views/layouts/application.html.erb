@@ -18,34 +18,46 @@
   <body>
   <!--================Header Menu Area =================-->
   <header class="main_menu_area">
-      <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span></span>
-              <span></span>
-              <span></span>
-          </button>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="<%= home_path %>"><span>Amboary</span><img src="logo.png" alt=""></a>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                  <li class="nav-item active"><a class="nav-link" href="<%= home_path %>">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="about-us.html">Créer date</a></li>
-                  <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                  <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                  <li class="nav-item dropdown submenu">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Compte
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li class="nav-item"><a class="nav-link" href="blog.html">Créer un compte</a></li>
-                          <li class="nav-item"><a class="nav-link" href="single-blog.html">Se connecter</a></li>
-                          <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                      </ul>
-                  </li>
-                  <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-              </ul>
-          </div>
-      </nav>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          
+          <span>fsdhqn</span>
+          <span>sdfhjtr</span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item active"><a class="nav-link" href="<%= home_path %>">Home</a></li>
+          <% if user_signed_in?%> 
+            <% if current_user.is_admins == true%>
+              <li class="nav-item"><a class="nav-link" href="<%= new_daty_path %>">Créer date</a></li>
+              <li class="nav-item"><a class="nav-link" href="<%= new_candidat_path %>">Créer un candidat</a></li>
+            <% end %>
+          <% end %>
+          <li class="nav-item"><a class="nav-link" href="<%= regions_path %>" >Région</a></li>
+          <li class="nav-item dropdown submenu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <% if user_signed_in?%>
+                Mon profil
+              <% else %>
+                Connexion
+              <% end %>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <% if user_signed_in?%>
+                <li class="nav-item"><a class="nav-link" href="<%=user_path(current_user.id)%>">Mon profil</a></li>
+                <li class="nav-item"><a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete">Se déconnecter</a></li>
+              <% else%>
+                <li class="nav-item"><a class="nav-link" href="<%=new_user_session_path%>">Se connecter</a></li>
+                <li class="nav-item"><a class="nav-link" href="<%=new_user_registration_path%>">S'inscrire</a></li>
+              <% end%>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
   <!--================End Header Menu Area =================-->
       <%= yield %>

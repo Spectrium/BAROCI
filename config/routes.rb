@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'portraits/create'
-  get 'pictures/create'
-  get 'avatars/create'
   devise_for :users
   root 'homes#index', as: "home"
 
   resources :daties
   resources :users
+
+  resources :actualities do
+    resources :actu_photos, only: [:create]
+    resources :actuphotos, only: [:create]
+  end
 
   resources :engagments do
     resources :comments
@@ -41,7 +43,7 @@ end
   resources :candidats, only: [:new, :create]
 
 resources :promesses, only: [:show] do
-resources :pictures, only: [:create]
+  resources :pictures, only: [:create]
 end
 
 resources :users, only: [:show] do
