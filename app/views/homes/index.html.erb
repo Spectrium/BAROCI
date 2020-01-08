@@ -78,7 +78,26 @@
 
 	</script>
 </section>
-	
+
+<section>
+	<div class="container">
+		<div class="row intro-tables">
+			<div class="col-md-4">
+				<div class="intro-table intro-table-first">
+					<h5 class="white heading">Actualités</h5>
+						<% for i in @actualite.length-4..@actualite.length-1%>
+							<%if @actualite[i].actuphoto.attached?%>
+						    <%= image_tag (@actualite[i].actuphoto), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
+						 	<%end%> <br>
+							<%= @actualite[i].description%> <br>
+							<%= link_to "voir", actuality_path(@actualite[i]) %> <br>
+						<%end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 	<!--================Feature Area =================-->
 <section class="feature_area mb-5">
     <div class="container">
@@ -121,6 +140,7 @@
         </div>
     </div>
 </section>
+
 
 	<%# carte de madagascar  %>
 <section>
@@ -293,18 +313,14 @@
 </section>
 
 
-
-
-    <!--================End Feature Area =================-->
-
- <section id="pricing" class="section">
+<!--================End Feature Area =================-->
+<section id="pricing" class="section">
  	<div class="container">
 	   	<div id="ca">
 			<iframe class="w-100" width="100" height="416" src="https://www.youtube.com/embed/UWDWPy1nSDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
   	</div>
 </section> 
-
 
 <section class="section section-padded blue-bg">
 	<div class="container">

@@ -1,0 +1,27 @@
+<h1>A propos de cette actualité</h1>
+<div class="container">
+	<p>
+		<em>Titre : </em>
+		<%= @actualite.title %><br>
+		<em>Description : </em><br>
+		<%= @actualite.description %><br><br>
+		
+	</p>
+
+
+  <%if @actualite.actuphoto.attached?%>
+    <%= image_tag (@actualite.actuphoto), class:"img-display carousel-display card-img-top proimg",alt: "Photo d'actualité" %>
+  <%end%>
+
+	<% if user_signed_in?%> 
+    <% if current_user.is_admins == true%>
+			<h3>Ajouter des photos</h3>
+			<%= form_tag actuality_actuphotos_path(@actualite), multipart: true do %>
+				<%= file_field_tag :actuphoto %>
+				<%= submit_tag "mettre à jour" %>
+			<% end %>
+			<%= link_to "Editer", edit_actuality_path(@actualite.id) %><br>
+			<%= link_to "Supprimer", actuality_path(@actualite.id), method:"delete" %>
+	  <%end%>
+	<%end%>
+</div>

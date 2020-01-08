@@ -1,5 +1,5 @@
 class DatiesController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :is_admin, except: [:index, :show]
 
   def index

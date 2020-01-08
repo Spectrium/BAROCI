@@ -1,0 +1,17 @@
+<h1>Toutes les actualités</h1>
+
+<div class="container">
+	<p>
+		<% @actualite.each do |actualite| %>
+			<em>Titre : </em>
+			<%= actualite.title %><br>
+			<em>Description : </em><br>
+			<%= actualite.description %><br>
+			<%= link_to "voir", actuality_path(actualite) %> <br>
+			<%if actualite.actuphoto.attached?%>
+			  <%= image_tag (actualite.actuphoto), class:"img-display carousel-display card-img-top proimg",alt: "Photo d'actualité" %>
+			<%end%>
+			<br><br>
+		<% end %>
+	</p>
+</div>

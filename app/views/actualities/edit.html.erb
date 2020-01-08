@@ -1,0 +1,12 @@
+<h1>Modifier cette actualité</h1>
+<div class="container">
+	<div class="date row col-md-4">
+		<%= form_tag url_for(action:'update'), method:'put' do %><br>
+			Titre<br>
+			<input type="text" class="form-control" name="title" value="<%= @actualite.title %>" ><br>
+			Contenu<br>
+			<input type="text" class="form-control" name="description" value="<%= @actualite.description %>" ><br>
+			<input type="submit" value="Sauvegarder" ><br>
+		<%end%>
+	</div>
+</div>
