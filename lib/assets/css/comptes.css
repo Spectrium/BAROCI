@@ -1,0 +1,18 @@
+.bloc{
+    width: 100px;
+    height: 100px;
+    border: solid;
+}
+
+.numbers{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h1{
+    text-align: center;
+}
+
+strong{
+    font-size: 100px;
+}
