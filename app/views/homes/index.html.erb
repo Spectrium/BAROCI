@@ -64,12 +64,24 @@
 			<div class="col-md-4">
 				<div class="intro-table intro-table-first">
 					<h5 class="white heading">Actualités</h5>
-						<% for i in @actualite.length-4..@actualite.length-1%>
-							<%if @actualite[i].actuphoto.attached?%>
-						    <%= image_tag (@actualite[i].actuphoto), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
-						 	<%end%> <br>
-							<%= @actualite[i].description%> <br>
-							<%= link_to "voir", actuality_path(@actualite[i]) %> <br>
+            <%if @actualite != nil%>
+              <%if @actualite.length < 4%>
+                <% for i in 0..@actualite.length-1%>
+                  <%if @actualite[i].actuphoto.attached?%>
+                    <%= image_tag (@actualite[i].actuphoto), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
+                  <%end%> <br>
+                 <%= @actualite[i].description%> <br>
+                 <%= link_to "voir", actuality_path(@actualite[i]) %> <br>
+                <%end%> <br>
+              <%else%> <br>
+  						  <% for i in @actualite.length-4..@actualite.length-1%>
+    							<%if @actualite[i].actuphoto.attached?%>
+    						    <%= image_tag (@actualite[i].actuphoto), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
+                  <%end%> <br>
+  							 <%= @actualite[i].description%> <br>
+  							 <%= link_to "voir", actuality_path(@actualite[i]) %> <br>
+                <%end%> <br>
+    					<%end%> <br>
 						<%end %>
 				</div>
 			</div>
