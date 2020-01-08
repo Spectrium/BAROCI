@@ -23,3 +23,7 @@
  *= require assets/css/comptes
  *= require assets/css/app
  */
+
+.drop-pos{
+	top: 85px !important;
+}
