@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 2020_01_06_111017) do
 
   create_table "suivis", force: :cascade do |t|
     t.boolean "start"
+    t.boolean "trasition"
     t.boolean "finished"
     t.bigint "promess_id"
     t.datetime "created_at", null: false
