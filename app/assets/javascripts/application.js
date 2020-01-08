@@ -11,6 +11,7 @@
 // about supported directives.
 //
 
+
 //= require rails-ujs
 
 //= require activestorage
@@ -38,4 +39,7 @@
 //= require assets/js/smoothscroll
 //= require assets/js/theme
 
+
 //= require_tree .
+
+
