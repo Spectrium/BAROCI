@@ -4,28 +4,23 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-
-
     <title>Sahy hifidy</title>
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
-
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
   <!--================Header Menu Area =================-->
-  <header class="main_menu_area">
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="<%= home_path %>"><span>Amboary</span><img src="" alt=""></a>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          
-          <span>fsdhqn</span>
-          <span>sdfhjtr</span>
-      </button>
+  <header class="main_menu_area fixed-top">
+   <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
@@ -46,7 +41,7 @@
                 Connexion
               <% end %>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu drop-pos" aria-labelledby="navbarDropdown">
               <% if user_signed_in?%>
                 <li class="nav-item"><a class="nav-link" href="<%=user_path(current_user.id)%>">Mon profil</a></li>
                 <li class="nav-item"><a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete">Se déconnecter</a></li>
@@ -61,9 +56,10 @@
     </nav>
   </header>
   <!--================End Header Menu Area =================-->
-      <%= yield %>
-      <%= render "layouts/footer.html.erb" %>
+    <div class="yield">
+       <%= yield %>
+       <%= render "layouts/footer.html.erb" %>
+    </div>
   </body>
     	<!-- Scripts -->
-
 </html>

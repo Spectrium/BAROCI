@@ -23,3 +23,10 @@
  *= require assets/css/comptes
  *= require assets/css/app
  */
+.yield{
+	position: absolute;
+	top: 60px;
+}
+.drop-pos{
+	top: 85px !important;
+}

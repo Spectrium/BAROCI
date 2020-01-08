@@ -1,15 +1,18 @@
 
 .map{
-    overflow: hidden;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .map__img{
-    width: 50%;
-    float: left;
+    width:500px;
 }
 
 .map__img path{
-    fill: #6fde3c;
+    fill: #F7B267;
     stroke: azure;
     stroke-width: 2px;
     transition: fill 0.3s;
@@ -17,22 +20,28 @@
 }
 
 .map__img .is-active path {
-    fill: #18a895;
+    fill: #FF5A5F;
 }
 
-.map__list{
-    float: right;
-    width: 50%;
-}
 
 .map__list a{
     color: inherit;
     text-decoration: none;
     transition: color 0.3s;
+    width: 100%;
 }
 
 .map__list a.is-active {
-    color: blue;
-    font-weight: bold;
-    text-decoration: underline;
+    background: #FF5A5F;
+}
+
+.region{
+    display: block;
+    padding: 10px;
+    border-bottom: solid 2px;
+}
+
+.fontcart{
+    font: caption;
+    background: #F7B267;
 }
