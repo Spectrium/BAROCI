@@ -5,47 +5,17 @@
 		<%= @actualite.title %><br>
 		<strong>Description : </strong><br>
 		<%= @actualite.description %><br><br>
-		************************** <%= @actualite.actuphoto.length %> *************************
+		
 	</p>
 
 
-<!--  	<%if @actualite.actuphoto.attached?%>
-    <%= image_tag (@actualite.actuphoto[2]), class:"img-display carousel-display card-img-top proimg",alt: '#{@car.model.name} #{@car.model.name}' %>
-  <%else%>
-  tsisy
-  <%end%> -->
-
-		<% i = 0 %>
-	<% longueur = @actualite.actuphoto.length %>
-	<%if @actualite.actuphoto.attached?%>
-  	<% while i < longueur %>
-	    <div class="carousel-item">
-	      <%= image_tag (@actualite.actuphoto[i]), class:"img-display carousel-display card-img-top proimg",alt: 'actuphoto' %>
-				<% i += 0 %>
-	    </div>
-    <%end%>
-	 <%end%>
-	<h3>Ajouter des photos</h3>
-
-<!--   <% for i in 0..(@actualite.actuphoto.length-1)%>
-    <div class="carousel-item">
-      <%if @actualite.actuphoto.attached?%>
-        <%= image_tag (@actualite.actuphoto[i]), class:"img-display carousel-display card-img-top proimg",alt: '#{@car.model.name} #{@car.model.name}' %>
-      <%else%>
-				<h3>Ajouter des photos</h3>
-      <%end%>
-    </div>
-    <%end%> -->
-<!-- 
   <%if @actualite.actuphoto.attached?%>
-		<% for i in 1..(@actualite.actuphoto.length-1)%>
-	    <div class="carousel-item">
-	        <%= image_tag (@actualite.actuphoto[i]), class:"img-display carousel-display card-img-top proimg",alt: '#{@car.model.name} #{@car.model.name}' %>
-	    </div>
-  	<%end%>
+    <%= image_tag (@actualite.actuphoto), class:"img-display carousel-display card-img-top proimg",alt: '#{@car.model.name} #{@car.model.name}' %>
   <%else%>
-		<h3>Ajouter des photos</h3>
-  <%end%> -->
+	<h3>Ajouter des photos</h3>
+  <%end%>
+
+
 
 	<%= form_tag actuality_actuphotos_path(@actualite), multipart: true do %>
 		<%= file_field_tag :actuphoto %>
