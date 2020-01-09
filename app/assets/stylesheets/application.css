@@ -39,6 +39,7 @@ body {
 .yield{
 	position: relative;
 	top: 60px;
+	padding-bottom: 100px;
 }
 .drop-pos{
 	top: 85px !important;
