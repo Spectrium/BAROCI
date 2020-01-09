@@ -45,7 +45,7 @@
       <tbody>
         <tr>
           <th><%= i %></th>
-          <td><%= link_to region.name,region_communes_path(region.id)%><br></td>
+          <td><%= link_to region.name.capitalize,region_communes_path(region.id)%><br></td>
       	  <% if user_signed_in? %>
             <% if current_user.is_admins == true %>
               <td><%= link_to "Editer", edit_region_path(region.id),class:'boutton edit' %></td>

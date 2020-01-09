@@ -8,6 +8,7 @@ class ActualitiesController < ApplicationController
 
   def show
     @actualite = Actuality.find(params[:id])
+    @actuphoto = @actualite.actuphotos.all
   end
 
   def new
