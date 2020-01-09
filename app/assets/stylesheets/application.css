@@ -66,3 +66,7 @@ body {
 .search:focus {
   width: 100%;
 }
+li .type:hover{
+  background-color: white;
+  color: #007bff;
+}

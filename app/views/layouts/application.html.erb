@@ -17,6 +17,7 @@
   <!--================Header Menu Area =================-->
   <header class="main_menu_area fixed-top">
    <nav class="navbar navbar-expand-lg">
+    <!-- page accueil -->
           <a class="navbar-brand" href="<%= home_path %>"> fuck <img src="" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span></span>
@@ -26,24 +27,32 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-          <% if user_signed_in?%> 
-            <% if current_user.is_admins == true%>
-              <li class="nav-item"><a class="nav-link" href="<%= new_actuality_path %>">Créer actualité</a></li>
-              <li class="nav-item"><a class="nav-link" href="<%= new_daty_path %>">Créer date</a></li>
-              <li class="nav-item"><a class="nav-link" href="<%= new_candidat_path %>">Créer un candidat</a></li>
-            <% end %>
-          <% end %>
+          <!-- bar de recherche -->
           <li>
             <%= form_tag search_path, method:"post"  do %><br>
               <input type="text" placeholder="Search Commune.." name="search" class="search">
-              <!-- <button type="submit" hidden></button> -->
-            <%end%>
+              <%end%>
           </li>
+          <!-- dropdown creation pour admin -->
+          <% if user_signed_in?%> 
+            <% if current_user.is_admins == true%>
+              <li class="nav-item dropdown submenu">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Créer
+                </a>
+                <ul class="dropdown-menu drop-pos" aria-labelledby="navbarDropdown">
+                  <a class="nav-link" href="<%= new_actuality_path %>"><li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">Créer actualité</a></li> </a>
+                  <a class="nav-link" href="<%= new_daty_path %>"><li class="nav-item type"><a class="nav-link" href="<%= new_daty_path %>">Créer date</a></li></a>
+                  <a class="nav-link" href="<%= new_candidat_path %>"><li class="nav-item type"><a class="nav-link" href="<%= new_candidat_path %>">Créer un candidat</a></li></a>
+                </ul>
+              </li>
+            <% end %>
+          <% end %>
+<!-- actualité et region -->
           <li class="nav-item"><a class="nav-link" href="<%= actualities_path %>">Actualités</a></li>
           <li class="nav-item"><a class="nav-link" href="<%= regions_path %>" >Région</a></li>
-
+<!-- dropdown pour compte -->
           <li class="nav-item dropdown submenu">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <% if user_signed_in?%>
                 Mon profil
               <% else %>
@@ -52,11 +61,11 @@
             </a>
             <ul class="dropdown-menu drop-pos" aria-labelledby="navbarDropdown">
               <% if user_signed_in?%>
-                <li class="nav-item"><a class="nav-link" href="<%=user_path(current_user.id)%>">Mon profil</a></li>
-                <li class="nav-item"><a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete">Se déconnecter</a></li>
+                <a class="nav-link" href="<%=user_path(current_user.id)%>"><li class="nav-item type"><a class="nav-link" href="<%=user_path(current_user.id)%>">Mon profil</a></li></a>
+                <a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete"><li class="nav-item type"><a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete">Se déconnecter</a></li></a>
               <% else%>
-                <li class="nav-item"><a class="nav-link" href="<%=new_user_session_path%>">Se connecter</a></li>
-                <li class="nav-item"><a class="nav-link" href="<%=new_user_registration_path%>">S'inscrire</a></li>
+                <a class="nav-link" href="<%=new_user_session_path%>"><li class="nav-item type"><a class="nav-link" href="<%=new_user_session_path%>">Se connecter</a></li></a>
+                <a class="nav-link" href="<%=new_user_registration_path%>"><li class="nav-item type"><a class="nav-link" href="<%=new_user_registration_path%>">S'inscrire</a></li></a>
               <% end%>
             </ul>
           </li>
