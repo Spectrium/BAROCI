@@ -27,9 +27,9 @@ com.length.times do |i|
     Commune.create(name: com[i], region_id: (Region.first.id))
 end
 
-10.times do |i|
-    User.create(full_name: Faker::Name.name, age: rand(18..77), adress: Faker::Address.street_address, email: Faker::Internet.email, password: "azertyop")
-end
+# 10.times do |i|
+#     User.create(full_name: Faker::Name.name, age: rand(18..77), adress: Faker::Address.street_address, email: Faker::Internet.email, password: "azertyop")
+# end
 
 5.times do |i|
     Candidat.create(name: Faker::FunnyName.name, parti: Faker::Kpop.boy_bands, resultat: 10, commune_id: rand(Commune.first.id .. Commune.last.id), region_id: (Region.first.id))

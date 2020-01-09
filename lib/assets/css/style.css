@@ -255,14 +255,13 @@ i:before {
     -webkit-transform-origin: 50% 0;
     -ms-transform-origin: 50% 0;
     transform-origin: 50% 0;
-    min-width: 250px;
-    background: #171717;
+    background: rgba(0, 0, 0, 0.5);
     left: auto;
     right: 0px;
     top: 90%;
     border-radius: 0px;
     border: none;
-    padding: 30px 0px 30px 0px;
+    padding: 5px 0px;
     -webkit-box-shadow: none;
     box-shadow: none;
     visibility: hidden;
@@ -281,7 +280,7 @@ i:before {
   font-family: "Roboto", sans-serif;
   letter-spacing: .48px;
   font-size: 16px;
-  padding: 0px 30px;
+  padding: 0px 15px;
   text-transform: inherit;
   -webkit-transition: all 400ms linear 0s;
   -o-transition: all 400ms linear 0s;
@@ -290,8 +289,8 @@ i:before {
   text-shadow: none;
 }
 
-.main_menu_area .navbar .navbar-nav li.submenu .dropdown-menu li:hover a {
-  color: #97ccfe;
+.main_menu_area .navbar .navbar-nav li.submenu .dropdown-menu li:hover{
+  border-bottom: 1px solid #aaa;
 }
 
 @media (min-width: 992px) {
@@ -1284,7 +1283,69 @@ i:before {
   border-radius: 33px;
 }
 
-.more_btn:hover {
+.more_btn_succ {
+  padding: 0px 46px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#2cfc03), color-stop(51%, #5aeda4), to(#49b000));
+  background-image: -webkit-linear-gradient(left, #2cfc03 0%, #5aeda4 51%, #49b000 100%);
+  background-image: -o-linear-gradient(left, #2cfc03 0%, #5aeda4 51%, #49b000 100%);
+49b000  background-size: 200% auto;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  line-height: 55px;
+  border: 6px solid rgba(204, 241, 255, 0.5);
+  border-radius: 33px;
+}
+
+.more_btn_dan {
+  padding: 0px 46px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff5a5f), color-stop(51%, #f7b267), to(#dccfec));
+  background-image: -webkit-linear-gradient(left, #ff5a5f 0%, #f7b267 51%, #dccfec 100%);
+  background-image: -o-linear-gradient(left, #ff5a5f 0%, #f7b267 51%, #dccfec 100%);
+  background-image: linear-gradient(to right, #ff5a5f 0%, #f7b267 51%, #dccfec 100%);
+  background-size: 200% auto;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  line-height: 55px;
+  border: 6px solid rgba(204, 241, 255, 0.5);
+  border-radius: 33px;
+}
+
+.more_btn_coms {
+  padding: 0px 46px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#6fbcfe), color-stop(51%, #998dff), to(#6fbcfe));
+  background-image: -webkit-linear-gradient(left, #6fbcfe 0%, #998dff 51%, #6fbcfe 100%);
+  background-image: -o-linear-gradient(left, #6fbcfe 0%, #998dff 51%, #6fbcfe 100%);
+  background-image: linear-gradient(to right, #6fbcfe 0%, #998dff 51%, #6fbcfe 100%);
+  background-size: 200% auto;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  line-height: 55px;
+  border: 6px solid rgba(204, 241, 255, 0.5);
+  border-radius: 33px;
+}
+
+.more_btn:hover, .more_btn_coms:hover, .more_btn_succ:hover, .more_btn_dan:hover {
   background-position: right center;
   color: #fff;
 }
@@ -2394,18 +2455,28 @@ i:before {
 
 .footer_copyright {
   overflow: hidden;
-  background: #11173b;
+  background: #104547;
   padding: 10px 0px;
 }
 
 .footer_copyright .float-sm-left h5 {
   font-size: 14px;
-  color: #2a2f56;
+  color: #dccfec;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   line-height: 29px;
 }
+
+.color{
+  color: #dccfec;
+}
+
+.color:hover{
+  color: #ff5a5f;
+}
+
+
 
 .footer_copyright .float-sm-right ul li {
   display: inline-block;
@@ -2414,7 +2485,7 @@ i:before {
 
 .footer_copyright .float-sm-right ul li a {
   font-size: 14px;
-  color: #2a2f56;
+  color: #dccfec;
   -webkit-transition: all 400ms linear 0s;
   -o-transition: all 400ms linear 0s;
   transition: all 400ms linear 0s;
@@ -2425,7 +2496,7 @@ i:before {
 }
 
 .footer_copyright .float-sm-right ul li:hover a {
-  color: #fff;
+  color: #ff5a5f;
 }
 
 /* End Footer Area css

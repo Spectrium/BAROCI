@@ -39,7 +39,12 @@ body {
 .yield{
 	position: relative;
 	top: 60px;
+	margin-bottom: 100px;
 }
 .drop-pos{
 	top: 85px !important;
+}
+
+i{
+	font-size: 30px !important;
 }
