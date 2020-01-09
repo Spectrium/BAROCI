@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Appne</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sahy hifidy</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+  <!--================Header Menu Area =================-->
+  <header class="main_menu_area fixed-top">
+   <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="<%= home_path %>"> fuck <img src="" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="<%= actualities_path %>">Actualités</a></li>
+          <% if user_signed_in?%> 
+            <% if current_user.is_admins == true%>
+              <li class="nav-item"><a class="nav-link" href="<%= new_actuality_path %>">Créer actualité</a></li>
+              <li class="nav-item"><a class="nav-link" href="<%= new_daty_path %>">Créer date</a></li>
+              <li class="nav-item"><a class="nav-link" href="<%= new_candidat_path %>">Créer un candidat</a></li>
+            <% end %>
+          <% end %>
+          <li class="nav-item"><a class="nav-link" href="<%= regions_path %>" >Région</a></li>
+          <li class="nav-item dropdown submenu">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <% if user_signed_in?%>
+                Mon profil
+              <% else %>
+                Connexion
+              <% end %>
+            </a>
+            <ul class="dropdown-menu drop-pos" aria-labelledby="navbarDropdown">
+              <% if user_signed_in?%>
+                <li class="nav-item"><a class="nav-link" href="<%=user_path(current_user.id)%>">Mon profil</a></li>
+                <li class="nav-item"><a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete">Se déconnecter</a></li>
+              <% else%>
+                <li class="nav-item"><a class="nav-link" href="<%=new_user_session_path%>">Se connecter</a></li>
+                <li class="nav-item"><a class="nav-link" href="<%=new_user_registration_path%>">S'inscrire</a></li>
+              <% end%>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!--================End Header Menu Area =================-->
+    <div class="yield">
+       <%= yield %>
+       <%= render "layouts/footer.html.erb" %>
+    </div>
   </body>
+    	<!-- Scripts -->
 </html>

@@ -1,0 +1,40 @@
+<section  class="section gray-bg">
+		<div class="container">
+			<div class="row title text-center">
+				<h1 class="t-color">Liste des candidats dans la commune <%= @commune.name %></h1>
+				<h4 class="t-color">Commune <%= @commune.name %></h4>
+			</div>
+			<div class="candidat-container">
+			<% @candidat.each do |candidat|%>
+				<div class="candidat-content">
+					<div>
+						<div class="image-r">
+							<%if candidat.avatars.attached?%>
+								<%= image_tag  candidat.avatars.last, class:"image-width" %>
+							<%else%>
+								<img src="//placehold.it/150" alt="avatar">
+							<%end%>
+						</div>
+						<div class="pad">
+							<div class="left">
+								<p class="t-color">Nom du candidat : <%= candidat.name %></p>
+								<p class="t-color">Mouvence : <%= candidat.parti %></p>
+							</div>
+							
+							<div class="title">
+							 <h4 class="dark">Résultat : <span class="float-right"><%= candidat.resultat %>%</span></h4>
+								<div class="progress mb-4">
+									<div class="progress-bar bg-danger" role="progressbar" style="width: <%= candidat.resultat %>%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+							</div>
+							<button data-toggle="modal" data-target="#modal1" class="boutt"><%= link_to "Voir", commune_candidat_path(@commune.id, candidat.id) %></button>
+						</div>
+					</div>
+				</div>
+			<% end %>
+			</div>
+		</div>
+		<div class="bottom">
+			<%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn-sondage" %>
+		</div>
+	</section>

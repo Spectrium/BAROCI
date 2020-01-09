@@ -1,0 +1,46 @@
+// Place all the styles related to the regions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.boutton{
+  padding: 10px 20px;
+  color: #000;
+}
+
+.edit:hover{
+  padding: 5px 20px;
+  border: 2px solid #1bb1ff;
+  color: #1bb1ff;
+  border-radius: 5px;
+}
+.aaaa{
+	margin-top: 100px;
+}
+
+.supprimer:hover{
+  padding: 5px 20px;
+  border: 2px solid #dc3545;
+  color: #dc3545;
+  border-radius: 5px;
+}
+#edit-region{
+	padding: 5px 10px;
+	border: 1px solid #bbb;
+	border-radius: 10px;
+}
+.submit-edit{
+	padding: 5px 10px;
+	background: #1bb1ff;
+	color: #fff;
+	border: 1px solid;
+	border-radius: 10px;
+}
+
+.submit-edit:hover{
+	font-size: 20px;
+	background: #096da2;
+	border: 1px solid #1bb1ff;
+	border-radius: 10px;
+}
+
+

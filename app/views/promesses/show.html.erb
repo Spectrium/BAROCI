@@ -1,0 +1,70 @@
+
+<div class="card" style="width: 18rem;">
+<div id="carouselExampleFade" class="carousel slide carousel-fade " data-ride="carousel">
+      <div class="carousel-inner carousel-display">
+        <div class="carousel-item active">
+          <%if @promesse.pictures.attached?%>
+            <%= image_tag (@promesse.pictures[0]), class:"img-display carousel-display card-img-top proimg",alt: '#{@car.model.name} #{@car.model.name}' %>
+          <%else%>
+          tsisy
+          <%end%>
+        </div>
+        <% for i in 1..(@promesse.pictures.length-1)%>
+        <div class="carousel-item">
+          <%if @promesse.pictures.attached?%>
+            <%= image_tag (@promesse.pictures[i]), class:"img-display carousel-display card-img-top proimg",alt: '#{@car.model.name} #{@car.model.name}' %>
+          <%else%>
+          tsisy
+  
+          <%end%>
+        </div>
+        <%end%>
+          <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+      </div>
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+
+  <% if user_signed_in? %>
+    <% if current_user.is_admins == true %> 
+      <div>
+        <%= form_tag promess_pictures_path(@promesse), multipart: true do %>
+        <%= file_field_tag :picture %>
+        <%= submit_tag "mettre à jour" %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  voirs plus
+</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tous les promesses</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% @promess.each do |promess|%>
+       <a href="#"> <%= image_tag  promess, class:"tailleimg" %></a>
+        <%end%>
+      </div>
+    </div>
+  </div>
+</div>
+
+

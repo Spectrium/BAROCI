@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="date row col-md-4">
+		<%= form_tag url_for(action:'create'), method:'post' do %><br>
+			Début du Mandat<br>
+			<input type="date" class="form-control" name="start_date" min= <%=Time.now%>><br>
+			Fin du Mandat<br>
+			<input type="date" class="form-control" name="end_date" min= <%=Time.now%>><br>
+			<input type="submit" value="Créer"><br>
+		<%end%>
+	</div>
+</div>

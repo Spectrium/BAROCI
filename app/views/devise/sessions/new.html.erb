@@ -1,0 +1,33 @@
+
+        <div id="titre">Connexion</div>
+        <div class="form-group" id="sign">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label :email, class:"pos" %><br />
+              <%= f.email_field :email, autofocus: true, id:"inputEmail", class:"form-control vo",placeholder:"Adresse email" ,autocomplete: "email" %>
+            </div> 
+
+            <br />
+            <div class="field">
+              <%= f.label :mot_de_passe, class:"pos" %><br />
+              <%= f.password_field :password, autocomplete: "current-password", id:"inputPassword", class:"form-control vo", placeholder:"Mot de passe" %>
+            </div> 
+            
+            <br />
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>  
+
+            <div class="actions">
+              <%= f.submit "Se connecter", class:"btn btn-lg btn-primary btn-block" %>
+            </div>
+
+          <% end %>
+          <%= render "devise/shared/links" %> 
+        </div>
+      </div>
+    </div>
+  </body>

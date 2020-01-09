@@ -1,0 +1,25 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.imagauto{
+    width: 70%;
+    margin-top: 25px;
+}
+
+.connexion, .inscri{
+	float: none;
+	margin: 0 auto;
+	padding-top: 10px;
+}
+
+.connexion .form-control, .inscri .form-control{
+	height: 10px;
+
+}
+
+.btn-connexion{
+	border: none;
+
+	padding: 10px 20px;
+}

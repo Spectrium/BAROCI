@@ -1,0 +1,19 @@
+<h1>Liste des engagments pour la promesse "<%= @promesse.content %>" </h1>
+<% i = 1 %>
+<% @engagement.each do |engagement| %>
+	<p>
+		Engagement <%= i %> : <%= engagement.content %> 
+		<% if user_signed_in? %>
+			<% if current_user.is_admins == true %>
+				<%= link_to "Edit", edit_promess_engagment_path(@promesse.id, engagement.id) %> | <%= link_to "Effacer", promess_engagment_path(@promesse.id, engagement.id), method:"delete" %>
+			<% end %>
+		<% end %>
+		<% i += 1 %>
+	</p>
+<% end %>
+<% if user_signed_in? %>
+	<% if current_user.is_admins == true %>
+		<%= link_to "Créer un engagement", new_promess_engagment_path(@promesse.id) %>
+	<% end %>
+<% end %>
+<p><%= link_to "Sondage sur le candidat élu", commune_surveys_path(@promesse.candidat.commune.id) %></p>
