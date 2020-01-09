@@ -252,6 +252,7 @@ i:before {
     -o-transition: all 400ms ease-out;
     transition: all 400ms ease-out;
     display: block;
+    width: 170px;
     -webkit-transform-origin: 50% 0;
     -ms-transform-origin: 50% 0;
     transform-origin: 50% 0;
@@ -261,7 +262,7 @@ i:before {
     top: 90%;
     border-radius: 0px;
     border: none;
-    padding: 5px 0px;
+    padding: 1px 0px;
     -webkit-box-shadow: none;
     box-shadow: none;
     visibility: hidden;
@@ -290,6 +291,7 @@ i:before {
 }
 
 .main_menu_area .navbar .navbar-nav li.submenu .dropdown-menu li:hover{
+  background: rgba(55, 55, 55, 0.8);
   border-bottom: 1px solid #aaa;
 }
 
