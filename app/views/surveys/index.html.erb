@@ -2,7 +2,12 @@
 
 <p>Voici tous ses promesses et ces engagements </p>
 <ol>
+	<% totalegagement = 0 %>
+	<% totalagree = 0 %>
+	<% totalhesitate = 0 %>
+	<% totaldisagree = 0 %>
 	<% @promesse.each do |promesse| %>
+		<% totalegagement += promesse.engagments.count %>
 		<li>
 			<%= promesse.content %>
 			<ul>
@@ -31,8 +36,6 @@
 							<input type="submit" value="Hesiter">(<%= number.where(hesitat: true).count %>)
 						<%end%>
 						<%= link_to "Commentaire", new_engagment_comment_path(engagement.id) %>(<%= engagement.comments.count %>) <br>
-
-						<strong>Résultat sur le sondage des engagements : </strong>
 						<% total = engagement.surveys.count %>
 						<% survey = Survey.where(engagment: engagement) %>
 						<% surveyagree = survey.where(agree: true) %>
@@ -40,49 +43,48 @@
 						<% surveyhes = survey.where(hesitat: true) %>
 						<% if total != 0 %>
 
-							D'accord : <%= (surveyagree.count * 100)/total %> %
-							Pas d'accord : <%= (surveydisagree.count * 100)/total %>%
-							Hesitation : <%= (surveyhes.count * 100)/total %>%
+							<% (surveyagree.count * 100)/total %> 
+							<% (surveydisagree.count * 100)/total %>
+							<% (surveyhes.count * 100)/total %>
+							<% totalagree += (surveyagree.count * 100)/total %>
+							<% totalhesitate += (surveyhes.count * 100)/total %>
+							<% totaldisagree += (surveydisagree.count * 100)/total %>
 
-							   <div class="row">
+							<div class="row">
+						        <!-- Content Column -->
+						        <div class="col-lg-6 mb-4">
 
-        <!-- Content Column -->
-        <div class="col-lg-6 mb-4">
-
-          <!-- Project Card Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary"><h5>Le candidat <%= @candidat_valid.name %> est élu avec un résultat de <%= @candidat_valid.resultat %> % </h5> <br></h6></h6>
-            </div>
-            <div class="card-body">
-              <h4 class="small font-weight-bold">Projet Faits <span class="float-right">20%</span></h4>
-              <h4 class="small font-weight-bold">Agree : <span class="float-right"><%= (surveyagree.count * 100)/total %> %</span></h4>
-              <div class="progress mb-4">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: <%= (surveyagree.count * 100)/total %>%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <h4 class="small font-weight-bold">Projets En Cours <span class="float-right">40%</span></h4>
-              <div class="progress mb-4">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-              <h4 class="small font-weight-bold"> Projets <span class="float-right">60%</span></h4>
-              <div class="progress mb-4">
-                <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 mb-4">
-            <div class="card-body">
-              <div class="text-center">
-                <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"src="img/undraw_posting_photo.svg" alt="">
-              </div>
-              <p>Toutes ces projets sont tirées des discours et promesses du candidats lors de  <a target="_blank" rel="nofollow" href="#">l'election </a>, et toutes les visiteurs du site web ont droit de soummetre des sondage du progrès de ces projets</p>
-              <a target="_blank" rel="nofollow" href="#">Voirs les discours du candidats &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </div>
+						          <!-- Project Card Example -->
+						          <div class="card shadow mb-4">
+						            <div class="card-header py-3">
+						              <h6 class="m-0 font-weight-bold text-primary"><h5>Le candidat <%= @candidat_valid.name %> est élu avec un résultat de <%= @candidat_valid.resultat %> % </h5> <br>
+						              </h6>
+						              <p class="m-0 font-weight-bold text-primary"><h5>Résultat sur le sondage des engagements total </h5> <br>
+	          							</p>
+						            </div>
+						            <div class="card-body">
+						              <h4 class="small font-weight-bold">Projet Faits <span class="float-right"><% if @total != 0 %><%= (@suivi*100)/@total %>%<% end %></span></h4> <br>
+						              <h4 class="small font-weight-bold">Agree : <span class="float-right"><%= (surveyagree.count * 100)/total %> %</span></h4>
+						              <div class="progress mb-4">
+						                <div class="progress-bar bg-success" role="progressbar" style="width: <%= (surveyagree.count * 100)/total %>%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+						              </div>
+						              <h4 class="small font-weight-bold"> Disagree <span class="float-right"><%= (surveydisagree.count * 100)/total %>%</span></h4>
+						              <div class="progress mb-4">
+						                <div class="progress-bar bg-warning" role="progressbar" style="width: <%= (surveydisagree.count * 100)/total %>%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+						              </div>
+						              <h4 class="small font-weight-bold"> Hesitate <span class="float-right"><%= (surveyhes.count * 100)/total %>%</span></h4>
+						              <div class="progress mb-4">
+						                <div class="progress-bar" role="progressbar" style="width: <%= (surveyhes.count * 100)/total %>%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+						              </div>
+						            </div>
+						        </div>
+						    </div> 
+						    <div class="col-lg-6 mb-4">
+				            <div class="card-body">
+				              <div class="text-center">
+				              </div>
+				             </div>
+				          </div>
 
 						<% end %>
 				<% end %>
@@ -90,5 +92,37 @@
 		</li>
 		
 	<% end %>
+	<br>
+	<%if  totalegagement != 0 %>
+		<div class="row">
+							        <!-- Content Column -->
+		    <div class="col-lg-6 mb-4">
+
+		      <!-- Project Card Example -->
+		      <div class="card shadow mb-4">
+		        <div class="card-header py-3">
+		          <h6 class="m-0 font-weight-bold text-primary"><h5>Le candidat <%= @candidat_valid.name %> est élu avec un résultat de <%= @candidat_valid.resultat %> % </h5> <br>
+		          </h6>
+		           <p class="m-0 font-weight-bold text-primary"><h5>Résultat sur le sondage des engagements total </h5> <br>
+		          </p>
+		        </div>
+		        <div class="card-body">
+		          <h4 class="small font-weight-bold">Projet Faits <span class="float-right"><% if @total != 0 %><%= (@suivi*100)/@total %>%<% end %></span></h4> <br>
+		          <h4 class="small font-weight-bold">Agree : <span class="float-right"><%= totalagree/totalegagement %> %</span></h4>
+		          <div class="progress mb-4">
+		            <div class="progress-bar bg-success" role="progressbar" style="width: <%= totalagree/totalegagement %>%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+		          </div>
+		          <h4 class="small font-weight-bold"> Disagree <span class="float-right"><%= totaldisagree/totalegagement %>%</span></h4>
+		          <div class="progress mb-4">
+		            <div class="progress-bar bg-warning" role="progressbar" style="width: <%= totaldisagree/totalegagement %>%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+		          </div>
+		          <h4 class="small font-weight-bold"> Hesitate <span class="float-right"><%= totalhesitate/totalegagement %>%</span></h4>
+		          <div class="progress mb-4">
+		            <div class="progress-bar" role="progressbar" style="width: <%= totalhesitate/totalegagement %>%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+		          </div>
+		        </div>
+		    </div>
+		</div> 
+	<%end %>
 </ol>
 

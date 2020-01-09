@@ -23,8 +23,21 @@
  *= require assets/css/comptes
  *= require assets/css/app
  */
+html, body {
+	height: 100%;
+	margin: 0; padding: 0;
+}
+body {
+	display : table !important;
+	width: 100%;
+}
+#footer {
+	display : table-row !important;
+	height: 50px;
+}
+
 .yield{
-	position: absolute;
+	position: relative;
 	top: 60px;
 }
 .drop-pos{

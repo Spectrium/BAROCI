@@ -180,7 +180,7 @@ i:before {
   width: 100%;
   z-index: 30;
   padding: 0px 45px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .main_menu_area .navbar {
@@ -2395,7 +2395,7 @@ i:before {
 .footer_copyright {
   overflow: hidden;
   background: #11173b;
-  padding: 35px 0px;
+  padding: 10px 0px;
 }
 
 .footer_copyright .float-sm-left h5 {
