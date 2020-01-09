@@ -1,5 +1,5 @@
 class Actuality < ApplicationRecord
 
-	has_one_attached :actuphoto
+	has_many_attached :actuphotos
 
 end
