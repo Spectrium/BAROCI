@@ -966,7 +966,7 @@ i:before {
   background: #79ccff;
   background: -moz-linear-gradient(left, #79ccff 0%, #9b75ff 100%);
   background: -webkit-linear-gradient(left, #79ccff 0%, #9b75ff 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#79ccff', endColorstr='#9b75ff',GradientType=1 );
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#79ccff', endColorstr='#9b75ff',GradientType=1 ); */
   display: block;
   color: #fff;
   font-size: 16px;
@@ -1105,7 +1105,7 @@ i:before {
   background: -o-linear-gradient(left, #6ebcfe 0%, #997aff 100%);
   background: linear-gradient(to right, #6ebcfe 0%, #997aff 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ebcfe', endColorstr='#997aff',GradientType=1 );
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6ebcfe', endColorstr='#997aff',GradientType=1 ); */
   /* IE6-9 */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1723,7 +1723,7 @@ i:before {
   background: -o-linear-gradient(left, #80cfff 0%, #997aff 100%);
   background: linear-gradient(to right, #80cfff 0%, #997aff 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80cfff', endColorstr='#997aff',GradientType=1 );
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80cfff', endColorstr='#997aff',GradientType=1 ); */
   /* IE6-9 */
 }
 
@@ -1821,7 +1821,7 @@ i:before {
   background: -o-linear-gradient(left, #6fbcfe 0%, #9b8aff 100%);
   background: linear-gradient(to right, #6fbcfe 0%, #9b8aff 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fbcfe', endColorstr='#9b8aff',GradientType=1 );
+  /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fbcfe', endColorstr='#9b8aff',GradientType=1 ); */
   /* IE6-9 */
   text-align: center;
   color: #fff;
