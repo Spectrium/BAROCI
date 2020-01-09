@@ -679,7 +679,7 @@ filter: progid:dximagetransform.microsoft.gradient( startcolorstr="#e5e5e5", end
 
 /* THUMBS */
 .erinyen .tp-thumb {
-opacity:1
+opacity:1;
 }
 
 .erinyen .tp-thumb-over {
@@ -758,7 +758,7 @@ opacity:1
     font-size:13px;
     font-weight:700;
     text-transform:uppercase;
-    font-family:"Roboto Slab"
+    font-family:"Roboto Slab";
     margin-bottom:5px;
 }
 
@@ -839,7 +839,7 @@ website:    http://www.themepunch.com
 
 /* THUMBS */
 .gyges .tp-thumb { 
-      opacity:1
+      opacity:1;
   }
 .gyges .tp-thumb-img-wrap {
   padding:3px;
@@ -1419,7 +1419,7 @@ border-radius:6px;
     font-size:13px;
     font-weight:700;
     text-transform:uppercase;
-    font-family:"Roboto Slab"
+    font-family:"Roboto Slab";
     margin-bottom:5px;
 }
 
