@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'searchs/index',as: "searchs"
+  post 'searchs/create',as: "search"
   devise_for :users
   root 'homes#index', as: "home"
 
   resources :daties
   resources :users
+  resources :searchs, only: [:create,:index]
 
   resources :actualities do
     resources :actu_photos, only: [:create]

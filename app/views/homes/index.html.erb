@@ -88,8 +88,8 @@
             <%if @actualite != nil%>
               <%if @actualite.length < 4%>
                 <% for i in 0..@actualite.length-1%>
-                  <%if @actualite[i].actuphoto.attached?%>
-                    <%= image_tag (@actualite[i].actuphoto), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
+                  <%if @actualite[i].actuphotos.attached?%>
+                    <%= image_tag (@actualite[i].actuphotos.last), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
                   <%end%> <br>
                  <%= @actualite[i].description%> <br>
                  <%= link_to "voir", actuality_path(@actualite[i]) %> <br>
