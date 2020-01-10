@@ -13,19 +13,9 @@
 <%
 =end%>
 
-
-
-
 <div class="container">
   
   <h2 class="py-3">Listes des régions</h2>
-  
-  <% if user_signed_in? %>
-  	<% if current_user.is_admins == true %>
-  		<%= link_to "créé une région", new_region_path ,class:'btn btn-success' %> <br> <br> 
-  	<% end %>
-  <% end %>
-
   <table class="table table-striped">
 
     <thead class="white">
@@ -43,13 +33,13 @@
     <% i = 1 %>
     <% @region.each do |region|%>
       <tbody>
-        <tr>
+        <tr class="tr">
           <th><%= i %></th>
           <td><%= link_to region.name.capitalize,region_communes_path(region.id)%><br></td>
       	  <% if user_signed_in? %>
             <% if current_user.is_admins == true %>
-              <td><%= link_to "Editer", edit_region_path(region.id),class:'boutton edit' %></td>
-              <td><%= link_to "Supprimer", region_path(region.id) , method: "delete",class:'boutton supprimer' %></td>
+              <td><%= link_to "Editer", edit_region_path(region.id),class:'more_btn_edi' %></td>
+              <td><%= link_to "Supprimer", region_path(region.id) , method: "delete",class:'more_btn_sup' %></td>
         	  <% end %>
       	  <% end %>
         </tr>
@@ -57,4 +47,12 @@
       <% i += 1 %>
     <% end %>
   </table>
+
+    <% if user_signed_in? %>
+    <% if current_user.is_admins == true %>
+    <div>
+      <%= link_to "ajouté une région", new_region_path ,class:'more_btn' %>
+    </div>
+    <% end %>
+  <% end %>
 </div>
