@@ -31,7 +31,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <!-- bar de recherche -->
-          <li>
+          <li class=" place-center">
             <%= form_tag search_path, method:"post"  do %><br>
               <input type="text" placeholder="Search Commune.." name="search" class="search">
             <%end%>
@@ -39,7 +39,7 @@
           <!-- dropdown creation pour admin -->
           <% if user_signed_in?%> 
             <% if current_user.is_admins == true%>
-              <li class="nav-item dropdown submenu">
+              <li class="nav-item dropdown submenu place-center">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Créer
                 </a>
@@ -52,10 +52,11 @@
             <% end %>
           <% end %>
 <!-- actualité et region -->
-          <li class="nav-item"><a class="nav-link" href="<%= actualities_path %>">Actualités</a></li>
-          <li class="nav-item"><a class="nav-link" href="<%= regions_path %>" >Région</a></li>
+          <li class="nav-item place-center"><a class="nav-link" href="<%= actualities_path %>">Actualités</a></li>
+          <li class="nav-item place-center"><a class="nav-link" href="<%= regions_path %>" >Région</a></li>
 <!-- dropdown pour compte -->
-          <li class="nav-item dropdown submenu">
+          <li class="nav-item dropdown submenu place-center">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <% if user_signed_in?%>
                 Mon profil
               <% else %>

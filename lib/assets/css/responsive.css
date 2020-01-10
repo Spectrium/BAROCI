@@ -119,7 +119,7 @@
     }
     .main_menu_area .navbar .navbar-collapse {
         background: #7f7f7f;
-        max-height: 306px;
+        max-height: 450px;
         overflow-y: scroll;
     }
     .main_menu_area .navbar .navbar-toggler {
