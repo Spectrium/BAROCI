@@ -66,4 +66,8 @@ gem 'table_print'
 gem 'jquery-rails'
 gem 'chartkick'
 gem 'bootstrap-glyphicons', '~> 0.0.1'
+gem "dotenv"
+gem "omniauth"
 
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'

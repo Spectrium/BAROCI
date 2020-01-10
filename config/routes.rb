@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   get 'searchs/index',as: "searchs"
   post 'searchs/create',as: "search"
-  devise_for :users
+  
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
+  
   root 'homes#index', as: "home"
 
   resources :daties

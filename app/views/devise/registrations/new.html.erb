@@ -27,15 +27,16 @@
         <li>
           <div class="grid grid-3">
             <button class="btn-grid" type="submit">
-              <span class="back">
+              <!-- <span class="back">
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/email-icon.svg" alt="">
               </span>
-              <%= f.submit "Confirmer", class:"front" %>
+ -->              <%= f.submit "S'inscrire", class:"btn btn-lg btn-primary btn-block" %>
             </button>
           </div>
         </li>    
       </ul>
     </div>
    <% end %>
+   <%= render "devise/shared/links" %>
 </section>
  
