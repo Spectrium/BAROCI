@@ -13,7 +13,7 @@ class CommunesController < ApplicationController
 
   def create
   	@region = Region.find(params[:region_id])
-  	@commune = Commune.new(name: params[:name], region: @region)
+  	@commune = Commune.new(name: params[:name].downcase, region: @region)
   	if @commune.save
   		redirect_to region_communes_path(@region.id)
   	else
@@ -28,7 +28,7 @@ class CommunesController < ApplicationController
   def update
   	@region = Region.find(params[:region_id])
   	@commune = Commune.find(params[:id])
-  	@commune.update(name: params[:name],region: @region)
+  	@commune.update(name: params[:name].downcase,region: @region)
   	if @commune.save
   		redirect_to region_communes_path(@region.id)
   	else
