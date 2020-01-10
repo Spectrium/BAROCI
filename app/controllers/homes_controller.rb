@@ -2,6 +2,7 @@ class HomesController < ApplicationController
   def index
   	@actualite = Actuality.all
   	@candidat = Candidat.all
+    @region = Region.all
   	@suivi1 = 0 
     @suivi2 = 0 
     @suivi3 = 0 

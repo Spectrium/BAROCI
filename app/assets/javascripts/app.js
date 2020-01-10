@@ -30,6 +30,9 @@
 //= require assets/js/counterup/countto
 //= require owl-carousel/owl.carousel.min
 //= require magnify-popup/jquery.magnific-popup.min
+//= require circle-bar/circle-progress.min
+//= require circle-bar/plugins
+//= require assets/js/circle-active
 
 
 //= require assets/js/smoothscroll
