@@ -1291,7 +1291,7 @@ i:before {
   background-image: -webkit-gradient(linear, left top, right top, from(#2cfc03), color-stop(51%, #5aeda4), to(#49b000));
   background-image: -webkit-linear-gradient(left, #2cfc03 0%, #5aeda4 51%, #49b000 100%);
   background-image: -o-linear-gradient(left, #2cfc03 0%, #5aeda4 51%, #49b000 100%);
-49b000  background-size: 200% auto;
+  background-size: 200% auto;
   z-index: 2;
   display: inline-block;
   -webkit-transition: all 400ms ease-out;
