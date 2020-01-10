@@ -6,15 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Candidat.destroy_all
-Comment.destroy_all
-Promess.destroy_all
-Engagment.destroy_all
-Region.destroy_all
-Commune.destroy_all
-Daty.destroy_all
+# User.destroy_all
+Suivi.destroy_all
 Survey.destroy_all
+Comment.destroy_all
+Engagment.destroy_all
+Promess.destroy_all
+Candidat.destroy_all
+Commune.destroy_all
+Region.destroy_all
+# Daty.destroy_all
 
 reg = ["Antananarivo"]
 com =["ivato", "analamanga", "talatamaty"]
