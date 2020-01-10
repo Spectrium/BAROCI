@@ -1,10 +1,4 @@
 
-<% if user_signed_in? %>
-	<% if current_user.is_admins == true %>
-		<%= link_to "créé une commune", new_region_commune_path(@region.id) ,class:'btn btn-success' %> <br> <br>
-	<% end %>
-<% end %>
-
 <div class="container">
 
   <h2 class="py-3">Liste de toutes les communes dans cette région</h2>
@@ -31,8 +25,8 @@
           <td><%= link_to commune.name, commune_candidats_path(commune.id) %></td>
           <% if user_signed_in? %>
             <% if current_user.is_admins == true %>
-              <td><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'boutton edit' %></td>
-              <td><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'boutton supprimer' %></td>
+              <td><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'more_btn_edi' %></td>
+              <td><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'more_btn_sup' %></td>
             <% end %>
       	  <% end %>
         </tr>
@@ -40,5 +34,10 @@
       <% i += 1 %>
     <% end %>
   </table>
+  <% if user_signed_in? %>
+    <% if current_user.is_admins == true %>
+      <%= link_to "créé une commune", new_region_commune_path(@region.id) ,class:'more_btn' %> <br> <br>
+    <% end %>
+  <% end %>
 
 </div>

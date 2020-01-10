@@ -180,7 +180,8 @@ i:before {
   width: 100%;
   z-index: 30;
   padding: 0px 45px;
-  background-color: rgba(0, 0, 0, 0.5);
+  /*background-color: rgba(0, 0, 0, 0.5);*/
+  background-color: #2274a5;
 }
 
 .main_menu_area .navbar {
@@ -1326,8 +1327,28 @@ i:before {
   border-radius: 33px;
 }
 
-.more_btn_coms {
-  padding: 0px 46px;
+.more_btn_sup {
+  padding: 0px 10px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff5a5f), color-stop(51%, #f7b267), to(#dccfec));
+  background-image: -webkit-linear-gradient(left, #ff5a5f 0%, #f7b267 51%, #dccfec 100%);
+  background-image: -o-linear-gradient(left, #ff5a5f 0%, #f7b267 51%, #dccfec 100%);
+  background-image: linear-gradient(to right, #ff5a5f 0%, #f7b267 51%, #dccfec 100%);
+  background-size: 200% auto;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transition: all 400ms ease-out;
+  -o-transition: all 400ms ease-out;
+  transition: all 400ms ease-out;
+  text-align: center;
+  color: #fff;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  border: 6px solid rgba(204, 241, 255, 0.5);
+  border-radius: 33px;
+}
+
+.more_btn_edi {
+  padding: 0px 10px;
   background-image: -webkit-gradient(linear, left top, right top, from(#6fbcfe), color-stop(51%, #998dff), to(#6fbcfe));
   background-image: -webkit-linear-gradient(left, #6fbcfe 0%, #998dff 51%, #6fbcfe 100%);
   background-image: -o-linear-gradient(left, #6fbcfe 0%, #998dff 51%, #6fbcfe 100%);
@@ -1342,12 +1363,11 @@ i:before {
   color: #fff;
   font-size: 15px;
   font-family: "Roboto", sans-serif;
-  line-height: 55px;
   border: 6px solid rgba(204, 241, 255, 0.5);
   border-radius: 33px;
 }
 
-.more_btn:hover, .more_btn_coms:hover, .more_btn_succ:hover, .more_btn_dan:hover {
+.more_btn:hover, .more_btn_coms:hover, .more_btn_succ:hover, .more_btn_dan:hover, .more_btn_edi:hover, .more_btn_sup:hover {
   background-position: right center;
   color: #fff;
 }

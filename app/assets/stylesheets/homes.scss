@@ -4,7 +4,9 @@
 
 .head{
 	background: image-url('ext.jpg');
+	background-size: cover;
 	padding: 20px;
+	height: 600px;
 }
 .header-text{
 	width: 60%;
