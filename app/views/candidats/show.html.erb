@@ -63,13 +63,17 @@
                                 </ul>
 
                                 <% end %>
+                                <% if @candidat == @candidat_valid %>
 
                                   <%= link_to "Voir les progressions des promesses", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id) %> <br>
-                            <% end %>  
-                            <% if @total != 0 %>
-                              Pas encore commencer : <%= (@suivi2 *100)/@total %>%<br>
-                              En cours : <%= (@suivi1 *100)/@total %>%<br>
-                              fini : <%= (@suivi3 *100)/@total %>%<br>
+                                <% end %>
+                            <% end %>
+                            <% if @candidat == @candidat_valid %> 
+                              <% if @total != 0 %>
+                                Pas encore commencer : <%= (@suivi2 *100)/@total %>%<br>
+                                En cours : <%= (@suivi1 *100)/@total %>%<br>
+                                fini : <%= (@suivi3 *100)/@total %>%<br>
+                              <% end %>  
                             <% end %>  
                           </p>
                       </td>
@@ -100,7 +104,7 @@
         <% end %>
         </div>
     </div>
-</div>
+  </div>
 
   <div class="boutton-flex">
     <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn btn-radius btn-brd effect-1" %>
