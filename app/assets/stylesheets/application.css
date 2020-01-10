@@ -39,13 +39,20 @@ body {
 .yield{
 	position: relative;
 	top: 60px;
-	padding-bottom: 100px;
+	margin-bottom: 100px;
 }
 .drop-pos{
-	top: 85px !important;
+	top: 42px !important;
+}
+.drop-pos-create{
+	top: 87px !important;
+}
+
+i{
+	font-size: 30px !important;
 }
 .search{
-  width: 130px;
+  width: auto;
   height: 35px;
   box-sizing: border-box;
   border-style: none;
@@ -65,8 +72,4 @@ body {
 
 .search:focus {
   width: 100%;
-}
-li .type:hover{
-  background-color: white;
-  color: #007bff;
 }

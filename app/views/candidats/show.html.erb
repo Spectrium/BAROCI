@@ -1,37 +1,64 @@
-<div class="container margin">
-  <div class="container">
-    <div class="row my-2">
-      <div class="col-lg-8 order-lg-2">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
-            </li>
-            <li class="nav-item">
-                <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Promesse et engagement</a>
-            </li>
-            <li class="nav-item">
-                <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Photos</a>
-            </li>
-        </ul>
-        <div class="tab-content py-4">
-          <div class="tab-pane active" id="profile">
-            <div id="about" class="row">
-              <div class="col-md-6">
-                  <div class="row">
-                    <p>
-                      <strong>Nom de l'élue :</strong> <%= @candidat.name %> </br>
-                      <strong>Mouvence :</strong> <%= @candidat.parti %> </br>
-                      <strong>Résultat :</strong> <%= @candidat.resultat %> </br>
-                      <strong>Région :</strong> <%= @candidat.region.name %> </br>
-                      <strong>Commune :</strong> <%= @candidat.commune.name %> </br>
-                    </p>
+<div class="container">  
+  <div class="row py-3">
+    <div class="col-md-12 text-md-center">
+      <% if @candidat.avatars.attached?%>
+        <%= image_tag @candidat.avatars.last, alt: 'avatar', class: 'rounded img-fluid' %>
+      <%else%>
+        <img src="//placehold.it/150" class="img-fluid" alt="avatar">
+      <%end%>
+    </div>
+    <div>
+      <% if user_signed_in? %>
+        <% if current_user.is_admins == true %>
+          <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %>
+            <%= file_field_tag  :avatar, class: "btn choice" %>
+            <div class="col-12">
+              <%= submit_tag "mettre à jour", class:"btn btn-success" %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-                  </div>
-              </div>
-
+<div class="container">
+  <div class="col-md-12">
+    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Promesse et engagement</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Photos</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <p>
+          <strong>Nom de l'élue :</strong> <%= @candidat.name %> </br>
+          <strong>Mouvence :</strong> <%= @candidat.parti %> </br>
+          <strong>Résultat :</strong> <%= @candidat.resultat %> </br>
+          <strong>Région :</strong> <%= @candidat.region.name %> </br>
+          <strong>Commune :</strong> <%= @candidat.commune.name %> </br>
+        </p>
+      </div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      
+      <div class="row justify-content-center">
+        <div class="col-md-4">
+          <% @candidat.promesses.each do |promesse| %>
+              
+              <div class="alert alert-info">
+                <div>
+                  <%= link_to promesse.content, promess_engagments_path(promesse.id) %>
                 </div>
-                <!--/row-->
+                <div>
+                  <%= link_to "Voir les progressions", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id), class: 'btn btn-success' %>
                 </div>
+<!-- <<<<<<< HEAD -->
                 <div class="tab-pane" id="messages"> 
                 <table>
                   <tbody>
@@ -84,36 +111,58 @@
                 <div class="tab-pane" id="edit">
                  <% @avatar.each do |candidat|%>
                   <%= image_tag  candidat, class:"tailimg" %>
+<!-- ======= -->
+             <!--  </div>
+              
+
+              <% if user_signed_in? %>
+                <% if current_user.is_admins == true %> | <%= link_to "Créer des engagements", new_promess_engagment_path(promesse.id) %> | <%= link_to "Modifier la promesse", edit_commune_candidat_promess_path(@commune.id, @candidat.id,promesse.id) %> | <%= link_to "Supprimer la promesse", commune_candidat_promess_path(@commune.id,@candidat.id, promesse.id), method:"delete" %> <br>
+                <% if @candidat.resultat == @tab %>
+                  <%= form_tag promess_suivis_path(promesse.id), method:'post' do %>
+                  <input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
+                  <input type="text" name="commune" value="<%= @commune.id %>" hidden>
+                  <input type="text" name="name" value="0" hidden>
+                  <input type="submit" value="En cours" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.start == true %> class="btn btn-primary" <%  else%> class="btn btn-warning"<%  end%><%  else%> class="btn btn-warning" <% end%> > -->
+<!-- >>>>>>> development -->
                   <%end%>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 order-lg-1 text-center">
-        <% if @candidat.avatars.attached?%>
-          <%= image_tag @candidat.avatars.last, alt: 'avatar', class:"mx-auto img-fluid img-circle d-block col-md-12" %>
-        <%else%>
-          <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
-        <%end%>
-        <% if user_signed_in? %>
-          <% if current_user.is_admins == true %> 
-            <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %>
-            <%= file_field_tag  :avatar, class:"btn choice" %>
-            <%= submit_tag "mettre à jour", class:"btn btn-success" %>
+                  <%= form_tag promess_suivis_path(promesse.id), method:'post' do %>
+                  <input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
+                  <input type="text" name="commune" value="<%= @commune.id %>" hidden>
+                  <input type="text" name="name" value="1" hidden>
+                  <input type="submit" value="Fait" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.finished == true %> class="btn btn-success" <%  else%> class="btn btn-warning"<%  end%><%  else%> class="btn btn-warning" <% end%>  >
+                  <%end%><br>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
+          
+          <% end %>
         </div>
-    </div>
-  </div>
 
-  <div class="boutton-flex">
-    <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn btn-radius btn-brd effect-1" %>
-    <% if user_signed_in? %>
-      <% if current_user.is_admins == true %>
-        <%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id), class:"btn btn-radius btn-brd effect-1" %>
-        <%= link_to "Editer candidat", edit_commune_candidat_path(@commune.id, @candidat.id), class:"btn btn-radius btn-brd effect-1" %>
-        <%= link_to "Effacer candidat", commune_candidat_path(@commune.id, @candidat.id), method:"delete", class:"btn btn-radius btn-brd effect-1" %>
-      <% end %>
-    <% end %>
+        <div class="col-md-4">      
+          <% if @total != 0 %>
+          Pas encore commencer : <%= (@suivi2 *100)/@total %>%<br>
+          En cours : <%= (@suivi1 *100)/@total %>%<br>
+          fini : <%= (@suivi3 *100)/@total %>%<br>
+          <% end %>
+        </div>
+      </div>
+    </div>
+<!-- <<<<<<< HEAD -->
   </div>
+<!-- ======= -->
+  <!--   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+  </div>
+</div> -->
+<!-- >>>>>>> development -->
+
+<div class="boutton-flex">
+  <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn btn-radius btn-brd effect-1" %>
+  <% if user_signed_in? %>
+  <% if current_user.is_admins == true %>
+  <%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id), class:"btn btn-radius btn-brd effect-1" %>
+  <%= link_to "Editer candidat", edit_commune_candidat_path(@commune.id, @candidat.id), class:"btn btn-radius btn-brd effect-1" %>
+  <%= link_to "Effacer candidat", commune_candidat_path(@commune.id, @candidat.id), method:"delete", class:"btn btn-radius btn-brd effect-1" %>
+  <% end %>
+  <% end %>
+</div>
 </div>
