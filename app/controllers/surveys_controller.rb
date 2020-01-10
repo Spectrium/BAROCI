@@ -12,16 +12,16 @@ class SurveysController < ApplicationController
   	max = tab.max()
   	@candidat_valid = Candidat.find_by(resultat: max)
   	@promesse = Promess.where(candidat: @candidat_valid)
-    var = @candidat_valid.promesses.all 
-    @total = 0
-    @suivi = 0
-    if var.length != 0                    
-      var.each do |pro| 
-        @total += pro.suivis.count 
-        @suivis = Suivi.where(promess: pro)
-        @suivi += ((@suivis.where(finished: true).count) ) 
-      end 
-    end
+    # var = @candidat_valid.promesses.all 
+    # @total = 0
+    # @suivi = 0
+    # if var.length != 0                    
+    #   var.each do |pro| 
+    #     @total += pro.suivis.count 
+    #     @suivis = Suivi.where(promess: pro)
+    #     @suivi += ((@suivis.where(finished: true).count) ) 
+    #   end 
+    # end
   end
 
   def new
