@@ -17,7 +17,11 @@ Commune.destroy_all
 Region.destroy_all
 # Daty.destroy_all
 
-reg = ["Antananarivo"]
+reg = ["Diana", "Sava", "Itasy", "Analamanga", "Vakinankaratra", "Bongolava", "Sofia", "Boeny",
+		"Betsiboka", "Melaky", "Alaotra-Mangoro", "Atsinanana", "Analanjirofo", "Amoron'i Mania",
+		"Haute Matsiatra", "Vatovavy-Fitovinany", "Atsimo-Atsinanana", "Ihorombe", "Menabe",
+		"Atsimo-Andrefana", "Androy", "Anosy"]
+		
 com =["ivato", "analamanga", "talatamaty"]
 
 reg.length.times do |i|
