@@ -180,7 +180,8 @@ i:before {
   width: 100%;
   z-index: 30;
   padding: 0px 45px;
-  background-color: rgba(0, 0, 0, 0.5);
+  /*background-color: rgba(0, 0, 0, 0.5);*/
+  background-color: #2274a5;
 }
 
 .main_menu_area .navbar {
