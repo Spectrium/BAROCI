@@ -3,6 +3,26 @@ class CandidatsController < ApplicationController
   def index
     @commune = Commune.find(params[:commune_id])
     @candidat = @commune.candidats.all
+    tab = []
+    @candidat.each do |candidat|
+      tab << candidat.resultat
+    end
+    @tab = tab.max
+    @candidat_valid = Candidat.find_by(resultat: tab.max)
+    @suivi1 = 0 
+    @suivi2 = 0 
+    @suivi3 = 0 
+    @total = 0  
+    var = @candidat_valid.promesses.all 
+    if var.length != 0                    
+      var.each do |pro| 
+        @total += pro.suivis.count 
+        @suivi = Suivi.where(promess: pro)
+        @suivi1 += (@suivi.where(start: true)).count
+        @suivi2 += ((@suivi.where(transition: true).count))
+        @suivi3 += ((@suivi.where(finished: true).count) ) 
+      end 
+    end 
   end
 
   def show
@@ -16,20 +36,20 @@ class CandidatsController < ApplicationController
     @tab = tab.max
     @candidat_valid = Candidat.find_by(resultat: tab.max)
   	@avatar = @candidat.avatars.all 
-    @suivi1 = 0 
-    @suivi2 = 0 
-    @suivi3 = 0 
-    @total = 0  
-    var = @candidat.promesses.all 
-    if var.length != 0                    
-      var.each do |pro| 
-        @total += pro.suivis.count 
-        @suivi = Suivi.where(promess: pro)
-        @suivi1 += (@suivi.where(start: true)).count
-        @suivi2 += ((@suivi.where(transition: true).count))
-        @suivi3 += ((@suivi.where(finished: true).count) ) 
-      end 
-    end   
+    # @suivi1 = 0 
+    # @suivi2 = 0 
+    # @suivi3 = 0 
+    # @total = 0  
+    # var = @candidat.promesses.all 
+    # if var.length != 0                    
+    #   var.each do |pro| 
+    #     @total += pro.suivis.count 
+    #     @suivi = Suivi.where(promess: pro)
+    #     @suivi1 += (@suivi.where(start: true)).count
+    #     @suivi2 += ((@suivi.where(transition: true).count))
+    #     @suivi3 += ((@suivi.where(finished: true).count) ) 
+    #   end 
+    # end   
   end
 
   def new
