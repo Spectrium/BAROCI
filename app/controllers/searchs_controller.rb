@@ -5,7 +5,7 @@ class SearchsController < ApplicationController
   end
 
   def create
-  	@@result = params[:search].downcase
+  	@@result = params[:search].upcase
   	redirect_to searchs_path
   end
 end

@@ -4,8 +4,8 @@
 		<% @region = Region.where(communes: resultat)%>
 		<%@region.each do |region|%>
 			la commune
-				<%= link_to resultat.name.capitalize, commune_candidats_path(resultat)%> 
-			dans la région <%= link_to region.name.capitalize, region_communes_path(region)%> <br>
+				<%= link_to resultat.name.titleize, commune_candidats_path(resultat)%> 
+			dans la région <%= link_to region.name.titleize, region_communes_path(region)%> <br>
 		<%end%>
 	<%end%>
 <%else%>

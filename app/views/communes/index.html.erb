@@ -22,7 +22,7 @@
       <tbody>
         <tr>
           <th scope="row"><%= i %></th>
-          <td><%= link_to commune.name, commune_candidats_path(commune.id) %></td>
+          <td><%= link_to commune.name.titleize, commune_candidats_path(commune.id) %></td>
           <% if user_signed_in? %>
             <% if current_user.is_admins == true %>
               <td><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'more_btn_edi' %></td>
