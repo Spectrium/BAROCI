@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
   def index
+    @date = Daty.last
   	@actualite = Actuality.all
   	@candidat = Candidat.all
     @region = Region.all

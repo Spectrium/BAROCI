@@ -45,7 +45,12 @@
       <div class="bloc last" id="seconds">0</div>
 	</div>
 	<script>
-		var launch = new Date("01/11/2020, 09:00:00 AM");
+    <% if @date != nil %>
+
+		var launch = new Date("<%= @date.end_date.to_time.month%>/<%= @date.end_date.to_time.day%>/<%= @date.end_date.to_time.year%>, 09:00:00 AM");
+    <%else %>
+      var launch = new Date("1/20/20, 09:00:00 AM");
+    <%end %>
 			// "January 09, 2020" or use this format
 			var years = document.getElementById('years');
 			var months = document.getElementById('months');

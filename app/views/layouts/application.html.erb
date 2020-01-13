@@ -44,9 +44,13 @@
                   Créer
                 </a>
                 <ul class="dropdown-menu drop-pos-create" aria-labelledby="navbarDropdown">
-                  <a class="nav-link" href="<%= new_actuality_path %>"><li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">Créer actualité</a></li> </a>
-                  <a class="nav-link" href="<%= new_daty_path %>"><li class="nav-item type"><a class="nav-link" href="<%= new_daty_path %>">Créer date</a></li></a>
-                  <a class="nav-link" href="<%= new_candidat_path %>"><li class="nav-item type"><a class="nav-link" href="<%= new_candidat_path %>">Créer un candidat</a></li></a>
+                  <li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">Créer actualité</a></li> 
+                  <%if Daty.last == nil %>
+                    <li class="nav-item type"><a class="nav-link" href="<%= new_daty_path %>">Créer date</a></li>
+                  <% else %>
+                    <li class="nav-item type"><a class="nav-link" href="<%= daty_path(Daty.last.id) %>">éditer la date</a></li>
+                  <% end %>
+                  <li class="nav-item type"><a class="nav-link" href="<%= new_candidat_path %>">Créer un candidat</a></li>
                 </ul>
               </li>
             <% end %>

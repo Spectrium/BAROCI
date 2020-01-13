@@ -3,22 +3,7 @@ class DatiesController < ApplicationController
   before_action :is_admin, except: [:index, :show]
 
   def index
-  	@date = Daty.last
-    # limite = (@date.end_date - @date.start_date).to_f
-    ##calcul de difference de temps
-    ##calcul second
-    # if limite < 60
-    #   @second = limite.to_i
-    # else
-    #   s = limite/60
-    #   sc = s.to_i
-    #   @second = ((s - sc)*60).to_i
-    #   if s < 60
-    #     @min = s.to_i
-    #   else
-    #     mm = s/60
-
-
+  	@date = Daty.all
   end
 
   def show
