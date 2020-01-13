@@ -106,16 +106,16 @@
                 <% for i in 0..@actualite.length-1%>
                   <div class="card mb-5">
                     <div class="row no-gutters">
-                      <div class="col-md-4">
+                      <div class="col-md-2">
                         <%if @actualite[i].actuphotos.attached?%>
                           <%= image_tag (@actualite[i].actuphotos.last), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
                         <%end%>
                       </div>
-                      <div class="col-md-8">
+                      <div class="col-md-10">
                         <div class="card-body">
                           <h5 class="card-title"><%= @actualite[i].title%></h5>
-                          <p class="card-text text-muted"><%= @actualite[i].description%></p>
-                          <p class="card-text"><small class="text-muted"><%= link_to "voir", actuality_path(@actualite[i]) %></small></p>
+                          <span class="card-text text-muted"><% for a in 0..65 do %><%= @actualite[i].description.split[a] %>  <%end%><% if @actualite[i].description.split.length-1 > 65 %>... <%end%></span>
+                          <span class="card-text"><small class="text-muted"><%= link_to "voir plus", actuality_path(@actualite[i]) %></small></span>
                         </div>
                       </div>
                     </div>
@@ -164,7 +164,6 @@
                     </div>
                     <h4>Mission 1</h4>
                     <p>Eduquer à l'integrité et à la transparance.</p>
-                    <a class="more_btn" href="#">En savoir plus</a>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
@@ -174,7 +173,6 @@
                     </div>
                     <h4>Mission 2</h4>
                     <p>Promouvoir la participation de la jeunesse.</p>
-                    <a class="more_btn" href="#">En savoir plus</a>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
@@ -184,7 +182,6 @@
                     </div>
                     <h4>Mission 3</h4>
                     <p>Réclamer la redevabilité des élus. </p>
-                    <a class="more_btn" href="#">En savoir plus</a>
                 </div>
             </div>
         </div>
