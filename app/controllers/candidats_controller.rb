@@ -35,21 +35,7 @@ class CandidatsController < ApplicationController
     end
     @tab = tab.max
     @candidat_valid = Candidat.find_by(resultat: tab.max)
-  	@avatar = @candidat.avatars.all 
-    # @suivi1 = 0 
-    # @suivi2 = 0 
-    # @suivi3 = 0 
-    # @total = 0  
-    # var = @candidat.promesses.all 
-    # if var.length != 0                    
-    #   var.each do |pro| 
-    #     @total += pro.suivis.count 
-    #     @suivi = Suivi.where(promess: pro)
-    #     @suivi1 += (@suivi.where(start: true)).count
-    #     @suivi2 += ((@suivi.where(transition: true).count))
-    #     @suivi3 += ((@suivi.where(finished: true).count) ) 
-    #   end 
-    # end   
+  	@avatar = @candidat.avatars.all   
   end
 
   def new
