@@ -50,12 +50,12 @@ User.create(full_name: "User",age: 29,adress: "nill", email: "User@user.com", pa
 #     User.create(full_name: Faker::Name.name, age: rand(18..77), adress: Faker::Address.street_address, email: Faker::Internet.email, password: "azertyop")
 # end
 
-200.times do |i|
-    Candidat.create(name: Faker::FunnyName.name, parti: Faker::Kpop.boy_bands, resultat: 10, commune_id: rand(Commune.first.id .. Commune.last.id), region_id: (Region.first.id))
+5.times do |i|
+    Candidat.create(name: Faker::FunnyName.name, parti: Faker::Kpop.boy_bands, resultat: rand(99), commune_id: 237, region_id: 4)
 end
 
-500.times do |i|
-    Promess.create(content: Faker::Kpop.boy_bands, candidat_id: rand(Candidat.first.id .. Candidat.last.id))
-end
+# 55.times do |i|
+#     Promess.create(content: Faker::Kpop.boy_bands, candidat_id: rand(Candidat.first.id .. Candidat.last.id))
+# end
 
 puts "vita"
