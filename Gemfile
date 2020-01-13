@@ -38,6 +38,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "dotenv-rails"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -66,7 +67,6 @@ gem 'table_print'
 gem 'jquery-rails'
 gem 'chartkick'
 gem 'bootstrap-glyphicons', '~> 0.0.1'
-gem "dotenv"
 gem "omniauth"
 
 gem 'omniauth-facebook'
