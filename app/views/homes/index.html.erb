@@ -16,10 +16,7 @@
 <header class="row head align-items-center">
     <div class="header-text text-center">
       <div class="col-md-12">
-        <h3 class="tp-caption tp-resizeme first_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h3>
-        
-        <h2>Lorem ipsum dolor sit amet
-        .</h2>
+        <h1 class="tp-caption tp-resizeme first_text">Mon droit, ma voix, mon vote</h1>
       </div>
     </div>
 </header>
@@ -65,11 +62,11 @@
 				let s = (launch.getTime() - now.getTime()) / 1000;
 
 				var y = Math.floor(s / 31536000);
-				years.innerHTML = '<em>' + y + '</em>' + ' ' + '</br>' + 'year' + (y > 1 ? 's' : '');
+				years.innerHTML = '<em>' + y + '</em>' + ' ' + '</br>' + 'année' + (y > 1 ? 's' : '');
 				s -= y * 31536000;
 
 				var mo = Math.floor(s / 2628000);
-				months.innerHTML = '<em>' + mo + '</em>' + ' ' + '</br>' + 'month' + (mo > 1 ? 's' : '');
+				months.innerHTML = '<em>' + mo + '</em>' + ' ' + '</br>' + 'mois' ;
 				s -= mo * 2628000;
 
 				let d = Math.floor(s / 86400);
@@ -77,7 +74,7 @@
 				s = s - d * 86400;
 
 				var h = Math.floor(s / 3600);
-				hours.innerHTML = '<em>' + h + '</em>' + ' ' + '</br>' + 'hour' + (h > 1 ? 's' : '');
+				hours.innerHTML = '<em>' + h + '</em>' + ' ' + '</br>' + 'heure' + (h > 1 ? 's' : '');
 				s -= h * 3600;
 
 				var m = Math.floor(s / 60);
@@ -85,7 +82,7 @@
 				s -= m * 60;
 
 				s = Math.floor(s);
-				seconds.innerHTML = '<em>' + s + '</em>' + ' ' + '</br>' + 'second' + (s > 1 ? 's' : '');
+				seconds.innerHTML = '<em>' + s + '</em>' + ' ' + '</br>' + 'seconde' + (s > 1 ? 's' : '');
 
 				setTimeout(setDate, 1000);
 				// ('#days').html('<em>' + d + '</em>');
@@ -400,8 +397,8 @@
     <div class="container">
         <div class="row justify-content-around">
             <div><%= image_tag  "spectre-logo.png", width: '150px' %></div>
-            <div><%= image_tag  "medem-logo.png", width: '150px' %></div>
-            <div><%= image_tag  "miel-logo.png", width: '150px' %></div>
+            <div><a href="https://medem.mg/" target="_blank" ><%= image_tag  "medem-logo.png", width: '150px' %></a></div>
+            <div><a href=""><%= image_tag  "miel-logo.png", width: '150px' %></a></div>
         </div>
     </div>
 </section>

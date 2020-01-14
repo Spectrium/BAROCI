@@ -9,11 +9,9 @@
                             <h3 class="mb-0 text-truncated"><%= @user.full_name  %></h3>
                             <p class="lead"><%= @user.age  %><br>
                                             <%= @user.email %><br></p>
-                            <p>
-                                I love to read, hang out with friends, watch football, listen to music, and learn new things.
-                            </p>
+                            
                             <hr>
-                            <p>Changer d'avatar ?</p>
+                            <p>Changer ma photo de profil </p>
                               <%= form_tag user_portraits_path(@user), multipart: true do %>
                               <%= file_field_tag :portrait %>
                               <%= submit_tag "mettre à jour" %>
@@ -27,11 +25,11 @@
 <img src="https://robohash.org/68.186.255.198.png" alt="" class="imagauto">                          <%end%>
                             <br>
                             <% if @user == current_user %>
-	<%= link_to 'modifier profil', edit_user_path(@user.id)  %> <br>
+	<%= link_to 'modifier mon profil', edit_user_path(@user.id)  %> <br>
 <% end %>
 
 <% if current_user.is_admins == true %>
-	<%= link_to 'Supprimer ce compte', user_path(@user.id) , method: 'delete', data:{confirm:'Etes-vous sure bordel de merde'} %>
+	<%= link_to 'Supprimer mon compte', user_path(@user.id) , method: 'delete', data:{confirm:'Etes-vous sure bordel de merde'} %>
 <% end %>
                         </div>
                     </div>
