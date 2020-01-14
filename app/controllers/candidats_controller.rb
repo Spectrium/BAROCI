@@ -9,20 +9,22 @@ class CandidatsController < ApplicationController
     end
     @tab = tab.max
     @candidat_valid = Candidat.find_by(resultat: tab.max)
-    @suivi1 = 0 
-    @suivi2 = 0 
-    @suivi3 = 0 
-    @total = 0  
-    var = @candidat_valid.promesses.all 
-    if var.length != 0                    
-      var.each do |pro| 
-        @total += pro.suivis.count 
-        @suivi = Suivi.where(promess: pro)
-        @suivi1 += (@suivi.where(start: true)).count
-        @suivi2 += ((@suivi.where(transition: true).count))
-        @suivi3 += ((@suivi.where(finished: true).count) ) 
+    @suivi1 = 0
+    @suivi2 = 0
+    @suivi3 = 0
+    @total = 0
+    if @candidat.length != 0
+      var = @candidat_valid.promesses.all
+      if var.length != 0
+        var.each do |pro|
+          @total += pro.suivis.count
+          @suivi = Suivi.where(promess: pro)
+          @suivi1 += (@suivi.where(start: true)).count
+          @suivi2 += ((@suivi.where(transition: true).count))
+          @suivi3 += ((@suivi.where(finished: true).count) )
+        end
       end 
-    end 
+    end
   end
 
   def show
@@ -35,7 +37,7 @@ class CandidatsController < ApplicationController
     end
     @tab = tab.max
     @candidat_valid = Candidat.find_by(resultat: tab.max)
-  	@avatar = @candidat.avatars.all   
+  	@avatar = @candidat.avatars.all
   end
 
   def new
@@ -123,7 +125,7 @@ class CandidatsController < ApplicationController
   	end
   	@candidat.region = region_candidat
   	@candidat.commune = commune_candidat
-  	
+
   	if @candidat.save
   		redirect_to commune_candidat_path(commune_candidat.id, @candidat.id)
   	else

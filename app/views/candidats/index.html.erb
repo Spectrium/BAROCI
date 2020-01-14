@@ -23,8 +23,8 @@
                             <%end%>
                         </div>
                         <h5><%= candidat.name %></h5>
-                        <span>Mouvence : <%= candidat.parti %></span>
-                        
+                        <span>Mouvance : <%= candidat.parti %></span>
+
                         <div class="our_skill_inner py-5">
                             <div class="single_skill">
                                 <div class="progress" data-value="<%=candidat.resultat %>">
@@ -58,7 +58,7 @@
                                             <strong></strong>
                                             <span class="percentage"></span>
                                             <h4>indébuté</h4>
-                                        </div> 
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6">
@@ -67,7 +67,7 @@
                                             <strong></strong>
                                             <span class="percentage"></span>
                                             <h4>En cours</h4>
-                                        </div> 
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-sm-6">
@@ -76,12 +76,12 @@
                                             <strong></strong>
                                             <span class="percentage"></span>
                                             <h4>Fini</h4>
-                                        </div> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </section> 
+                    </section>
                 </div>
                 <% end %>
             </div>
@@ -91,7 +91,7 @@
             <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"more_btn" %>
         </div>
     </section>
-    <!-- Our Team Area End -->   
+    <!-- Our Team Area End -->
 </div>
 <% if @total != 0 %>
 
@@ -118,7 +118,7 @@
 							<p class="t-color">Nom du candidat : <%= candidat.name %></p>
 							<p class="t-color">Mouvence : <%= candidat.parti %></p>
 						</div>
-						
+
 						<div class="title">
 						 <h4 class="dark">Résultat : <span class="float-right"><%= candidat.resultat %>%</span></h4>
 							<div class="progress mb-4">
@@ -136,5 +136,3 @@
 		<%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn-sondage" %>
 	</div>
 </section>  -->
-
-
