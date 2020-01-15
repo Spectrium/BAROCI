@@ -23,7 +23,7 @@ class CandidatsController < ApplicationController
           @suivi2 += ((@suivi.where(transition: true).count))
           @suivi3 += ((@suivi.where(finished: true).count) ) 
         end 
-      end 
+      end  
     end
   end
 
