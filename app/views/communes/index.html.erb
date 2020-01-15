@@ -10,7 +10,7 @@
         <th scope="col">Commune</th>
   	  <% if user_signed_in? %>
         <% if current_user.is_admins == true %>
-          <th scope="col">Edit</th>
+          <th scope="col">Editer</th>
           <th scope="col">Supprimer</th>
         <% end %>
   	  <% end %>
@@ -36,8 +36,7 @@
   </table>
   <% if user_signed_in? %>
     <% if current_user.is_admins == true %>
-      <%= link_to "créé une commune", new_region_commune_path(@region.id) ,class:'more_btn' %> <br> <br>
+      <%= link_to "créer une commune", new_region_commune_path(@region.id) ,class:'more_btn' %> <br> <br>
     <% end %>
   <% end %>
-
 </div>
