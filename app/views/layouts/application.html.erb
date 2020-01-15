@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sahy hifidy</title>
+    <title>BAROCI</title>
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -45,13 +45,13 @@
                   Créer
                 </a>
                 <ul class="dropdown-menu drop-pos-create" aria-labelledby="navbarDropdown">
-                  <li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">Créer actualité</a></li> 
+                  <li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">une actualité</a></li> 
                   <%if Daty.last == nil %>
-                    <li class="nav-item type"><a class="nav-link" href="<%= new_daty_path %>">Créer date</a></li>
+                    <li class="nav-item type"><a class="nav-link" href="<%= new_daty_path %>">la date du mandat</a></li>
                   <% else %>
                     <li class="nav-item type"><a class="nav-link" href="<%= daty_path(Daty.last.id) %>">éditer la date</a></li>
                   <% end %>
-                  <li class="nav-item type"><a class="nav-link" href="<%= new_candidat_path %>">Créer un candidat</a></li>
+                  <li class="nav-item type"><a class="nav-link" href="<%= new_candidat_path %>">un candidat</a></li>
                 </ul>
               </li>
             <% end %>
@@ -87,6 +87,7 @@
        <%= yield %>
     </div>
     <%= render "layouts/footer.html.erb" %>
+    
   </body>
     	<!-- Scripts -->
       <script src="https://kit.fontawesome.com/48ba21fe93.js"></script>

@@ -356,15 +356,15 @@ i:before {
 }
 
 .banner_inner_text {
-  padding-top: 200px;
+  /*padding-top: 200px;*/
   position: relative;
-  padding-bottom: 95px;
+  /*padding-bottom: 95px;*/
 }
 
 .banner_inner_text:before {
   content: "";
-  width: 213px;
-  height: 1px;
+  /*width: 213px;*/
+  /*height: 1px;*/
   position: absolute;
   background: #ced0e0;
   left: 0px;
@@ -1739,7 +1739,8 @@ i:before {
 /* Circle Chart Area css
 ============================================================================================ */
 .circle_chart_area {
-  padding: 85px 0px 80px 0px;
+  /*padding: 85px 0px 80px 0px;*/
+  padding: 0px 0px 0px 0px;
 }
 
 .circle_progress .circle_progress_inner {
