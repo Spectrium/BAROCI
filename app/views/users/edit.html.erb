@@ -1,15 +1,17 @@
-<div class="container">
-	<div class="row">
+<div class="container contenu">
+	<div class="row card ">
+		<div class="form-group">
 		<%= form_tag url_for(action:'update'), method:'put' do %><br>
-			Nom<br>
+		<label>Nom d'utilisateur</label>
 			<input type="text" name="name" value="<%= @user.full_name %>" ><br>
-			age
+		<label>Age</label>	
 			<input type="text" name="age" value="<%= @user.age %>" ><br>
-			cin
+		<label>CIN</label>
 			<input type="text" name="cin" value="<%= @user.cin %>" ><br>
-			adresse
+		<label>Adresse</label>
 			<input type="text" name="adress" value="<%= @user.adress %>" ><br>
-			<input type="submit" value="Enregistrer"><br>
+			<input type="submit" class="btn btn-success" value="Enregistrer"><br>
 		<%end%>
+		</div>
 	</div>
 </div>
