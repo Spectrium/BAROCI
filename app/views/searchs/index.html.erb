@@ -1,13 +1,37 @@
 <%if @resultat.length != 0 %>
-	<p>voici les resultats des recheches sur <%=@result1 %></p>
-	<% @resultat.each do |resultat|%>
-		<% @region = Region.where(communes: resultat)%>
-		<%@region.each do |region|%>
-			la commune
-				<%= link_to resultat.name.titleize, commune_candidats_path(resultat)%> 
-			dans la région <%= link_to region.name.titleize, region_communes_path(region)%> <br>
-		<%end%>
-	<%end%>
+	<div class="container text-center">
+		<h5 class="py-4">Resultats des recheches sur <%=@result1 %></h5>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Commune</th>
+					<th>Region</th>
+				</tr>
+			</thead>
+			<% i = 1%>
+			<tbody>
+				<% @resultat.each do |resultat|%>
+					<% @region = Region.where(communes: resultat)%>
+					<%@region.each do |region|%>
+						<tr>
+							<td><%= i %></td>
+							<td><%= link_to resultat.name.titleize, commune_candidats_path(resultat)%></td>
+							<td><%= link_to region.name.titleize, region_communes_path(region)%></td>
+						</tr>
+						<% i += 1%>
+					<%end%>
+				<%end%>
+			</tbody>
+		</table>
+	</div>
+
 <%else%>
- 	pas de resultat sur <%=@result1 %> 
+	<div class="no-resultat">
+		<img src="/assets/no1.jpeg">
+	 	<h1 class="text-white result-position">Aucun resultat trouvé<br> pour "<span class="text-info"><%=@result1 %></span>"</h1>
+	</div>
 <%end%>
+
+
+
