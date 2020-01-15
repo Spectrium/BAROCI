@@ -1,6 +1,4 @@
-<h1>Toutes les actualités</h1>
-
-<div class="container">
+<!-- <div class="container">
 	<p>
 		<% @actualite.each do |actualite| %>
 			<strong>Titre : </strong>
@@ -14,4 +12,36 @@
 			<br><br>
 		<% end %>
 	</p>
-</div>
+</div> -->
+
+<section class="banner_area">
+    <div class="container">
+        <div class="banner_inner_text">
+            <h3 class="py-5">Toutes les actualités</h3>
+        </div>
+    </div>
+</section>
+
+<!--================Blog Main Area =================-->
+        <section class="blog_main_area p_75">
+            <div class="container">
+                <div class="row">
+                	<% @actualite.each do |actualite| %>
+                    <div class="col-lg-9">
+                        <div class="blog_main_inner">
+                            <div class="blog_main_item">
+                                <!-- etp -->
+                                <div class="blog_text">
+                                    <a href="#"><h4><%= actualite.title %></h4></a>
+                                    
+                                    <p><%= actualite.description %> </p>
+                                    <a class="more_btn" href="#">Lire la suite</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </section>
+        <!--================End Blog Main Area =================-->
