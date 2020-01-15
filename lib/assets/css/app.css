@@ -25,7 +25,8 @@
 
 
 .map__list a{
-    color: inherit;
+    /*color: inherit;*/
+    color: #FFF;
     text-decoration: none;
     transition: color 0.3s;
     width: 100%;

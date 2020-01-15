@@ -1,3 +1,4 @@
+<h1>Ajouter un(e) canditat(e)</h1>
 <div class="new-candidat">
 	<div class="container content">
 	<%= form_tag url_for(action:'create'), method:'post' do %>
@@ -7,7 +8,7 @@
 				<input type="text" name="full_name" placeholder="Votre nom" class="form-control form-custom" id="name" >
 			</div>
 			<div class="form-group col-md-6">
-				<label for="mouvence">Mouvence</label>
+				<label for="mouvence">Mouvance</label>
 				<input type="text" name="mouvence" placeholder="Votre mouvence" class="form-control form-custom" id="mouvence" >
 			</div>
 		</div>
@@ -29,7 +30,7 @@
 		</div>			
 		<div class="form-row">
 			<div class="form-group col-md-12">
-				<input type="submit" value="Créer" class="btn btn-blue ripple trial-button form-control form-custom" id="create">
+				<input type="submit" value="Ajouter" class="btn btn-blue ripple trial-button form-control form-custom" id="create">
 			</div>			
 		</div>	
 	<%end%>

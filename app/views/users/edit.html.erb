@@ -2,6 +2,7 @@
 	<div class="row card ">
 		<div class="form-group">
 		<%= form_tag url_for(action:'update'), method:'put' do %><br>
+<<<<<<< HEAD
 		<label>Nom d'utilisateur</label>
 			<input type="text" name="name" value="<%= @user.full_name %>" ><br>
 		<label>Age</label>	
@@ -9,6 +10,15 @@
 		<label>CIN</label>
 			<input type="text" name="cin" value="<%= @user.cin %>" ><br>
 		<label>Adresse</label>
+=======
+			Nom et prénom(s)<br>
+			<input type="text" name="name" value="<%= @user.full_name %>" ><br>
+			Age
+			<input type="text" name="age" value="<%= @user.age %>" ><br>
+			CIN
+			<input type="text" name="cin" value="<%= @user.cin %>" ><br>
+			Adresse
+>>>>>>> a9d9c4d0cb3c680a5f828ad7e31cd3a20baadf7b
 			<input type="text" name="adress" value="<%= @user.adress %>" ><br>
 			<input type="submit" class="btn btn-success" value="Enregistrer"><br>
 		<%end%>

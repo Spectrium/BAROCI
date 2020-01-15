@@ -1,4 +1,4 @@
-<h1>Création des actualités</h1>
+<h1>Que pensez-vous ?</h1>
 <div class="container">
 	<div class="date  col-md-4">
 		<%= form_tag url_for(action:'create'), method:'post' do %><br>
@@ -6,7 +6,7 @@
 			<input type="text" class="form-control" name="title" placeholder="Titre" ><br>
 			Son contenu<br>
 			<textarea type="text" class="form-control" name="description" placeholder="Description..." ></textarea> <br>
-			<input type="submit" value="Créer" ><br>
+			<input type="submit" value="Ajouter" ><br>
 		<%end%>
 	</div>
 </div>

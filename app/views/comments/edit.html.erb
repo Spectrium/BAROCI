@@ -1,7 +1,7 @@
-<h2>Editer votre commentaire sur l'engagement "<%= @engagement.content %>"</h2>
+<h2>Modifier votre commentaire sur l'engagement "<%= @engagement.content %>"</h2>
 
 <%= form_tag url_for(action:'update'), method:'put' do %>
 	Votre commentaire
 	<input type="text" name="content" value="<%= @comment.content %>" >
-	<input type="submit" value="Ajouter" >
+	<input type="submit" value="Enregistrer" >
 <%end%>
