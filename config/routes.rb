@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :daties, path: '/date'
   resources :users, path: '/mon_profil',except: [:show] do
     resources :portraits, only: [:create]
+    member do
+      get :confirm_email
+    end
   end
 
 

@@ -1,0 +1,3 @@
+Hi <%= @user.full_name %>
+
+Merci de confirmer votre inscription, cliquer le lien suivant : <%= confirm_email_user_url(@user.confirm_token) %>
