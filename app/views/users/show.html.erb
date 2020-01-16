@@ -36,12 +36,12 @@
           <p class="-typo-copy -typo-copy--blue"><%= @user.adress %></p>
         </div>
         <div class="col-md-3">
-          <button class="btn btn--green">
-            <span class="btn__icon fa fa-pencil modif"></span>
+          <!-- <button class="btn btn--green"> -->
+            <!-- <span class="btn__icon fa fa-pencil modif"></span> -->
             <span class="btn__label"> <% if @user == current_user %>
-	            <%= link_to 'Modifier profil', edit_user_path(@user.id),class:"modif"  %> <br><% end %>   
+	            <%= link_to 'Modifier profil', edit_user_path(@user.id),class:"btn btn-primary"  %> <br><% end %>   
             </span>
-          </button>
+          <!-- </button> -->
           <% if current_user.is_admins == true %>
             <button class="btn btn-danger">
               <i class="fa fa-trash-alt supr "></i>
