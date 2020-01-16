@@ -111,12 +111,13 @@
           <h3 class="text-center p_60">Actualités</h3>
       </div>
       <div class="row justify-content-center">
-          <div class="col-lg-4">
-              <div class="blog_main_inner">
+          
 
                 <%if @actualite != nil%>
                   <%if @actualite.length < 4%>
                     <% for i in 0..@actualite.length-1%>
+                      <div class="col-lg-4">
+                        <div class="blog_main_inner">
                       <div class="blog_main_item">
                           <div class="blog_img">
                               <!-- <img class="img-fluid" src="img/blog/blog-1.jpg" alt=""> -->
@@ -132,28 +133,33 @@
                               </div>
                           </div>
                       </div>
+                      </div>
+                      </div>
                     <%end%>
                   <%else%>
                     <% for i in @actualite.length-4..@actualite.length-1%>
-                      <div class="blog_main_item">
-                          <div class="blog_img">
-                              <%if @actualite[i].actuphotos.attached?%>
-                                <%= image_tag (@actualite[i].actuphotos.last), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
-                              <%end%>
-                          </div>
-                          <div class="blog_text">
-                              <a href="#"><h4><%= @actualite[i].title%></h4></a>
-                              <p><%= @actualite[i].description%></p>
-                              <div class="text-center">
-                                <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>
-                              </div>
-                          </div>
+                        <div class="col-lg-4">
+                          <div class="blog_main_inner">
+                            <div class="blog_main_item">
+                                <div class="blog_img">
+                                    <%if @actualite[i].actuphotos.attached?%>
+                                      <%= image_tag (@actualite[i].actuphotos.last), class: 'w-100 actu-img' %>
+                                    <%end%>
+                                </div>
+                                <div class="blog_text">
+                                    <a href="#"><h4><%= @actualite[i].title%></h4></a>
+                                    <p><%= @actualite[i].description%></p>
+                                    <div class="text-center">
+                                      <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                       </div>
                     <%end%>
                   <%end%>
                 <%end%>
-              </div>
-          </div>
+              
       </div>
   </div>
 </section>
