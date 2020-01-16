@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root 'homes#index', as: "home"
 
   resources :daties, path: '/date'
-  resources :users, path: '/profil' do
+  resources :users, path: '/mon_profil' do
     resources :portraits, only: [:create]
   end
 
