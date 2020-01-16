@@ -34,8 +34,14 @@
                         </div>
                     </div>
                 </div>
-
-                <% if @total != 0 %>
+                <div>
+                  <%= link_to "Voir", commune_candidat_path(@commune.id, @candidat_valid.id), class: 'btn btn-info' %>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+       <% if @total != 0 %>
                   <section class="circle_chart_area">
                     <div class="row">
                         <div class="col-12 py-3">
@@ -113,10 +119,6 @@
                     </div>
                   </section>
                 <% end %>
-              </div>
-          </div>
-        </div>
-      </div>
       <div class="text-center py-3">
         <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"more_btn" %>
       </div>
