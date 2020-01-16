@@ -12,17 +12,19 @@ class CandidatsController < ApplicationController
     @suivi1 = 0 
     @suivi2 = 0 
     @suivi3 = 0 
-    @total = 0  
-    var = @candidat_valid.promesses.all 
-    if var.length != 0                    
-      var.each do |pro| 
-        @total += pro.suivis.count 
-        @suivi = Suivi.where(promess: pro)
-        @suivi1 += (@suivi.where(start: true)).count
-        @suivi2 += ((@suivi.where(transition: true).count))
-        @suivi3 += ((@suivi.where(finished: true).count) ) 
-      end 
-    end 
+    @total = 0
+    if @candidat.length != 0
+      var = @candidat_valid.promesses.all 
+      if var.length != 0                    
+        var.each do |pro| 
+          @total += pro.suivis.count 
+          @suivi = Suivi.where(promess: pro)
+          @suivi1 += (@suivi.where(start: true)).count
+          @suivi2 += ((@suivi.where(transition: true).count))
+          @suivi3 += ((@suivi.where(finished: true).count) ) 
+        end 
+      end  
+    end
   end
 
   def show

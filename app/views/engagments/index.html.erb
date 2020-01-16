@@ -5,7 +5,7 @@
 		Engagement <%= i %> : <%= engagement.content %> 
 		<% if user_signed_in? %>
 			<% if current_user.is_admins == true %>
-				<%= link_to "Edit", edit_promess_engagment_path(@promesse.id, engagement.id) %> | <%= link_to "Effacer", promess_engagment_path(@promesse.id, engagement.id), method:"delete" %>
+				<%= link_to "Editer", edit_promess_engagment_path(@promesse.id, engagement.id) %> | <%= link_to "Effacer", promess_engagment_path(@promesse.id, engagement.id), method:"delete" %>
 			<% end %>
 		<% end %>
 		<% i += 1 %>
