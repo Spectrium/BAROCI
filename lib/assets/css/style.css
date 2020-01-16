@@ -107,6 +107,13 @@ body, p, h1, h2, h3, h4, h5, h6 {
   padding: 60px 0px;
 }
 
+@media (max-width: 500px) {
+  .p_60 {
+    padding: 10px 0px;
+  }
+
+}
+
 iframe {
   border: none;
 }
