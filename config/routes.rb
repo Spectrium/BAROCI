@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
-
-  get 'searchs/index',as: "searchs"
+  get '/résultat', to: 'searchs#index',as: "searchs"
   post 'searchs/create',as: "search"
+  get '/mon_profil', to: 'users#show',as: "user"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
   
   root 'homes#index', as: "home"
 
   resources :daties, path: '/date'
-  resources :users, path: '/mon_profil' do
+  resources :users, path: '/mon_profil',except: [:show] do
     resources :portraits, only: [:create]
   end
 
 
 
-  resources :searchs, only: [:create,:index], path: '/résultat'
+  # resources :searchs, only: [:create,:index], path: '/résultat'
 
   resources :actualities, path: '/actualités' do
     resources :actuphotos, only: [:create]

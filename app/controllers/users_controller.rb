@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
 
 	before_action :authenticate_user!
-	before_action :is_user,except: [:index]
+	before_action :is_user,except: [:index,:show]
 	before_action :is_admin,only: [:destroy ,:index]
 
     def index
         @user = User.all
     end
     def show
-    	@user = User.find(params[:id])
+    	@user = User.find(current_user.id)
     end
     def edit
     	@user = User.find(params[:id])
