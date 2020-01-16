@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post 'searchs/create',as: "search"
   get '/mon_profil', to: 'users#show',as: "user"
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}, controllers: { confirmations: 'confirmations' }
   
   root 'homes#index', as: "home"
 
