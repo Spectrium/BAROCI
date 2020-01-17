@@ -31,16 +31,21 @@
 
 <%# compte à rebours %>
 
-<section>
-  <h1 class="py-2 cpt"> Temps restant </h1>
-    <div class="numbers">
-      <div class="bloc" id="years"></div>
-      <div class="bloc" id="months"></div>
-      <div class="bloc" id="days"></div>
-      <div class="bloc" id="hours"></div>
-      <div class="bloc" id="minutes"></div>
-      <div class="bloc last" id="seconds">0</div>
-	</div>
+<section class="container">
+    <div class="banner_inner_text">
+          <h3 class="text-center p_60">Temps restant</h3>
+      </div>
+    <div class="row justify-content-center pt-4 ">
+      <div class="col-md-10 d-flex justify-content-between">
+        <div class="bloc" id="years"></div>
+        <div class="bloc" id="months"></div>
+        <div class="bloc" id="days"></div>
+        <div class="bloc" id="hours"></div>
+        <div class="bloc" id="minutes"></div>
+        <div class="bloc last" id="seconds">0</div>
+        
+      </div>
+	   </div>  
 	<script>
     <% if @date != nil %>
 
@@ -92,7 +97,74 @@
 	</script>
 </section>
 
-<section>
+
+
+<!--================Actualité Area =================-->
+
+  
+<section class="blog_main_area">
+  <div class="container">
+      <div class="banner_inner_text">
+          <h3 class="text-center p_60">Actualités</h3>
+      </div>
+      <div class="row justify-content-center">
+          
+
+                <%if @actualite != nil%>
+                  <%if @actualite.length < 4%>
+                    <% for i in 0..@actualite.length-1%>
+                      <div class="col-lg-4">
+                        <div class="blog_main_inner">
+                      <div class="blog_main_item">
+                          <div class="blog_img">
+                              <!-- <img class="img-fluid" src="img/blog/blog-1.jpg" alt=""> -->
+                              <%if @actualite[i].actuphotos.attached?%>
+                                <%= image_tag (@actualite[i].actuphotos.last), class: 'img-fluid'%>
+                              <%end%>
+                          </div>
+                          <div class="blog_text">
+                              <a href="#"><h4><%= @actualite[i].title%></h4></a>
+                              <p><% for a in 0..65 do %><%= @actualite[i].description.split[a] %>  <%end%><% if @actualite[i].description.split.length-1 > 65 %>... <%end%></p>
+                              <div class="text-center">
+                                <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>                                          
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                      </div>
+                    <%end%>
+                  <%else%>
+                    <% for i in @actualite.length-4..@actualite.length-1%>
+                        <div class="col-lg-4">
+                          <div class="blog_main_inner">
+                            <div class="blog_main_item">
+                                <div class="blog_img">
+                                    <%if @actualite[i].actuphotos.attached?%>
+                                      <%= image_tag (@actualite[i].actuphotos.last), class: 'w-100 actu-img' %>
+                                    <%end%>
+                                </div>
+                                <div class="blog_text">
+                                    <a href="#"><h4><%= @actualite[i].title%></h4></a>
+                                    <p><%= @actualite[i].description%></p>
+                                    <div class="text-center">
+                                      <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    <%end%>
+                  <%end%>
+                <%end%>
+              
+      </div>
+  </div>
+</section>
+<!--================End Blog Main Area =================-->
+
+
+
+<!-- <section>
 	<div class="container">
 		<div class="row intro-tables">
 			<div class="col-md-12">
@@ -143,7 +215,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
 	<!--================Feature Area =================-->
 <section class="feature_area mb-5">
