@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     	end
     	@user.update(full_name: params[:name], age: params[:age], cin: params[:cin], adress: params[:adress] )
     	if @user.save
-    		redirect_to user_path(@user.id)
+    		redirect_to user_path
     	else
     		render 'new'
     	end

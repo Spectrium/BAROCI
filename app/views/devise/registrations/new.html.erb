@@ -1,40 +1,37 @@
- <section class="my-form">
+ <section>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
     <div class="container">
-      <h1>Inscription</h1>
-      <ul>
-        <li>
-          <div class="grid grid-2">
-            <%= f.text_field :full_name, autofocus: true, class: 'form-control', autocomplete: "Nom Complet",placeholder:"Name" %>
-              <%= f.email_field :email, autofocus: true, class: 'form-control', autocomplete: "email",placeholder:"Email" %>
-          </div>
-        </li>
-        <li>
-          <div class="grid grid-2">
-              <%= f.password_field :password, class: 'form-control', autocomplete: "new-password",placeholder:"Mots de passe" %>
-              <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password",placeholder:"Confirmer mots de passe" %>
-          </div>
-        </li>       
-        <li>
-          <input type="checkbox" id="terms">
-            <% if devise_mapping.rememberable? %>
-              <%= f.label :remember_me, class:"d" %>
-            <% end %>  
-          </label>
-        </li>  
-        
-        <li>
-          <div class="grid grid-3">
-            <button class="btn-grid" type="submit">
-              <!-- <span class="back">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/email-icon.svg" alt="">
-              </span>
- -->              <%= f.submit "S'inscrire", class:"btn btn-lg btn-primary btn-block" %>
-            </button>
-          </div>
-        </li>    
-      </ul>
+      <h1 class="text-center">Inscription</h1>
+      <div class="row mb-2">
+        <div class="col-md-6 text-dark">
+          <label for="nom-inscri">Nom :</label>
+          <%= f.text_field :full_name, autofocus: true, id:'nom-inscri', class: 'form-control', autocomplete: "Nom Complet",placeholder:"Nom" %>
+        </div>
+        <div class="col-md-6 text-dark">
+          <label for="email-inscri">Email :</label>
+            <%= f.email_field :email, autofocus: true, id:'email-inscri',class: 'form-control', autocomplete: "email",placeholder:" adressee-mail" %>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6 text-dark">
+          <label for="password-inscri">Mot de passe :</label>
+          <%= f.password_field :password, class: 'form-control', id:'password-inscri', autocomplete: "new-password",placeholder:"Mots de passe" %>
+        </div>
+        <div class="col-md-6 text-dark">
+          <label for="password-inscri-confirm">confirmer le mot de passe :</label>
+          <%= f.password_field :password_confirmation, id:'password-inscri-confirm',class: 'form-control', autocomplete: "new-password",placeholder:"Confirmer mots de passe" %>
+        </div>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox", id="terms">
+          <% if devise_mapping.rememberable? %>
+            <%= f.label :remember_me %>
+          <% end %>
+      </div>  
+      <div class="text-center">
+         <%= f.submit "S'inscrire", class:"more_btn_edi" %>
+      </div>
     </div>
    <% end %>
    <%= render "devise/shared/links" %>

@@ -1,57 +1,46 @@
-<div class="container">
-  <div class="row -spacing-a">
+<div class="container mb-4">
+  <div class="row text-center m-4">
     <div class="col-md-12">
       <h1>Votre profil</h1>
     </div>
   </div>
-  <div class="row -spacing-a">
+  <div class="row justify-content-center">
     <div class="col-md-4">
       <div class="profile-image">
         <%if @user.portrait.attached?%>
-            <%= image_tag @user.portrait, class:"imagauto", alt: 'avatar' %>
+            <%= image_tag @user.portrait, width:'350px', class:"rounded-circle", alt: 'avatar' %>
         <%else%>
             <img src="https://robohash.org/68.186.255.198.png" alt="" class="imagauto">
-        <%end%><br>
-        <%= form_tag user_portraits_path(@user), multipart: true do %>
+        <%end%>
+        <%= form_tag user_portraits_path(@user), class:'m-4', multipart: true do %>
           <%= file_field_tag :portrait %>
-          <%= submit_tag "mettre à jour" %>
+          <%= submit_tag "changer ma photo de profil", class:'more_btn_edi mt-2' %>
         <% end %>  
       </div>
     </div>
-    <div class="col-md-8">
-      <h5> Votre information</h5>
-      <div class="row -spacing-b">
-        <div class="col-md-3">
-          <p class="-typo-copy">Nom d'utilisateur</p>
-          <p class="-typo-copy">Email</p>
-          <% if @user.age != nil && @user.age !="" %><p class="-typo-copy">Age</p><% end %> 
-          <% if @user.cin != nil && @user.cin !="" %><p class="-typo-copy">CIN</p><% end %> 
-          <% if @user.adress != nil && @user.adress !="" %><p class="-typo-copy">Adresse</p><% end %> 
-        </div>
-        <div class="col-md-3">
-          <p class="-typo-copy -typo-copy--blue"><%= @user.full_name  %></p>
-          <p class="-typo-copy -typo-copy--blue"><%= @user.email %></p>
-          <p class="-typo-copy -typo-copy--blue"><%= @user.age  %></p>
-          <p class="-typo-copy -typo-copy--blue"><%= @user.cin %></p>
-          <p class="-typo-copy -typo-copy--blue"><%= @user.adress %></p>
-        </div>
-        <div class="col-md-3">
-          <!-- <button class="btn btn--green"> -->
-            <!-- <span class="btn__icon fa fa-pencil modif"></span> -->
-            <span class="btn__label"> <% if @user == current_user %>
-	            <%= link_to 'Modifier profil', edit_user_path(@user.id),class:"btn btn-primary"  %> <br><% end %>   
-            </span>
-          <!-- </button> -->
-          <% if current_user.is_admins == true %>
-            <button class="btn btn-danger">
-              <i class="fa fa-trash-alt supr "></i>
-              <span class="btn__label">
-  	            <%= link_to 'Supprimer ce compte', user_path(@user.id) , method:'delete', class:"modif" , data:{confirm:'Etes-vous sure bordel de merde'} %>
-              </span>
-            </button>
-          <% end %>
-        </div>
-      </div>
-    </div>  
+      <div class="col-md-3 pr-0 pt-5">
+        <h5>À propos</h5>
+        <p><span class="text-secondary">Nom d'utilisateur : </span><%= @user.full_name  %></p>
+        <p><span class="text-secondary">Email : </span><%= @user.email %></p>
+        <% if @user.age != nil && @user.age !="" %>
+          <p><span class="text-secondary">Age : </span><%= @user.age  %> ans</p>
+        <% end %> 
+        <% if @user.cin != nil && @user.cin !="" %>
+          <p><span class="text-secondary">CIN : </span><%= @user.cin %></p>
+        <% end %> 
+        <% if @user.adress != nil && @user.adress !="" %>
+          <p><span class="text-secondary">Adresse : </span><%= @user.adress %></p>
+        <% end %> 
+        <% if @user == current_user %>
+          <div class="m-2">
+            <%= link_to 'Modifier profil', edit_user_path(@user.id),class:"more_btn_edi"  %>
+          </div>
+        <% end %>
+        <% if current_user.is_admins == true %>
+          <div class="m-2">
+              <%= link_to 'Supprimer ce compte', user_path(@user.id) , method:'delete', class:"more_btn_sup" , data:{confirm:'Etes-vous sure bordel de merde'} %>              
+          </div>
+        <% end %>
+      </div>  
   </div>
 </div>

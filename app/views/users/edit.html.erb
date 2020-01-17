@@ -1,17 +1,32 @@
-<div class="container contenu">
-	<div class="row card ">
-		<div class="form-group">
-		<%= form_tag url_for(action:'update'), method:'put' do %><br>
-			<label>Nom d'utilisateur</label>
-			<input type="text" name="name" value="<%= @user.full_name %>" ><br>
-			<label>Age</label>	
-			<input type="text" name="age" value="<%= @user.age %>" ><br>
-			<label>CIN</label>
-			<input type="text" name="cin" value="<%= @user.cin %>" ><br>
-			<label>Adresse</label>
-			<input type="text" name="adress" value="<%= @user.adress %>" ><br>
-			<input type="submit" class="btn btn-success" value="Enregistrer"><br>
-		<%end%>
+<div class="contenu">
+	<div class="row  justify-content-center">
+		<div class="text-center col-lg-12">
+			<h3>Modifier votre profil</h3>
 		</div>
+		<%= form_tag url_for(action:'update'), class: 'contact_us_form col-lg-9 row', id: 'contactForm', method:'put' do %>
+			<div class="form-group col-lg-6">
+				<label for="name" class="text-secondary">Nom d'utilisateur</label>
+				<input type="text" placeholder="Nom" id="name" name="name" class="form-control" value="<%= @user.full_name %>" >
+			</div>
+
+			<div class="form-group col-lg-6">
+				<label for="age" class="text-secondary">Age</label>	
+				<input type="text" placeholder="Age" id="age" name="age" class="form-control" value="<%= @user.age %>" >
+			</div>
+
+			<div class="form-group col-lg-6">
+				<label for="cin" class="text-secondary">CIN</label>
+				<input type="text" placeholder="n° CIN" id="cin" name="cin" class="form-control" value="<%= @user.cin %>" >				
+			</div>
+
+			<div class="form-group col-lg-6">
+				<label for="adress" class="text-secondary">Adresse</label>
+				<input type="text" placeholder="Adresse" id="adress" name="adress" class="form-control" value="<%= @user.adress %>" >	
+			</div>
+				<div class="mx-auto m-4">
+					<input type="submit" class="more_btn_edi" value="Enregistrer">	
+				</div>
+			</div>
+		<%end%>
 	</div>
 </div>
