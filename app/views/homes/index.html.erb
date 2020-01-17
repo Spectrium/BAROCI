@@ -124,7 +124,7 @@
                           </div>
                           <div class="blog_text">
                               <a href="#"><h4><%= @actualite[i].title%></h4></a>
-                              <p><% for a in 0..65 do %><%= @actualite[i].description.split[a] %>  <%end%><% if @actualite[i].description.split.length-1 > 65 %>... <%end%></p>
+                              <p><% for a in 0..15 do %><%= @actualite[i].description.split[a] %>  <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p>
                               <div class="text-center">
                                 <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>                                          
                               </div>
