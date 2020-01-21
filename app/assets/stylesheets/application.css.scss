@@ -25,33 +25,33 @@
  *= require assets/css/devise
  */
 html, body {
-	height: 100%;
-	margin: 0; padding: 0;
+  height: 100%;
+  margin: 0; padding: 0;
 }/*
 body {
-	display : table !important;
-	width: 100%;
+  display : table !important;
+  width: 100%;
 }*/
 #footer {
-	display : table-row !important;
-	height: 50px;
+  display : table-row !important;
+  height: 50px;
   position: relative;
 }
 
 .yield{
-	position: relative;
-	top: 60px;
+  position: relative;
+  top: 60px;
   padding-bottom: 60px;
 }
 .drop-pos{
-	top: 87px !important;
+  top: 87px !important;
 }
 .drop-pos-create{
-	top: 87px !important;
+  top: 87px !important;
 }
 
 i{
-	font-size: 30px !important;
+  font-size: 30px !important;
 }
 
 .search-cust{
