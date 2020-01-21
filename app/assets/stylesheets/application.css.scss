@@ -25,33 +25,33 @@
  *= require assets/css/devise
  */
 html, body {
-	height: 100%;
-	margin: 0; padding: 0;
+  height: 100%;
+  margin: 0; padding: 0;
 }/*
 body {
-	display : table !important;
-	width: 100%;
+  display : table !important;
+  width: 100%;
 }*/
 #footer {
-	display : table-row !important;
-	height: 50px;
+  display : table-row !important;
+  height: 50px;
   position: relative;
 }
 
 .yield{
-	position: relative;
-	top: 60px;
+  position: relative;
+  top: 60px;
   padding-bottom: 60px;
 }
 .drop-pos{
-	top: 87px !important;
+  top: 87px !important;
 }
 .drop-pos-create{
-	top: 87px !important;
+  top: 87px !important;
 }
 
 i{
-	font-size: 30px !important;
+  font-size: 30px !important;
 }
 
 .search-cust{
@@ -63,14 +63,6 @@ i{
   color: #000;
   transition: 0.3s;
 }
-
-@media (max-width: 991px){
-  .search-cust:hover{
-  color: #97ccfe;
-  transition: 0.3s;
-}
-}
-
 
 .search{
   width: 130px;
@@ -118,7 +110,11 @@ i{
 .place-center{
   text-align: center;
 }
-@media (max-width: 991px){
+@media screen and (max-width: 991px){
+  .search-cust:hover{
+    color: #97ccfe;
+    transition: 0.3s;
+  }
 .logo {
   width: 16%;
   height: 130%;
@@ -141,7 +137,29 @@ i{
 .imagauto{
   width: 350px;
 }
+.video{
+  width: 600px;
+  height: 300px; 
+}
 /*responsive commandes*/
+@media screen and (min-width: 420px) and (max-width: 720px){
+  /*.section{
+    width: 600px;
+  }*/
+  .video{
+    width: 500px;
+    height: 250px; 
+  }
+}
+@media screen and (min-width: 420px) and (max-width: 530px){
+  /*.section{
+    width: 600px;
+  }*/
+  .video{
+    width: 400px;
+    height: 220px; 
+  }
+}
 @media screen and (min-width: 200px) and (max-width: 420px){
   .imagauto{
     width: 280px;
@@ -149,4 +167,9 @@ i{
   .d-flex{
     flex-wrap: wrap;
   }
+  .video{
+    width: 350px;
+    height: 150px; 
+  }
+  
 }
