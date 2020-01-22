@@ -80,7 +80,8 @@
 												</div>
 												<div class="row justify-content-center mb-4">
 													<div class="">
-													<%= link_to "Voir les commentaires", new_engagment_comment_path(engagement.id), class: 'more_btn' %>
+													<%= link_to "Voir les commentaires(#{engagement.comments.all.count})", new_engagment_comment_path(engagement.id), class: 'more_btn' %>
+
 													</div>
 												</div>
 						        	</div>

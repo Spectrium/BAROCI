@@ -1,0 +1,6 @@
+//document.getElementById("commentss").insertAdjacentHTML("beforeend", "<%= j render 'comment', comment: @comment %>")
+
+$(document).ready(function(){
+    $("#commentss").append("<%= j render 'comment', comment: @comment %>")
+    $("#btn-content").val("");
+});
