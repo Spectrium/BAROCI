@@ -42,8 +42,12 @@ class CommentsController < ApplicationController
 
   def destroy
   	@comment = Comment.find(params[:id])
+  	# redirect_to new_engagment_comment_path(params[:engagment_id])
+    respond_to do |format|
+      format.html { redirect_to books_path }
+      format.js { }
+    end
   	@comment.destroy
-  	redirect_to new_engagment_comment_path(params[:engagment_id])
   end
 
   private
