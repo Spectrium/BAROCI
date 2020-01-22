@@ -15,9 +15,13 @@ class CommentsController < ApplicationController
   def create
   	@comment = Comment.new(content: params[:content], user_id: current_user.id, engagment_id: params[:engagment_id])
   	if @comment.save
-  		redirect_to new_engagment_comment_path(params[:engagment_id])
-  	else
-  		render "new"
+  	# 	redirect_to new_engagment_comment_path(params[:engagment_id])
+  	# else
+  	# 	render "new"
+      respond_to do |format|
+        format.html { redirect_to books_path }
+        format.js { }
+      end
   	end
   end
 
@@ -38,8 +42,12 @@ class CommentsController < ApplicationController
 
   def destroy
   	@comment = Comment.find(params[:id])
+  	# redirect_to new_engagment_comment_path(params[:engagment_id])
+    respond_to do |format|
+      format.html { redirect_to books_path }
+      format.js { }
+    end
   	@comment.destroy
-  	redirect_to new_engagment_comment_path(params[:engagment_id])
   end
 
   private
