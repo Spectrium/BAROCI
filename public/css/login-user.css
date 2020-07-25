@@ -1,0 +1,26 @@
+.box-login {
+  margin: 30px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.box-login .box-login-image {
+  width: 48%;
+}
+
+.box-login .box-login-image img {
+  width: 100%;
+}
+
+.box-login .box-login-form {
+  background-color: #dfdfdf;
+  box-shadow: 1px 1px 10px 1px #dfdfdf;
+  padding: 20px;
+}
+
+.box-login .log-submit {
+  padding: 5px 25px;
+  margin-top: 15px;
+}

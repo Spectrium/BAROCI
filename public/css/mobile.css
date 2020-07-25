@@ -1,0 +1,83 @@
+@media screen and (min-width: 320px) {
+  .box-login {
+    width: 100%;
+  }
+  .box-login .box-login-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .box-login .box-login-image {
+    display: none;
+  }
+  .box-signup {
+    width: 100%;
+  }
+  .box-signup .box-signup-image {
+    display: none;
+  }
+  .box-signup .sign-up {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .box-signup .sign-up .sp-flex {
+    flex-wrap: wrap;
+  }
+  .box-signup .sign-up .sp-flex .sp-flex1,
+  .box-signup .sign-up .sp-flex .sp-flex2 {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .box-login {
+    width: 90%;
+  }
+  .box-login .box-login-form {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .box-login .box-login-image {
+    display: none;
+  }
+  .box-signup {
+    width: 90%;
+  }
+  .box-signup .sign-up .sp-flex {
+    flex-wrap: nowrap;
+  }
+  .box-signup .sign-up .sp-flex .sp-flex1,
+  .box-signup .sign-up .sp-flex .sp-flex2 {
+    width: 49%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .box-login {
+    width: 70%;
+    box-shadow: 1px 1px 10px 1px grey;
+  }
+  .box-login .box-login-form {
+    width: 48%;
+  }
+  .box-login .box-login-image {
+    align-self: center;
+    display: block;
+  }
+  .box-signup {
+    box-shadow: 1px 1px 10px 1px grey;
+  }
+  .box-signup .sign-up {
+    width: 60%;
+  }
+  .box-signup .sign-up .sp-flex {
+    flex-wrap: nowrap;
+  }
+  .box-signup .sign-up .sp-flex .sp-flex1,
+  .box-signup .sign-up .sp-flex .sp-flex2 {
+    width: 48%;
+  }
+  .box-signup .box-signup-image {
+    display: block;
+    align-self: center;
+  }
+}

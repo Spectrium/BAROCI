@@ -1,96 +1,92 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BAROCI</title>
-      <%= csrf_meta_tags %>
-      <%= csp_meta_tag %>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-      <script src="https://kit.fontawesome.com/48ba21fe93.js"></script>
-      
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="/css/mobile.css" />
+    <script src="https://kit.fontawesome.com/48ba21fe93.js"></script>
   </head>
 
   <body>
-  <!--================Header Menu Area =================-->
-  <header class="main_menu_area fixed-top">
-   <nav class="navbar navbar-expand-lg">
-    <!-- page accueil -->
-          <a class="logo" href="<%= home_path %>">
+    <!--================Header Menu Area =================-->
+    <header class="main_menu_area fixed-top">
+      <nav class="navbar navbar-expand-lg">
+        <!-- page accueil -->
+        <a class="logo" href="<%= home_path %>">
           <%= image_tag "logoo.png" ,class:"imglogo"%>
-          </a>
+        </a>
 
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span></span>
-              <span></span>
-              <span></span>
-          </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <!-- bar de recherche -->
-          <li class=" place-center">
-            <%= form_tag search_path, method:"post"  do %><br>
-              <input type="text" placeholder="Search Commune.." name="search" class="search">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <!-- bar de recherche -->
+            <li class="place-center">
+              <%= form_tag search_path, method:"post" do %><br />
+              <input type="text" placeholder="Search Commune.." name="search" class="search" />
               <button class="search-sub" type="submit"><i class="fas fa-search search-cust"></i></button>
-            <%end%>
-          </li>
-          <!-- dropdown creation pour admin -->
-          <% if user_signed_in?%> 
-            <% if current_user.is_admins == true%>
-              <li class="nav-item dropdown submenu place-center">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Créer
-                </a>
-                <ul class="dropdown-menu drop-pos-create" aria-labelledby="navbarDropdown">
-                  <li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">une actualité</a></li> 
-                  <%if Daty.last == nil %>
-                    <li class="nav-item type"><a class="nav-link" href="<%= new_daty_path %>">la date du mandat</a></li>
-                  <% else %>
-                    <li class="nav-item type"><a class="nav-link" href="<%= daty_path(Daty.last.id) %>">éditer la date</a></li>
-                  <% end %>
-                  <li class="nav-item type"><a class="nav-link" href="<%= new_candidat_path %>">un candidat</a></li>
-                </ul>
-              </li>
-            <% end %>
-          <% end %>
-<!-- actualité et region -->
-          <li class="nav-item place-center"><a class="nav-link" href="<%= actualities_path %>">Actualités</a></li>
-          <li class="nav-item place-center"><a class="nav-link" href="<%= regions_path %>" >Région</a></li>
-<!-- dropdown pour compte -->
-          <li class="nav-item dropdown submenu place-center">
+              <%end%>
+            </li>
+            <!-- dropdown creation pour admin -->
+            <% if user_signed_in?%> <% if current_user.is_admins == true%>
+            <li class="nav-item dropdown submenu place-center">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <% if user_signed_in?%>
-                Mon profil
-              <% else %>
-                Connexion
-              <% end %>
-            </a>
-            <ul class="dropdown-menu drop-pos" aria-labelledby="navbarDropdown">
-              <% if user_signed_in?%>
-                <a class="nav-link" href="<%=user_path(current_user.id)%>"><li class="nav-item type"><a class="nav-link" href="<%=user_path%>">Mon profil</a></li></a>
-                <a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete"><li class="nav-item type"><a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete">Se déconnecter</a></li></a>
-              <% else%>
-                <a class="nav-link" href="<%=new_user_session_path%>"><li class="nav-item type"><a class="nav-link" href="<%=new_user_session_path%>">Se connecter</a></li></a>
-                <a class="nav-link" href="<%=new_user_registration_path%>"><li class="nav-item type"><a class="nav-link" href="<%=new_user_registration_path%>">S'inscrire</a></li></a>
-              <% end%>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!--================End Header Menu Area =================-->
+                Créer
+              </a>
+              <ul class="dropdown-menu drop-pos-create" aria-labelledby="navbarDropdown">
+                <li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">une actualité</a></li>
+                <%if Daty.last == nil %>
+                <li class="nav-item type"><a class="nav-link" href="<%= new_daty_path %>">la date du mandat</a></li>
+                <% else %>
+                <li class="nav-item type"><a class="nav-link" href="<%= daty_path(Daty.last.id) %>">éditer la date</a></li>
+                <% end %>
+                <li class="nav-item type"><a class="nav-link" href="<%= new_candidat_path %>">un candidat</a></li>
+              </ul>
+            </li>
+            <% end %> <% end %>
+            <!-- actualité et region -->
+            <li class="nav-item place-center"><a class="nav-link" href="<%= actualities_path %>">Actualités</a></li>
+            <li class="nav-item place-center"><a class="nav-link" href="<%= regions_path %>">Région</a></li>
+            <!-- dropdown pour compte -->
+            <li class="nav-item dropdown submenu place-center">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <% if user_signed_in?%> Mon profil <% else %> Connexion <% end %>
+              </a>
+              <ul class="dropdown-menu drop-pos" aria-labelledby="navbarDropdown">
+                <% if user_signed_in?%>
+                <a class="nav-link" href="<%=user_path(current_user.id)%>"
+                  ><li class="nav-item type"><a class="nav-link" href="<%=user_path%>">Mon profil</a></li></a
+                >
+                <a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete"
+                  ><li class="nav-item type"><a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete">Se déconnecter</a></li></a
+                >
+                <% else%>
+                <a class="nav-link" href="<%=new_user_session_path%>"
+                  ><li class="nav-item type"><a class="nav-link" href="<%=new_user_session_path%>">Se connecter</a></li></a
+                >
+                <a class="nav-link" href="<%=new_user_registration_path%>"
+                  ><li class="nav-item type"><a class="nav-link" href="<%=new_user_registration_path%>">S'inscrire</a></li></a
+                >
+                <% end%>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!--================End Header Menu Area =================-->
     <div class="yield">
-      <%= yield %>
+      <%= yield %> <%= render "layouts/footer.html.erb" %>
     </div>
-      <%= render "layouts/footer.html.erb" %>
-    
-      <%= javascript_include_tag 'app' %>
+    <%= javascript_include_tag 'app' %>
   </body>
-    	<!-- Scripts -->
-      <script src="https://kit.fontawesome.com/48ba21fe93.js"></script>
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/48ba21fe93.js"></script>
 </html>

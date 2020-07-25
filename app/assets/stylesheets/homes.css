@@ -1,0 +1,25 @@
+.head {
+  background: image-url("ext.jpg");
+  background-size: cover;
+  padding: 20px;
+  height: 600px;
+}
+
+.header-text {
+  width: 60%;
+  color: #fff;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.topten {
+  background: #AAA;
+  padding: 100px;
+  text-align: center;
+  font-size: 100px;
+}
+
+.actu-img {
+  height: 196px;
+}
