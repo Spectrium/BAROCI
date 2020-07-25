@@ -1,0 +1,30 @@
+/* page survey */
+.head-center {
+  text-align: center;
+}
+
+.pro-center {
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+.candidat {
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+  border-bottom: solid 2px #868e96;
+}
+
+.promesse-content {
+  margin-top: 10px;
+}
+
+.engagement {
+  padding: 10px;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+ul, ol {
+  list-style-type: none;
+}

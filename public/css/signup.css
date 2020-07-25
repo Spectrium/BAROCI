@@ -1,0 +1,36 @@
+.box-signup {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 15px auto;
+}
+
+.box-signup .sign-up {
+  background-color: #dfdfdf;
+  box-shadow: 1px 1px 10px 1px #dfdfdf;
+  padding: 20px;
+}
+
+.box-signup .sign-up .sp-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-signup .sign-up h1 {
+  margin-bottom: 10px;
+}
+
+.box-signup .sign-up .log-submit {
+  padding: 5px 30px;
+  margin-top: 15px;
+}
+
+.box-signup .box-signup-image {
+  align-self: center;
+  width: 40%;
+}
+
+.box-signup .box-signup-image img {
+  width: 100%;
+}

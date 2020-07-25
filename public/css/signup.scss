@@ -1,0 +1,31 @@
+.box-signup {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 15px auto;
+  .sign-up {
+    // width: 60%;
+    background-color: rgb(223, 223, 223);
+    box-shadow: 1px 1px 10px 1px rgb(223, 223, 223);
+    padding: 20px;
+    .sp-flex {
+      display: flex;
+      justify-content: space-between;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .log-submit {
+      padding: 5px 30px;
+      margin-top: 15px;
+    }
+  }
+  .box-signup-image {
+    align-self: center;
+    width: 40%;
+    img {
+      width: 100%;
+    }
+  }
+}
