@@ -1,5 +1,5 @@
 .head {
-  background: image-url("ext.jpg");
+  background: url("ext.jpg");
   background-size: cover;
   padding: 20px;
   height: 600px;
@@ -14,7 +14,7 @@
 }
 
 .topten {
-  background: #AAA;
+  background: #aaa;
   padding: 100px;
   text-align: center;
   font-size: 100px;
