@@ -1,3 +1,49 @@
+.signup-link-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.signup-link-flex .sign-lf-1 {
+  width: 40%;
+}
+
+.omniauth {
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.omniauth .facebook-link,
+.omniauth .google-link {
+  position: relative;
+  width: 270px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 5px 0;
+  background-color: white;
+}
+
+.omniauth .facebook-link:hover, .omniauth .facebook-link:active,
+.omniauth .google-link:hover,
+.omniauth .google-link:active {
+  box-shadow: 1px 1px 5px 1px #aaaaaa;
+}
+
+.omniauth .facebook-link a,
+.omniauth .google-link a {
+  padding: 8px 40px;
+}
+
+.omniauth .facebook-link img,
+.omniauth .google-link img {
+  width: 35px;
+  left: 2px;
+  top: 1px;
+  position: absolute;
+}
+
 @media screen and (min-width: 320px) {
   .box-login {
     width: 100%;

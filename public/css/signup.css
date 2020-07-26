@@ -22,8 +22,9 @@
 }
 
 .box-signup .sign-up .log-submit {
+  cursor: pointer;
   padding: 5px 30px;
-  margin-top: 15px;
+  margin-top: 4px;
 }
 
 .box-signup .box-signup-image {

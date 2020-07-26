@@ -42,11 +42,11 @@ body {
 }
 
 .yield {
-  min-height: 99.6vh;
+  min-height: 99.1vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 65px;
+  padding-top: 64px;
 }
 
 .drop-pos {
