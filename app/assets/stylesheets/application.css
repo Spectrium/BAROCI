@@ -35,6 +35,10 @@ body {
   display : table !important;
   width: 100%;
 }*/
+.fixed {
+  width: 100%;
+}
+
 #footer {
   display: table-row !important;
   height: 50px;
