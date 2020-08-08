@@ -13,35 +13,40 @@
 		<% end %>
 	</p>
 </div> -->
-
+<!-- call css  -->
+<link rel="stylesheet" href="/css/actue.css" />
+<!-- body html  -->
 <section class="banner_area">
-    <div class="container">
-        <div class="banner_inner_text">
-            <h3 class="py-5">Toutes les actualités</h3>
-        </div>
+  <div class="container">
+    <div class="banner_inner_text">
+      <center>
+        <h3 class="py-5">Toutes les actualités</h3>
+      </center>
     </div>
+  </div>
 </section>
 
 <!--================Blog Main Area =================-->
-        <section class="blog_main_area p_75">
-            <div class="container">
-                <div class="row">
-                	<% @actualite.each do |actualite| %>
-                    <div class="col-lg-9">
-                        <div class="blog_main_inner">
-                            <div class="blog_main_item">
-                                <!-- etp -->
-                                <div class="blog_text">
-                                    <a href="#"><h4><%= actualite.title %></h4></a>
-                                    
-                                    <p><%= actualite.description %> </p>
-                                    <a class="more_btn" href="#">Lire la suite</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <% end %>
-                </div>
+<section class="blog_main_area p_75">
+  <div class="container">
+    <div class="row">
+      <% @actualite.each do |actualite| %>
+      <div class="col-lg-12 m-3">
+        <div class="blog_main_inner">
+          <div class="blog_main_item">
+            <!-- etp -->
+            <div class="blog_text">
+              <a href="<%= actuality_path(actualite) %>"><h4><%= actualite.title %></h4></a>
+              <%if actualite.actuphotos.attached?%> <%= image_tag (actualite.actuphotos.last),id:'img-actu-index'%> <%end%>
+
+              <p><% for a in 0..50 do %><%= actualite.description.split[a] %> <%end%><% if actualite.description.split.length-1 > 50 %>... <%end%></p>
+              <a class="more_btn" href="<%= actuality_path(actualite) %>">Lire la suite</a>
             </div>
-        </section>
-        <!--================End Blog Main Area =================-->
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+<!--================End Blog Main Area =================-->
