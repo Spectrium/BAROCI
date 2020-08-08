@@ -1,3 +1,6 @@
+<!-- call css  -->
+<link rel="stylesheet" href="/css/accuei.css" />
+<!-- body html  -->
 <header class="row head align-items-center">
   <div class="header-text text-center">
     <div class="col-md-12">
@@ -94,7 +97,7 @@
           <div class="blog_main_item">
             <div class="blog_img">
               <!-- <img class="img-fluid" src="img/blog/blog-1.jpg" alt=""> -->
-              <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last), class: 'img-fluid'%> <%end%>
+              <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last), class: 'img-fluid',id:'img-actu'%> <%end%>
             </div>
             <div class="blog_text">
               <a href="#"><h4><%= @actualite[i].title%></h4></a>
