@@ -20,7 +20,6 @@
     padding: 10px;
   }
   .footer-logo {
-    background: red;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -35,7 +34,7 @@
     }
   }
   .footer-acces {
-    background: green;
+    align-self: flex-start;
     a {
       color: white;
       display: block;
@@ -46,9 +45,7 @@
     }
   }
   .footer-contact {
-    background: yellow;
     .tel {
-      background: green;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -74,13 +71,15 @@
       justify-content: center;
       li {
         margin: 10px;
+        i {
+          color: white;
+        }
       }
     }
   }
   .copyright {
     width: 100%;
     padding: 25px;
-    background: red;
     a:hover {
       color: #db00b7;
     }

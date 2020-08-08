@@ -1,30 +1,21 @@
-<h1>A propos de cette actualitée</h1>
-<div class="container">
-	<p>
-		<strong>Titre : </strong>
-		<%= @actualite.title %><br>
-		<strong>Description : </strong><br>
-		<%= @actualite.description %><br><br>
-		
-	</p>
+<!-- call css  -->
+<link rel="stylesheet" href="/css/actue.css" />
+<!-- body html  -->
+
+<h4 class="text-center p-5">A propos de cette actualitée</h4>
+<div class="container mb-5">
+  <p>
+    <p class="text-center " id="Font-actue"> <strong> <%= @actualite.title %></strong></p>
+    <br />
+    <%= @actualite.description %><br /><br />
+  </p>
 
   <%if @actualite.actuphotos.attached?%>
-	<div class="tab-pane" id="edit">
-     <% @actuphoto.each do |photo|%>
-      <%= image_tag  photo, class:"tailimg" %>
-      <%end%>
-    </div>
-  <%end%>
-
-	<% if user_signed_in?%> 
-    	<% if current_user.is_admins == true%>
-			<h3>Ajouter des photos</h3>
-			<%= form_tag actuality_actuphotos_path(@actualite), multipart: true do %>
-				<%= file_field_tag :actuphoto %>
-				<%= submit_tag "mettre à jour" , class:"btn btn-success" %>
-			<% end %>
-			<%= link_to "Editer", edit_actuality_path(@actualite.id) %><br>
-			<%= link_to "Supprimer", actuality_path(@actualite.id), method:"delete" %>
-	  <%end%>
-	<%end%>
+  <div class="tab-pane" id="edit">
+    <% @actuphoto.each do |photo|%> <%= image_tag photo, class:"tailimg" %> <%end%>
+  </div>
+  <%end%> <% if user_signed_in?%> <% if current_user.is_admins == true%>
+  <h3>Ajouter des photos</h3>
+  <%= form_tag actuality_actuphotos_path(@actualite), multipart: true do %> <%= file_field_tag :actuphoto %> <%= submit_tag "mettre à jour" , class:"btn btn-success" %> <% end %> <%= link_to "Editer", edit_actuality_path(@actualite.id) %><br />
+  <%= link_to "Supprimer", actuality_path(@actualite.id), method:"delete" %> <%end%> <%end%>
 </div>
