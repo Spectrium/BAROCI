@@ -1,0 +1,102 @@
+#footer {
+  display: table-row !important;
+  width: 100%;
+}
+
+.footer-copyright {
+  overflow: hidden;
+  background: #104547;
+  text-align: center;
+  color: white;
+  line-height: 1.5;
+}
+
+.footer-copyright .title {
+  text-transform: uppercase;
+  color: white;
+  padding: 10px;
+}
+
+.footer-copyright .footer-flex {
+  padding: 10px;
+}
+
+.footer-copyright .footer-logo {
+  background: red;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-copyright .footer-logo a:hover {
+  padding: 0;
+}
+
+.footer-copyright .footer-logo img {
+  width: 130px;
+  height: 130px;
+}
+
+.footer-copyright .footer-acces {
+  background: green;
+}
+
+.footer-copyright .footer-acces a {
+  color: white;
+  display: block;
+  margin: 10px;
+}
+
+.footer-copyright .footer-acces a:hover {
+  color: #db00b7;
+}
+
+.footer-copyright .footer-contact {
+  background: yellow;
+}
+
+.footer-copyright .footer-contact .tel {
+  background: green;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-copyright .footer-contact .tel li {
+  margin: 5px 0;
+}
+
+.footer-copyright .footer-contact img {
+  margin-right: 20px;
+  margin-left: -38px;
+  width: 20px;
+  height: 20px;
+}
+
+.footer-copyright .footer-contact .logomail {
+  height: 12px;
+}
+
+.footer-copyright .footer-contact p {
+  margin: 5px 0;
+}
+
+.footer-copyright .footer-contact .footer-social {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-copyright .footer-contact .footer-social li {
+  margin: 10px;
+}
+
+.footer-copyright .copyright {
+  width: 100%;
+  padding: 25px;
+  background: red;
+}
+
+.footer-copyright .copyright a:hover {
+  color: #db00b7;
+}
