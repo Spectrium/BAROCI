@@ -96,8 +96,8 @@
   </div>
 </div>
 
-<div class="boutton-flex">
-  <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn btn-radius btn-brd effect-1" %>
+<div class="boutton-flex mb-5">
+  <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn btn-radius btn-brd effect-1 pl-0" %>
   <% if user_signed_in? %>
   <% if current_user.is_admins == true %>
   <%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id), class:"btn btn-radius btn-brd effect-1" %>
