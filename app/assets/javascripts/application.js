@@ -10,11 +10,41 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 
-
+//= require jquery
+//= require jquery_ujs
 //= require rails-ujs
+
+//= require vendor/modernizr-3.5.0.min
+//= require vendor/jquery-1.12.4.min
+//= require popper.min
+//= require bootstrap.min
+//= require owl.carousel.min
+//= require isotope.pkgd.min
+//= require ajax-form
+//= require waypoints.min
+//= require jquery.counterup.min
+//= require imagesloaded.pkgd.min
+//= require scrollIt
+//= require jquery.scrollUp.min
+//= require wow.min
+//= require nice-select.min
+//= require jquery.slicknav.min
+//= require jquery.magnific-popup.min
+//= require plugins
+//= require gijgo.min
+//= require slick.min
+//= require contact
+//= require jquery.ajaxchimp.min
+//= require jquery.form
+//= require jquery.validate.min
+//= require mail-script
+//= require main
 
 //= require activestorage
 //= require turbolinks
-
 //= require_tree .
 
+
+$(document).ready(function() {
+    alert('Thanks for visiting!');
+   });
