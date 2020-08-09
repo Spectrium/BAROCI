@@ -1,27 +1,6 @@
-<!-- call css  -->
-<link rel="stylesheet" href="/css/accuei.css" />
-<!-- body html  -->
-<header class="row head align-items-center">
-  <div class="header-text text-center">
-    <div class="col-md-12">
-      <h1 class="tp-caption tp-resizeme first_text">Mon droit, ma voix, mon vote</h1>
-    </div>
-  </div>
-</header>
 
-<!-- <section>
-    <div class="topten">
-        <strong>
-            Top 10 le eto
-        </strong>
-    </div>
-</section> -->
-
-<%# compte à rebours %>
-
-<section class="container">
-  <div class="banner_inner_text">
-    <h3 class="text-center p_60">Temps restant</h3>
+  <h1 class="tp-caption tp-resizeme first_text">Mon droit, ma voix, mon vote</h1>
+   Temps restant
   </div>
   <div class="row justify-content-center pt-4 ml-3">
     <div class="col-md-10 d-flex justify-content-between">
@@ -81,149 +60,51 @@
 
     	}
   </script>
-</section>
 
-<!--================Actualité Area =================-->
+  <h3 class="text-center p_60">Actualités</h3>
+    <%if @actualite != nil%> <%if @actualite.length < 4%> 
+      <% for i in 0..@actualite.length-1%>
+        <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last), class: 'img-fluid',id:'img-actu'%> 
+        <%end%>
 
-<section class="blog_main_area">
-  <div class="container">
-    <div class="banner_inner_text">
-      <h3 class="text-center p_60">Actualités</h3>
-    </div>
-    <div class="row justify-content-center">
-      <%if @actualite != nil%> <%if @actualite.length < 4%> <% for i in 0..@actualite.length-1%>
-      <div class="col-lg-4">
-        <div class="blog_main_inner">
-          <div class="blog_main_item">
-            <div class="blog_img">
-              <!-- <img class="img-fluid" src="img/blog/blog-1.jpg" alt=""> -->
-              <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last), class: 'img-fluid',id:'img-actu'%> <%end%>
-            </div>
-            <div class="blog_text">
-              <a href="#"><h4><%= @actualite[i].title%></h4></a>
-              <p><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p>
-              <div class="text-center">
-                <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <%end%> <%else%> <% for i in @actualite.length-4..@actualite.length-1%>
-      <div class="col-lg-4">
-        <div class="blog_main_inner">
-          <div class="blog_main_item">
-            <div class="blog_img">
-              <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last), class: 'w-100 actu-img' %> <%end%>
-            </div>
-            <div class="blog_text">
+        <a href="#"><h4><%= @actualite[i].title%></h4></a>
+        <% for a in 0..15 do %><%= @actualite[i].description.split[a] %> 
+        <%end%>
+
+        <% if @actualite[i].description.split.length-1 > 15 %>... 
+        <%end%>
+          <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>   
+      <%end%> 
+    <%else%> 
+    
+      <% for i in @actualite.length-4..@actualite.length-1%>
+          <%if @actualite[i].actuphotos.attached?%> 
+            <%= image_tag (@actualite[i].actuphotos.last), class: 'w-100 actu-img' %> 
+            <%end%>       
               <a href="#"><h4><%= @actualite[i].title%></h4></a>
               <p><%= @actualite[i].description%></p>
-              <div class="text-center">
-                <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <%end%> <%end%> <%end%>
-    </div>
-  </div>
-</section>
-<!--================End Blog Main Area =================-->
+            <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>
+          <%end%> 
+      <%end%> 
+    <%end%> 
 
-<!-- <section>
-	<div class="container">
-		<div class="row intro-tables">
-			<div class="col-md-12">
-				<div class="intro-table intro-table-first">
-					<h5 class="white heading">Actualités</h5>
-            <%if @actualite != nil%>
-              <%if @actualite.length < 4%>
-                <% for i in 0..@actualite.length-1%>
-                  <div class="card mb-5">
-                    <div class="row no-gutters">
-                      <div class="col-md-2">
-                        <%if @actualite[i].actuphotos.attached?%>
-                          <%= image_tag (@actualite[i].actuphotos.last), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
-                        <%end%>
-                      </div>
-                      <div class="col-md-10">
-                        <div class="card-body">
-                          <h5 class="card-title"><%= @actualite[i].title%></h5>
-                          <span class="card-text text-muted"><% for a in 0..65 do %><%= @actualite[i].description.split[a] %>  <%end%><% if @actualite[i].description.split.length-1 > 65 %>... <%end%></span>
-                          <span class="card-text"><small class="text-muted"><%= link_to "voir plus", actuality_path(@actualite[i]) %></small></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <%end%>
-              <%else%>
-  						  <% for i in @actualite.length-4..@actualite.length-1%>
-                  <div class="card mb-5">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <%if @actualite[i].actuphotos.attached?%>
-                          <%= image_tag (@actualite[i].actuphotos.last), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
-                        <%end%> 
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title"><%= @actualite[i].title%></h5>
-                          <p class="card-text text-muted"><%= @actualite[i].description%></p>
-                          <p class="card-text"><small class="text-muted"><%= link_to "voir", actuality_path(@actualite[i]) %></small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <%end%>
-    					<%end%>
-						<%end %>
-				</div>
-			</div>
-		</div>
-	</div>
-</section> -->
+  <h6>Visions</h6>
+  <h3>L'integrité des leaders et des institutions, et la participation citoyenne garante du développement durable à Madagascar</h3>
 
-<!--================Feature Area =================-->
-<section class="feature_area mb-5">
-  <div class="container pb-3">
-    <div class="c_title">
-      <!-- <img src="img/icon/title-icon.png" alt=""> -->
-      <h6>Visions</h6>
-      <h3>L'integrité des leaders et des institutions, et la participation citoyenne garante du développement durable à Madagascar</h3>
-    </div>
-    <div class="row feature_inner">
-      <div class="col-lg-4 col-sm-6">
-        <div class="feature_item">
-          <div class="f_icon">
-            <%= image_tag "guru-blue.png",class:"icon" %>
-          </div>
-          <h4>Mission 1</h4>
-          <p>Eduquer à l'integrité et à la transparance.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="feature_item">
-          <div class="f_icon">
-            <img src="img/icon/f-icon-2.png" alt="" />
-          </div>
-          <h4>Mission 2</h4>
-          <p>Promouvoir la participation de la jeunesse.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="feature_item">
-          <div class="f_icon">
-            <%= image_tag "weight-blue.png",class:"icon" %>
-          </div>
-          <h4>Mission 3</h4>
-          <p>Réclamer la redevabilité des élus.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <%= image_tag "guru-blue.png",class:"icon" %>
+      
+      <h4>Mission 1</h4>
+      <p>Eduquer à l'integrité et à la transparance.</p>
+
+        <img src="img/icon/f-icon-2.png" alt="" />
+
+      <h4>Mission 2</h4>
+      <p>Promouvoir la participation de la jeunesse.</p>
+
+        <%= image_tag "weight-blue.png",class:"icon" %>
+      
+      <h4>Mission 3</h4>
+      <p>Réclamer la redevabilité des élus.</p>
 
 <%# carte de madagascar %>
 <section class="py-4">
@@ -448,36 +329,4 @@
   </div>
 </section>
 
-<!-- <section class="section section-padded blue-bg">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="owl-twitter owl-carousel">
-					<div class="item text-center">
-						<i class="icon fa fa-twitter"></i>
-						<h4 class="white light">
-							<%= image_tag  "medem.png", class:"image-car" %>
-						</h4>
-					</div>
-			
-					<div class="item text-center">
-						<i class="icon fa fa-twitter"></i>
-						<h4 class="white light">
-							<%= image_tag  "Miel-2.JPG", class:"image-car" %>
-						</h4>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section> -->
 
-<section>
-  <div class="container">
-    <div class="row justify-content-around">
-      <div><%= image_tag "spectre-logo.png", width: '200px' %></div>
-      <div><a href="https://medem.mg/" target="_blank"><%= image_tag "medem-logo.png", width: '150px' %></a></div>
-      <div><a href="https://www.facebook.com/miel.mouvement/" target="_blank"><%= image_tag "miel-logo.png", width: '200px' %></a></div>
-    </div>
-  </div>
-</section>

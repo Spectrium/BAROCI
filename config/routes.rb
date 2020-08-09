@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   end
 
 
-
   # resources :searchs, only: [:create,:index], path: '/résultat'
 
   resources :actualities, path: '/actualités' do
