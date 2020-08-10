@@ -22,6 +22,11 @@
  *= require slick
  *= require slicknav
  *= require style
+ *= require app
+ *= require comptes
+ *= require devise
+ *= require responsive
+ 
  
  *= require_tree .
  *= require_self
