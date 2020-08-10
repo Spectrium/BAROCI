@@ -3854,6 +3854,9 @@ h3 {
   -o-transition: 0.3s;
   transition: 0.3s;
   margin-bottom: 30px;
+  background: #f9f9f9;
+	border-radius: 5px;
+	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
 }
 
 /* line 13, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_service.scss */
@@ -3906,8 +3909,9 @@ h3 {
 
 /* line 46, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_service.scss */
 .service_area .single_service:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
-  border-color: transparent;
+  background: #f9f9f9;
+	border-radius: 5px;
+	box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
 }
 
 /* line 51, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_service.scss */
