@@ -11,3 +11,10 @@ li.count span{
     display: block;
     font-size: 4.5em;
 }
+
+a#logo{
+    color: white;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: thick;
+    font-size: xx-large;
+}

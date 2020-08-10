@@ -9,16 +9,14 @@
     position: relative;
       overflow-x: hidden;
 }
-.new_footer_area .footer_bottom {
-    padding-top: 5px;
-    padding-bottom: 50px;
-}
+
 .footer_bottom {
     font-size: 14px;
     font-weight: 300;
     line-height: 20px;
     color: #7f88a6;
     padding: 27px 0px;
+    background-color: #2c2c2c;
 }
 .new_footer_top .company_widget p {
     font-size: 16px;
@@ -199,5 +197,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.color{
+    color: #fff908f2;
+}
+
+.color:hover{
+    color: white;
+}
 /*************footer End*****************/
 
