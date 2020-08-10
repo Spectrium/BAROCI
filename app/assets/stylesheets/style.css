@@ -1441,7 +1441,7 @@ h3 {
 .about_info_area .about_text h3 {
   font-size: 46px;
   font-weight: 300;
-  color: #001D38;
+  color: #4a9cf6;
 }
 
 @media (max-width: 767px) {
@@ -1455,7 +1455,7 @@ h3 {
 .about_info_area .about_text p {
   font-size: 15px;
   font-weight: 400;
-  color: #727272;
+  color: white;
   margin-bottom: 24px;
   margin-top: 10px;
 }
@@ -3893,6 +3893,8 @@ h3 {
   font-weight: 300;
   margin-top: 35px;
   margin-bottom: 23px;
+  font-style: oblique;
+  font-weight: bold;
 }
 
 /* line 34, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_service.scss */
