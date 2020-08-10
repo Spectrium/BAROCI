@@ -194,17 +194,17 @@ h3 {
 
 /* line 132, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/theme-default.scss */
 .bg-img-1 {
-  background-image: url(../img/slider/slider-img-1.jpg);
+  background-image: url('slider-img-1.jpg');
 }
 
 /* line 135, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/theme-default.scss */
 .bg-img-2 {
-  background-image: url(../img/background-img/bg-img-2.jpg);
+  background-image: url('bg-img-2.jpg');
 }
 
 /* line 138, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/theme-default.scss */
 .cta-bg-1 {
-  background-image: url(../img/background-img/bg-img-3.jpg);
+  background-image: url('bg-img-3.jpg');
 }
 
 /* line 143, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/theme-default.scss */
@@ -1314,12 +1314,12 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/banner.png);
+  background-image: url('banner/banner.png');
 }
 
 /* line 4, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_slider.scss */
 .slider_bg_2 {
-  background-image: url(../img/banner/banner_2.png);
+  background-image: url('banner/banner_2.png');
 }
 
 /* line 8, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_slider.scss */
@@ -1510,7 +1510,7 @@ h3 {
 
 /* line 27, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_counter.scss */
 .counter_bg_1 {
-  background-image: url(../img/about/counter.png);
+  background-image: url('counter.png');
 }
 
 /* line 31, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_counter.scss */
@@ -1833,7 +1833,7 @@ h3 {
 
 /* line 2, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_testmonial.scss */
 .testimonial_area {
-  background-image: url(../img/banner/testmonial.png);
+  background-image: url('testmonial.png');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1909,7 +1909,7 @@ h3 {
 
 /* line 61, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_testmonial.scss */
 .Information_area {
-  background-image: url(../img/banner/info_banner.png);
+  background-image: url('info_banner.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -2697,7 +2697,7 @@ h3 {
 
 /* line 84, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_offers.scss */
 .video_bg {
-  background-image: url(../img/video/video.png);
+  background-image: url('video.png');
 }
 
 /* line 87, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_offers.scss */
@@ -3449,7 +3449,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_bradcam.scss */
 .bradcam_bg_1 {
-  background-image: url(../img/banner/bradcam.png);
+  background-image: url('bradcam.png');
 }
 
 /* line 4, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_bradcam.scss */
@@ -4172,12 +4172,12 @@ h3 {
 
 /* line 36, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_emergency_contact.scss */
 .emergency_bg_1 {
-  background-image: url(../img/banner/emergency-1.png);
+  background-image: url('emergency-1.png');
 }
 
 /* line 39, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_emergency_contact.scss */
 .emergency_bg_2 {
-  background-image: url(../img/banner/emergency-2.png);
+  background-image: url('emergency-2.png');
 }
 
 /*=================== contact banner start ====================*/
@@ -5281,7 +5281,7 @@ h6 {
 
 /* line 798, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_elements.scss */
 .primary-checkbox input:checked + label {
-  background: url(../img/elements/primary-check.png) no-repeat center center/cover;
+  background: url('primary-check.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -5323,7 +5323,7 @@ h6 {
 
 /* line 835, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_elements.scss */
 .confirm-checkbox input:checked + label {
-  background: url(../img/elements/success-check.png) no-repeat center center/cover;
+  background: url('success-check.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -5371,7 +5371,7 @@ h6 {
 
 /* line 876, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_elements.scss */
 .disabled-checkbox input:checked + label {
-  background: url(../img/elements/disabled-check.png) no-repeat center center/cover;
+  background: url('disabled-check.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -5413,7 +5413,7 @@ h6 {
 
 /* line 913, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_elements.scss */
 .primary-radio input:checked + label {
-  background: url(../img/elements/primary-radio.png) no-repeat center center/cover;
+  background: url('primary-radio.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -5455,7 +5455,7 @@ h6 {
 
 /* line 950, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_elements.scss */
 .confirm-radio input:checked + label {
-  background: url(../img/elements/success-radio.png) no-repeat center center/cover;
+  background: url('success-radio.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -5503,7 +5503,7 @@ h6 {
 
 /* line 991, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_elements.scss */
 .disabled-radio input:checked + label {
-  background: url(../img/elements/disabled-radio.png) no-repeat center center/cover;
+  background: url('disabled-radio.png') no-repeat center center/cover;
   border: none;
 }
 
@@ -7320,5 +7320,3 @@ h6 {
   margin-right: 10px;
   font-size: 12px;
 }
-
-/*# sourceMappingURL=style.css.map */

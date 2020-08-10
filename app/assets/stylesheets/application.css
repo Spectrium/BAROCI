@@ -27,7 +27,7 @@
  *= require devise
  *= require responsive
  *= require countdown
- 
+ *= require footer
  *= require_tree .
  *= require_self
 

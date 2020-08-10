@@ -79,7 +79,7 @@
                 <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="single_service text-center">
                         <div class="service_icon">
-                            <img src="img/svg_icon/1.svg" alt="">
+                          <%= image_tag "1.svg" %>
                         </div>
                         <h3>Marketing & SEO Agency</h3>
                         <p>Esteem spirit temper too say adieus who direct esteem.</p>
@@ -89,7 +89,7 @@
                 <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="single_service text-center">
                         <div class="service_icon">
-                            <img src="img/svg_icon/2.svg" alt="">
+                          <%= image_tag "2.svg" %>
                         </div>
                         <h3>Startup Agency</h3>
                         <p>Esteem spirit temper too say adieus who direct esteem.</p>
@@ -99,7 +99,7 @@
                 <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="single_service text-center">
                         <div class="service_icon">
-                            <img src="img/svg_icon/3.svg" alt="">
+                          <%= image_tag "3.svg" %>
                         </div>
                         <h3>Corporate Business</h3>
                         <p>Esteem spirit temper too say adieus who direct esteem.</p>
@@ -197,27 +197,27 @@
   </div>
 
 
- <div class="about_info_area">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-lg-6 pb-5">
-                       <div class="row justify-content-center ml-3">
-                            <div class="d-flex justify-content-between">
+<div class="about_info_area">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-xl-6 col-lg-6 pb-5">
+        <div class="row justify-content-center ml-3">
+          <div class="d-flex justify-content-between">
+            
+                  
+                        <ul>
+                          <li class="count"><span id="days"></span>days</li>
+                          <li class="count"><span id="hours"></span>Hours</li>
+                          <li class="count"><span id="minutes"></span>Minutes</li>
+                          <li class="count"><span id="seconds"></span>Seconds</li>
+                          
+                        </ul>
                       
-                   
-                                <ul>
-                                  <li class="count"><span id="days"></span>days</li>
-                                  <li class="count"><span id="hours"></span>Hours</li>
-                                  <li class="count"><span id="minutes"></span>Minutes</li>
-                                  <li class="count"><span id="seconds"></span>Seconds</li>
-                                </ul>
-                             
-                            </div>
-                          </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="about_thumb">
-                   
 
                               <div class="about_text">
                         <h3>Event Name</h3>
@@ -231,6 +231,7 @@
         </div>
     </div>
   </div>
+
 
   <h3 class="text-center p_60">Actualités</h3>
     <%if @actualite != nil%> <%if @actualite.length < 4%> 
@@ -472,5 +473,7 @@
     });
   </script>
 </section>
+
+
 
 
