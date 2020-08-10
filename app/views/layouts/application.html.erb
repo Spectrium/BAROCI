@@ -10,11 +10,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
  </head>
-
-  <body>
  
-  <%
+  <body>
+<%
 =begin%>
+ 
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <ul class="navbar-nav">
@@ -26,7 +26,8 @@
           <%end%>
         </li>
         <!-- dropdown creation pour admin -->
-        <% if user_signed_in?%> <% if current_user.is_admins == true%>
+        <% if user_signed_in?%> 
+        <% if current_user.is_admins == true%>
         <li class="nav-item dropdown submenu place-center">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Créer
@@ -41,7 +42,8 @@
             <li class="nav-item type"><a class="nav-link" href="<%= new_candidat_path %>">un candidat</a></li>
           </ul>
         </li>
-        <% end %> <% end %>
+        <% end %> 
+      <% end %>
         <!-- actualité et region -->
         <li class="nav-item place-center"><a class="nav-link" href="<%= actualities_path %>">Actualités</a></li>
         <li class="nav-item place-center"><a class="nav-link" href="<%= regions_path %>">Région</a></li>
@@ -52,9 +54,9 @@
           </a>
           <ul class="dropdown-menu drop-pos" aria-labelledby="navbarDropdown">
             <% if user_signed_in?%>
-            <a class="nav-link" href="<%=user_path(current_user.id)%>"
-              ><li class="nav-item type"><a class="nav-link" href="<%=user_path%>">Mon profil</a></li></a
-            >
+            <a class="nav-link" href="<%=user_path(current_user.id)%>">
+              <li class="nav-item type"><a class="nav-link" href="<%=user_path%>">Mon profil</a></li></a>
+        
             <a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete"
               ><li class="nav-item type"><a class="nav-link" href="<%=destroy_user_session_path%>" data-method="delete">Se déconnecter</a></li></a
             >
@@ -69,69 +71,11 @@
           </ul>
         </li>
       </ul>
-  </div>  
+ </div>    
 <%
 =end%>
 
-    <!-- header-start -->
-    <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container">
-                    <div class="header_bottom_border">
-                        <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
-                                <div class="logo">
-                                    <a href="index.html">
-                                        <img src="img/logo.png" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-7">
-                                <div class="main-menu  d-none d-lg-block">
-                                    <nav>
-                                        <ul id="navigation">
-                                            <li><a class="active" href="index.html">home</a></li>
-                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                        <li><a href="case_details.html">case details</a></li>
-                                                        <li><a href="about.html">about</a></li>
-                                                        <li><a href="elements.html">elements</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="services.html">Services</a></li>
-                                            <li><a href="study.html">Case study</a></li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                                <div class="Appointment">
-                                    <div class="book_btn d-none d-lg-block">
-                                        <a  href="#">Get a Quote</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- header-end -->
-
-
+    <%= render "layouts/NavBar.html.erb" %>
     <div class="yield">
       <%= yield %> 
       <%= render "layouts/footer.html.erb" %>

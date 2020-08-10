@@ -1,0 +1,72 @@
+<!-- header-start -->
+<header>
+  <div class="header-area ">
+    <div id="sticky-header" class="main-header-area">
+      <div class="container">
+        <div class="header_bottom_border">
+          <div class="row align-items-center">
+              <div class="col-xl-3 col-lg-2">
+                <div class="logo">
+                  <a href="">
+                      <%= image_tag  "logo.png" %> 
+                  </a>
+                </div>
+              </div>
+              <div class="col-xl-6 col-lg-7">
+                <div class="main-menu  d-none d-lg-block">
+                  <nav>
+                    <ul id="navigation">
+                      <li><a class="active" href="index.html">Accueil</a></li>
+                      <li><a href="services.html">Actualité</a></li>
+                      <% if user_signed_in?%> 
+                        <% if current_user.is_admins == true%>
+                          <li><a href="#">Ajouter<i class="ti-angle-down"></i></a>
+                              <ul class="submenu">
+                                <li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">une actualité</a></li>
+                                <%if Daty.last == nil %>
+                                <li class="nav-item type"><a class="nav-link" href="<%= new_daty_path %>">la date du mandat</a></li>
+                                <% else %>
+                                <li class="nav-item type"><a class="nav-link" href="<%= daty_path(Daty.last.id) %>">éditer la date</a></li>
+                                <% end %>
+                                <li class="nav-item type"><a class="nav-link" href="<%= new_candidat_path %>">un candidat</a></li>
+                              </ul>
+                          </li>
+                        <% end %> 
+                      <% end %>
+                  </nav>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                <div class="Appointment">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <% if user_signed_in?%> Mon profil 
+                      <% else %> Connexion 
+                      <% end %>
+                    </button>
+
+                  <% if user_signed_in?%>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="<%=user_path(current_user.id)%>">Profil</a>
+                      <a class="dropdown-item" href="<%=destroy_user_session_path%>" data-method="delete">Se Déconnecter</a>
+                    </div>
+                  <% else %>  
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="<%=new_user_session_path%>">Se connecter</a>
+                      <a class="dropdown-item" href="<%=new_user_registration_path%>" data-method="delete">S'inscrire</a>
+                    </div>
+                  <% end %>
+                  </div>
+                </div>
+              </div>
+                </ul>
+              <div class="col-12">
+                  <div class="mobile_menu d-block d-lg-none"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- header-end -->
