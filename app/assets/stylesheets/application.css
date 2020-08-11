@@ -48,6 +48,7 @@
   height: 35px;
   box-sizing: border-box;
   border-style: none;
+  outline: none;
   border-bottom: 2px solid #ccc;
   border-radius: 3px;
   font-size: 16px;
@@ -59,8 +60,11 @@
 
 .search:focus {
   width: 65%;
+  outline: none;
 }
-
+.yield {
+  padding-top: 150px;
+}
 .search-sub {
   background-color: transparent;
   border: 0;
