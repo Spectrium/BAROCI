@@ -11,7 +11,6 @@
 // about supported directives.
 
 //= require jquery
-//= require jquery_ujs
 //= require rails-ujs
 
 //= require vendor/modernizr-3.5.0.min
