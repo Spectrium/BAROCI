@@ -7,7 +7,7 @@
           <div class="row align-items-center">
               <div class="col-xl-3 col-lg-2">
                 <div class="logo">
-                  <a id="logo" href="">
+                  <a id="logo" href="<%= home_path %>">
                       BAROCI .
                   </a>
                 </div>
@@ -16,11 +16,18 @@
                 <div class="main-menu d-none d-lg-block">
                   <nav>
                     <ul id="navigation">
-                      <li><a class="active" href="index.html">Accueil</a></li>
-                      <li><a href="services.html">Actualité</a></li>
+                      <!-- bar de recherche -->
+                      <li class="place-center">
+                        <%= form_tag search_path, method:"post" do %><br />
+                        <input type="text" placeholder="Search Commune.." name="search" class="search" />
+                        <button class="search-sub" type="submit"><i class="fa fa-search search-cust"></i></button>
+                        <%end%>
+                      </li>
+                      <li><a class="active" href="<%= home_path %>">Accueil</a></li>
+                      <li><a href="<%= actualities_path %>">Actualité</a></li>
                       <% if user_signed_in?%> 
                         <% if current_user.is_admins == true%>
-                          <li><a href="#">Ajouter<i class="ti-angle-down"></i></a>
+                          <li><a>Ajouter<i class="ti-angle-down"></i></a>
                               <ul class="submenu">
                                 <li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">une actualité</a></li>
                                 <%if Daty.last == nil %>

@@ -32,3 +32,53 @@
  *= require_self
 
  */
+
+.search-cust {
+  font-size: 20px !important;
+  color: #fff;
+}
+
+.search-cust:hover {
+  color: #000;
+  transition: 0.3s;
+}
+
+.search {
+  width: 130px;
+  height: 35px;
+  box-sizing: border-box;
+  border-style: none;
+  border-bottom: 2px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  background-color: transparent;
+  padding: 10px 20px 10px 0px;
+  transition: width 0.4s ease-in-out;
+  color: white;
+}
+
+.search:focus {
+  width: 65%;
+}
+
+.search-sub {
+  background-color: transparent;
+  border: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .search-cust:hover {
+    color: #97ccfe;
+    transition: 0.3s;
+  }
+}
+
+/*responsive commandes*/
+@media screen and (min-width: 420px) and (max-width: 720px) {
+}
+
+@media screen and (min-width: 420px) and (max-width: 530px) {
+}
+
+@media screen and (min-width: 200px) and (max-width: 420px) {
+}
