@@ -1,3 +1,7 @@
+.omniauth {
+  background: red;
+}
+
 .box-signup {
   display: flex;
   flex-wrap: nowrap;
