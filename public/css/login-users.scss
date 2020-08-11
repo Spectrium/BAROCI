@@ -1,7 +1,6 @@
-@import 'linkdevise';
 .box-login {
-  background-color: red;
-  margin: 40px auto;
+  margin: 130px auto;
+  margin-bottom: 0px;
   padding: 12px;
   display: flex;
   justify-content: space-between;
@@ -16,7 +15,6 @@
     background-color: rgb(223, 223, 223);
     box-shadow: 1px 1px 10px 1px rgb(223, 223, 223);
     padding: 15px;
-    background: red;
   }
   .log-submit {
     padding: 5px 25px;

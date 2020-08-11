@@ -2,7 +2,7 @@
   <%- if controller_name != 'sessions' %> <%= link_to "Se connecter", new_session_path(resource_name) %><br />
   <% end %>
   <div class="signup-link-flex">
-    <div class="sign-lf-1">
+    <div class="sign-lf">
       <%- if devise_mapping.registerable? && controller_name != 'registrations' %> <%= link_to "S'inscrire", new_registration_path(resource_name) %> <% end %>
     </div>
     <div class="sign-lf-1">
@@ -16,13 +16,13 @@
       <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
     <% end %>  -->
   <div class="omniauth">
-    <div class="facebook-link">
+    <div class="facebook-link omniauth-btn">
       <a href="<%= user_facebook_omniauth_authorize_path%>" class="btn-omniauth">
         <img src="/images/facebook.png" alt="facebook" />
         <%- if controller_name != 'sessions' %> S'inscrire <% end %> <%- if devise_mapping.registerable? && controller_name != 'registrations' %> Se connecter <% end %> avec facebook
       </a>
     </div>
-    <div class="google-link">
+    <div class="google-link omniauth-btn">
       <a href="<%= user_google_oauth2_omniauth_authorize_path %>" class="btn-omniauth">
         <img src="/images/google.png" alt="" />
         <%- if controller_name != 'sessions' %> S'inscrire <% end %> <%- if devise_mapping.registerable? && controller_name != 'registrations' %> Se connecter <% end %> avec google

@@ -2,13 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 15px;
 }
 
 .signup-link-flex .sign-lf-1 {
-  width: 40%;
+  width: 47%;
 }
 
 .omniauth {
+  margin-top: 15px;
   display: flex;
   justify-content: space-around;
   align-content: space-around;
@@ -18,10 +20,10 @@
 .omniauth .facebook-link,
 .omniauth .google-link {
   position: relative;
-  width: 270px;
+  width: 350px;
   margin-bottom: 5px;
   border-radius: 5px;
-  padding: 5px 0;
+  padding: 10px 0;
   background-color: white;
 }
 
@@ -33,15 +35,20 @@
 
 .omniauth .facebook-link a,
 .omniauth .google-link a {
-  padding: 8px 40px;
+  padding: 10px 60px;
 }
 
 .omniauth .facebook-link img,
 .omniauth .google-link img {
-  width: 35px;
+  width: 40px;
   left: 2px;
-  top: 1px;
+  top: 2px;
   position: absolute;
+}
+
+.sign-up .omniauth .facebook-link,
+.sign-up .omniauth .google-link {
+  width: 320px;
 }
 
 @media screen and (min-width: 320px) {

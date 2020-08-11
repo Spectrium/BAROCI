@@ -2,12 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 15px;
   .sign-lf-1 {
-    width: 40%;
+    width: 47%;
   }
 }
 .omniauth {
-  // margin-top: 5px;
+  margin-top: 15px;
   display: flex;
   justify-content: space-around;
   align-content: space-around;
@@ -15,23 +16,31 @@
   .facebook-link,
   .google-link {
     position: relative;
-    width: 270px;
+    width: 350px;
     margin-bottom: 5px;
     border-radius: 5px;
-    padding: 5px 0;
+    padding: 10px 0;
     background-color: white;
     &:hover,
     &:active {
       box-shadow: 1px 1px 5px 1px rgb(170, 170, 170);
     }
     a {
-      padding: 8px 40px;
+      padding: 10px 60px;
     }
     img {
-      width: 35px;
+      width: 40px;
       left: 2px;
-      top: 1px;
+      top: 2px;
       position: absolute;
+    }
+  }
+}
+.sign-up {
+  .omniauth {
+    .facebook-link,
+    .google-link {
+      width: 320px;
     }
   }
 }
