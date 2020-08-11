@@ -23,13 +23,12 @@
 //= require imagesloaded.pkgd.min
 //= require scrollIt
 //= require jquery.scrollUp.min
-//= require nice-select.min
 //= require jquery.slicknav.min
 //= require jquery.magnific-popup.min
 //= require plugins
-//= require slick.min
+
 //= require jquery.ajaxchimp.min
-//= require jquery.validate.min
+
 //= require main
 
 //= require activestorage
