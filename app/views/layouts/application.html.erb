@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="<% image_path "favicon.png" %>">
     <title>BAROCI</title>
-    <%= csrf_meta_tags %> 
-    <%= csp_meta_tag %> <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">   
- <link rel="stylesheet" href="/css/mobile.css">
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/css/mobile.css" />
   </head>
   <body>
     <%= render "layouts/NavBar.html.erb" %>
@@ -20,3 +18,9 @@
     </div> 
   </body>
 </html>
+<script>
+  var path = window.location.pathname.split('/').pop();
+  if (path == '') {
+    $('.yield').removeClass('yield');
+  }
+</script>

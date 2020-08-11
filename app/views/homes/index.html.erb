@@ -63,7 +63,7 @@
                         </div>
                         <h3>Mission 1</h3>
                         <p>Eduquer <br>à l'integrité et à la transparence.</p>
-                        <a href="#" class="learn_more">Learn More</a>
+                        <!-- <a href="#" class="learn_more">Learn More</a> -->
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 col-lg-4">
@@ -73,7 +73,7 @@
                         </div>
                         <h3>Mission 2</h3>
                         <p>Promouvoir <br>la participation de la jeunesse.</p>
-                        <a href="#" class="learn_more">Learn More</a>
+                        <!-- <a href="#" class="learn_more">Learn More</a> -->
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-6 col-lg-4">
@@ -83,7 +83,7 @@
                         </div>
                         <h3>Mission 3</h3>
                         <p>Réclamer <br> la redevabilité des élus.</p>
-                        <a href="#" class="learn_more">Learn More</a>
+                        <!-- <a href="#" class="learn_more">Learn More</a> -->
                     </div>
                 </div>
             </div>
@@ -141,10 +141,10 @@
                         <%end%>
                       </div>   
                       <div class="case_heading">
-                        <span><%= @actualite[i].title%></span>
-                        <h3><% for a in 0..15 do %><%= @actualite[i].description.split[a] %><%end%></h3>
-                          <% if @actualite[i].description.split.length-1 > 15 %>... 
-                          <%end%>
+                        <a href="#"><h4><%= @actualite[i].title%></h4></a>
+                        <p><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p>
+                       
+                          
                           <%= link_to "Voir plus", actuality_path(@actualite[i]) %>   
                       </div>
                     </div>   
