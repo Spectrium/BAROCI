@@ -2243,8 +2243,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_case_details.scss */
 .case_details_area {
-  padding-top: 100px;
-  margin-top: 138px;
+  margin-top: 35px;
 }
 
 @media (max-width: 767px) {
