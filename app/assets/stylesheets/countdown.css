@@ -57,3 +57,29 @@ a#logo{
     border-right: 2px solid;
     margin-bottom: 1em;
 }
+
+.overflow{
+    height: 35em;
+    overflow-y: auto;
+}
+
+.white{
+    background-color: #0a5456;
+    color: white;
+}
+
+.hover-table:hover{
+    background-color: burlywood;
+}
+
+.text-blue{
+    color: royalblue;
+}
+
+.text-red{
+    color: rgb(201, 1, 1);
+}
+
+.fa{
+    padding:1em;
+}

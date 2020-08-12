@@ -2,8 +2,8 @@
 <div class="container">
   
   <h2 class="py-3">Listes des régions</h2>
+<div class="overflow">
   <table class="table table-striped">
-
     <thead class="white">
       <tr>
         <th>#</th>
@@ -18,22 +18,26 @@
     </thead>
     <% i = 1 %>
     <% @region.each do |region|%>
-      <tbody>
+
+      <tbody class="hover-table">
         <tr class="tr">
           <th><%= i %></th>
+         
           <td><%= link_to region.name.titleize,region_communes_path(region.id)%><br></td>
       	  <% if user_signed_in? %>
             <% if current_user.is_admins == true %>
-              <td><%= link_to "Editer", edit_region_path(region.id),class:'more_btn_edi' %></td>
-              <td><%= link_to "Supprimer", region_path(region.id) , method: "delete",class:'more_btn_sup' %></td>
+              <td class="text-blue"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "Editer", edit_region_path(region.id),class:'more_btn_edi text-blue' %></td>
+              <td class="text-red"><i class="fa fa-trash" aria-hidden="true"></i><%= link_to "Supprimer", region_path(region.id) , method: "delete",class:'more_btn_sup text-red' %></td>
         	  <% end %>
       	  <% end %>
         </tr>
+       
       </tbody>
+
       <% i += 1 %>
     <% end %>
   </table>
-
+</div>
     <% if user_signed_in? %>
     <% if current_user.is_admins == true %>
     <div>
