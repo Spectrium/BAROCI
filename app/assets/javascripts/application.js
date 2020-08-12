@@ -18,7 +18,6 @@
 //= require popper.min
 //= require bootstrap.min
 //= require owl.carousel.min
-//= require jquery.counterup.min
 //= require imagesloaded.pkgd.min
 //= require scrollIt
 //= require jquery.scrollUp.min
