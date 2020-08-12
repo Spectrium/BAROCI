@@ -162,13 +162,13 @@
                       </div>   
                       <div class="case_heading">
                         <h4><%= @actualite[i].title%></h4>
-                        <p><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p> 
+                        <p id="case-paragraph"><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p> 
                       </div>
                           <div class="text-center"><%= link_to "Voir plus", actuality_path(@actualite[i]), class: "boxed-btn3-line" %> </div>   
                     </div>   
                   <%end%> 
                 <%else%>     
-                  <% for i in @actualite.length-4..@actualite.length-1%>
+                  <% for i in (@actualite.length-1).downto(@actualite.length-3)%>
                     <div class="single_case">
                         <div class="case_thumb">
                           <%if @actualite[i].actuphotos.attached?%> 
@@ -176,11 +176,10 @@
                           <%end%>    
                         </div>
                         <div class="case_heading">
-                          <span><%= @actualite[i].title%></span>
-                          <h3><%= @actualite[i].description%></h3>
+                          <h4><%= @actualite[i].title%></h4>
+                          <p id="case-paragraph"><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p> 
                         </div>
-                    
-                         <div class="text-center"> <%= link_to "Voir plus", actuality_path(@actualite[i]), class: "boxed-btn3-line" %> </div> 
+                        <div class="text-center"> <%= link_to "Voir plus", actuality_path(@actualite[i]), class: "boxed-btn3-line" %> </div> 
                     </div>
                   <%end%>
                 <%end%>  
