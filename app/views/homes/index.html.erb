@@ -60,22 +60,72 @@
     </div>
 
   <!-- Evenement CountDown -->
+ 
 
-    <div class="about_info_area pt-4 pb-2" id="bg-banner">
-      <div class="container">
+  <div class="about_info_area pt-4 pb-4" id="bg-banner">
+      <div class="container text-white">
         <div class="row align-items-center">
-          <div class="col-xl-6 col-lg-6 pb-2 pt-2" id="bg-banner">
-            <div class="row justify-content-center">
-              <div class="d-flex justify-content-between">
-                <ul>
-                  <li class="count"><span id="days"></span>days</li>
-                  <li class="count"><span id="hours"></span>Hours</li>
-                  <li class="count"><span id="minutes"></span>Minutes</li>
-                  <li class="count"><span id="seconds"></span>Seconds</li>
-                </ul>
+          <div class="col-xl-6 col-lg-6 pb-2 pt-2">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col border-white" id="years"></div>
+                <div class="col border-white" id="months"></div>
+                <div class="col border-white" id="days"></div>
+                  <div class="w-100"></div>
+                <div class="col border-white" id="hours"></div>
+                <div class="col border-white" id="minutes"></div>
+                <div class="col border-white last" id="seconds">0</div>
               </div>
             </div>
           </div>
+          <script>
+              <% if @date != nil %>
+
+            var launch = new Date("<%= @date.end_date.to_time.month%>/<%= @date.end_date.to_time.day%>/<%= @date.end_date.to_time.year%>, 09:00:00 AM");
+              <%else %>
+                var launch = new Date("1/20/20, 09:00:00 AM");
+              <%end %>
+              // "January 09, 2020" or use this format
+              var years = document.getElementById('years');
+              var months = document.getElementById('months');
+              var days = document.getElementById('days');
+              var hours = document.getElementById('hours');
+              var minutes = document.getElementById('minutes');
+              var seconds = document.getElementById('seconds');
+
+              setDate();
+              function setDate() {
+                let now = new Date();
+                let s = (launch.getTime() - now.getTime()) / 1000;
+
+                var y = Math.floor(s / 31536000);
+                years.innerHTML = '<em>' + y + '</em>' + ' ' + '</br>' + 'année' + (y > 1 ? 's' : '');
+                s -= y * 31536000;
+
+                var mo = Math.floor(s / 2628000);
+                months.innerHTML = '<em>' + mo + '</em>' + ' ' + '</br>' + 'mois' ;
+                s -= mo * 2628000;
+
+                let d = Math.floor(s / 86400);
+                days.innerHTML = '<em>' + d + '</em>' + ' ' + '</br>' + 'Jour' + (d > 1 ? 's' : '');
+                s = s - d * 86400;
+
+                var h = Math.floor(s / 3600);
+                hours.innerHTML = '<em>' + h + '</em>' + ' ' + '</br>' + 'heure' + (h > 1 ? 's' : '');
+                s -= h * 3600;
+
+                var m = Math.floor(s / 60);
+                minutes.innerHTML = '<em>' + m + '</em>' + ' ' + '</br>' + 'minute' + (m > 1 ? 's' : '');
+                s -= m * 60;
+
+                s = Math.floor(s);
+                seconds.innerHTML = '<em>' + s + '</em>' + ' ' + '</br>' + 'seconde' + (s > 1 ? 's' : '');
+
+                setTimeout(setDate, 1000);
+                // ('#days').html('<em>' + d + '</em>');
+
+              }
+          </script>
           <div class="col-xl-6 col-lg-6">
             <div class="about_thumb">
               <div class="about_text">
@@ -151,16 +201,16 @@
     </div>
 
    <!-- INFO SAFIDY Video youtube  -->
-    <div class="about_info_area pt-5 pb-2" id="bg-safidy">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-xl-6 col-lg-6">
-            <div class="about_text">
-              <h3>Zah Hifidy olo-marina</h3>
-                <p>Esteem spirit temper too say adieus who direct esteem.
-                It esteems luckily or picture placing drawing. Apartments frequently or motionless on reasonable.</p>
-                  <a href="#" class="boxed-btn3">About Us</a>
-            </div>
+  <div class="about_info_area pt-5 pb-2" id="bg-safidy">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-lg-6">
+          <div class="about_text">
+            <h3>Zah Hifidy olo-marina</h3>
+              <p>Esteem spirit temper too say adieus who direct esteem.
+              It esteems luckily or picture placing drawing. Apartments frequently or motionless on reasonable.</p>
+                <a href="#" class="boxed-btn3">About Us</a>
+          </div>
         </div>      
         <div class="col-xl-6 col-lg-6">
           <div class="about_thumb">
@@ -169,7 +219,7 @@
         </div>
       </div>
     </div>
-    </div>
+  </div>
 
 <%# carte de madagascar %>
 <section class="py-4">
