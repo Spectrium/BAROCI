@@ -10,7 +10,7 @@
         </div>
         <div class="col-xl-12">
           <%if @actualite.actuphotos.attached?%>
-            <div class="case_thumb">
+            <div class="case_thumb width-card">
               <% @actuphoto.each do |photo|%> <%= image_tag photo, class:"tailimg" %> <%end%>
             </div>
             <div class="section-top-border">
