@@ -1,3 +1,6 @@
+/**********************/
+/******Countdown*******/
+/**********************/
 li.count {
     display: inline-block;
     font-size: 14px;
@@ -14,13 +17,18 @@ li.count span{
     font-size: 4.5em;
 }
 
+/**********************/
+/****** LOGO   *******/
+/**********************/
 a#logo{
     color: white;
     text-transform: uppercase;
     -webkit-text-stroke-width: thick;
     font-size: xx-large;
 }
-
+/**********************/
+/****** Bannier  *******/
+/**********************/
 #bg-banner{
     background-image: url('banner/info_banner.jpg');
     background-repeat: no-repeat;
@@ -33,3 +41,15 @@ a#logo{
     background-color: #2c2c2c;
 }
 
+/**********************/
+/******Actualité*******/
+/**********************/
+#img-actu-index {
+    width: 70px;
+    height: 100px;
+  }
+  
+  #Font-actue {
+    font: 550 20px Raleway, sans-serif;
+  }
+  
