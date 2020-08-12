@@ -7,6 +7,19 @@
     width: 47%;
   }
 }
+.input-search {
+  position: relative;
+  .search-sub {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    top: 0;
+  }
+}
+#case-paragraph {
+  height: 50px;
+  overflow: hidden;
+}
 .omniauth {
   margin-top: 15px;
   display: flex;
