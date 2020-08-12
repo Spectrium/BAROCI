@@ -90,64 +90,59 @@
     </div>
 
   <!-- Actualiter-->
-    <div class="case_study_area">
-      <div class="container">
-        <div class="border_bottom">
-          <div class="row">
-            <div class="col-xl-12">
-              <div class="section_title text-center mb-40"><h3>Actualité</h3></div>          
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-12">
-              <div class="case_active owl-carousel">
-                <%if @actualite != nil%> <%if @actualite.length < 4%> 
-                  <% for i in 0..@actualite.length-1%>
-                    <div class="single_case">
-                      <div class="case_thumb">
-                        <%if @actualite[i].actuphotos.attached?%> 
-                          <%= image_tag (@actualite[i].actuphotos.last) %> 
+  
+<section>
+	<div class="container">
+		<div class="row intro-tables">
+			<div class="col-md-12">
+				<div class="intro-table intro-table-first">
+					<h5 class="white heading">Actualités</h5>
+            <%if @actualite != nil%>
+              <%if @actualite.length < 4%>
+                <% for i in 0..@actualite.length-1%>
+                  <div class="card mb-5">
+                    <div class="row no-gutters">
+                      <div class="col-md-2">
+                        <%if @actualite[i].actuphotos.attached?%>
+                          <%= image_tag (@actualite[i].actuphotos.last), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
                         <%end%>
-                      </div>   
-                      <div class="case_heading">
-                        <a href="#"><h4><%= @actualite[i].title%></h4></a>
-                        <p><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p>
-                       
-                          
-                          <%= link_to "Voir plus", actuality_path(@actualite[i]) %>   
                       </div>
-                    </div>   
-                  <%end%> 
-                <%else%>     
-
-                  <% for i in @actualite.length-4..@actualite.length-1%>
-                    <div class="single_case">
-                        <div class="case_thumb">
-                          <%if @actualite[i].actuphotos.attached?%> 
-                            <%= image_tag (@actualite[i].actuphotos.last) %> 
-                          <%end%>    
+                      <div class="col-md-10">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= @actualite[i].title%></h5>
+                          <span class="card-text text-muted"><% for a in 0..65 do %><%= @actualite[i].description.split[a] %>  <%end%><% if @actualite[i].description.split.length-1 > 65 %>... <%end%></span>
+                          <span class="card-text"><small class="text-muted"><%= link_to "voir plus", actuality_path(@actualite[i]) %></small></span>
                         </div>
-                        <div class="case_heading">
-                          <span><%= @actualite[i].title%></span>
-                          <h3><%= @actualite[i].description%></h3>
-                        </div>
-                    </div>
-                  <%end%>
-                <%end%>  
-                <%end%>  
-                    <div class="row">
-                      <div class="col-xl-12">
-                        <div class="more_close_btn text-center"><a href="#" class="boxed-btn3-line">Voir Plus</a></div>
                       </div>
                     </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>  
-    </div>
-
+                  </div>
+                <%end%>
+              <%else%>
+  						  <% for i in @actualite.length-4..@actualite.length-1%>
+                  <div class="card mb-5">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <%if @actualite[i].actuphotos.attached?%>
+                          <%= image_tag (@actualite[i].actuphotos.last), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
+                        <%end%> 
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= @actualite[i].title%></h5>
+                          <p class="card-text text-muted"><%= @actualite[i].description%></p>
+                          <p class="card-text"><small class="text-muted"><%= link_to "voir", actuality_path(@actualite[i]) %></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <%end%>
+    					<%end%>
+						<%end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
    <!-- INFO SAFIDY Video youtube  -->
     <div class="about_info_area pt-5 pb-2" id="bg-safidy">
       <div class="container">
