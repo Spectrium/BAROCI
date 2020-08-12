@@ -12,15 +12,7 @@
   </head>
   <body>
     <%= render "layouts/NavBar.html.erb" %>
-    <div class="yield align-self-center">
       <%= yield %> 
       <%= render "layouts/footer.html.erb" %>
-    </div> 
   </body>
 </html>
-<script>
-  var path = window.location.pathname.split('/').pop();
-  if (path == '') {
-    $('.yield').removeClass('yield');
-  }
-</script>

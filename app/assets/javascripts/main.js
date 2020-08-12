@@ -12,10 +12,6 @@ $(window).on('scroll', function () {
 	}
 });
 
-
-
-
-
 $(document).ready(function(){
 
 // mobile_menu
@@ -173,17 +169,6 @@ center: false,
   }
 });
 
-// for filter
-  // init Isotope
-  var $grid = $('.grid').isotope({
-    itemSelector: '.grid-item',
-    percentPosition: true,
-    masonry: {
-      // use outer width of grid-sizer for columnWidth
-      columnWidth: 1
-    }
-  });
-
   // filter items on button click
   $('.portfolio-menu').on('click', 'button', function () {
     var filterValue = $(this).attr('data-filter');
@@ -197,14 +182,6 @@ center: false,
     event.preventDefault();
 	});
   
-  // wow js
-  new WOW().init();
-
-  // counter 
-  $('.counter').counterUp({
-    delay: 10,
-    time: 10000
-  });
 
 /* magnificPopup img view */
 $('.popup-image').magnificPopup({
@@ -352,78 +329,32 @@ dots:false,
 
 });
 
-// resitration_Form
-$(document).ready(function() {
-	$('.popup-with-form').magnificPopup({
-		type: 'inline',
-		preloader: false,
-		focus: '#name',
-
-		// When elemened is focused, some mobile browsers in some cases zoom in
-		// It looks not nice, so we disable it:
-		callbacks: {
-			beforeOpen: function() {
-				if($(window).width() < 700) {
-					this.st.focus = false;
-				} else {
-					this.st.focus = '#name';
-				}
-			}
-		}
-	});
-});
-
-
-
-//------- Mailchimp js --------//  
-function mailChimp() {
-  $('#mc_embed_signup').find('form').ajaxChimp();
-}
-mailChimp();
-
-
-
-        // Search Toggle
-        $("#search_input_box").hide();
-        $("#search").on("click", function () {
-            $("#search_input_box").slideToggle();
-            $("#search_input").focus();
-        });
-        $("#close_search").on("click", function () {
-            $('#search_input_box').slideUp(500);
-        });
-        // Search Toggle
-        $("#search_input_box").hide();
-        $("#search_1").on("click", function () {
-            $("#search_input_box").slideToggle();
-            $("#search_input").focus();
-        });
-
 })(jQuery);	
-
 //========================
 //CountDown
 //========================
-const second = 1000,
-      minute = second * 60,
-      hour = minute * 60,
-      day = hour * 24;
+// function count(){
+//     const second = 1000,
+//     minute = second * 60,
+//     hour = minute * 60,
+//     day = hour * 24;
+//     let countDown = new Date('Sept 01, 2020 00:00:00').getTime(),
+//     x = setInterval(function() {    
 
-let countDown = new Date('Sept 01, 2020 00:00:00').getTime(),
-    x = setInterval(function() {    
+//     let now = new Date().getTime(),
+//       distance = countDown - now;
 
-      let now = new Date().getTime(),
-          distance = countDown - now;
+//     document.getElementById('days').innerText = Math.floor(distance / (day)),
+//     document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
+//     document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
+//     document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
 
-      document.getElementById('days').innerText = Math.floor(distance / (day)),
-        document.getElementById('hours').innerText = Math.floor((distance % (day)) / (hour)),
-        document.getElementById('minutes').innerText = Math.floor((distance % (hour)) / (minute)),
-        document.getElementById('seconds').innerText = Math.floor((distance % (minute)) / second);
+//     //do something later when date is reached
+//     //if (distance < 0) {
+//     //  clearInterval(x);
+//     //  'IT'S MY BIRTHDAY!;
+//     //}
 
-      //do something later when date is reached
-      //if (distance < 0) {
-      //  clearInterval(x);
-      //  'IT'S MY BIRTHDAY!;
-      //}
+//     }, second)
+// }
 
-    }, second)

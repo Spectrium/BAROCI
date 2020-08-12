@@ -827,7 +827,7 @@ h3 {
   width: 100%;
   top: 0;
   z-index: 9;
-  position: absolute;
+  
 }
 
 @media (max-width: 767px) {
@@ -847,7 +847,7 @@ h3 {
 /* line 17, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_header.scss */
 .header-area .main-header-area {
   padding: 15px 0;
-  background: #353535a3;
+  background: #1c4965;
 }
 
 /* line 21, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_header.scss */
