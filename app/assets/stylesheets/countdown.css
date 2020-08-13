@@ -91,8 +91,10 @@ a#logo{
 
 .shadow-card{
     padding:2em;
-    box-shadow: 0px 0px 10px #0a5456;
-    border-radius: 1em 1em 0em 0em;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: inset 7px 7px 26px #c7c7c7, 
+                inset -7px -7px 26px #ffffff;
 }
 
 .titre-table{
@@ -107,4 +109,8 @@ a#logo{
 }
 .h-22{
     height: 20em;
+}
+
+ul.submenu li:hover{
+    background-color: #cecece;
 }

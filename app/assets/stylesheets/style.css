@@ -3833,15 +3833,16 @@ h3 {
 /* line 7, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_service.scss */
 .service_area .single_service {
   padding: 30px;
-  border: 1px solid #E8E8E8;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
   margin-bottom: 30px;
-  background: #f9f9f9;
-	border-radius: 5px;
-	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  background: #f7f7f6;
+  border-radius: 44px;
+  background: #f7f7f6;
+  box-shadow:  12px 12px 14px #d2d2d1, 
+               -12px -12px 14px #ffffff;
 }
 
 /* line 13, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_service.scss */
@@ -3897,7 +3898,7 @@ h3 {
 /* line 46, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_service.scss */
 .service_area .single_service:hover {
   background: #f9f9f9;
-	border-radius: 5px;
+	border-radius: 44px;
 	box-shadow: inset -3px -3px 7px #ffffffb0, inset 0px 0px 10px rgba(94, 104, 121, 0.692);
 }
 
