@@ -1,5 +1,5 @@
-<h1>Ajouter un(e) canditat(e)</h1>
-<div class="new-candidat">
+<div class="new-candidat  pb-5 pt-5">
+	<h1 class=" text-center">Ajouter un(e) canditat(e)</h1>
 	<div class="container content">
 	<%= form_tag url_for(action:'create'), method:'post' do %>
 		<div class="form-row">
@@ -28,9 +28,9 @@
 				<input type="text" name="commune" placeholder="Votre commune"  class="form-control form-custom" id="commune"> 			
 			</div>			
 		</div>			
-		<div class="form-row">
+		<div class="form-row ">
 			<div class="form-group col-md-12">
-				<input type="submit" value="Ajouter" class="btn btn-blue ripple trial-button form-control form-custom" id="create">
+				<input type="submit" value="Ajouter" class="boxed-btn3-line" id="create">
 			</div>			
 		</div>	
 	<%end%>
