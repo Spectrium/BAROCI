@@ -1,6 +1,4 @@
 
-<!-- call css  -->
-<link rel="stylesheet" href="/css/show_promess.css">
 <!-- body html  -->
 <div class="show-promess container text-center">
   <h4 class=" m-5 ">
@@ -8,7 +6,7 @@
   </h4>
   <%if @promesse.pictures.attached?%> 
     <% @promess.each do |promess|%>
-      <a> <%= image_tag promess, class:"tailleimg" %></a>
+      <a> <%= image_tag promess, class:"tailleimg m-1", style:"width: 300px;"%></a>
     <%end%>
   <%else%>
     <p class="m-2">Pas de photo d'évolution pour le moment.</p>

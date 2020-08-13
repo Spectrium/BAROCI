@@ -1,17 +1,12 @@
 
-<% @date.each do |date|  %>
-	<%= date.end_date %>
-	<%= date.start_date %>
-<%end %>
-
-<div>
-	<div class="bloc" id="days">	
-	</div>
-	<div class="bloc" id="hours">	
-	</div>
-	<div class="bloc" id="minutes">	
-	</div>
-	<div class="bloc" id="seconds">	
-	</div>
+<div class="container pt-5 pb-5 text-center ">
+	<h1>
+		Voici la liste des dates créer au part avant
+	</h1>
+	<% @date.each do |date|  %>
+		<%= date.end_date %>
+		<%= date.start_date %>
+		<br>
+	<%end %>
 </div>
 
