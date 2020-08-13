@@ -66,6 +66,11 @@ a#logo{
 .white{
     background-color: #0a5456;
     color: white;
+    margin-left: 0px;
+    padding: 9px 0px;
+    width: 100%;
+    font-weight: bold;
+    font-size: large;
 }
 
 .hover-table:hover{
@@ -76,10 +81,21 @@ a#logo{
     color: royalblue;
 }
 
+.ml-6{
+    margin-left: 4rem;
+}
+
 .text-red{
     color: rgb(201, 1, 1);
 }
 
-.fa{
-    
+.shadow-card{
+    padding:2em;
+    box-shadow: 0px 0px 10px #0a5456;
+    border-radius: 1em 1em 0em 0em;
+}
+
+.titre-table{
+    box-shadow: 0px 0px 10px #0a5456;
+    margin-top: 0.5em;
 }

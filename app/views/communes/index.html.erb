@@ -1,42 +1,51 @@
 
 <div class="container">
+  <h2 class="py-3 text-center titre-table">Liste de toutes les communes dans la région <%= @region.name %></h2>
+    <div class="shadow-card">
+      <div class="row white">
+        <div class="col-xl-1 col-lg-4">#</div>
+          <div class="col-xl-3 col-lg-4">Region</div>
+          <div class="d-flex justify-content-between w-50 text-center ml-6">
+            <% if user_signed_in?%>
+              <% if current_user.is_admins == true %>
+                <div class="col-xl-6 col-lg-4">Editer</div>
+                <div class="col-xl-6 col-lg-4">Supprimer</div>
+              <% end%>
+            <% end%>
+          </div>
+        </div>
 
-  <h2 class="py-3">Liste de toutes les communes dans la région <%= @region.name %></h2>
+        <div class="overflow">
+          <table class="table table-striped">
+                <% i = 1 %>
+                <% @commune.each do |commune|%>
+                  <tbody class="hover-table">
+                    <tr class="tr">
+                      <th scope="row"><%= i %></th>
+                      <td><%= link_to commune.name.titleize, commune_candidats_path(commune.id) %></td>
+                      <% if user_signed_in? %>
+                        <% if current_user.is_admins == true %>
+                          <td class="text-blue"><i class="mr-4 fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'more_btn_edi text-blue' %></td>
+                          <td class="text-red"><i class="mr-4 fa fa-trash" aria-hidden="true"></i><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'more_btn_sup text-red' %></td>
+                        <% end %>
+                      <% end %>
+                    </tr>
+                  </tbody>
+                  <% i += 1 %>
+                <% end %>
+          </table>
+        </div>
+      </div>
 
-  <table class="table table-striped">
-    <thead class="white">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Commune</th>
-  	  <% if user_signed_in? %>
-        <% if current_user.is_admins == true %>
-          <th scope="col">Editer</th>
-          <th scope="col">Supprimer</th>
-        <% end %>
-  	  <% end %>
-        
-      </tr>
-    </thead>
-    <% i = 1 %>
-    <% @commune.each do |commune|%>
-      <tbody>
-        <tr>
-          <th scope="row"><%= i %></th>
-          <td><%= link_to commune.name.titleize, commune_candidats_path(commune.id) %></td>
-          <% if user_signed_in? %>
-            <% if current_user.is_admins == true %>
-              <td><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'more_btn_edi' %></td>
-              <td><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'more_btn_sup' %></td>
-            <% end %>
-      	  <% end %>
-        </tr>
-      </tbody>
-      <% i += 1 %>
-    <% end %>
-  </table>
   <% if user_signed_in? %>
     <% if current_user.is_admins == true %>
-      <%= link_to "créer une commune", new_region_commune_path(@region.id) ,class:'more_btn' %> <br> <br>
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="btn-lg btn-block">
+            <a href="<%= new_region_commune_path(@region.id) %>" class="w-100 boxed-btn3">Ajouter une Commune</a>
+          </div>
+        </div>
+      </div>
     <% end %>
   <% end %>
 </div>
