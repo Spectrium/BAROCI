@@ -1,10 +1,10 @@
-<div class="container">
-	<h1>Création d'un engagement</h1>
-	<div class="row">
-		<%= form_tag url_for(action:'create'), method:'post' do %><br>
-			Contenu de l'engagement<br>
-			<input type="text" name="content" ><br>
-			<input type="submit" value="Ajouter"><br>
-		<%end%>
-	</div>
+<div class="container text-center pt-5 pb-5">
+  <h1>Création d'un engagement</h1>
+  <div>
+    <%= form_tag url_for(action:'create'), method:'post' do %><br />
+    Contenu de l'engagement<br />
+    <input type="text" name="content" class="m-1" /><br />
+    <input type="submit" value="Ajouter" class="m-1" /><br />
+    <%end%>
+  </div>
 </div>
