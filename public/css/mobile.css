@@ -103,6 +103,13 @@
   .footer-copyright .footer-flex {
     width: 350px;
   }
+  .sc-head .sc-head-item1 .sc-image {
+    width: 300px;
+    height: 400px;
+  }
+  .sc-head .sc-head-item2 {
+    margin-top: 20px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -133,6 +140,13 @@
   }
   .footer-copyright .footer-contact {
     width: 100%;
+  }
+  .sc-head .sc-head-item1 .sc-image {
+    width: 350px;
+    height: 450px;
+  }
+  .sc-head .sc-head-item2 {
+    margin-top: 0;
   }
 }
 
