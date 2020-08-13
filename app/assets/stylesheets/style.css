@@ -7319,6 +7319,7 @@ h6 {
   width: 22em;
 }
 
-.width-card{
-  width: 35em;
+.w-40{
+  width: 40%;
+  margin: 35px;
 }

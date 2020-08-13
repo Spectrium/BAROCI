@@ -1,8 +1,8 @@
 <h3 class="py-5 text-center">Toutes les actualités</h3>  
-  <div class="container">
-      <div class="text-center width-card">          
+  <div class="text-center">
+      <div class="d-flex flex-wrap justify-content-center">          
        <% @actualite.each do |actualite| %>
-        <article class="blog_item">
+        <article class="w-40">
           <div class="blog_item_img">
               <%if actualite.actuphotos.attached?%> <%= image_tag (actualite.actuphotos.last), class:"card-img rounded-0"%> <%end%>
                 <a href="#" class="blog_item_date">
