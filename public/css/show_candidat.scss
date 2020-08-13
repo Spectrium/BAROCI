@@ -1,15 +1,13 @@
 .show-candidat {
-  background: red;
+  padding: 20px 0;
   .sc-head {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     .sc-head-item1 {
       .sc-image {
-        background: yellow;
         padding: 10px;
         margin: 0 auto;
-        width: 350px;
-        height: 450px;
         img {
           margin: 0 auto;
           width: 100%;
@@ -18,7 +16,6 @@
       }
     }
     .sc-head-item2 {
-      background: green;
       align-self: center;
     }
   }
@@ -38,6 +35,13 @@
         width: 0;
         margin: 0 auto;
         margin-top: 15px;
+        &.active {
+          content: ' ';
+          transition: all 200ms ease-in-out;
+          background: #198df7;
+          height: 5px;
+          width: 100%;
+        }
       }
       &:hover {
         .ligne-b {
@@ -49,26 +53,19 @@
         }
       }
     }
-    .active {
-      .ligne-b {
-        content: ' ';
-        transition: all 200ms ease-in-out;
-        background: #198df7;
-        height: 5px;
-        width: 100%;
-      }
-    }
   }
-.sc-body-photo{
-    display: flex;
-    justify-content: center;
+  .sc-body {
+    .sc-body-photo {
+      display: flex;
+      justify-content: center;
 
-    align-items: flex-start;
-    flex-wrap: wrap;
-    .tailimg{
+      align-items: flex-start;
+      flex-wrap: wrap;
+      .tailimg {
         width: 300px;
         margin: 5px;
         height: 450px;
+      }
     }
-}
+  }
 }
