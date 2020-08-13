@@ -126,13 +126,13 @@
 
               }
           </script>
-          <div class="col-xl-6 col-lg-6">
+         <div class="col-xl-6 col-lg-6">
             <div class="about_thumb">
               <div class="about_text">
                 <h3>Event Name</h3>
                   <p>Esteem spirit temper too say adieus who direct esteem.
                   It esteems luckily or picture placing drawing. Apartments frequently or motionless on reasonable.</p>
-                    <a href="#" class="boxed-btn3">Voir détail</a>
+                  <a href="#" class="boxed-btn3">Voir détail</a>
               </div>
             </div>
           </div>
@@ -141,63 +141,58 @@
     </div>
 
   <!-- Actualiter-->
-    <div class="case_study_area">
-      <div class="container">
-        <div class="border_bottom">
-          <div class="row">
-            <div class="col-xl-12">
-              <div class="section_title text-center mb-40"><h3>Actualité</h3></div>          
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-12">
-              <div class="case_active owl-carousel">
-                <%if @actualite != nil%> <%if @actualite.length < 4%> 
-                  <% for i in 0..@actualite.length-1%>
-                    <div class="single_case">
-                      <div class="case_thumb">
-                        <%if @actualite[i].actuphotos.attached?%> 
-                          <%= image_tag (@actualite[i].actuphotos.last), style:"widht:200px!important"; %> 
-                        <%end%>
-                      </div>   
-                      <div class="case_heading">
-                        <h4><%= @actualite[i].title%></h4>
-                        <p id="case-paragraph"><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p> 
-                      </div>
-                          <div class="text-center"><%= link_to "Voir plus", actuality_path(@actualite[i]), class: "boxed-btn3-line" %> </div>   
-                    </div>   
-                  <%end%> 
-                <%else%>     
-                  <% for i in (@actualite.length-1).downto(@actualite.length-3)%>
-                    <div class="single_case">
-                        <div class="case_thumb">
-                          <%if @actualite[i].actuphotos.attached?%> 
-                            <%= image_tag (@actualite[i].actuphotos.last) %> 
-                          <%end%>    
-                        </div>
-                        <div class="case_heading">
-                          <h4><%= @actualite[i].title%></h4>
-                          <p id="case-paragraph"><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p> 
-                        </div>
-                        <div class="text-center"> <%= link_to "Voir plus", actuality_path(@actualite[i]), class: "boxed-btn3-line" %> </div> 
-                    </div>
+  <div class="case_study_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="section_title text-center mb-40"><h3>Actualité</h3></div>          
+        </div>
+      </div>       
+      <div class="single-defination">
+        <div class="d-flex">
+          <%if @actualite != nil%> <%if @actualite.length < 4%> 
+            <% for i in 0..@actualite.length-1%>
+              <div class="single_case">
+                <div class="case_thumb">
+                  <%if @actualite[i].actuphotos.attached?%> 
+                    <%= image_tag (@actualite[i].actuphotos.last), style:"widht:200px!important"; %> 
                   <%end%>
-                <%end%>  
-                <%end%>  
-                     
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xl-12">
-                <div class="btn-lg btn-block">
-                  <a href="<%= actualities_path %>" class="w-100 boxed-btn3">Plus d'actualité</a>
+                </div>   
+                <div class="case_heading">
+                  <h4><%= @actualite[i].title%></h4>
+                  <p id="case-paragraph"><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p> 
                 </div>
-            </div>
+                    <div class="text-center"><%= link_to "Voir plus", actuality_path(@actualite[i]), class: "boxed-btn3-line" %> </div>   
+              </div>   
+            <%end%> 
+          <%else%>     
+            <% for i in (@actualite.length-1).downto(@actualite.length-3)%>
+              <div class="single_case">
+                  <div class="case_thumb">
+                    <%if @actualite[i].actuphotos.attached?%> 
+                      <%= image_tag (@actualite[i].actuphotos.last) %> 
+                    <%end%>    
+                  </div>
+                  <div class="case_heading">
+                    <h4><%= @actualite[i].title%></h4>
+                    <p id="case-paragraph"><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p> 
+                  </div>
+                  <div class="text-center"> <%= link_to "Voir plus", actuality_path(@actualite[i]), class: "boxed-btn3-line" %> </div> 
+              </div>
+            <%end%>
+          <%end%>  
+          <%end%>          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="btn-lg btn-block">
+            <a href="<%= actualities_path %>" class="w-100 boxed-btn3">Plus d'actualité</a>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
+  </div>  
 
    <!-- INFO SAFIDY Video youtube  -->
   <div class="about_info_area pt-5 pb-2" id="bg-safidy">

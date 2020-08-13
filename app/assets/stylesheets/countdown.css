@@ -98,7 +98,13 @@ a#logo{
 .titre-table{
     box-shadow: 0px 0px 10px #0a5456;
     margin-top: 0.5em;
+}
+
+.bg{
     background-image: url("titre-table.png");
     background-size: cover;
     background-repeat: no-repeat;
+}
+.h-22{
+    height: 20em;
 }
