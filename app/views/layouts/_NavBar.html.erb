@@ -17,15 +17,15 @@
                     <nav>
                       <ul id="navigation">
                         <!-- bar de recherche -->
-       
                           <li><a class="Nbr active" href="<%= home_path %>">Accueil</a></li>
                           <li><a class="Nbr" href="<%= actualities_path %>">Actualité</a></li>
                           <li><a class="Nbr" href="<%= regions_path %>">Région</a></li>
                           <li><a class="Nbr" href="#"> 
-                              <% if user_signed_in? %> Mon profil 
-                              <% else %> Connexion 
-                              <% end %>
-                              <i class="ti-angle-down"></i></a>
+                                <% if user_signed_in? %> Mon profil 
+                                <% else %> Connexion 
+                                <% end %>
+                                <i class="ti-angle-down"></i>
+                              </a>
                               <ul class="submenu">
                                   <% if user_signed_in?%>
                                     <li><a href="<%= user_path(current_user.id) %>">Profil</a></li>
@@ -80,4 +80,12 @@
     </div>
   </div>
 </header>
-<!-- header-end -->
+
+<script>
+$(document).ready(function() {
+  $('a.active').removeClass('active');
+  $('a[href="' + location.pathname + '"]').closest('a').addClass('active'); 
+});
+</script>
+
+<!-- header-end --> 

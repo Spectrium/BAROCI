@@ -925,6 +925,7 @@ h3 {
   justify-content: flex-end;
   -ms-flex-pack: flex-end;
 }
+  
 
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 75, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_header.scss */
