@@ -5,16 +5,20 @@
   <div class="sc-head">
     <div class="sc-head-item1">
       <div class="sc-image">
-        <% if @candidat.avatars.attached?%> <%= image_tag @candidat.avatars.last, alt: 'avatar', class: 'sc-profil' %> <%else%>
-        <img src="//placehold.it/150" class="img-fluid" alt="avatar" />
+        <% if @candidat.avatars.attached?%> 
+          <%= image_tag @candidat.avatars.last, alt: 'avatar', class: 'sc-profil' %>
+        <%else%>
+          <img src="//placehold.it/150" class="img-fluid" alt="avatar" />
         <%end%>
       </div>
       <div>
-        <% if user_signed_in? %> <% if current_user.is_admins == true %> <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %> <%= file_field_tag :avatar, class: "btn choice" %>
-        <div class="col-12">
-          <%= submit_tag "mettre à jour", class:"btn btn-success" %>
-        </div>
-        <% end %> <% end %> <% end %>
+        <% if user_signed_in? %> 
+          <% if current_user.is_admins == true %> 
+            <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %> <%= file_field_tag :avatar, class: "btn choice" %>
+              <div class="col-12"><%= submit_tag "mettre à jour", class:"btn btn-success" %></div>
+            <% end %> 
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="sc-head-item2">

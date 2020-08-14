@@ -114,3 +114,6 @@ a#logo{
 ul.submenu li:hover{
     background-color: #cecece;
 }
+.w-60{
+    width: 60%;
+}

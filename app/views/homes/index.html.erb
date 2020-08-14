@@ -129,10 +129,16 @@
          <div class="col-xl-6 col-lg-6">
             <div class="about_thumb">
               <div class="about_text">
-                <h3>Event Name</h3>
-                  <p>Esteem spirit temper too say adieus who direct esteem.
+                <h3>Durée du Mandat</h3>
+              
+                  <p>Ici, on doit mettre une petite information à propos du président.
                   It esteems luckily or picture placing drawing. Apartments frequently or motionless on reasonable.</p>
-                  <a href="#" class="boxed-btn3">Voir détail</a>
+                  <% if user_signed_in?%> 
+                    <% if current_user.is_admins == true%>
+                      <a href="<%= daty_path(Daty.last.id) %>" class="boxed-btn3">Modifier la date</a>
+                      <% end %> 
+                  <% end %>
+                
               </div>
             </div>
           </div>
