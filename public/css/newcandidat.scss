@@ -1,0 +1,24 @@
+.region-box {
+  position: relative;
+  #region-list {
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    background: rgb(204, 202, 202);
+    text-align: center;
+    overflow-y: auto;
+    border-collapse: collapse;
+    z-index: 20;
+    &,
+    li {
+      border: 1px solid #c4c4c4;
+    }
+    li {
+      padding: 10px;
+      &:hover,
+      &:active {
+        background: rgb(250, 246, 246);
+      }
+    }
+  }
+}

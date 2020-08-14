@@ -1,0 +1,27 @@
+.region-box {
+  position: relative;
+}
+
+.region-box #region-list {
+  position: absolute;
+  height: 200px;
+  width: 100%;
+  background: #cccaca;
+  text-align: center;
+  overflow-y: auto;
+  border-collapse: collapse;
+  z-index: 20;
+}
+
+.region-box #region-list,
+.region-box #region-list li {
+  border: 1px solid #c4c4c4;
+}
+
+.region-box #region-list li {
+  padding: 10px;
+}
+
+.region-box #region-list li:hover, .region-box #region-list li:active {
+  background: #faf6f6;
+}

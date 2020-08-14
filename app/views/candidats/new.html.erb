@@ -1,38 +1,38 @@
-<div class="new-candidat  pb-5 pt-5">
-	<h1 class=" text-center">Ajouter un(e) canditat(e)</h1>
-	<div class="container content">
-	<%= form_tag url_for(action:'create'), method:'post' do %>
-		<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="name">Nom complet</label>
-				<input type="text" name="full_name" placeholder="Votre nom" class="form-control form-custom" id="name" >
-			</div>
-			<div class="form-group col-md-6">
-				<label for="mouvence">Mouvance</label>
-				<input type="text" name="mouvence" placeholder="Votre mouvence" class="form-control form-custom" id="mouvence" >
-			</div>
-		</div>
-		<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="election">Résultat durant l'éléction</label>
-				<input type="text" name="resultat" placeholder="Résultat durant l'éléction"  class="form-control form-custom" id="election">
-			</div>
-			<div class="form-group col-md-6">
-				<label for="candidat">Région du candidat</label>
-				<input type="text" name="region" placeholder="Votre région" class="form-control form-custom" id="candidat">
-			</div>
-		</div>	
-		<div class="form-row">
-			<div class="form-group col-md-12">
-				<label for="commune">Commune du candidat</label>
-				<input type="text" name="commune" placeholder="Votre commune"  class="form-control form-custom" id="commune"> 			
-			</div>			
-		</div>			
-		<div class="form-row ">
-			<div class="form-group col-md-12">
-				<input type="submit" value="Ajouter" class="boxed-btn3-line" id="create">
-			</div>			
-		</div>	
-	<%end%>
-</div>
+<div class="new-candidat pb-5 pt-5">
+  <h1 class="text-center">Ajouter un(e) canditat(e)</h1>
+  <div class="container content">
+    <%= form_tag url_for(action:'create'), method:'post' do %>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="name">Nom complet</label>
+        <input type="text" name="full_name" placeholder="Votre nom" class="form-control form-custom" id="name" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="mouvence">Mouvance</label>
+        <input type="text" name="mouvence" placeholder="Votre mouvence" class="form-control form-custom" id="mouvence" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="election">Résultat durant l'éléction</label>
+        <input type="text" name="resultat" placeholder="Résultat durant l'éléction" class="form-control form-custom" id="election" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="candidat">Région du candidat</label>
+        <input type="text" name="region" placeholder="Votre région" class="form-control form-custom" id="candidat" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="commune">Commune du candidat</label>
+        <input type="text" name="commune" placeholder="Votre commune" class="form-control form-custom" id="commune" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <input type="submit" value="Ajouter" class="boxed-btn3-line" id="create" />
+      </div>
+    </div>
+    <%end%>
+  </div>
 </div>
