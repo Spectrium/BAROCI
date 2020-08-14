@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <div class="container">
   <h2 class="py-3 text-center mt-4">Listes des régions</h2>
@@ -36,15 +37,40 @@
       </div>
     </div>
 
-    <% if user_signed_in? %>
-      <% if current_user.is_admins == true %>
-        <div class="row">
-          <div class="col-xl-12">
-              <div class="btn-lg btn-block">
-                <a href="<%= new_region_path %>" class="w-100 boxed-btn3">Ajouter une région</a>
+   <div class="d-flex justify-content-center mt-3">
+      <% if user_signed_in? %>
+        <% if current_user.is_admins == true %>
+            <div class="col-xl-10">
+              <div class="btn-lg btn-block text-center">
+                <button onclick="document.getElementById('id01').style.display='block'" class="w-50 boxed-btn3">Ajouter Région</button>
               </div>
-          </div>
-        </div>
-    <% end %>
-  <% end %>
+            </div>
+        <% end %>
+      <% end %>
+      <button type="button" class="btn btn-labeled btn-danger m-3" onclick= window.location.href='<%= home_path %>'; value="Retour vers la page Accueil" >
+        <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
+      </button>
+    </div>
 </div>
+
+ <!-- MODAL section -->
+  <div class="w3-container">
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-animate-top w3-card-4">
+        <header class="w3-container w3-teal"> 
+          <span onclick="document.getElementById('id01').style.display='none'" 
+          class="w3-button w3-display-topright">&times;</span>
+          <h2>Modal Header</h2>
+        </header>
+        
+        <div class="w3-container">
+          <%= render "regions/new.html.erb" %>
+        </div>
+        <footer class="w3-container w3-teal">
+          <p>Modal Footer</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+ <!-- End MODAL section -->
+         

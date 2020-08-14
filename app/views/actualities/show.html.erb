@@ -22,6 +22,9 @@
 				      </div>
 			      </div>
           <%end%> 
+            <button type="button" class="btn btn-labeled btn-danger float-right" onclick= window.location.href='<%= actualities_path %>'; value="Retour vers la page Actualité" >
+              <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
+            </button>
           <% if user_signed_in?%> <% if current_user.is_admins == true%>
             <h3>Ajouter des photos</h3>
             <%= form_tag actuality_actuphotos_path(@actualite), multipart: true do %> 
@@ -36,3 +39,4 @@
     </div>
   </div>
 </div>
+

@@ -102,11 +102,6 @@ a#logo{
     margin-top: 0.5em;
 }
 
-.bg{
-    background-image: url("titre-table.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 .h-22{
     height: 20em;
 }
