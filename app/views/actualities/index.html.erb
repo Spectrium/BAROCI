@@ -1,25 +1,27 @@
-<h3 class="py-5 text-center">Toutes les actualités</h3>  
-  <div class="text-center">
-      <div class="d-flex flex-wrap">
-       <% for i in (@actualite.length-1).downto(@actualite.length-3)%>
-        <article class="w-40">
-          <div class="blog_item_img">
-              <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last), class:"card-img rounded-0"%> <%end%>
-                <a href="#" class="blog_item_date">
-                <h3><%= @actualite[i].created_at.day %></h3>
-                <p><%= @actualite[i].created_at.strftime("%b")  %></p>
-                </a>
-            </div>
-            <div class="blog_details">
-              <a href="<%= actuality_path(@actualite[i]) %>"><h2><%= @actualite[i].title %></h2></a>
-              <p><% for a in 0..50 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 50 %>... <%end%></p>
-              <a class="boxed-btn3-line" href="<%= actuality_path(@actualite[i])%>">Lire la suite</a>
-            </div> 
-          </article>  
-       <% end %>   
+<div id="Actualite">
+  <h3 class="py-5 text-center">Toutes les actualités</h3>  
+    <div class="text-center">
+        <div class="d-flex flex-wrap justify-content-center">
+        <% for i in (@actualite.length-1).downto(@actualite.length-4)%>
+          <article class="w-40">
+            <div class="blog_item_img">
+                <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last), class:"card-img rounded-0"%> <%end%>
+                  <a href="#" class="blog_item_date">
+                  <h3><%= @actualite[i].created_at.day %></h3>
+                  <p><%= @actualite[i].created_at.strftime("%b")  %></p>
+                  </a>
+              </div>
+              <div class="blog_details">
+                <a href="<%= actuality_path(@actualite[i]) %>"><h2><%= @actualite[i].title %></h2></a>
+                <p><% for a in 0..20 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 20 %>... <%end%></p>
+                <a class="boxed-btn3-line" href="<%= actuality_path(@actualite[i])%>">Lire la suite</a>
+              </div> 
+            </article>  
+        <% end %>   
+        </div>
       </div>
     </div>
-  </div>
+</div>
 
 
 

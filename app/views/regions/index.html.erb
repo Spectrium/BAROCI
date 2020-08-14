@@ -18,18 +18,18 @@
       <div class="overflow">
         <table class="table table-striped">
           <% i = 1 %>
-          <% @region.each do |region|%>
-            <tbody class="hover-table">
-              <tr class="tr">
-                <th><%= i %></th>   
-                <td><%= link_to region.name.titleize,region_communes_path(region.id)%><br></td>
-                <% if user_signed_in? %>
-                  <% if current_user.is_admins == true %>
-                    <td class="text-blue"><i class="mr-4 fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "Editer", edit_region_path(region.id),class:'more_btn_edi text-blue' %></td>
-                    <td class="text-red"><i class="mr-4 fa fa-trash" aria-hidden="true"></i><%= link_to "Supprimer", region_path(region.id) , method: "delete",class:'more_btn_sup text-red' %></td>
+          <% @region.each do |region|%>  
+            <tbody class="hover-table">        
+                <tr class="tr">
+                  <th><%= i %></th>   
+                  <td><%= link_to region.name.titleize,region_communes_path(region.id)%><br></td>
+                  <% if user_signed_in? %>
+                    <% if current_user.is_admins == true %>
+                      <td class="text-blue"><i class="mr-4 fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "Editer", edit_region_path(region.id),class:'more_btn_edi text-blue' %></td>
+                      <td class="text-red"><i class="mr-4 fa fa-trash" aria-hidden="true"></i><%= link_to "Supprimer", region_path(region.id) , method: "delete",class:'more_btn_sup text-red' %></td>
+                    <% end %>
                   <% end %>
-                <% end %>
-              </tr>     
+                </tr>     
             </tbody>
             <% i += 1 %>
           <% end %>

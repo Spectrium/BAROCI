@@ -112,3 +112,13 @@ ul.submenu li:hover{
 .w-60{
     width: 60%;
 }
+
+#Actualite{
+    width: 100%;
+    height: 100%;
+    background: url(background-Actualite.jpg) no-repeat;
+}
+
+.blog_details{
+    background-color: white;
+}
