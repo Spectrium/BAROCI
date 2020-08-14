@@ -1,4 +1,4 @@
-<!-- Slide Banniere-->
+  <!-- Slide Banniere-->
     <div class="slider_area"> 
       <div class="single_slider  d-flex align-items-center slider_bg_3 overlay2">
           <div class="container">
@@ -60,8 +60,6 @@
     </div>
 
   <!-- Evenement CountDown -->
- 
-
   <div class="about_info_area pt-4 pb-4" id="bg-banner">
       <div class="container text-white">
         <div class="row align-items-center">
@@ -133,9 +131,16 @@
               
                   <p>Ici, on doit mettre une petite information à propos du président.
                   It esteems luckily or picture placing drawing. Apartments frequently or motionless on reasonable.</p>
+                
                   <% if user_signed_in?%> 
                     <% if current_user.is_admins == true%>
+                    <%if Daty.last == nil %>
+                      <a href="<%= new_daty_path %>" class="boxed-btn3">Ajout date Mandat</a></li>
+                    <% else %>
                       <a href="<%= daty_path(Daty.last.id) %>" class="boxed-btn3">Modifier la date</a>
+                    <% end %>
+                     
+                      
                       <% end %> 
                   <% end %>
                 
@@ -435,4 +440,5 @@
     });
   </script>
 </section>
+
 

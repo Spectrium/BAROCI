@@ -1,3 +1,5 @@
+    <!--Modale-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="container">
   <h2 class="py-3 text-center">Liste de toutes les communes dans la région <%= @region.name %></h2>
     <div class="shadow-card">
@@ -41,7 +43,7 @@
         <% if current_user.is_admins == true %>
             <div class="col-xl-10">
               <div class="btn-lg btn-block text-center">
-                <a href="<%= new_region_commune_path(@region.id) %>" class="w-50 boxed-btn3">Ajouter une Commune</a>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w-50 boxed-btn3">Ajouter Commune</button>
               </div>
             </div>
         <% end %>
@@ -49,5 +51,25 @@
       <button type="button" class="btn btn-labeled btn-danger m-3" onclick= window.location.href='<%= home_path %>'; value="Retour vers la page Accueil" >
         <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
       </button>
+    </div>
+  </div>
+
+   <!-- MODAL section -->
+  <div class="w3-container">
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-animate-top w3-card-4">
+        <header class="w3-container w3-teal"> 
+          <span onclick="document.getElementById('id01').style.display='none'" 
+          class="w3-button w3-display-topright">&times;</span>
+          <h2>Modal Header</h2>
+        </header>
+        
+        <div class="w3-container">
+          <%= render "communes/new.html.erb" %>
+        </div>
+        <footer class="w3-container w3-teal">
+          <p>Modal Footer</p>
+        </footer>
+      </div>
     </div>
   </div>
