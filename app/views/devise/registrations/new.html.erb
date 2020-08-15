@@ -32,20 +32,20 @@
           <%= f.submit "S'inscrire", class:"more_btn_edi log-submit" %>
         </div>
         <% end %> 
-          <!-- Flash message  -->
-  <div class="flash">
-    <div class="flash__icon">
-      <i class="icon fa fa-info"></i>
-    </div>
-    <% if flash.each do |type, msg| %>
-      <p class="flash__body font-weight-bold"><%= msg %></p>     
-    <% end.empty? %>
-      <p class="font-weight-bold">Remplir les formulaires pour s'inscrire!</p>    
-    <% end %>
-  </div>
+        <!-- Flash message  -->
+        <div class="flash">
+          <div class="flash__icon">
+            <i class="icon fa fa-info"></i>
+          </div>
+          <% if flash.each do |type, msg| %>
+            <p class="flash__body font-weight-bold"><%= msg %></p>     
+          <% end.empty? %>
+            <p class="font-weight-bold">Remplir les formulaires pour s'inscrire!</p>    
+          <% end %>
+        </div>
 
       </div>
-      <div class="box-signup-image">
-        <img src="/images/logo.webp" alt="image mada" />
-      </div>
-    </div>
+  <div class="box-signup-image">
+    <img src="/images/logo.webp" alt="image mada" />
+  </div>
+</div>

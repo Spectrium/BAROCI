@@ -1,10 +1,12 @@
-<div class="container">
-	<h1>Créer une nouvelle région</h1>
-	<div class="row">
-		<%= form_tag url_for(action:'create'), method:'post' do %><br>
-			Nom de la region<br>
-			<input type="text" name="name" placeholder ="Nom de la région" ><br>
-			<input type="submit" value="Ajouter"><br>
-		<%end%>
-	</div>
+<div class="card-center p-5">
+  <h1 class="text-center mb-3 ">Ajouter une Region</h1>
+  <div class="date text-center"> 
+    <%= form_tag url_for(action:'create'), method:'post' do %>
+      <div class="mb-2">Nom de la region</div>
+        <input type="text" name="name" placeholder ="Nom de la région" class="neo-form content-modal mb-2" required>
+      <div class="text-center">
+        <input type="submit" value="Ajouter" class="btn-modal btn btn-success">
+      </div>
+    <%end%>
+  </div>
 </div>
