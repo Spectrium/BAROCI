@@ -2,26 +2,31 @@
   position: relative;
 }
 
-.region-box #region-list {
+.region-box .ul-table {
   position: absolute;
-  height: 200px;
+  height: 187px;
   width: 100%;
-  background: #cccaca;
   text-align: center;
   overflow-y: auto;
   border-collapse: collapse;
   z-index: 20;
 }
 
-.region-box #region-list,
-.region-box #region-list li {
+.region-box .ul-table li {
+  cursor: pointer;
   border: 1px solid #c4c4c4;
-}
-
-.region-box #region-list li {
+  background: #d3d2d2;
   padding: 10px;
 }
 
-.region-box #region-list li:hover, .region-box #region-list li:active {
+.region-box .ul-table li:hover, .region-box .ul-table li:active {
   background: #faf6f6;
+}
+
+.region-box .ul-table div {
+  border: 1px solid red;
+  box-shadow: 1px 1px 5px 1px red;
+  background: rgba(231, 231, 231, 0.514);
+  color: red;
+  padding: 10px;
 }
