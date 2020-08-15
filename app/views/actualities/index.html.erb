@@ -10,7 +10,7 @@
     <div class="single-defination">
       <div class="d-flex flex-wrap">
         <%if @actualite != nil%> <% for i in (@actualite.length-1).downto(0)%>
-        <div class="single_case">
+        <div class="single_case bg-white">
           <div class="case_thumb">
             <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last) %> <%end%>
           </div>

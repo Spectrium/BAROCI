@@ -1,3 +1,4 @@
+<div id="Actuality"> 
   <!-- Slide Banniere-->
     <div class="slider_area"> 
       <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
@@ -139,12 +140,9 @@
                       <a href="<%= new_daty_path %>" class="boxed-btn3">Ajout date Mandat</a></li>
                     <% else %>
                       <a href="<%= daty_path(Daty.last.id) %>" class="boxed-btn3">Modifier la date</a>
-                    <% end %>
-                     
-                      
+                    <% end %> 
                       <% end %> 
                   <% end %>
-                
               </div>
             </div>
           </div>
@@ -164,7 +162,7 @@
         <div class="d-flex">
           <%if @actualite != nil%> <%if @actualite.length < 4%> 
             <% for i in 0..@actualite.length-1%>
-              <div class="single_case">
+              <div class="single_case bg-white">
                 <div class="case_thumb">
                   <%if @actualite[i].actuphotos.attached?%> 
                     <%= image_tag (@actualite[i].actuphotos.last), style:"widht:200px!important"; %> 
@@ -179,7 +177,7 @@
             <%end%> 
           <%else%>     
             <% for i in (@actualite.length-1).downto(@actualite.length-3)%>
-              <div class="single_case">
+              <div class="single_case bg-white">
                   <div class="case_thumb">
                     <%if @actualite[i].actuphotos.attached?%> 
                       <%= image_tag (@actualite[i].actuphotos.last) %> 
@@ -441,6 +439,7 @@
     });
   </script>
 </section>
+  </div>
 
 <!-- Flash message -->
  <% if flash.each do |type, msg| %>
