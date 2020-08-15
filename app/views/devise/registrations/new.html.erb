@@ -14,13 +14,13 @@
           </div>
           <div class="sp-flex2">
             <label for="email-inscri">Email :</label>
-            <%= f.email_field :email, autofocus: true, id:'email-inscri',class: 'form-control', autocomplete: "email",placeholder:" adressee-mail", :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+            <%= f.email_field :email, autofocus: true, id:'email-inscri',class: 'form-control', autocomplete: "email",placeholder:" adressee-mail", :required => true %>
           </div>
         </div>
         <div class="sp-flex">
           <div class="sp-flex1">
             <label for="password-inscri">Mot de passe :</label>
-            <%= f.password_field :password, class: 'form-control', id:'password-inscri', autocomplete: "new-password",placeholder:"Mots de passe", :required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+            <%= f.password_field :password, class: 'form-control', id:'password-inscri', autocomplete: "new-password",placeholder:"Mots de passe", :required => true %>
           </div>
           <div class="sp-flex2">
             <label for="password-inscri-confirm">confirmer le mot de passe :</label>
@@ -28,12 +28,22 @@
           </div>
         </div>
 
-        <input type="checkbox" , id="terms" />
-        <% if devise_mapping.rememberable? %> <%= f.label :remember_me %> <% end %>
         <div class="text-center">
           <%= f.submit "S'inscrire", class:"more_btn_edi log-submit" %>
         </div>
-        <% end %> <%= render "devise/shared/links" %>
+        <% end %> 
+          <!-- Flash message  -->
+  <div class="flash">
+    <div class="flash__icon">
+      <i class="icon fa fa-info"></i>
+    </div>
+    <% if flash.each do |type, msg| %>
+      <p class="flash__body font-weight-bold"><%= msg %></p>     
+    <% end.empty? %>
+      <p class="font-weight-bold">Remplir les formulaires pour s'inscrire!</p>    
+    <% end %>
+  </div>
+
       </div>
       <div class="box-signup-image">
         <img src="/images/logo.webp" alt="image mada" />
