@@ -536,10 +536,10 @@ h3 {
   border-radius: 30px;
   text-align: center;
   text-transform: capitalize;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
   cursor: pointer;
   letter-spacing: 2px;
 }
@@ -549,6 +549,8 @@ h3 {
   background: #5DB2FF;
   color: #fff !important;
   border: 1px solid transparent;
+  box-shadow: inset 12px 12px 24px #53a4d4, 
+            inset -12px -12px 24px #75e8ff;
 }
 
 /* line 124, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_btn.scss */
@@ -7325,3 +7327,4 @@ h6 {
   width: 40%;
   margin: 35px;
 }
+

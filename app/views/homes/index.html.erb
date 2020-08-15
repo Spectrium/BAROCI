@@ -1,3 +1,4 @@
+<div id="Actuality"> 
   <!-- Slide Banniere-->
     <div class="slider_area"> 
       <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
@@ -139,12 +140,9 @@
                       <a href="<%= new_daty_path %>" class="boxed-btn3">Ajout date Mandat</a></li>
                     <% else %>
                       <a href="<%= daty_path(Daty.last.id) %>" class="boxed-btn3">Modifier la date</a>
-                    <% end %>
-                     
-                      
+                    <% end %> 
                       <% end %> 
                   <% end %>
-                
               </div>
             </div>
           </div>
@@ -441,6 +439,7 @@
     });
   </script>
 </section>
+  </div>
 
 <!-- Flash message -->
  <% if flash.each do |type, msg| %>

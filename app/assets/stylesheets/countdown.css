@@ -107,7 +107,10 @@ a#logo{
 }
 
 ul.submenu li:hover{
-    background-color: #cecece;
+    background: #a9a9a9;
+    box-shadow: inset 7px 7px 6px #9a9a9a, 
+            inset -7px -7px 6px #b8b8b8;
+
 }
 .w-60{
     width: 60%;
@@ -123,3 +126,18 @@ ul.submenu li:hover{
     background-color: white;
 }
 
+.card-center{
+    width: 100%;
+    max-width: 50em;
+    padding: 15px;
+    margin: auto;
+    box-shadow: 0px 0px 10px;
+    background-color: #f9f9f97a;
+}
+
+.neo-form{
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: inset 5px 5px 8px #f2f2f2, 
+                inset -5px -5px 8px #ffffff;
+}
