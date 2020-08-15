@@ -29,3 +29,12 @@
 //= require turbolinks
 //= require_tree .
 
+
+//flash_message
+$(function() {
+    console.log('Flash message active'); 
+  $( ".flash" ).addClass( "animate--drop-in-fade-out" );
+  setTimeout(function(){
+      $( ".flash" ).removeClass( "animate--drop-in-fade-out" );
+  }, 3500);
+});

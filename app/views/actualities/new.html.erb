@@ -3,9 +3,9 @@
 	<div class="date ">
 		<%= form_tag url_for(action:'create'), method:'post' do %><br>
 			Ajouter le titre d'actualité<br>
-			<input type="text" class="form-control" name="title" placeholder="Titre" ><br>
+			<input type="text" class="form-control" name="title" placeholder="Titre" required = true ><br>
 			Son contenu<br>
-			<textarea type="text" class="form-control" name="description" placeholder="Description..." ></textarea> <br>
+			<textarea type="text" class="form-control" name="description" required = true minlength = 10 placeholder="Description..." ></textarea> <br>
 			<input type="submit" value="Ajouter" ><br>
 		<%end%>
 	</div>
