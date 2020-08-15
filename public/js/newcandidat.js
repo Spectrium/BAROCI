@@ -40,10 +40,13 @@ var list2 = $('#commune-list');
 var candidatc = $('#commune');
 candidatc.focus(function () {
   if (candidat.val() == '') {
+    list2.html('');
     list2.append('<div>Ajouté ou verifié le champ région avant de remplir la commune</div>');
   } else if (typeof commune.commune[`${candidat.val()}`] == 'undefined') {
+    list2.html('');
     list2.append('<div>la région saisi est introuvable dans la base de donné, vauillez verifier !</div>');
   } else {
+    list2.html('');
     let valeur = commune.commune[`${candidat.val()}`];
     for (var i = 0; i < valeur.length; i++) {
       list2.append('<li class="commune-list-item">' + valeur[i].name + '</li>');
