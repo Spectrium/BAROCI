@@ -1,0 +1,32 @@
+.region-box {
+  position: relative;
+}
+
+.region-box .ul-table {
+  position: absolute;
+  height: 187px;
+  width: 100%;
+  text-align: center;
+  overflow-y: auto;
+  border-collapse: collapse;
+  z-index: 20;
+}
+
+.region-box .ul-table li {
+  cursor: pointer;
+  border: 1px solid #c4c4c4;
+  background: #d3d2d2;
+  padding: 10px;
+}
+
+.region-box .ul-table li:hover, .region-box .ul-table li:active {
+  background: #faf6f6;
+}
+
+.region-box .ul-table div {
+  border: 1px solid red;
+  box-shadow: 1px 1px 5px 1px red;
+  background: rgba(231, 231, 231, 0.514);
+  color: red;
+  padding: 10px;
+}
