@@ -162,7 +162,7 @@
         <div class="d-flex">
           <%if @actualite != nil%> <%if @actualite.length < 4%> 
             <% for i in 0..@actualite.length-1%>
-              <div class="single_case">
+              <div class="single_case bg-white">
                 <div class="case_thumb">
                   <%if @actualite[i].actuphotos.attached?%> 
                     <%= image_tag (@actualite[i].actuphotos.last), style:"widht:200px!important"; %> 
@@ -177,7 +177,7 @@
             <%end%> 
           <%else%>     
             <% for i in (@actualite.length-1).downto(@actualite.length-3)%>
-              <div class="single_case">
+              <div class="single_case bg-white">
                   <div class="case_thumb">
                     <%if @actualite[i].actuphotos.attached?%> 
                       <%= image_tag (@actualite[i].actuphotos.last) %> 

@@ -1129,10 +1129,10 @@ h3 {
   opacity: 0;
   visibility: hidden;
   text-align: left;
-  -webkit-transition: 0.6s;
-  -moz-transition: 0.6s;
-  -o-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* line 222, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_header.scss */
