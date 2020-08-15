@@ -1,6 +1,7 @@
 class ActualitiesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :is_admin, except: [:index, :show]
+  before_action :find_nil, only: [:create]
 
   def index
     @actualite = Actuality.all
@@ -52,6 +53,13 @@ class ActualitiesController < ApplicationController
       else
         redirect_to home_path
       end
+    end
+  end
+  def find_nil
+    if params[:title] == '' && params[:description] == ''
+      render "new"
+    else
+      return true
     end
   end
 
