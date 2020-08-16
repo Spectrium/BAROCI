@@ -30,11 +30,20 @@
 //= require_tree .
 
 
-//flash_message
+//flash_message 1
 $(function() {
-    console.log('Flash message active'); 
+    console.log('Flash message active-OK'); 
   $( ".flash" ).addClass( "animate--drop-in-fade-out" );
   setTimeout(function(){
       $( ".flash" ).removeClass( "animate--drop-in-fade-out" );
   }, 50000);
 });
+
+//flash_message 2
+
+function closeAlert() {
+  // document.getElementById("flash-disappear").className += " zoomOut";
+   document.getElementById("flash-disappear").className += " bounceOutUp";
+   console.log("bouce popup-OK");
+
+}		

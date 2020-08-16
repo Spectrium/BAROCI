@@ -1,16 +1,15 @@
-<div class="bg-page">
+
   <div class="card-center p-5" style="width:40%!important;">
     <h1 class="text-center mb-5">Créer un date du Mandat</h1>
     <div class="date "> 
       <%= form_tag url_for(action:'create'), method:'post' do %>
         <div class="mb-2">Début du Mandat</div>
-          <input type="date" class="form-control neo-form" name="start_date" min= <%=Time.now%>><br>
+          <input type="date" class="form-control neo-form" name="start_date" min= <%=Time.now%> required><br>
         <div class="mb-2">Fin du Mandat</div>
-          <input type="date" class="form-control neo-form" name="end_date" min= <%=Time.now%>><br>
+          <input type="date" class="form-control neo-form" name="end_date" min= <%=Time.now%> required><br>
         <div class="text-center">
           <input type="submit" value="Créer" class="boxed-btn3" style="padding: 1em 2em; border-radius:11px;">
         </div>
       <%end%>
     </div>
   </div>
-</div>
