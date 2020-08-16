@@ -1,50 +1,48 @@
-
 .search-cust {
-    font-size: 20px !important;
-    color: #fff;
-  }
-  
+  font-size: 20px !important;
+  color: #fff;
+}
+
+.search-cust:hover {
+  color: #5fb0f8;
+  transition: 0.3s;
+}
+
+.search {
+  width: 130px;
+  height: 35px;
+  border-style: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+  background-color: transparent;
+  transition: width 0.2s ease-in-out;
+  color: white;
+  text-align: center;
+}
+
+.search:focus {
+  width: 220px;
+  border-color: none;
+}
+
+.search-sub {
+  background-color: transparent;
+  border: 0;
+}
+
+@media screen and (max-width: 991px) {
   .search-cust:hover {
-    color: #5fb0f8;
+    color: #a87c02;
     transition: 0.3s;
   }
-  
-  .search {
-    width: 130px;
-    height: 35px;
-    border-style: none;
-    border-bottom: 2px solid #ccc;
-    font-size: 16px;
-    background-color: transparent;
-    transition: width 0.2s ease-in-out;
-    color: white;
-    text-align: center;
-  }
-  
-  .search:focus {
-    width: 220px;
-    border-color: none;
-  }
-  
-  .search-sub {
-    background-color: transparent;
-    border: 0;
-  }
-  
-  @media screen and (max-width: 991px) {
-    .search-cust:hover {
-      color: #a87c02;
-      transition: 0.3s;
-    }
-  }
-  
-  /*responsive commandes*/
-  @media screen and (min-width: 420px) and (max-width: 720px) {
-  }
-  
-  @media screen and (min-width: 420px) and (max-width: 530px) {
-  }
-  
-  @media screen and (min-width: 200px) and (max-width: 420px) {
-  }
-  
+}
+
+/*responsive commandes*/
+@media screen and (min-width: 420px) and (max-width: 720px) {
+}
+
+@media screen and (min-width: 420px) and (max-width: 530px) {
+}
+
+@media screen and (min-width: 200px) and (max-width: 420px) {
+}
