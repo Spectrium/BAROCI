@@ -1,12 +1,12 @@
 <!-- appel css  -->
 <link rel="stylesheet" href="/css/login-users.css" />
 <!-- body html  -->
-
 <div class="box-login">
   <div class="box-login-image">
     <img src="/images/logo.webp" alt="image mada" />
   </div>
   <div class="box-login-form">
+  <h3 class="text-center">Connexion</h3>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> 
     <div class="text-left pl-2">
       <%= f.label :email, class:"pos" %><br />
@@ -16,25 +16,28 @@
       <%= f.label :mot_de_passe, class:"pos" %><br />
     </div>
     <%= f.password_field :password, autocomplete: "current-password", id:"inputPassword", class:"form-control vo text-center neo-form", placeholder:"Mot de passe", :required => true,:minlength => 5 %> <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %> <%= f.label :Se_souvenir %>
+    <div class="field m-3">
+      <%= f.check_box :remember_me %> <%= f.label :Rester_connecter %>
     </div>
-    <% end %> <%= f.submit "Se connecter", class:"more_btn_edi log-submit button" %> <% end %> 
+    <% end %> 
+  <div class="text-center">
+    <%= f.submit "Se connecter", class:"boxed-btn3" %> <% end %> 
+  </div>
     <%= render "devise/shared/links" %>
   </div>
   </div>
 </div>
   
-  <!-- Flash message  -->
-  <div class="flash">
-    <div class="flash__icon">
-      <i class="icon fa fa-info"></i>
-    </div>
-    <% if flash.each do |type, msg| %>
-      <p class="flash__body font-weight-bold"><%= msg %></p>     
-    <% end.empty? %>
-      <p class="font-weight-bold">Remplir les formulaires pour se connecter!</p>    
-    <% end %>
+<!-- Flash message  -->
+<div class="flash">
+  <div class="flash__icon">
+    <i class="icon fa fa-info"></i>
   </div>
+  <% if flash.each do |type, msg| %>
+    <p class="flash__body font-weight-bold"><%= msg %></p>     
+  <% end.empty? %>
+    <p class="font-weight-bold">Remplir les formulaires pour se connecter!</p>    
+  <% end %>
+</div>
 
 

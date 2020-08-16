@@ -28,6 +28,7 @@
  *= require countdown
  *= require footer
  *= require search
+ *= require alert
 
  *= require_tree .
  *= require_self
