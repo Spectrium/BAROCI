@@ -3,7 +3,6 @@
   padding: 12px;
   display: flex;
   justify-content: space-between;
-  text-align: center;
 }
 
 .box-login .box-login-image {
@@ -15,8 +14,8 @@
 }
 
 .box-login .box-login-form {
-  background-color: #dfdfdf;
-  box-shadow: 1px 1px 10px 1px #dfdfdf;
+  background-color: #f8f8f8;
+  box-shadow: 0px 0px 10px black;
   padding: 15px;
 }
 

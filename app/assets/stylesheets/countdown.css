@@ -178,3 +178,7 @@ ul.submenu li:hover{
     padding: 1em 2em; 
     border-radius:11px;
 }
+
+input.focus-none:focus{ 
+    outline:none;
+}
