@@ -110,7 +110,13 @@ ul.submenu li:hover {
   box-shadow: inset 7px 7px 6px #9a9a9a, inset -7px -7px 6px #b8b8b8;
 }
 .w-60 {
-  width: 60%;
+  width: 65%;
+}
+
+@media only screen and (max-width: 990px) {
+  .w-60{
+    width: 5em;
+  }
 }
 
 .bg-page {
@@ -178,4 +184,8 @@ ul.submenu li:hover {
 
 input.focus-none:focus {
   outline: none;
+}
+
+.transparent-bg{
+  background:rgba(0, 0, 0, 0.753);
 }
