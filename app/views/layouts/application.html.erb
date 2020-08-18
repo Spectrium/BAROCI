@@ -4,19 +4,15 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" type="image/x-icon">
+    <link rel="shortcut icon" type="image/x-icon" />
     <title>BAROCI</title>
     <%= csrf_meta_tags %> <%= csp_meta_tag %> <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--Icon Awesome-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="/css/mobile.css">
+    <link rel="stylesheet" href="/css/mobile.css" />
   </head>
-  
+
   <body class="bg-page">
-    <%= render "layouts/NavBar.html.erb" %>
-      <%= yield %> 
-    <%= render "layouts/footer.html.erb" %>
+    <%= render "layouts/NavBar.html.erb" %> <%= yield %> <%= render "layouts/footer.html.erb" %>
   </body>
 </html>
-
-  
