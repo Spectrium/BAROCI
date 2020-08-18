@@ -30,7 +30,7 @@ a#logo {
 /****** Bannier  *******/
 /**********************/
 #bg-banner {
-  background-image: url('banner/info_banner.jpg');
+  background-image: url('/images/banner/info_banner.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

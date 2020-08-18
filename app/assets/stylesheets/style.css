@@ -1317,16 +1317,16 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url('banner/banner.png');
+  background-image: url('/images/banner/banner.png');
 }
 
 /* line 4, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_slider.scss */
 .slider_bg_2 {
-  background-image: url('banner/banner_2.png');
+  background-image: url('/images/banner/info_banner.jpg');
 }
 
 .slider_bg_3 {
-  background-image: url('banner/baobab.jpg');
+  background-image: url('/images/baobab.jpg');
 }
 
 /* line 8, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_slider.scss */
