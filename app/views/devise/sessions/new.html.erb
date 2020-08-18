@@ -1,5 +1,5 @@
 
-    <!--Modale-->
+<!--Modale-->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="/css/login-users.css" />
 <!-- body html  -->
@@ -32,14 +32,13 @@
     
   <div class="d-flex flex-wrap justify-content-around">
     <%= f.submit "Se connecter", class:"btn btn-primary" %> 
-    <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-outline-dark">Mots de passe oublié?</button>
+    <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-info">Mots de passe oublié?</button>
     <% end %> 
   </div>
     <%= render "devise/shared/links" %>
   </div>
   </div>
-    
-      
+
    <!-- MODAL section -->
   <div class="w3-container">
     <div id="id01" class="w3-modal">
@@ -57,6 +56,7 @@
       </div>
     </div>
   </div>
+    </div>
 
 
 <!-- Flash message  -->
@@ -64,11 +64,11 @@
   <div class="flash__icon">
     <i class="icon fa fa-info"></i>
   </div>
-    <% if flash.each do |type, msg| %>
-      <p class="flash__body font-weight-bold"><%= msg %></p>     
-    <% end.empty? %>
+  <% if flash.each do |type, msg| %>
+    <p class="flash__body font-weight-bold"><%= msg %></p>     
+  <% end.empty? %>
+    <p class="font-weight-bold">Remplir les formulaires pour se connecter!</p>    
   <% end %>
-</div>
 </div>
 
 
