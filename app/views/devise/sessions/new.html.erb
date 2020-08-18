@@ -1,4 +1,6 @@
-<!-- appel css  -->
+
+    <!--Modale-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="/css/login-users.css" />
 <!-- body html  -->
 <div class="box-login">
@@ -17,16 +19,44 @@
     </div>
     <%= f.password_field :password, autocomplete: "current-password", id:"inputPassword", class:"form-control vo text-center neo-form", placeholder:"Mot de passe", :required => true,:minlength => 5 %> <% if devise_mapping.rememberable? %>
     <div class="field m-3">
-      <%= f.check_box :remember_me %> <%= f.label :Rester_connecter %>
+    
+      <div class="d-flex">
+          <div class="primary-switch mr-2">
+            <input type="checkbox" value= "1" name="user[remember_me]" id="default-switch">
+            <label for="default-switch"></label>
+          </div>
+           <%= f.label :Rester_connecter %>
     </div>
+        </div>
     <% end %> 
-  <div class="text-center">
-    <%= f.submit "Se connecter", class:"btn btn-primary" %> <% end %> 
+    
+  <div class="d-flex flex-wrap justify-content-around">
+    <%= f.submit "Se connecter", class:"btn btn-primary" %> 
+    <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-outline-dark">Mots de passe oublié?</button>
+    <% end %> 
   </div>
     <%= render "devise/shared/links" %>
   </div>
   </div>
-</div>
+    
+      
+   <!-- MODAL section -->
+  <div class="w3-container">
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-animate-top w3-card-4">
+        <header class="w3-container close-icon"> 
+          <span onclick="document.getElementById('id01').style.display='none'" 
+          class="w3-button w3-display-topright">&times;</span>
+        </header>
+        
+        <div class="w3-container">
+          <%= render "devise/passwords/new.html.erb" %>
+        </div>  
+        <footer class="w3-container w3-teal">
+        </footer>
+      </div>
+    </div>
+  </div>
 
 
 <!-- Flash message  -->
@@ -34,11 +64,11 @@
   <div class="flash__icon">
     <i class="icon fa fa-info"></i>
   </div>
-  <% if flash.each do |type, msg| %>
-    <p class="flash__body font-weight-bold"><%= msg %></p>     
-  <% end.empty? %>
-    <p class="font-weight-bold">Remplir les formulaires pour se connecter!</p>    
+    <% if flash.each do |type, msg| %>
+      <p class="flash__body font-weight-bold"><%= msg %></p>     
+    <% end.empty? %>
   <% end %>
+</div>
 </div>
 
 
