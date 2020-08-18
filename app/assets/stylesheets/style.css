@@ -1359,6 +1359,7 @@ h3 {
 /* line 26, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_text h3 span {
   font-weight: 700;
+  line-height: 1.45;
 }
 
 @media (max-width: 767px) {
