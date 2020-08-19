@@ -1,19 +1,21 @@
 <div class="card-center p-5">
   <h1 class="text-center mb-5 ">Récupération de compte</h1>
   <div class="date text-center"> 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    	<div class="mb-2"><%= f.label :email %></div>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"neo-form content-modal mb-2 w-100", :required => "true" %>
-  </div>
+      <div class="field">
+          <div class="mb-2"><%= f.label :email %></div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"neo-form content-modal mb-2 w-100", :required => "true" %>
+      </div>
 
-  <div class="actions mt-3">
-    <div class="text-center">
-      <input type="submit" value="Obtenir un code de validation" class="btn btn-success">
-      <%= link_to  "return", new_session_path(resource_name), class:"btn btn-outline-danger" %>
-    </div>
+      <div class="actions mt-3">
+        <div class="text-center">
+          <input type="submit" value="Obtenir un code de validation" class="btn btn-success">
+          <%= link_to  "return", new_session_path(resource_name), class:"btn btn-outline-danger" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
 

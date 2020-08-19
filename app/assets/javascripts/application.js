@@ -45,3 +45,4 @@ function closeAlert() {
   document.getElementById('flash-disappear').className += ' bounceOutUp';
   console.log('bouce popup-OK');
 }
+
