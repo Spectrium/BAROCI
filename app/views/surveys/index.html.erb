@@ -10,7 +10,9 @@
 			<li>
 				<p class="promesse-content h4"> Promesse : <u><%= promesse.content %></u></p>
 				<ul>
+					<%i = 0 %>
 					<% promesse.engagments.each do |engagement| %>
+
 						<li class="col-lg-9 pro-center container">
 							<div class="head-center h6 ">Engagements n° <%= engagement.id %> : <br>
 							<p class="engagement"><%= engagement.content %></p>	</div>	
@@ -101,9 +103,43 @@
 							<% end%>
 							<%end%>
 						</div>
-						<div class="row justify-content-center mb-4">						
-							<%= link_to "Voir les commentaires(#{engagement.comments.all.count})", new_engagment_comment_path(engagement.id), class: 'btn btn-info' %>
+						<div class="row justify-content-center mb-4">			
+							<a class="btn btn-info" id="btn-comment-engagement">Voir les commentaires(<%= engagement.comments.all.count %>)
+							</a>
 						</div>
+						<div class=" comment-engagement border p-4 mb-4">
+							<div id="commentss" class="container p-2 mb-2">
+								<%if engagement.comments.length > 7 %>
+									<%= link_to "Voir plus ...", new_engagment_comment_path(engagement.id), class: 'btn btn-info' %>
+								
+									<% for i in engagement.comments.length-5..engagement.comments.length-1 do %>
+										<div id="<%=engagement.comments[i].id%>">
+										<%= engagement.comments[i].user.full_name %><br />
+										<%= engagement.comments[i].content %> <% if user_signed_in? %> <% if engagement.comments[i].user == current_user || current_user.is_admins == true %> | <%= link_to "Modifier", edit_engagment_comment_path(engagement.id, engagement.comments[i].id) %> | <%= link_to "Supprimer", engagment_comment_path(engagement.id, engagement.comments[i].id),
+										method:"delete" ,remote: true%> <br />
+										<% end %> <% end %>
+										</div>
+									<% end %>
+								<% else %>
+									<% engagement.comments.each do |comment| %>
+									<div id="<%=comment.id%>">
+									<%= comment.user.full_name %><br />
+									<%= comment.content %> <% if user_signed_in? %> <% if comment.user == current_user || current_user.is_admins == true %> | <%= link_to "Modifier", edit_engagment_comment_path(engagement.id, comment.id) %> | <%= link_to "Supprimer", engagment_comment_path(engagement.id, comment.id),
+									method:"delete" ,remote: true%> <br />
+									<% end %> <% end %>
+									</div>
+									<% end %>
+								<% end %>
+							</div>
+							<div class="text-center">
+								<%= form_tag url_for(engagment_comments_path(engagement.id)), method:'post',remote: true do %> Votre commentaire
+								<input type="text" name="content" id="btn-content" placeholder="Commentaire .. " />
+							
+								<input type="submit" value="Ajouter" id="btn-submit" />
+								<%end%>
+							</div>
+						</div>
+						<%i += 1 %>
 					<% end %>
 				</ul>
 			</li>
@@ -143,4 +179,3 @@
 		</div> 
 	<%end %>
 </div>
-

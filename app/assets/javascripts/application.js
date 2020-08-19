@@ -29,13 +29,12 @@
 //= require turbolinks
 //= require_tree .
 
-
 //flash_message 1
-$(function() {
-    console.log('Flash message active-OK'); 
-  $( ".flash" ).addClass( "animate--drop-in-fade-out" );
-  setTimeout(function(){
-      $( ".flash" ).removeClass( "animate--drop-in-fade-out" );
+$(function () {
+  console.log('Flash message active-OK');
+  $('.flash').addClass('animate--drop-in-fade-out');
+  setTimeout(function () {
+    $('.flash').removeClass('animate--drop-in-fade-out');
   }, 50000);
 });
 
@@ -43,7 +42,6 @@ $(function() {
 
 function closeAlert() {
   // document.getElementById("flash-disappear").className += " zoomOut";
-   document.getElementById("flash-disappear").className += " bounceOutUp";
-   console.log("bouce popup-OK");
-
-}		
+  document.getElementById('flash-disappear').className += ' bounceOutUp';
+  console.log('bouce popup-OK');
+}
