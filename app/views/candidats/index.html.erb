@@ -15,7 +15,7 @@
             </div>
             <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="100ms">
               <div class="member-thumb">
-
+<!-- <img src="img/bg-img/19.jpg" alt=""> -->
                 <%if @candidat_valid.avatars.attached?%>
                   <%= image_tag  @candidat_valid.avatars.last, class:"image-width", width: '165', height: '165' %>
                 <%else%>
@@ -91,7 +91,6 @@
     <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"more_btn" %>
   </div>
 <!-- Our Team Area End -->   
-
 <!-- Our Team Area Start -->
   <section class="our-team-area section-padding-80-50">
       <div class="container">
@@ -141,58 +140,3 @@
 <%else%>
   <h1 style="text-align: center; margin-top: 10% ">Pas de donné en vue</h1>
 <%end%>
-
-<div class="container">
-     <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-            <h3 class="text-center">My Skills</h3>
-            <br>
-		    <!-- Skill Bars -->
-                <span>html 5</span>
-            <div class="progress skill-bar ">
-                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                    
-                </div>
-            </div>
-                
-           <span>CSS 3</span>     
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" >
-                    
-                </div>
-            </div>
-                <span>Bootstrap</span>
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">    
-                </div>
-            </div>    
-            
-                <span>javascript</span>
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                </div>
-            </div>              
-            
-                <span>jquery</span>
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-                    
-                </div>
-            </div>  
-               
-                <span>php</span>
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                
-                </div>
-            </div>                
-                     
-                <span>photoshop</span>
-            <div class="progress skill-bar">
-                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                   
-                </div>
-            </div>                  
-	</div>
-</div>  
-</div>    

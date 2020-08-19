@@ -29,6 +29,7 @@
  *= require footer
  *= require search
  *= require alert
+ *= require candidat
 
  *= require_tree .
  *= require_self
