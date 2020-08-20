@@ -1,142 +1,135 @@
-<%if @candidat.length != 0%>
-  <div class="container">
-<!-- Our Team Area Start -->
-    <section class="our-team-area section-padding-80-50">
-      <div class="container">
-        <div class="row">
-<!-- Team Member Area -->
-          <div class="col-xl-3">
-            <div class="row">
-              <div class="col-12 py-3">
-                <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
-                  <h2>Candidat élu</h2>
-                </div>
-              </div>
-            </div>
-            <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="100ms">
-              <div class="member-thumb">
-<!-- <img src="img/bg-img/19.jpg" alt=""> -->
-                <%if @candidat_valid.avatars.attached?%>
-                  <%= image_tag  @candidat_valid.avatars.last, class:"image-width", width: '165', height: '165' %>
-                <%else%>
-                  <img src="//placehold.it/150" alt="avatar">
-                <%end%>
-              </div>
-              <h5><%= @candidat_valid.name %></h5>
-              <span>Mouvance : <%= @candidat_valid.parti %></span>
-              <div class="our_skill_inner py-5">
-                <div class="single_skill">
-                  <div class="progress" data-value="<%=@candidat_valid.resultat %>">
-                    <div class="progress-bar">
-                      <div class="progress_parcent">
-                        <span class="counter"><%= @candidat_valid.resultat %></span>%
-                      </div>
+<body>
+
+  <%if @candidat.length != 0%>
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 pb-2 pt-2">
+        <div class="container">
+          <div class="row justify-content-center">
+               <div class="single-defination">
+                <div class="d-flex flex-wrap justify-content-center">
+                  <div class="single_case bg-white">
+                    <div class="case_thumb">
+                      <%if @candidat_valid.avatars.attached?%>
+                        <%= image_tag  @candidat_valid.avatars.last, class:"image-width", width: '165', height: '165' %>
+                      <%else%>
+                        <img src="//placehold.it/150" alt="avatar", class="w-100">
+                      <%end%>
                     </div>
+                    <div class="case_heading">
+                      <h4><%= @candidat_valid.name %></h4>
+                      <span id="case-paragraph">Mouvance : <%= @candidat_valid.parti %>                 
+                        <div class="wrapper mb-3">
+                          <div class="progress-tooltip">
+                            <span class="progress-tooltip-info" style="left: <%=@candidat_valid.resultat %>%;"><%=@candidat_valid.resultat %></span>
+                            <progress class="progress" value="<%= @candidat_valid.resultat %>" max="100"><%= @candidat_valid.resultat %></progress>
+                          </div>
+                        </div>
+                      </span>
+                    </div>
+                    <div class="text-center"><%= link_to "Voir", commune_candidat_path(@commune.id, @candidat_valid.id), class: 'boxed-btn3-line' %></div>
                   </div>
-                </div>
+                </div>  
               </div>
-            <%= link_to "Voir", commune_candidat_path(@commune.id, @candidat_valid.id), class: 'btn btn-info' %>
-            </div>
           </div>
         </div>
       </div>
+      <div class="col-xl-6 col-lg-6">
+        <div class="about_thumb">
+          <div class="about_text">
+            <div class="col-xl-9">
+                <% if @total != 0 %>
+                  <section class="circle_chart_area">
+                    <div class="row">
+                      <div class="col-12 py-3 pb-4">
+                        <div class="section-heading text-center">
+                          <h3>Evolution de la réalisation des promesses</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                          <div class="circle_progress circular style-polygon" data-percentage="<%= (@suivi2 *100)/@total %>" data-thickness="3" data-reverse="true" data-empty-fill="transparent" data-start-color="#987dff" data-end-color="#7acaff">
+                            <div class="circle_progress_inner">
+                              <strong></strong>
+                              <span class="percentage"></span>
+                              <h4>indébuté</h4>
+                            </div> 
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                          <div class="circle_progress circular style-polygon" data-percentage="<%= (@suivi1 *100)/@total  %>" data-thickness="3" data-reverse="true" data-empty-fill="transparent" data-start-color="#987dff" data-end-color="#7acaff">
+                            <div class="circle_progress_inner">
+                              <strong></strong>
+                              <span class="percentage"></span>
+                              <h4>En cours</h4>
+                            </div> 
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                          <div class="circle_progress circular style-polygon" data-percentage="<%= (@suivi3 *100)/@total %>" data-thickness="3" data-reverse="true" data-empty-fill="transparent" data-start-color="#987dff" data-end-color="#7acaff">
+                            <div class="circle_progress_inner">
+                              <strong></strong>
+                              <span class="percentage"></span>
+                              <h4>Fini</h4>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section> 
+                <%end%>
+              </div>
+          </div> 
+        </div>
+      </div>
+    </div>
 
-      <div class="col-xl-9">
-        <% if @total != 0 %>
-          <section class="circle_chart_area">
-            <div class="row">
-              <div class="col-12 py-3 pb-4">
-                <div class="section-heading text-center">
-                  <h3>Evolution de la réalisation des promesses</h3>
-                </div>
+
+
+    <div class="text-center py-3">
+      <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"boxed-btn3" %>
+    </div>
+  
+    <!-- Liste candidat -->
+    <section class="our-team-area section-padding-80-50">
+      <div class="case_study_area">
+        <div class="container">
+          <div class="section_title text-center mb-40"><h3>Liste des candidats dans la commune <%= @commune.name %></h3></div>
+            <div class="single-defination">
+              <div class="d-flex flex-wrap justify-content-center">
+                <!-- Team Member Area -->
+                <% @candidat.each do |candidat|%>
+                  <div class="single_case bg-white">
+                    <div class="case_thumb">
+                      <!-- <img src="img/bg-img/19.jpg" alt=""> -->
+                        <%if candidat.avatars.attached?%>
+                            <%= image_tag  candidat.avatars.last, class:"image-width", width: '165', height: '165' %>
+                        <%else%>
+                            <img src="//placehold.it/150" alt="avatar">
+                        <%end%>                          
+                    </div>
+                    <div class="case_heading">
+                      <h4><%= candidat.name %></h4>
+                      <span id="case-paragraph">Mouvence : <%= candidat.parti %>                 
+                        <div class="wrapper mb-3">
+                          <div class="progress-tooltip">
+                            <span class="progress-tooltip-info" style="left: <%=candidat.resultat %>%;"><%=candidat.resultat %></span>
+                            <progress class="progress" value="<%=candidat.resultat %>" max="100"><%=candidat.resultat %></progress>
+                          </div>
+                        </div>
+                      </span>
+                    </div>
+                    <div class="text-center"><%= link_to "Voir", commune_candidat_path(@commune.id, candidat.id), class: 'boxed-btn3-line' %></div>
+                  </div>
+                <% end %>
               </div>
             </div>
-            <div class="container">
-              <div class="row justify-content-center">
-                <div class="col-lg-3 col-sm-6">
-                  <div class="circle_progress circular style-polygon" data-percentage="<%= (@suivi2 *100)/@total %>" data-thickness="3" data-reverse="true" data-empty-fill="transparent" data-start-color="#987dff" data-end-color="#7acaff">
-                    <div class="circle_progress_inner">
-                      <strong></strong>
-                      <span class="percentage"></span>
-                      <h4>indébuté</h4>
-                    </div> 
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="circle_progress circular style-polygon" data-percentage="<%= (@suivi1 *100)/@total  %>" data-thickness="3" data-reverse="true" data-empty-fill="transparent" data-start-color="#987dff" data-end-color="#7acaff">
-                    <div class="circle_progress_inner">
-                      <strong></strong>
-                      <span class="percentage"></span>
-                      <h4>En cours</h4>
-                    </div> 
-                  </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                  <div class="circle_progress circular style-polygon" data-percentage="<%= (@suivi3 *100)/@total %>" data-thickness="3" data-reverse="true" data-empty-fill="transparent" data-start-color="#987dff" data-end-color="#7acaff">
-                    <div class="circle_progress_inner">
-                      <strong></strong>
-                      <span class="percentage"></span>
-                      <h4>Fini</h4>
-                    </div> 
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section> 
-        <%end%>
+          </div>
+        </div>  
       </div>
     </section>
-  </div>
-  <div class="text-center py-3">
-    <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"more_btn" %>
-  </div>
-<!-- Our Team Area End -->   
-<!-- Our Team Area Start -->
-  <section class="our-team-area section-padding-80-50">
-      <div class="container">
-          <div class="row">
-              <div class="col-12 py-3">
-                  <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
-                      <h2>Liste des candidats dans la commune <%= @commune.name %></h2>
-                  </div>
-              </div>
-          </div>
+  <%else%>
+    <h1 style="text-align: center; margin-top: 10% ">Pas de donné en vue</h1>
+  <%end%>
 
-          <div class="row">
-              <!-- Team Member Area -->
-              <% @candidat.each do |candidat|%>
-              <div class="col-md-6 col-xl-3">
-                  <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="100ms">
-                      <div class="member-thumb">
-                          <!-- <img src="img/bg-img/19.jpg" alt=""> -->
-                          <%if candidat.avatars.attached?%>
-                              <%= image_tag  candidat.avatars.last, class:"image-width", width: '165', height: '165' %>
-                          <%else%>
-                              <img src="//placehold.it/150" alt="avatar">
-                          <%end%>
-                      </div>
-                      <h5><%= candidat.name %></h5>
-                      <span>Mouvence : <%= candidat.parti %></span>
-                      
-                      <div class="our_skill_inner py-5">
-                          <div class="single_skill">
-                              <div class="progress" data-value="<%=candidat.resultat %>">
-                                  <div class="progress-bar">
-                                      <div class="progress_parcent"><span class="counter"><%= candidat.resultat %></span>%</div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div>
-                          <%= link_to "Voir", commune_candidat_path(@commune.id, candidat.id), class: 'btn btn-info' %>
-                      </div>
-                  </div>
-              </div>
-              <% end %>
-          </div>
-      </div>
-  </section>*
-<%else%>
-  <h1 style="text-align: center; margin-top: 10% ">Pas de donné en vue</h1>
-<%end%>
