@@ -1,18 +1,18 @@
 <body>
-
+ 
   <%if @candidat.length != 0%>
     <div class="row">
-      <div class="col-xl-6 col-lg-6 pb-2 pt-2">
+      <div class="col-5">
         <div class="container">
           <div class="row justify-content-center">
                <div class="single-defination">
                 <div class="d-flex flex-wrap justify-content-center">
                   <div class="single_case bg-white">
-                    <div class="case_thumb">
+                    <div class="case_thumb text-center">
                       <%if @candidat_valid.avatars.attached?%>
                         <%= image_tag  @candidat_valid.avatars.last, class:"image-width", width: '165', height: '165' %>
                       <%else%>
-                        <img src="//placehold.it/150" alt="avatar", class="w-100">
+                        <img src="//placehold.it/150" alt="avatar", class="mb-3 rounded-circle", style="width:87%">
                       <%end%>
                     </div>
                     <div class="case_heading">
@@ -26,17 +26,18 @@
                         </div>
                       </span>
                     </div>
-                    <div class="text-center"><%= link_to "Voir", commune_candidat_path(@commune.id, @candidat_valid.id), class: 'boxed-btn3-line' %></div>
+                    <div class="text-center pt-3"><%= link_to "Voir", commune_candidat_path(@commune.id, @candidat_valid.id), class: 'boxed-btn3-line' %></div>
                   </div>
                 </div>  
               </div>
           </div>
         </div>
       </div>
-      <div class="col-xl-6 col-lg-6">
+      
+      <div class="col-7">
         <div class="about_thumb">
           <div class="about_text">
-            <div class="col-xl-9">
+            
                 <% if @total != 0 %>
                   <section class="circle_chart_area">
                     <div class="row">
@@ -46,41 +47,71 @@
                         </div>
                       </div>
                     </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-lg-3 col-sm-6">
-                          <div class="circle_progress circular style-polygon" data-percentage="<%= (@suivi2 *100)/@total %>" data-thickness="3" data-reverse="true" data-empty-fill="transparent" data-start-color="#987dff" data-end-color="#7acaff">
-                            <div class="circle_progress_inner">
-                              <strong></strong>
-                              <span class="percentage"></span>
-                              <h4>indébuté</h4>
-                            </div> 
-                          </div>
+                    <div class="container">  
+                      <div class="row" >
+                          <ul class="List">
+                        
+                            <div class="col">
+                              <li class="List-item">
+                        <div class="ProgressBar ProgressBar--animateText" data-progress="<%= (@suivi3 *100)/@total %>">
+                          <svg class="ProgressBar-contentCircle">
+                            <!-- on défini le l'angle et le centre de rotation du cercle -->
+                            <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="95" />
+                            <circle transform="rotate(-90, 100, 100)" class="ProgressBar-circle" cx="100" cy="100" r="95" />
+                            <span class="ProgressBar-percentage ProgressBar-percentage--count"></span>
+                          </svg>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
-                          <div class="circle_progress circular style-polygon" data-percentage="<%= (@suivi1 *100)/@total  %>" data-thickness="3" data-reverse="true" data-empty-fill="transparent" data-start-color="#987dff" data-end-color="#7acaff">
-                            <div class="circle_progress_inner">
-                              <strong></strong>
-                              <span class="percentage"></span>
-                              <h4>En cours</h4>
-                            </div> 
-                          </div>
+                      </li>
+                      
+                            
+                               
+                              </div>
+    
+                            <div class="col">
+                                <li class="List-item">
+                        <div class="ProgressBar ProgressBar--animateCircle" data-progress=" <%= (@suivi2 *100)/@total %>">
+                          <svg class="ProgressBar-contentCircle">
+                            <!-- on défini le l'angle et le centre de rotation du cercle -->
+                            <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="95" />
+                            <circle transform="rotate(-90, 100, 100)" class="ProgressBar-circle" cx="100" cy="100" r="95" />
+                            <span class="ProgressBar-percentage ProgressBar-percentage--count"></span>
+                          </svg>
                         </div>
-                        <div class="col-lg-3 col-sm-6">
-                          <div class="circle_progress circular style-polygon" data-percentage="<%= (@suivi3 *100)/@total %>" data-thickness="3" data-reverse="true" data-empty-fill="transparent" data-start-color="#987dff" data-end-color="#7acaff">
-                            <div class="circle_progress_inner">
-                              <strong></strong>
-                              <span class="percentage"></span>
-                              <h4>Fini</h4>
-                            </div> 
-                          </div>
+                      </li>
+                  
+                            </div>
+                            <div class="col">
+                               <li class="List-item">
+                        <div class="ProgressBar ProgressBar--animateAll" data-progress=" <%= (@suivi1 *100)/@total %>">
+                          <svg class="ProgressBar-contentCircle">
+                            <!-- on défini le l'angle et le centre de rotation du cercle -->
+                            <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="95" />
+                            <circle transform="rotate(-90, 100, 100)" class="ProgressBar-circle" cx="100" cy="100" r="95" />
+                            <span class="ProgressBar-percentage ProgressBar-percentage--count"></span>
+                          </svg>
                         </div>
-                      </div>
+                      </li>
+                            </div>
+                          </ul>
+                      </div>                     
+                 
+                  
+
+                    
+                         
+                    
+
+                    
+                     
+	                
+          
+
+                        
+                        
                     </div>
                   </section> 
                 <%end%>
               </div>
-          </div> 
         </div>
       </div>
     </div>
@@ -101,12 +132,12 @@
                 <!-- Team Member Area -->
                 <% @candidat.each do |candidat|%>
                   <div class="single_case bg-white">
-                    <div class="case_thumb">
+                    <div class="case_thumb text-center">
                       <!-- <img src="img/bg-img/19.jpg" alt=""> -->
                         <%if candidat.avatars.attached?%>
                             <%= image_tag  candidat.avatars.last, class:"image-width", width: '165', height: '165' %>
                         <%else%>
-                            <img src="//placehold.it/150" alt="avatar">
+                            <img src="//placehold.it/150" alt="avatar" class="mb-3" style="width:87%">
                         <%end%>                          
                     </div>
                     <div class="case_heading">
@@ -132,4 +163,86 @@
   <%else%>
     <h1 style="text-align: center; margin-top: 10% ">Pas de donné en vue</h1>
   <%end%>
+<!-- partial:index.partial.html -->
 
+<script>
+    (function ($){
+
+        $.fn.bekeyProgressbar = function(options){
+
+            options = $.extend({
+              animate     : true,
+              animateText : true
+            }, options);
+
+            var $this = $(this);
+          
+            var $progressBar = $this;
+            var $progressCount = $progressBar.find('.ProgressBar-percentage--count');
+            var $circle = $progressBar.find('.ProgressBar-circle');
+            var percentageProgress = $progressBar.attr('data-progress');
+            var percentageRemaining = (100 - percentageProgress);
+            var percentageText = $progressCount.parent().attr('data-progress');
+          
+            //Calcule la circonférence du cercle
+            var radius = $circle.attr('r');
+            var diameter = radius * 2;
+            var circumference = Math.round(Math.PI * diameter);
+
+            //Calcule le pourcentage d'avancement
+            var percentage =  circumference * percentageRemaining / 100;
+
+            $circle.css({
+              'stroke-dasharray' : circumference,
+              'stroke-dashoffset' : percentage
+            })
+            
+            //Animation de la barre de progression
+            if(options.animate === true){
+              $circle.css({
+                'stroke-dashoffset' : circumference
+              }).animate({
+                'stroke-dashoffset' : percentage
+              }, 3000 )
+            }
+            
+            //Animation du texte (pourcentage)
+            if(options.animateText == true){
+    
+              $({ Counter: 0 }).animate(
+                { Counter: percentageText },
+                { duration: 3000,
+                step: function () {
+                  $progressCount.text( Math.ceil(this.Counter) + '%');
+                }
+                });
+
+            }else{
+              $progressCount.text( percentageText + '%');
+            }
+          
+        };
+
+    })(jQuery);
+
+    $(document).ready(function(){
+      
+      $('.ProgressBar--animateNone').bekeyProgressbar({
+        animate : false,
+        animateText : false
+      });
+      
+      $('.ProgressBar--animateCircle').bekeyProgressbar({
+        animate : true,
+        animateText : false
+      });
+      
+      $('.ProgressBar--animateText').bekeyProgressbar({
+        animate : false,
+        animateText : true
+      });
+      
+      $('.ProgressBar--animateAll').bekeyProgressbar();
+      
+    })
+</script>
