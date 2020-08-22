@@ -24,6 +24,7 @@
 //= require plugins
 //= require jquery.ajaxchimp.min
 //= require main
+//= require candidat.js
 
 //= require activestorage
 //= require turbolinks
@@ -38,11 +39,11 @@ $(function () {
   }, 50000);
 });
 
-//flash_message 2
+// //flash_message 2
 
-function closeAlert() {
-  // document.getElementById("flash-disappear").className += " zoomOut";
-  document.getElementById('flash-disappear').className += ' bounceOutUp';
-  console.log('bouce popup-OK');
-}
+// function closeAlert() {
+//   // document.getElementById("flash-disappear").className += " zoomOut";
+//   document.getElementById('flash-disappear').className += ' bounceOutUp';
+//   console.log('bouce popup-OK');
+// }
 
