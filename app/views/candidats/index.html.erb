@@ -1,6 +1,6 @@
+
   <!-- Begin Evolution des promesse--> 
   <%if @candidat.length != 0%>
-
     <div class="d-flex flex-wrap justify-content-center mb-5">
       <div class="flex-fill">
         <div class="container">
@@ -43,7 +43,7 @@
                 </div>
               </div>
             </div>
-            <div class="container mt-5" id="bgcount">  
+            <div class="container mt-3 mb-3" id="bgcount">  
               <div class="row">
                 <ul class="List"> 
                     <!-- colonne Non commencer--> 
@@ -89,30 +89,29 @@
                   </div>
                 </ul>
               </div>
-              <div class="container">
-                <div class="row text-center text-white">
-                  <div class="col-sm p-2 mr-3">
-                    Non commencer
-                  </div>
-                  <div class="col-sm p-2 mr-3">
-                    En cours de réalisation
-                  </div>
-                  <div class="col-sm p-2 mr-3">
-                    Promesse Réaliser
-                  </div>
-                </div>
-              </div>                    
+                     
             </div>
           </section> 
         <%end%>
+           <div class="container">
+                <div class="row text-center" id="roundbg">
+                  <div class="col-sm p-2 mr-3 border-right">
+                    Non commencer
+                  </div>
+                  <div class="col-sm p-2 mr-3 border-right">
+                    En cours de réalisation
+                  </div>
+                  <div class="col-sm p-2 mr-3 border-right">
+                    Promesse Réaliser
+                  </div>
+                </div>
+              </div>          
+      <div class="text-center py-3">
+        <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"boxed-btn3" %>
+      </div>
       </div>
     </div>
 
-
-
-    <div class="text-center py-3">
-      <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"boxed-btn3" %>
-    </div>
     <!-- End Evolution des promesse--> 
   
     <!-- Liste candidat -->
@@ -156,4 +155,3 @@
   <%else%>
     <h1 style="text-align: center; margin-top: 10% ">Pas de donné en vue</h1>
   <%end%>
-
