@@ -59,20 +59,9 @@
 
 $(document).ready(function(){
   
-  $('.ProgressBar--animateNone').bekeyProgressbar({
-    animate : false,
-    animateText : false
-  });
-  
-  $('.ProgressBar--animateCircle').bekeyProgressbar({
-    animate : true,
-    animateText : false
-  });
-  
-  $('.ProgressBar--animateText').bekeyProgressbar({
-    animate : false,
-    animateText : true
-  });
+  $('.ProgressBar--animateCircle').bekeyProgressbar();
+
+  $('.ProgressBar--animateText').bekeyProgressbar();
   
   $('.ProgressBar--animateAll').bekeyProgressbar();
   
