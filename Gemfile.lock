@@ -186,6 +186,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.2.1)
     regexp_parser (1.7.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -265,6 +266,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 5.2.4)
+  redis (~> 4.0)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
@@ -276,7 +278,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 2.5.1p57
 
 BUNDLED WITH
    2.1.4

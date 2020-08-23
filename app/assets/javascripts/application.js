@@ -46,3 +46,6 @@ function closeAlert() {
   console.log('bouce popup-OK');
 }
 
+document.addEventListener('turbolinks:load', () => {
+  console.log('fff')
+})
