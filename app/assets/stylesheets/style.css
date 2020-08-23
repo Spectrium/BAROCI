@@ -643,13 +643,13 @@ h3 {
 
 /* line 2, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_section_title.scss */
 .section_title h3 {
-  font-size: 46px;
-  font-weight: 300;
-  line-height: 76px;
-  color: #001d38;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 55px;
+  color: black;
   position: relative;
   z-index: 0;
-  padding-bottom: 15px;
+  padding: 1em;
 }
 
 @media (max-width: 767px) {
@@ -1573,7 +1573,7 @@ h3 {
 
 /* line 64, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_counter.scss */
 .case_study_area .single_case .case_heading {
-  padding: 25px 10px;
+  padding: 5px 10px;
 }
 
 /* line 66, ../../Arafath/CL/CL October/216. Consulting/HTML/scss/_counter.scss */
