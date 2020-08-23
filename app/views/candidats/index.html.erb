@@ -34,7 +34,7 @@
       </div>
       <div class="flex-fill">
         <% if @total != 0 %>
-          <section class="circle_chart_area">
+          <section class="circle_chart_area" >
             <div class="row">
               <div class="col-12 py-3 pb-4">
                 <div class="section-heading text-center">
@@ -43,12 +43,12 @@
               </div>
             </div>
             <div class="container mt-3 mb-3" id="bgcount">  
-              <div class="row">
+              <div class="row bg-candidat">
                 <ul class="List"> 
                     <!-- colonne Non commencer--> 
                   <div class="col">
                     <li class="List-item">
-                      <div class="ProgressBar ProgressBar--animateText" data-progress="<%= (@suivi3 *100)/@total %>">
+                      <div class="ProgressBar ProgressBar--animateText" data-progress="<%= (@suivi2 *100)/@total %>">
                         <svg class="ProgressBar-contentCircle">
                           <!-- on défini le l'angle et le centre de rotation du cercle -->
                           <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="95" />
@@ -62,7 +62,7 @@
                     <!-- colonne Débuter--> 
                   <div class="col">
                     <li class="List-item">
-                      <div class="ProgressBar ProgressBar--animateCircle" data-progress=" <%= (@suivi2 *100)/@total %>">
+                      <div class="ProgressBar ProgressBar--animateCircle" data-progress=" <%= (@suivi1 *100)/@total %>">
                         <svg class="ProgressBar-contentCircle">
                           <!-- on défini le l'angle et le centre de rotation du cercle -->
                           <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="95" />
@@ -76,7 +76,7 @@
                     <!-- colonne Tache réaliser--> 
                   <div class="col">
                       <li class="List-item">
-                        <div class="ProgressBar ProgressBar--animateAll" data-progress=" <%= (@suivi1 *100)/@total %>">
+                        <div class="ProgressBar ProgressBar--animateAll" data-progress=" <%= (@suivi3 *100)/@total %>">
                           <svg class="ProgressBar-contentCircle">
                             <!-- on défini le l'angle et le centre de rotation du cercle -->
                             <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="95" />
@@ -92,7 +92,7 @@
             </div>
           </section> 
         <%end%>
-           <div class="container">
+           <div class="container bg-candidat">
                 <div class="row text-center" id="roundbg">
                   <div class="col-sm p-2 mr-3 border-right">
                     Non commencer
