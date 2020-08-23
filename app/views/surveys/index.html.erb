@@ -9,7 +9,7 @@
 			<% totalegagement += promesse.engagments.count %>
 			<li>
 				<p class="promesse-content h4"> Promesse : <u><%= promesse.content %></u></p>
-				<ul>
+				<ul id="prommess-ul">
 					<%i = 0 %>
 					<% promesse.engagments.each do |engagement| %>
 
@@ -104,10 +104,10 @@
 							<%end%>
 						</div>
 						<div class="row justify-content-center mb-4">			
-							<a class="btn btn-info" id="btn-comment-engagement">Voir les commentaires(<%= engagement.comments.all.count %>)
+							<a class="btn btn-info btn-comment-engagement" id="<%= engagement.id %>">Voir les commentaires(<%= engagement.comments.all.count %>)
 							</a>
 						</div>
-						<div class=" comment-engagement border p-4 mb-4">
+						<div class=" comment-engagement border p-4 mb-4" id="comment-engagement<%= engagement.id %>">
 							<div id="commentss" class="container p-2 mb-2">
 								<%if engagement.comments.length > 7 %>
 									<%= link_to "Voir plus ...", new_engagment_comment_path(engagement.id), class: 'btn btn-info' %>

@@ -46,7 +46,10 @@ $(function () {
 //   document.getElementById('flash-disappear').className += ' bounceOutUp';
 //   console.log('bouce popup-OK');
 // }
-
-document.addEventListener('turbolinks:load', () => {
-  console.log('fff')
-})
+$(document).ready(function () {
+  $('.comment-engagement').hide();
+  $('ul').on('click', '.btn-comment-engagement', function (e) {
+    $('.comment-engagement').fadeOut(100);
+    $('#comment-engagement' + e.target.id).fadeIn(500);
+  });
+});
