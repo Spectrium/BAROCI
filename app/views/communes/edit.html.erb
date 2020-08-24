@@ -1,9 +1,10 @@
-<div class="container">
-	<div class="row">
-		<%= form_tag url_for(action:'update'), method:'put' do %><br>
-			Nom de la commune<br>
-			<input type="text" name="name" value="<%= @commune.name %>" ><br>
-			<input type="submit" value="Enregistrer"><br>
+<div class="card-center p-5">
+  <h1 class="text-center mb-5">Modification Commune</h1>
+  <div class="date ">
+		<%= form_tag url_for(action:'update'), method:'put' do %>
+			 <div class="mb-2 text-center">Nom de la Commune</div>
+			<input type="text" name="name" value="<%= @commune.name %>" class="form-control neo-form text-center" ><br>
+			<div class="text-center"><input type="submit" value="Enregistrer" class="boxed-btn3 btn-modal"></div>
 		<%end%>
 	</div>
 </div>

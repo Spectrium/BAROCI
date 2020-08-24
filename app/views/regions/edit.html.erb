@@ -1,13 +1,10 @@
-<div class="container aaaa">
-	<div class="row">
+<div class="card-center p-5">
+  <h1 class="text-center mb-5">Modification Région</h1>
+  <div class="date ">
 		<%= form_tag url_for(action:'update'), method:'put' do %>
-		<div class="form-group">
-			<label for="edit-region">Nom de la region</label>	
-			<input type="text" name="name" id="edit-region" class="form-control " value="<%= @region.name %>" >
-		</div>
-		<div class="form-group">
-			<input type="submit" value="Enregistrer" class="submit-edit form-control">
-		</div>
+			 <div class="mb-2 text-center">Nom de la Région</div>
+			<input type="text" name="name" value="<%= @region.name %>" class="form-control neo-form text-center"><br>
+			<div class="text-center"><input type="submit" value="Enregistrer" class="boxed-btn3 btn-modal"></div>
 		<%end%>
 	</div>
 </div>

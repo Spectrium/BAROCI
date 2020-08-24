@@ -1,43 +1,57 @@
-
+    <!--Modale-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <div class="container">
+  <h2 class="py-3 text-center">Liste de toutes les communes dans la région <%= @region.name %></h2>
+    <div class="shadow-card">
+      <div class="row white">
+        <div class="col-xl-1 col-lg-4">#</div>
+          <div class="col-xl-3 col-lg-4 text-center">Commune</div>
+          <div class="d-flex justify-content-between w-50 text-center ml-6">
+            <% if user_signed_in?%>
+              <% if current_user.is_admins == true %>
+                <div class="col-xl-6 col-lg-4">Editer</div>
+                <div class="col-xl-6 col-lg-4">Supprimer</div>
+              <% end%>
+            <% end%>
+          </div>
+        </div>
 
-  <h2 class="py-3">Liste de toutes les communes dans la région <%= @region.name %></h2>
-
-  <table class="table table-striped">
-    <thead class="white">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Commune</th>
-  	  <% if user_signed_in? %>
+        <div class="overflow">
+          <table class="table table-striped">
+                <% i = 1 %>
+                <% @commune.each do |commune|%>
+                  <tbody class="hover-table">
+                    <tr class="tr">
+                      <th scope="row"><%= i %></th>
+                      <td><%= link_to commune.name.titleize, commune_candidats_path(commune.id) %></td>
+                      <% if user_signed_in? %>
+                        <% if current_user.is_admins == true %>
+                          <td class="text-blue"><i class="mr-4 fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'more_btn_edi text-blue' %></td>
+                          <td class="text-red"><i class="mr-4 fa fa-trash" aria-hidden="true"></i><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'more_btn_sup text-red' %></td>
+                        <% end %>
+                      <% end %>
+                    </tr>
+                  </tbody>
+                  <% i += 1 %>
+                <% end %>
+          </table>
+        </div>
+      </div>
+   
+    <div class="d-flex justify-content-center mt-3">
+      <% if user_signed_in? %>
         <% if current_user.is_admins == true %>
-          <th scope="col">Edit</th>
-          <th scope="col">Supprimer</th>
+            <div class="col-xl-10">
+              <div class="btn-lg btn-block text-center">
+                <button onclick="document.getElementById('id01').style.display='block'" class="w-50 boxed-btn3">Ajouter Commune</button>
+              </div>
+            </div>
         <% end %>
-  	  <% end %>
-        
-      </tr>
-    </thead>
-    <% i = 1 %>
-    <% @commune.each do |commune|%>
-      <tbody>
-        <tr>
-          <th scope="row"><%= i %></th>
-          <td><%= link_to commune.name.titleize, commune_candidats_path(commune.id) %></td>
-          <% if user_signed_in? %>
-            <% if current_user.is_admins == true %>
-              <td><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'more_btn_edi' %></td>
-              <td><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'more_btn_sup' %></td>
-            <% end %>
-      	  <% end %>
-        </tr>
-      </tbody>
-      <% i += 1 %>
-    <% end %>
-  </table>
-  <% if user_signed_in? %>
-    <% if current_user.is_admins == true %>
-      <%= link_to "créé une commune", new_region_commune_path(@region.id) ,class:'more_btn' %> <br> <br>
-    <% end %>
-  <% end %>
+      <% end %>
+      <button type="button" class="btn btn-labeled btn-danger m-3" onclick= window.location.href='<%= home_path %>'; value="Retour vers la page Accueil" >
+        <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
+      </button>
+    </div>
+  </div>
 
-</div>
+  

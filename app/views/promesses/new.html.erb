@@ -1,10 +1,12 @@
-<div class="container">
-	<h1>Création d'une promesse</h1>
-	<div class="row">
+
+<div class="card-center p-5">
+  <h1 class="text-center mb-3 ">Ajout Promesse</h1>
+  <div class="date text-center"> 
 		<%= form_tag url_for(action:'create'), method:'post' do %><br>
-			Contenu de la promesse<br>
-			<input type="text" name="content" ><br>
-			<input type="submit" value="Créer"><br>
+			 <div class="mb-2">Contenue promesse</div>
+			<input type="text" name="content" class="neo-form content-modal mb-4" required>
+			<input type="submit" value="Ajouter" class="btn-modal btn btn-success"><br>
 		<%end%>
 	</div>
 </div>
+

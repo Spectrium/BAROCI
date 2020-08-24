@@ -1,9 +1,10 @@
-<div class="container">
-	<div class="row">
-		<%= form_tag url_for(action:'update'), method:'put' do %><br>
-			Contenu de la promesse<br>
-			<input type="text" name="content" value="<%= @promesse.content %>" ><br>
-			<input type="submit" value="Enregistrer les modifications"><br>
-		<%end%>
-	</div>
+<div class="container text-center pt-5 pb-5 ">
+  <h1>Modifier la promesse</h1>
+  <div>
+    <%= form_tag url_for(action:'update'), method:'put' do %><br />
+    Contenu de la promesse<br />
+    <input type="text" name="content" value="<%= @promesse.content %>" class="m-1" /><br />
+    <input type="submit" value="Enregistrer" class="m-1" /><br />
+    <%end%>
+  </div>
 </div>

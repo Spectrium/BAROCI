@@ -1,0 +1,33 @@
+.box-signup {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 50px auto;
+}
+
+.box-signup .sign-up {
+  background-color: #dfdfdf;
+  box-shadow: 0px 0px 10px;
+  padding: 20px;
+}
+
+
+.box-signup .sign-up h1 {
+  margin-bottom: 10px;
+}
+
+.box-signup .sign-up .log-submit {
+  cursor: pointer;
+  padding: 5px 30px;
+  margin-top: 4px;
+}
+
+.box-signup .box-signup-image {
+  align-self: center;
+  width: 40%;
+}
+
+.box-signup .box-signup-image img {
+  width: 100%;
+}

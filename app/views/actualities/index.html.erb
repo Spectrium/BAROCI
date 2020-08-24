@@ -1,17 +1,28 @@
-<h1>Toutes les actualités</h1>
-
-<div class="container">
-	<p>
-		<% @actualite.each do |actualite| %>
-			<strong>Titre : </strong>
-			<%= actualite.title %><br>
-			<strong> Description : </strong><br>
-			<%= actualite.description %><br>
-			<%= link_to "voir", actuality_path(actualite) %> <br>
-			<%if actualite.actuphotos.attached?%>
-			  <%= image_tag (actualite.actuphotos.last), class:"img-display carousel-display card-img-top proimg",alt: "Photo d'actualité" %>
-			<%end%>
-			<br><br>
-		<% end %>
-	</p>
+<!--================End Blog Main Area =================-->
+<!-- Actualiter-->
+<div class="case_study_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="section_title text-center mb-40"><h3>Actualité</h3></div>
+      </div>
+    </div>
+    <div class="single-defination">
+      <div class="d-flex flex-wrap">
+        <%if @actualite != nil%> <% for i in (@actualite.length-1).downto(0)%>
+        <div class="single_case bg-white">
+          <div class="case_thumb">
+            <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last) %> <%end%>
+          </div>
+          <div class="case_heading">
+            <h4><%= @actualite[i].title%></h4>
+            <p id="case-paragraph"><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p>
+          </div>
+          <div class="text-center"><%= link_to "Voir plus", actuality_path(@actualite[i]), class: "boxed-btn3-line" %></div>
+        </div>
+        <%end%> 
+        <%end%>
+      </div>
+    </div>
+  </div>
 </div>

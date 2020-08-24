@@ -1,5 +1,6 @@
 class CandidatsController < ApplicationController
-  before_action :is_admin,except: [:show,:index]
+	before_action :is_admin,except: [:show,:index]
+	before_action :find_nil, only: [:create]
   def index
     @commune = Commune.find(params[:commune_id])
     @candidat = @commune.candidats.all
@@ -12,17 +13,19 @@ class CandidatsController < ApplicationController
     @suivi1 = 0 
     @suivi2 = 0 
     @suivi3 = 0 
-    @total = 0  
-    var = @candidat_valid.promesses.all 
-    if var.length != 0                    
-      var.each do |pro| 
-        @total += pro.suivis.count 
-        @suivi = Suivi.where(promess: pro)
-        @suivi1 += (@suivi.where(start: true)).count
-        @suivi2 += ((@suivi.where(transition: true).count))
-        @suivi3 += ((@suivi.where(finished: true).count) ) 
-      end 
-    end 
+    @total = 0
+    if @candidat.length != 0
+      var = @candidat_valid.promesses.all 
+      if var.length != 0                    
+        var.each do |pro| 
+          @total += pro.suivis.count 
+          @suivi = Suivi.where(promess: pro)
+          @suivi1 += (@suivi.where(start: true)).count
+          @suivi2 += ((@suivi.where(transition: true).count))
+          @suivi3 += ((@suivi.where(finished: true).count) ) 
+        end 
+      end  
+    end
   end
 
   def show
@@ -147,6 +150,13 @@ class CandidatsController < ApplicationController
       else
         redirect_to home_path
       end
+    end
+  end
+  def find_nil
+    if params[:full_name] == '' || params[:mouvence] == '' || params[:resultat] == '' || params[:region] == '' || params[:commune] == ''
+      render "new"
+    else
+      return true
     end
   end
 end

@@ -1,42 +1,74 @@
- <section class="my-form">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="container">
-      <h1>Inscription</h1>
-      <ul>
-        <li>
-          <div class="grid grid-2">
-            <%= f.text_field :full_name, autofocus: true, class: 'form-control', autocomplete: "Nom Complet",placeholder:"Name" %>
-              <%= f.email_field :email, autofocus: true, class: 'form-control', autocomplete: "email",placeholder:"Email" %>
-          </div>
-        </li>
-        <li>
-          <div class="grid grid-2">
-              <%= f.password_field :password, class: 'form-control', autocomplete: "new-password",placeholder:"Mots de passe" %>
-              <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "new-password",placeholder:"Confirmer mots de passe" %>
-          </div>
-        </li>       
-        <li>
-          <input type="checkbox" id="terms">
-            <% if devise_mapping.rememberable? %>
-              <%= f.label :remember_me, class:"d" %>
-            <% end %>  
-          </label>
-        </li>  
-        
-        <li>
-          <div class="grid grid-3">
-            <button class="btn-grid" type="submit">
-              <!-- <span class="back">
-                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/email-icon.svg" alt="">
-              </span>
- -->              <%= f.submit "S'inscrire", class:"btn btn-lg btn-primary btn-block" %>
-            </button>
-          </div>
-        </li>    
-      </ul>
+<!-- appel css 
+ -->
+<link rel="stylesheet" href="/css/signup.css" />
+<!-- html body  --> 
+
+<div class="box-signup">
+  <div class="sign-up">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> <%= render "devise/shared/error_messages", resource: resource %>
+    <h1 class="text-center mb-3">Inscription</h1>
+    <div class="d-flex justify-content-around">
+      <div class="mr-1 mb-2">
+        <label for="nom-inscri">Nom :</label>
+        <%= f.text_field :full_name, autofocus: true, id:'nom-inscri', class: 'form-control text-center neo-form', autocomplete: "Nom Complet",placeholder:"Nom", :required => true,:minlength => 3 %>
+      </div>
+      <div class="ml-1">
+        <label for="email-inscri">Email :</label>
+        <%= f.email_field :email, autofocus: true, id:'email-inscri',class: 'form-control text-center neo-form', autocomplete: "email",placeholder:" adressee-mail", :required => true %>
+      </div>
     </div>
-   <% end %>
-   <%= render "devise/shared/links" %>
-</section>
- 
+    <div class="d-flex justify-content-around">
+      <div class="mr-1 mb-2">
+        <label for="password-inscri">Mot de passe :</label>
+        <%= f.password_field :password, class: 'form-control text-center neo-form', id:'password-inscri', autocomplete: "new-password",placeholder:"Mots de passe", :required => true %>
+      </div>
+      <div class="ml-1">
+        <label for="password-inscri-confirm">confirmer le mot de passe :</label>
+        <%= f.password_field :password_confirmation, id:'password-inscri-confirm',class: 'form-control text-center neo-form', autocomplete: "new-password",placeholder:"Confirmer mots de passe", :required => true %>
+      </div>
+    </div>
+    
+    <div class="text-center">
+      <%= f.submit "S'inscrire", class:"btn btn-primary log-submit"%>
+      <p class="submit-error" style="color: red;"></p>
+    </div>
+    <%= render "devise/shared/links" %>
+    <% end %> 
+    
+
+  <!-- Flash message  -->
+    <div class="flash">
+      <div class="flash__icon">
+        <i class="icon fa fa-info"></i>
+      </div>
+      <% if flash.each do |type, msg| %>
+      <p class="flash__body font-weight-bold"><%= msg %></p>
+      <% end.empty? %>
+      <p class="font-weight-bold">Remplir les formulaires pour s'inscrire!</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="box-signup-image">
+    <img src="/images/logo.webp" alt="image mada" />
+  </div>
+</div>
+
+  
+  <!-- Verification mots de passe  -->
+<script>
+  $('#password-inscri-confirm').on('input', function () {
+    if ($('#password-inscri').val() != $(this).val()) {
+      $('.log-submit').prop('disabled', true);
+    } else {
+      $('.log-submit').prop('disabled', false);
+    }
+  });
+  $('#password-inscri-confirm').focusout(function () {
+    if ($('#password-inscri').val() != $('#password-inscri-confirm').val()) {      
+      alert( "Mots de passe et la confirmation ne sont pas égaux.");
+    } else {
+      $('.submit-error').hide();
+    }
+  });
+</script>

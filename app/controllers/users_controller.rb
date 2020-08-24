@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
 
 	before_action :authenticate_user!
-	before_action :is_user,except: [:show,:index]
+	before_action :is_user,except: [:index,:show]
 	before_action :is_admin,only: [:destroy ,:index]
 
     def index
         @user = User.all
     end
     def show
-    	@user = User.find(params[:id])
+    	@user = User.find(current_user.id)
     end
     def edit
     	@user = User.find(params[:id])
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     	end
     	@user.update(full_name: params[:name], age: params[:age], cin: params[:cin], adress: params[:adress] )
     	if @user.save
-    		redirect_to user_path(@user.id)
+    		redirect_to user_path
     	else
     		render 'new'
     	end

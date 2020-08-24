@@ -1,12 +1,12 @@
-<h1>Modifier cette actualité</h1>
+<h1>Modifier cette actualitée</h1>
 <div class="container">
 	<div class="date col-md-4">
 		<%= form_tag url_for(action:'update'), method:'put' do %><br>
 			Titre<br>
-			<input type="text" class="form-control" name="title" value="<%= @actualite.title %>" ><br>
+			<input type="text" class="form-control" name="title" value="<%= @actualite.title %>" require = true ><br>
 			Contenu<br>
-			<textarea type="text" class="form-control" name="description"> <%= @actualite.description %> </textarea> <br>
-			<input type="submit" value="Sauvegarder" ><br>
+			<textarea type="text" class="form-control" name="description" require = true minlength = 10	> <%= @actualite.description %> </textarea> <br>
+			<input type="submit" value="Enregistrer" ><br>
 		<%end%>
 	</div>
 </div>
