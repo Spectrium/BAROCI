@@ -41,17 +41,17 @@
       <div class="ligne-b ligne-b2"></div>
     </div>
   </div>
-  	<div class="whole-wrap">
-		<div class="container box_1170">
-    <div class="section-top-border">
-      <h3 class="mb-30">Definition</h3>
-        <div class="d-flex flex-wrap">
+
+  <div class="whole-wrap sc-promess">
+    <div class="container box_1170">
+      <h3 class="mb-30 text-center">Promesses et engagements</h3>
+      <div class="d-flex flex-wrap mt-5">
         <% @candidat.promesses.each do |promesse| %>
           <div class="col-md-4">
             <div class="single-defination mb-5">
               <h4 class="mb-20"><%= link_to promesse.content, promess_engagments_path(promesse.id) %></h4>
                 <% if @candidat == @candidat_valid %>
-                  <p><%= link_to "Voir les progressions", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id), class: 'btn btn-success' %></p>
+                  <p><%= link_to "Voir les progressions", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id), class: 'btn btn-outline-info' %></p>
                     <% if user_signed_in? %>
                       <% if current_user.is_admins == true %> | <%= link_to "Créer des engagements", new_promess_engagment_path(promesse.id) %> | <%= link_to "Modifier la promesse", edit_commune_candidat_promess_path(@commune.id, @candidat.id,promesse.id) %> | <%= link_to "Supprimer la promesse", commune_candidat_promess_path(@commune.id,@candidat.id, promesse.id), method:"delete" %> <br>
                         <% if @candidat.resultat == @tab %>
@@ -60,13 +60,13 @@
                               <input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
                               <input type="text" name="commune" value="<%= @commune.id %>" hidden>
                               <input type="text" name="name" value="0" hidden>
-                              <input type="submit" value="En cours" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.start == true %> class="btn btn-primary m-2" <% else %> class="btn btn-warning m-2"<% end %><% else%> class="btn btn-warning" <% end %> >
+                              <input type="submit" value="En cours" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.start == true %> class="btn btn-success m-3" <% else %> class="btn btn-light m-3"<% end %><% else%> class="btn btn-light m-3" <% end %> >
                               <% end %>
                               <%= form_tag promess_suivis_path(promesse.id), method:'post' do %>
                               <input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
                               <input type="text" name="commune" value="<%= @commune.id %>" hidden>
                               <input type="text" name="name" value="1" hidden>
-                              <input type="submit" value="Fait" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.finished == true %> class="btn btn-success m-2" <%  else%> class="btn btn-warning m-2"<%  end%><%  else%> class="btn btn-warning" <% end%>  >
+                              <input type="submit" value="Fait" <% if promesse.suivis.first != nil %><% if promesse.suivis.first.finished == true %> class="btn btn-success m-3" <%  else%> class="btn btn-light m-3"<%  end%><%  else%> class="btn btn-light m-3" <% end%>  >
                             <%end%>
                           </div>
                         <% end %>
@@ -75,19 +75,24 @@
                 <% end %>     
             </div>
           </div>
-          <% end %>
-        </div>
+        <% end %>
+      </div>
     </div>   
-    
-     </div>   
-      </div>   
+  </div>   
       
-
-    <div class="sc-body-photo container" id="edit" style="display: none;">
-      <% @avatar.each do |candidat|%>
-        <%= image_tag  candidat, class:"tailimg" %>
-        <%end%>
+  <div class="sc-body-photo container" id="edit" style="display: none;">
+    <h3 class="mb-30 text-center">Image Gallery</h3>
+    <div class="row gallery-item">
+      <div class="col-md-4">
+        <a href="img/elements/g1.jpg" class="img-pop-up">
+          <% @avatar.each do |candidat|%>
+            <%= image_tag  candidat, class:"tailimg" %>
+          <%end%>
+        </a>
+      </div>
     </div>
+  </div>
+
 <div class="boutton-flex mb-5 text-center">
   <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn btn-outline-primary " %>
   <% if user_signed_in? %>

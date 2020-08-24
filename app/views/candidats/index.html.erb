@@ -91,6 +91,64 @@
                      
             </div>
           </section> 
+        <%else%>
+          <section class="circle_chart_area" >
+            <div class="row">
+              <div class="col-12 py-3 pb-4">
+                <div class="section-heading text-center">
+                  <h3>Evolution de la réalisation des promesses</h3>
+                </div>
+              </div>
+            </div>
+            <div class="container mt-3 mb-3" id="bgcount">  
+              <div class="row bg-candidat">
+                <ul class="List"> 
+                    <!-- colonne Non commencer--> 
+                  <div class="col">
+                    <li class="List-item">
+                      <div class="ProgressBar ProgressBar--animateText" data-progress="0">
+                        <svg class="ProgressBar-contentCircle">
+                          <!-- on défini le l'angle et le centre de rotation du cercle -->
+                          <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="95" />
+                          <circle transform="rotate(-90, 100, 100)" class="ProgressBar-circle" cx="100" cy="100" r="95" />
+                          <span class="ProgressBar-percentage ProgressBar-percentage--count"></span>
+                        </svg>                    
+                      </div>
+                    </li>                                               
+                  </div>
+
+                    <!-- colonne Débuter--> 
+                  <div class="col">
+                    <li class="List-item">
+                      <div class="ProgressBar ProgressBar--animateCircle" data-progress=" 0">
+                        <svg class="ProgressBar-contentCircle">
+                          <!-- on défini le l'angle et le centre de rotation du cercle -->
+                          <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="95" />
+                          <circle transform="rotate(-90, 100, 100)" class="ProgressBar-circle" cx="100" cy="100" r="95" />
+                          <span class="ProgressBar-percentage ProgressBar-percentage--count"></span>
+                        </svg>
+                      </div>
+                    </li> 
+                  </div>
+
+                    <!-- colonne Tache réaliser--> 
+                  <div class="col">
+                      <li class="List-item">
+                        <div class="ProgressBar ProgressBar--animateAll" data-progress="0">
+                          <svg class="ProgressBar-contentCircle">
+                            <!-- on défini le l'angle et le centre de rotation du cercle -->
+                            <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="95" />
+                            <circle transform="rotate(-90, 100, 100)" class="ProgressBar-circle" cx="100" cy="100" r="95" />
+                            <span class="ProgressBar-percentage ProgressBar-percentage--count"></span>
+                          </svg>
+                        </div>
+                      </li>
+                  </div>
+                </ul>
+              </div>
+                     
+            </div>
+          </section> 
         <%end%>
            <div class="container bg-candidat">
                 <div class="row text-center" id="roundbg">
