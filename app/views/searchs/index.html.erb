@@ -1,37 +1,48 @@
 <%if @resultat.length != 0 %>
-	<div class="container text-center">
-		<h5 class="py-4">Resultats des recheches sur <%=@result1 %></h5>
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Commune</th>
-					<th>Region</th>
-				</tr>
-			</thead>
-			<% i = 1%>
-			<tbody>
-				<% @resultat.each do |resultat|%>
-					<% @region = Region.where(communes: resultat)%>
-					<%@region.each do |region|%>
-						<tr>
-							<td><%= i %></td>
-							<td><%= link_to resultat.name.titleize, commune_candidats_path(resultat)%></td>
-							<td><%= link_to region.name.titleize, region_communes_path(region)%></td>
-						</tr>
-						<% i += 1%>
-					<%end%>
-				<%end%>
-			</tbody>
-		</table>
-	</div>
 
-<%else%>
-	<div class="no-resultat">
-		<img src="/images/no1.jpeg">
-	 	<h1 class="text-white result-position">Aucun resultat trouvé<br> pour "<span class="text-info"><%=@result1 %></span>"</h1>
-	</div>
-<%end%>
-
+<div class="container">
+  <h2 class="py-3 text-center">Resultats des recheches sur <%=@result1 %></h2>
+    <div class="shadow-card">
+      <div class="row"> 
+        <div class="overflow w-100"> 
+          <table class="table table-striped">
+            <thead class="white">
+              <tr>
+                <th>#</th>
+                <th>Commune</th>
+                <th>Region</th>
+              </tr>
+            </thead>
+            <% i = 1%>
+            <tbody>
+              <% @resultat.each do |resultat|%>
+                <% @region = Region.where(communes: resultat)%>
+                <%@region.each do |region|%>
+                  <tr class="tr">
+                    <td><%= i %></td>
+                    <td><%= link_to resultat.name.titleize, commune_candidats_path(resultat)%></td>
+                    <td><%= link_to region.name.titleize, region_communes_path(region)%></td>
+                  </tr>
+                  <% i += 1%>
+                <%end%>
+              <%end%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+    <%else%>
+      <div class="no-resultat">
+        <img src="/images/no1.jpeg">
+        <h1 class="text-white result-position">Aucun resultat trouvé<br> pour "<span class="text-info"><%=@result1 %></span>"</h1>
+      </div>
+    <%end%>
+    
+       <button type="button" class="btn btn-labeled btn-danger m-3" onclick= window.location.href='<%= home_path %>'; value="Retour vers la page Accueil" >
+        <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
+      </button>
+    </div>
+ </div>
 
 

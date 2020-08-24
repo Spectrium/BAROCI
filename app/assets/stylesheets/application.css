@@ -10,166 +10,28 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
 
+ *= require bootstrap.min
+ *= require owl.carousel.min
+ *= require magnific-popup
+ *= require themify-icons
+ *= require nice-select
+ *= require flaticon
+ *= require gijgo
+ *= require animate
+ *= require slick
+ *= require slicknav
+ *= require style
+ *= require app
+ *= require comptes
+ *= require devise
+ *= require responsive
+ *= require countdown
+ *= require footer
+ *= require search
+ *= require alert
+ *= require candidat
+
  *= require_tree .
  *= require_self
- *= require assets/css/font-awesome.min
- *= require assets/css/bootstrap.min
- *= require owl-carousel/owl.carousel.min
- *= require assets/css/style
- *= require assets/css/responsive
- *= require assets/css/comptes
- *= require assets/css/app
- *= require assets/css/devise
+
  */
-* {
-  box-sizing: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.fixed {
-  width: 100%;
-}
-
-.yield {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 60px;
-}
-
-.drop-pos {
-  top: 87px !important;
-}
-
-.drop-pos-create {
-  top: 87px !important;
-}
-
-i {
-  font-size: 30px !important;
-}
-
-.search-cust {
-  font-size: 20px !important;
-  color: #fff;
-}
-
-.search-cust:hover {
-  color: #000;
-  transition: 0.3s;
-}
-
-.search {
-  width: 130px;
-  height: 35px;
-  box-sizing: border-box;
-  border-style: none;
-  border-bottom: 2px solid #ccc;
-  border-radius: 3px;
-  font-size: 16px;
-  background-color: transparent;
-  padding: 10px 20px 10px 0px;
-  transition: width 0.4s ease-in-out;
-  color: white;
-}
-
-.search:focus {
-  width: 65%;
-}
-
-.search-sub {
-  background-color: transparent;
-  border: 0;
-}
-
-.logo {
-  width: 9%;
-  height: 110%;
-  margin-top: 3px;
-  background-color: azure;
-}
-
-.imglogo {
-  width: 100%;
-  height: 100%;
-}
-
-.logo:hover {
-  width: 12%;
-  height: 150%;
-  padding-top: 5px;
-  background-color: azure;
-}
-
-.place-center {
-  text-align: center;
-}
-
-@media screen and (max-width: 991px) {
-  .search-cust:hover {
-    color: #97ccfe;
-    transition: 0.3s;
-  }
-  .logo {
-    width: 16%;
-    height: 130%;
-    margin-left: 30px;
-    margin-top: 0px;
-    background-color: azure;
-  }
-  .logo:hover {
-    width: 18%;
-    height: 150%;
-    padding-top: 5px;
-    background-color: azure;
-  }
-  .imglogo {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.imagauto {
-  width: 350px;
-}
-
-.video {
-  width: 600px;
-  height: 300px;
-}
-
-/*responsive commandes*/
-@media screen and (min-width: 420px) and (max-width: 720px) {
-  /*.section{
-    width: 600px;
-  }*/
-  .video {
-    width: 500px;
-    height: 250px;
-  }
-}
-
-@media screen and (min-width: 420px) and (max-width: 530px) {
-  /*.section{
-    width: 600px;
-  }*/
-  .video {
-    width: 400px;
-    height: 220px;
-  }
-}
-
-@media screen and (min-width: 200px) and (max-width: 420px) {
-  .imagauto {
-    width: 280px;
-  }
-  .d-flex {
-    flex-wrap: wrap;
-  }
-  .video {
-    width: 350px;
-    height: 150px;
-  }
-}

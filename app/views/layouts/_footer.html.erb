@@ -1,48 +1,55 @@
-<!-- call css  -->
-<link rel="stylesheet" href="/css/mobile.css" />
-
-<link rel="stylesheet" href="/css/footer.css" />
-<div id="footer">
-  <div class="footer-copyright">
-    <div class="footer-logo footer-flex">
-      <a href="#"> <img src="/images/spectre-logo.png" alt="Logo Spectium" /> </a>
-      <a href="#"> <img src="/images/miel-logo.png" alt="Logo Miel" /> </a>
-    </div>
-    <div class="footer-acces footer-flex">
-      <h5 class="title">Accès rapide</h5>
-      <a href="#"> lien</a>
-      <a href="#"> lien</a>
-      <a href="#"> lien</a>
-      <a href="#"> lien</a>
-    </div>
-    <div class="footer-contact footer-flex">
-      <h5 class="title">Contact rapide</h5>
-      <div class="tel">
-        <img src="/images/call.png" alt="Tel :" />
-        <ul>
-          <li>+22 222 222 222</li>
-          <li>+22 222 222 222</li>
-          <li>+22 222 222 222</li>
-        </ul>
+<footer class="new_footer_area bg_color">
+  <div class="new_footer_top">
+      <div class="container">
+          <div class="d-flex justify-content-between flex-wrap">
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Groupe</h3>
+                      <ul class="d-flex">
+                          <li><a class="mr-2" href="#"><%= image_tag  "spectre-logo.png", style:"width: 6em" %></a></li>
+                          <li><a class="mr-2" href="#"><%= image_tag  "medem-logo.png", style:"width: 4.5em" %></a></li>
+                          <li><a href="#"><%= image_tag  "miel-logo.png", style:"width: 6em" %>  </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6">
+                  <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Lien</h3>
+                      <ul class="list-unstyled f_list">
+                          <li><a href="#">Politique de protection des données</a></li>
+                          <li><a href="#">Term &amp; conditions</a></li>
+                          <li><a href="#">Mentions légales</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                      <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                      <div class="f_social_icon">
+                          <a href="#" class="fa fa-facebook" target="_blank"></a>
+                          <a href="#" class="fa fa-twitter" target="_blank"></a>
+                          <a href="#" class="fa fa-linkedin" target="_blank"></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-      <p><img src="/images/map.png" alt="Adresse : " /> V6 12 Rc40</p>
-      <p><img src="/images/mess.png" alt=" Mail : " class="logomail" />access@g.g</p>
-      <ul class="footer-social">
-        <li>
-          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-        </li>
-        <li>
-          <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i></a>
-        </li>
-      </ul>
-    </div>
-    <div class="copyright">
-      <h5>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        Copyright &copy;<!-- <script>document.write(new Date().getFullYear());</script> -->
-        by <a href="#" class="color" target="_blank">SPECTRIUM</a>
-        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      </h5>
+      <div class="footer_bg">
+          <div class="footer_bg_one"></div>
+          <div class="footer_bg_two"></div>
+      </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-sm-7">
+            <p class="text-white mb-0 f_400">©copyright 2020 All rights reserved.
+            </p>
+        </div>
+        <div class="col-lg-6 col-sm-5 text-right">
+            <p class="text-white">Designed & developed with<i class="fa fa-heart m-1" aria-hidden="true"></i> by <a class="color" href="#">Spectrium</a></p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</footer>

@@ -159,7 +159,6 @@ anosy.length.times do |i|
 	Commune.create(name: anosy[i], region: region[21])
 end
 
-
 User.create(full_name: "User",age: 29,adress: "nill", email: "User@user.com", password:"azerty", is_admins: true)
 # 10.times do |i|
 #     User.create(full_name: Faker::Name.name, age: rand(18..77), adress: Faker::Address.street_address, email: Faker::Internet.email, password: "azertyop")

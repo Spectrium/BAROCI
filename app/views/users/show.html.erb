@@ -5,10 +5,10 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-md-8">
+    <div class="col-md-6">
       <div class="profile-image">
         <%if @user.portrait.attached?%>
-            <%= image_tag @user.portrait, width:'350px', class:"rounded-circle imagauto", alt: 'avatar' %>
+            <%= image_tag @user.portrait, width:'350px', class:"imagauto", alt: 'avatar' %>
         <%else%>
             <img src="https://robohash.org/68.186.255.198.png" alt="" class="imagauto">
         <%end%>

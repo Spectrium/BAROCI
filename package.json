@@ -4,6 +4,7 @@
   "dependencies": {
     "chartkick": "^3.2.0",
     "highcharts": "^8.0.0",
+    "jquery": "^3.5.1",
     "jquery-countdown": "^2.2.0"
   }
 }

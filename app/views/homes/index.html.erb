@@ -1,232 +1,233 @@
-<!-- call css  -->
-<link rel="stylesheet" href="/css/accuei.css" />
-<!-- body html  -->
-<header class="row head align-items-center">
-  <div class="header-text text-center">
-    <div class="col-md-12">
-      <h1 class="tp-caption tp-resizeme first_text">Mon droit, ma voix, mon vote</h1>
+<div class="bg-page"> 
+  <!-- Slide Banniere-->
+    <div class="slider_area"> 
+      <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-12">
+                      <div class="slider_text">
+                       <h3> <span class="transparent-bg pl-2">Mon droit,</span><br><span class="transparent-bg pl-2">ma voix, mon vote </span>
+                       <div>Baromètre Citoyen</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
     </div>
-  </div>
-</header>
 
-<!-- <section>
-    <div class="topten">
-        <strong>
-            Top 10 le eto
-        </strong>
-    </div>
-</section> -->
-
-<%# compte à rebours %>
-
-<section class="container">
-  <div class="banner_inner_text">
-    <h3 class="text-center p_60">Temps restant</h3>
-  </div>
-  <div class="row justify-content-center pt-4 ml-3">
-    <div class="col-md-10 d-flex justify-content-between">
-      <div class="bloc" id="years"></div>
-      <div class="bloc" id="months"></div>
-      <div class="bloc" id="days"></div>
-      <div class="bloc" id="hours"></div>
-      <div class="bloc" id="minutes"></div>
-      <div class="bloc last" id="seconds">0</div>
-    </div>
-  </div>
-  <script>
-      <% if @date != nil %>
-
-    var launch = new Date("<%= @date.end_date.to_time.month%>/<%= @date.end_date.to_time.day%>/<%= @date.end_date.to_time.year%>, 09:00:00 AM");
-      <%else %>
-        var launch = new Date("1/20/20, 09:00:00 AM");
-      <%end %>
-    	// "January 09, 2020" or use this format
-    	var years = document.getElementById('years');
-    	var months = document.getElementById('months');
-    	var days = document.getElementById('days');
-    	var hours = document.getElementById('hours');
-    	var minutes = document.getElementById('minutes');
-    	var seconds = document.getElementById('seconds');
-
-    	setDate();
-    	function setDate() {
-    		let now = new Date();
-    		let s = (launch.getTime() - now.getTime()) / 1000;
-
-    		var y = Math.floor(s / 31536000);
-    		years.innerHTML = '<em>' + y + '</em>' + ' ' + '</br>' + 'année' + (y > 1 ? 's' : '');
-    		s -= y * 31536000;
-
-    		var mo = Math.floor(s / 2628000);
-    		months.innerHTML = '<em>' + mo + '</em>' + ' ' + '</br>' + 'mois' ;
-    		s -= mo * 2628000;
-
-    		let d = Math.floor(s / 86400);
-    		days.innerHTML = '<em>' + d + '</em>' + ' ' + '</br>' + 'Jour' + (d > 1 ? 's' : '');
-    		s = s - d * 86400;
-
-    		var h = Math.floor(s / 3600);
-    		hours.innerHTML = '<em>' + h + '</em>' + ' ' + '</br>' + 'heure' + (h > 1 ? 's' : '');
-    		s -= h * 3600;
-
-    		var m = Math.floor(s / 60);
-    		minutes.innerHTML = '<em>' + m + '</em>' + ' ' + '</br>' + 'minute' + (m > 1 ? 's' : '');
-    		s -= m * 60;
-
-    		s = Math.floor(s);
-    		seconds.innerHTML = '<em>' + s + '</em>' + ' ' + '</br>' + 'seconde' + (s > 1 ? 's' : '');
-
-    		setTimeout(setDate, 1000);
-    		// ('#days').html('<em>' + d + '</em>');
-
-    	}
-  </script>
-</section>
-
-<!--================Actualité Area =================-->
-
-<section class="blog_main_area">
-  <div class="container">
-    <div class="banner_inner_text">
-      <h3 class="text-center p_60">Actualités</h3>
-    </div>
-    <div class="row justify-content-center">
-      <%if @actualite != nil%> <%if @actualite.length < 4%> <% for i in 0..@actualite.length-1%>
-      <div class="col-lg-4">
-        <div class="blog_main_inner">
-          <div class="blog_main_item">
-            <div class="blog_img">
-              <!-- <img class="img-fluid" src="img/blog/blog-1.jpg" alt=""> -->
-              <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last), class: 'img-fluid',id:'img-actu'%> <%end%>
+  <!-- service card -->
+    <div class="service_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-50">
+                        <h3>Visions</h3>
+                        L'integrité des leaders et des institutions, et la participation citoyenne garante du développement durable à Madagascar</h3>
+                    </div>
+                </div>
             </div>
-            <div class="blog_text">
-              <a href="#"><h4><%= @actualite[i].title%></h4></a>
-              <p><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p>
-              <div class="text-center">
-                <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_service text-center">
+                        <div class="service_icon">
+                          <%= image_tag "1.svg" %>
+                        </div>
+                        <h3>Mission 1</h3>
+                        <p>Eduquer <br>à l'integrité et à la transparence.</p>
+                        <!-- <a href="#" class="learn_more">Learn More</a> -->
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_service text-center">
+                        <div class="service_icon">
+                          <%= image_tag "2.svg" %>
+                        </div>
+                        <h3>Mission 2</h3>
+                        <p>Promouvoir <br>la participation de la jeunesse.</p>
+                        <!-- <a href="#" class="learn_more">Learn More</a> -->
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_service text-center">
+                        <div class="service_icon">
+                          <%= image_tag "3.svg" %>
+                        </div>
+                        <h3>Mission 3</h3>
+                        <p>Réclamer <br> la redevabilité des élus.</p>
+                        <!-- <a href="#" class="learn_more">Learn More</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- Evenement CountDown -->
+  <div class="about_info_area pt-4 pb-4" id="bg-banner">
+      <div class="container text-white">
+        <div class="row align-items-center">
+          <div class="col-xl-6 col-lg-6 pb-2 pt-2">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col border-white" id="years"></div>
+                <div class="col border-white" id="months"></div>
+                <div class="col border-white" id="days"></div>
+                  <div class="w-100"></div>
+                <div class="col border-white" id="hours"></div>
+                <div class="col border-white" id="minutes"></div>
+                <div class="col border-white last" id="seconds">0</div>
+              </div>
+            </div>
+          </div>
+          <script>
+              <% if @date != nil %>
+
+            var launch = new Date("<%= @date.end_date.to_time.month%>/<%= @date.end_date.to_time.day%>/<%= @date.end_date.to_time.year%>, 09:00:00 AM");
+              <%else %>
+                var launch = new Date("1/20/20, 09:00:00 AM");
+              <%end %>
+              // "January 09, 2020" or use this format
+              var years = document.getElementById('years');
+              var months = document.getElementById('months');
+              var days = document.getElementById('days');
+              var hours = document.getElementById('hours');
+              var minutes = document.getElementById('minutes');
+              var seconds = document.getElementById('seconds');
+
+              setDate();
+              function setDate() {
+                let now = new Date();
+                let s = (launch.getTime() - now.getTime()) / 1000;
+
+                var y = Math.floor(s / 31536000);
+                years.innerHTML = '<em>' + y + '</em>' + ' ' + '</br>' + 'année' + (y > 1 ? 's' : '');
+                s -= y * 31536000;
+
+                var mo = Math.floor(s / 2628000);
+                months.innerHTML = '<em>' + mo + '</em>' + ' ' + '</br>' + 'mois' ;
+                s -= mo * 2628000;
+
+                let d = Math.floor(s / 86400);
+                days.innerHTML = '<em>' + d + '</em>' + ' ' + '</br>' + 'Jour' + (d > 1 ? 's' : '');
+                s = s - d * 86400;
+
+                var h = Math.floor(s / 3600);
+                hours.innerHTML = '<em>' + h + '</em>' + ' ' + '</br>' + 'heure' + (h > 1 ? 's' : '');
+                s -= h * 3600;
+
+                var m = Math.floor(s / 60);
+                minutes.innerHTML = '<em>' + m + '</em>' + ' ' + '</br>' + 'minute' + (m > 1 ? 's' : '');
+                s -= m * 60;
+
+                s = Math.floor(s);
+                seconds.innerHTML = '<em>' + s + '</em>' + ' ' + '</br>' + 'seconde' + (s > 1 ? 's' : '');
+
+                setTimeout(setDate, 1000);
+                // ('#days').html('<em>' + d + '</em>');
+
+              }
+          </script>
+         <div class="col-xl-6 col-lg-6">
+            <div class="about_thumb">
+              <div class="about_text">
+                <h3>Durée du Mandat</h3>
+              
+                  <p>Ici, on doit mettre une petite information à propos du président.
+                  It esteems luckily or picture placing drawing. Apartments frequently or motionless on reasonable.</p>
+                
+                  <% if user_signed_in?%> 
+                    <% if current_user.is_admins == true%>
+                    <%if Daty.last == nil %>
+                      <a href="<%= new_daty_path %>" class="boxed-btn3">Ajout date Mandat</a></li>
+                    <% else %>
+                      <a href="<%= daty_path(Daty.last.id) %>" class="boxed-btn3">Modifier la date</a>
+                    <% end %> 
+                      <% end %> 
+                  <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <%end%> <%else%> <% for i in @actualite.length-4..@actualite.length-1%>
-      <div class="col-lg-4">
-        <div class="blog_main_inner">
-          <div class="blog_main_item">
-            <div class="blog_img">
-              <%if @actualite[i].actuphotos.attached?%> <%= image_tag (@actualite[i].actuphotos.last), class: 'w-100 actu-img' %> <%end%>
-            </div>
-            <div class="blog_text">
-              <a href="#"><h4><%= @actualite[i].title%></h4></a>
-              <p><%= @actualite[i].description%></p>
-              <div class="text-center">
-                <%= link_to "Voir plus", actuality_path(@actualite[i]), class: 'more_btn' %>
+    </div>
+
+  <!-- Actualiter-->
+  <div class="case_study_area">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="section_title text-center mb-40"><h3>Actualité</h3></div>          
+        </div>
+      </div>       
+      <div class="single-defination">
+        <div class="d-flex flex-wrap">
+          <%if @actualite != nil%> <%if @actualite.length < 4%> 
+            <% for i in 0..@actualite.length-1%>
+              <div class="single_case bg-white">
+                <div class="case_thumb">
+                  <%if @actualite[i].actuphotos.attached?%> 
+                    <%= image_tag (@actualite[i].actuphotos.last), style:"widht:200px!important"; %> 
+                  <%end%>
+                </div>   
+                <div class="case_heading">
+                  <h4><%= @actualite[i].title%></h4>
+                  <p id="case-paragraph"><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p> 
+                </div>
+                    <div class="text-center"><%= link_to "Voir plus", actuality_path(@actualite[i]), class: "boxed-btn3-line" %> </div>   
+              </div>   
+            <%end%> 
+          <%else%>     
+            <% for i in (@actualite.length-1).downto(@actualite.length-3)%>
+              <div class="single_case bg-white">
+                  <div class="case_thumb">
+                    <%if @actualite[i].actuphotos.attached?%> 
+                      <%= image_tag (@actualite[i].actuphotos.last) %> 
+                    <%end%>    
+                  </div>
+                  <div class="case_heading">
+                    <h4><%= @actualite[i].title%></h4>
+                    <p id="case-paragraph"><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p> 
+                  </div>
+                  <div class="text-center"> <%= link_to "Voir plus", actuality_path(@actualite[i]), class: "boxed-btn3-line" %> </div> 
               </div>
-            </div>
+            <%end%>
+          <%end%>  
+          <%end%>          
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="btn-lg btn-block">
+            <a href="<%= actualities_path %>" class="w-100 boxed-btn3">Plus d'actualité</a>
           </div>
         </div>
       </div>
-      <%end%> <%end%> <%end%>
     </div>
-  </div>
-</section>
-<!--================End Blog Main Area =================-->
+  </div>  
 
-<!-- <section>
-	<div class="container">
-		<div class="row intro-tables">
-			<div class="col-md-12">
-				<div class="intro-table intro-table-first">
-					<h5 class="white heading">Actualités</h5>
-            <%if @actualite != nil%>
-              <%if @actualite.length < 4%>
-                <% for i in 0..@actualite.length-1%>
-                  <div class="card mb-5">
-                    <div class="row no-gutters">
-                      <div class="col-md-2">
-                        <%if @actualite[i].actuphotos.attached?%>
-                          <%= image_tag (@actualite[i].actuphotos.last), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
-                        <%end%>
-                      </div>
-                      <div class="col-md-10">
-                        <div class="card-body">
-                          <h5 class="card-title"><%= @actualite[i].title%></h5>
-                          <span class="card-text text-muted"><% for a in 0..65 do %><%= @actualite[i].description.split[a] %>  <%end%><% if @actualite[i].description.split.length-1 > 65 %>... <%end%></span>
-                          <span class="card-text"><small class="text-muted"><%= link_to "voir plus", actuality_path(@actualite[i]) %></small></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <%end%>
-              <%else%>
-  						  <% for i in @actualite.length-4..@actualite.length-1%>
-                  <div class="card mb-5">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <%if @actualite[i].actuphotos.attached?%>
-                          <%= image_tag (@actualite[i].actuphotos.last), class:"img-display carousel-display card-img-top proimg",alt: 'a' %>
-                        <%end%> 
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h5 class="card-title"><%= @actualite[i].title%></h5>
-                          <p class="card-text text-muted"><%= @actualite[i].description%></p>
-                          <p class="card-text"><small class="text-muted"><%= link_to "voir", actuality_path(@actualite[i]) %></small></p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <%end%>
-    					<%end%>
-						<%end %>
-				</div>
-			</div>
-		</div>
-	</div>
-</section> -->
-
-<!--================Feature Area =================-->
-<section class="feature_area mb-5">
-  <div class="container pb-3">
-    <div class="c_title">
-      <!-- <img src="img/icon/title-icon.png" alt=""> -->
-      <h6>Visions</h6>
-      <h3>L'integrité des leaders et des institutions, et la participation citoyenne garante du développement durable à Madagascar</h3>
-    </div>
-    <div class="row feature_inner">
-      <div class="col-lg-4 col-sm-6">
-        <div class="feature_item">
-          <div class="f_icon">
-            <%= image_tag "guru-blue.png",class:"icon" %>
+   <!-- INFO SAFIDY Video youtube  -->
+  <div class="about_info_area pt-5 pb-2" id="bg-safidy">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-6 col-lg-6">
+          <div class="about_text">
+            <h3>Zah Hifidy olo-marina</h3>
+              <p>Esteem spirit temper too say adieus who direct esteem.
+              It esteems luckily or picture placing drawing. Apartments frequently or motionless on reasonable.</p>
+                <a href="#" class="boxed-btn3">About Us</a>
           </div>
-          <h4>Mission 1</h4>
-          <p>Eduquer à l'integrité et à la transparance.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="feature_item">
-          <div class="f_icon">
-            <img src="img/icon/f-icon-2.png" alt="" />
+        </div>      
+        <div class="col-xl-6 col-lg-6">
+          <div class="about_thumb">
+            <iframe class="video" src="https://www.youtube.com/embed/UWDWPy1nSDw" width="500" height="300" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <h4>Mission 2</h4>
-          <p>Promouvoir la participation de la jeunesse.</p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="feature_item">
-          <div class="f_icon">
-            <%= image_tag "weight-blue.png",class:"icon" %>
-          </div>
-          <h4>Mission 3</h4>
-          <p>Réclamer la redevabilité des élus.</p>
         </div>
       </div>
     </div>
   </div>
-</section>
 
 <%# carte de madagascar %>
 <section class="py-4">
+ <div class="section_title text-center mb-40"><h3>Voir les communes à Madagascar</h3></div>    
   <div class="map pb-3" id="map">
     <div class="map__img">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 1800 1600">
@@ -438,46 +439,15 @@
     });
   </script>
 </section>
-
-<!--================End Feature Area =================-->
-<section id="pricing" class="section pb-4">
-  <div class="container">
-    <div id="ca" class="text-center">
-      <iframe class="video" src="https://www.youtube.com/embed/UWDWPy1nSDw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
   </div>
-</section>
 
-<!-- <section class="section section-padded blue-bg">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="owl-twitter owl-carousel">
-					<div class="item text-center">
-						<i class="icon fa fa-twitter"></i>
-						<h4 class="white light">
-							<%= image_tag  "medem.png", class:"image-car" %>
-						</h4>
-					</div>
-			
-					<div class="item text-center">
-						<i class="icon fa fa-twitter"></i>
-						<h4 class="white light">
-							<%= image_tag  "Miel-2.JPG", class:"image-car" %>
-						</h4>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section> -->
-
-<section>
-  <div class="container">
-    <div class="row justify-content-around">
-      <div><%= image_tag "spectre-logo.png", width: '200px' %></div>
-      <div><a href="https://medem.mg/" target="_blank"><%= image_tag "medem-logo.png", width: '150px' %></a></div>
-      <div><a href="https://www.facebook.com/miel.mouvement/" target="_blank"><%= image_tag "miel-logo.png", width: '200px' %></a></div>
+<!-- Flash message -->
+ <% if flash.each do |type, msg| %>
+  <div class="flash">
+    <div class="flash__icon">
+      <i class="icon fa fa-info"></i>
     </div>
+      <p class="flash__body font-weight-bold"><%= msg %></p>     
+    <% end %>
   </div>
-</section>
+  <% end %>

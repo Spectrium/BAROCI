@@ -1,57 +1,21 @@
-<div class="card" style="width: 25rem; margin: 50px auto;">
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-    <div class="carousel-inner carousel-display">
-      <div class="carousel-item active text-center">
-        <%if @promesse.pictures.attached?%> <%= image_tag (@promesse.pictures.last), class:"img-display carousel-display card-img-top proimg",alt: '#{@car.model.name} #{@car.model.name}' %> <%else%>
-        <p class="m-2">Pas de photo d'évolution pour le moment.</p>
-        <%end%>
-      </div>
-      <% for i in 1..(@promesse.pictures.length-1)%>
-      <div class="carousel-item text-center">
-        <%if @promesse.pictures.attached?%> <%= image_tag (@promesse.pictures[i]), class:"img-display carousel-display card-img-top proimg",alt: '#{@car.model.name} #{@car.model.name}' %> <%else%> P
-        <p class="m-2">Pas de photo d'évolution pour le moment.</p>
-        <%end%>
-      </div>
-      <%end%>
-      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    <div class="card-body">
-      <p class="card-text">
-        Voici les photos de la promesse achevé.
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-          voir plus
-        </button>
-      </p>
-    </div>
 
-    <% if user_signed_in? %> <% if current_user.is_admins == true %>
-    <div>
-      <%= form_tag promess_pictures_path(@promesse), multipart: true do %> <%= file_field_tag :picture %> <%= submit_tag "mettre à jour" %> <% end %>
-    </div>
-    <% end %> <% end %>
+<!-- body html  -->
+<div class="show-promess container text-center">
+  <h4 class=" m-5 ">
+    Voici les photos d'évolution du prommesse
+  </h4>
+  <%if @promesse.pictures.attached?%> 
+    <% @promess.each do |promess|%>
+      <a> <%= image_tag promess, class:"tailleimg m-1", style:"width: 300px;"%></a>
+    <%end%>
+  <%else%>
+    <p class="m-2">Pas de photo d'évolution pour le moment.</p>
+  <%end%>
+
+  <% if user_signed_in? %> <% if current_user.is_admins == true %>
+  <div class=" m-5 ">
+    <h5 class="m-4"> Ajouter des photos</h5>
+    <%= form_tag promess_pictures_path(@promesse), multipart: true do %> <%= file_field_tag :picture %> <%= submit_tag "mettre à jour" %> <% end %>
   </div>
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Toutes les promesses</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <% @promess.each do |promess|%>
-        <a href="#"> <%= image_tag promess, class:"tailleimg" %></a>
-        <%end%>
-      </div>
-    </div>
-  </div>
+  <% end %> <% end %>
 </div>

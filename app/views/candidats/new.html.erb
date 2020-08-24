@@ -1,38 +1,45 @@
-<h1>Ajouter un(e) canditat(e)</h1>
-<div class="new-candidat">
-	<div class="container content">
-	<%= form_tag url_for(action:'create'), method:'post' do %>
-		<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="name">Nom complet</label>
-				<input type="text" name="full_name" placeholder="Votre nom" class="form-control form-custom" id="name" >
-			</div>
-			<div class="form-group col-md-6">
-				<label for="mouvence">Mouvance</label>
-				<input type="text" name="mouvence" placeholder="Votre mouvence" class="form-control form-custom" id="mouvence" >
-			</div>
-		</div>
-		<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="election">Résultat durant l'éléction</label>
-				<input type="text" name="resultat" placeholder="Résultat durant l'éléction"  class="form-control form-custom" id="election">
-			</div>
-			<div class="form-group col-md-6">
-				<label for="candidat">Région du candidat</label>
-				<input type="text" name="region" placeholder="Votre région" class="form-control form-custom" id="candidat">
-			</div>
-		</div>	
-		<div class="form-row">
-			<div class="form-group col-md-12">
-				<label for="commune">Commune du candidat</label>
-				<input type="text" name="commune" placeholder="Votre commune"  class="form-control form-custom" id="commune"> 			
-			</div>			
-		</div>			
-		<div class="form-row">
-			<div class="form-group col-md-12">
-				<input type="submit" value="Ajouter" class="btn btn-blue ripple trial-button form-control form-custom" id="create">
-			</div>			
-		</div>	
-	<%end%>
+  <div class="card-center p-5">
+    <h1 class="text-center mb-5">Ajouter un(e) canditat(e)</h1>
+    <div class="date "> 
+    <%= form_tag url_for(action:'create'), method:'post' do %>
+      <div class="form-row">
+        <div class="form-group mb-4 col-md-6">
+          <div class="mb-2" for="name">Nom complet</div>
+          <input type="text" name="full_name" placeholder="Votre nom" class="form-control form-custom neo-form" id="name" minlength="2" required/>
+        </div>
+        <div class="form-group mb-4 col-md-6">
+          <div class="mb-2" for="mouvence">Mouvance</div>
+          <input type="text" name="mouvence" placeholder="Votre mouvence" class="form-control form-custom neo-form" id="mouvence" minlength="2" required/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group mb-4 col-md-6">
+          <div class="mb-2" for="election">Résultat durant l'éléction</div>
+          <input type="number" name="resultat" placeholder="Résultat durant l'éléction" class="form-control form-custom neo-form" id="election" required/>
+        </div>
+        <div class="form-group mb-4 col-md-6 region-box">
+          <div class="mb-2" for="candidat">Région du candidat</div>
+          <input type="text" name="region" placeholder="Votre région" class="form-control form-custom neo-form" id="candidat" required/> 
+          <!-- Liste Région pré-remplie -->
+          <div class="drop-bloc"><ul class="ul-table" id="region-list"></ul></div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group mb-4 col-md-12 region-box">
+          <div class="mb-2" for="commune">Commune du candidat</div>
+          <input type="text" name="commune" placeholder="Votre commune" class="form-control form-custom neo-form" id="commune" />
+          <!-- Liste Région pré-remplie -->
+          <div class="drop-bloc"><ul class="ul-table" style="height:7.5em!important;" id="commune-list"></ul></div>
+        </div>
+      </div>
+      <div class="text-center">
+        <input type="submit" value="Ajouter" class="boxed-btn3 btn-modal" id="create"/>
+      </div>
+    <%end%>
+  </div>
 </div>
-</div>
+
+<!-- call js  -->
+<script data-turbolinks-track="reload" type="text/javascript" src="/js/region.json"></script>
+<script data-turbolinks-track="reload" type="text/javascript" src="/js/commune.json"></script>
+<script data-turbolinks-track="reload" type="text/javascript" src="/js/newcandidat.js"></script>

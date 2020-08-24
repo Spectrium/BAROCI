@@ -1,18 +1,47 @@
 <!-- appel css  -->
-<link rel="stylesheet" href="/css/login-user.css" />
+<link rel="stylesheet" href="/css/login-users.css" />
 <!-- body html  -->
-
 <div class="box-login">
   <div class="box-login-image">
     <img src="/images/logo.webp" alt="image mada" />
   </div>
   <div class="box-login-form">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> <%= f.label :email, class:"pos" %><br />
-    <%= f.email_field :email, autofocus: true, id:"inputEmail", class:"form-control vo",placeholder:"Adresse email" ,autocomplete: "email" %> <%= f.label :mot_de_passe, class:"pos" %><br />
-    <%= f.password_field :password, autocomplete: "current-password", id:"inputPassword", class:"form-control vo", placeholder:"Mot de passe" %> <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+  <h3 class="text-center">Connexion</h3>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %> 
+    <div class="text-left pl-2">
+      <%= f.label :email, class:"pos" %><br />
     </div>
-    <% end %> <%= f.submit "Se connecter", class:"more_btn_edi log-submit" %> <% end %> <%= render "devise/shared/links" %>
+    <%= f.email_field :email, autofocus: true, id:"inputEmail choose", class:"form-control vo text-center neo-form",placeholder:"Adresse email" ,autocomplete: "email",:required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+    <div class="text-left pl-2">
+      <%= f.label :mot_de_passe, class:"pos" %><br />
+    </div>
+    <%= f.password_field :password, autocomplete: "current-password", id:"inputPassword", class:"form-control vo text-center neo-form", placeholder:"Mot de passe", :required => true,:minlength => 5 %> <% if devise_mapping.rememberable? %>
+       <div class="d-flex m-3">
+        <div class="primary-switch mr-2">
+        <input type="checkbox" value= "1" name="user[remember_me]" id="default-switch">
+        <label for="default-switch"></label>
+        </div>
+        <%= f.label :Rester_connecter %>
+    </div>
+    <% end %> 
+  <div class="text-center">
+    <%= f.submit "Se connecter", class:"btn btn-primary" %> <% end %> 
+  </div>
+    <%= render "devise/shared/links" %>
+  </div>
   </div>
 </div>
+  
+<!-- Flash message  -->
+<div class="flash">
+  <div class="flash__icon">
+    <i class="icon fa fa-info"></i>
+  </div>
+  <% if flash.each do |type, msg| %>
+    <p class="flash__body font-weight-bold"><%= msg %></p>     
+  <% end.empty? %>
+    <p class="font-weight-bold">Remplir les formulaires pour se connecter!</p>    
+  <% end %>
+</div>
+
+

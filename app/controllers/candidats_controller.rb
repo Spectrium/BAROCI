@@ -1,5 +1,6 @@
 class CandidatsController < ApplicationController
-  before_action :is_admin,except: [:show,:index]
+	before_action :is_admin,except: [:show,:index]
+	before_action :find_nil, only: [:create]
   def index
     @commune = Commune.find(params[:commune_id])
     @candidat = @commune.candidats.all
@@ -149,6 +150,13 @@ class CandidatsController < ApplicationController
       else
         redirect_to home_path
       end
+    end
+  end
+  def find_nil
+    if params[:full_name] == '' || params[:mouvence] == '' || params[:resultat] == '' || params[:region] == '' || params[:commune] == ''
+      render "new"
+    else
+      return true
     end
   end
 end
