@@ -37,3 +37,10 @@ $(function () {
     $('.flash').removeClass('animate--drop-in-fade-out');
   }, 50000);
 });
+$(document).ready(function () {
+  $('.comment-engagement').hide();
+  $('ul').on('click', '.btn-comment-engagement', function (e) {
+    $('.comment-engagement').fadeOut(100);
+    $('#comment-engagement' + e.target.id).fadeIn(500);
+  });
+});
