@@ -24,7 +24,6 @@
 //= require plugins
 //= require jquery.ajaxchimp.min
 //= require main
-//= require candidat.js
 
 //= require activestorage
 //= require turbolinks
@@ -38,14 +37,6 @@ $(function () {
     $('.flash').removeClass('animate--drop-in-fade-out');
   }, 50000);
 });
-
-// //flash_message 2
-
-// function closeAlert() {
-//   // document.getElementById("flash-disappear").className += " zoomOut";
-//   document.getElementById('flash-disappear').className += ' bounceOutUp';
-//   console.log('bouce popup-OK');
-// }
 $(document).ready(function () {
   $('.comment-engagement').hide();
   $('ul').on('click', '.btn-comment-engagement', function (e) {
