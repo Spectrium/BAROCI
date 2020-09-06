@@ -94,7 +94,12 @@
   </div>
 
 <div class="boutton-flex mb-5 text-center">
-  <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn btn-outline-primary " %>
+  <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn btn-info " %>
+ 
+  <a class="btn btn-danger" href="javascript:history.back()">
+    <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
+  </a>
+
   <% if user_signed_in? %>
   <% if current_user.is_admins == true %>
   <%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id), class:"btn btn-outline-primary" %>

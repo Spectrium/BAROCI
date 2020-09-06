@@ -6,5 +6,11 @@
 			<input type="text" name="name" value="<%= @region.name %>" class="form-control neo-form text-center"><br>
 			<div class="text-center"><input type="submit" value="Enregistrer" class="boxed-btn3 btn-modal"></div>
 		<%end%>
+		<div class="text-right">
+      <button type="button" class="btn btn-labeled btn-danger m-3" onclick= window.location.href='<%= regions_path %>'; value="Retour vers la page Accueil" >
+        <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
+      </button>
+	  
+	  </div>
 	</div>
 </div>
