@@ -172,8 +172,4 @@ end
 #     Promess.create(content: Faker::Kpop.boy_bands, candidat_id: rand(Candidat.first.id .. Candidat.last.id))
 # end
 
-<<<<<<< HEAD
-puts "Vita"
-=======
 puts "seeds FAIT"
->>>>>>> development

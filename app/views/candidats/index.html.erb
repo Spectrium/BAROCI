@@ -9,7 +9,7 @@
                 <div class="single_case bg-white">
                   <div class="case_thumb text-center">
                     <%if @candidat_valid.avatars.attached?%>
-                      <%= image_tag  @candidat_valid.avatars.last, class:"image-width", width: '290', height: '180' %>
+                      <%= image_tag  @candidat_valid.avatars.last, class:"image-width", width: '165', height: '165' %>
                     <%else%>
                       <img src="//placehold.it/150" alt="avatar", class="mb-3 rounded-circle", style="width:87%">
                     <%end%>
@@ -210,7 +210,7 @@
       </div>
     </section>
   <%else%>
-    <h1 style="text-align: center; margin-top: 10% ">Pas de donné en vue</h1>
+    <h1 style="text-align: center; margin-top: 10% ">Pas de donnée en vue</h1>
   <%end%>
 
   

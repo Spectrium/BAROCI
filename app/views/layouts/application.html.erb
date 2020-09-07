@@ -13,6 +13,13 @@
   </head>
 
   <body class="bg-page">
-    <%= render "layouts/NavBar.html.erb" %> <%= yield %> <%= render "layouts/footer.html.erb" %>
+
+    <%= render "layouts/NavBar.html.erb" %> 
+      <!-- Flash message  -->
+<div class="flash-popup">
+   <%= flash_messages %>   
+</div>
+    <%= yield %>
+    <%= render "layouts/footer.html.erb" %>
   </body>
 </html>

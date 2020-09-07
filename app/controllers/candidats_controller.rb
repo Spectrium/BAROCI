@@ -80,9 +80,10 @@ class CandidatsController < ApplicationController
   	@candidat.region = region_candidat
   	@candidat.commune = commune_candidat
 
-  	if @candidat.save
+	  if @candidat.save
+		flash[:success] = "Candidat Ajouter avec success!"
   		redirect_to commune_candidat_path(commune_candidat.id, @candidat.id)
-  	else
+	  else
   		render "new"
   	end
   end

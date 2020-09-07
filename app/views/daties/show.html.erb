@@ -14,7 +14,7 @@
 			<% if user_signed_in? %>
 				<% if current_user.is_admins == true %>
 					<button onclick="document.getElementById('id01').style.display='block'" class="btn btn-success"><span class="btn-label m-1"><i class="fa fa-edit"></i></span>Editer la Date du Mandat</button>
-					<%= link_to "Effacer la date du Mandat", daty_path(@date.id), method:"delete",class:'btn btn-labeled btn-danger' %>
+					<%= link_to "Effacer la date du Mandat", daty_path(@date.id), method:"delete", :data => {:confirm => 'Etes-vous sûres de supprimer la date du mandat en cours ?'},class:'btn btn-labeled btn-danger' %>
 				<% end %>
 			<% end %>
 		</div>

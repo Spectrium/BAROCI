@@ -27,7 +27,7 @@
                       <% if user_signed_in? %>
                         <% if current_user.is_admins == true %>
                           <td class="text-blue"><i class="mr-4 fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'more_btn_edi text-blue' %></td>
-                          <td class="text-red"><i class="mr-4 fa fa-trash" aria-hidden="true"></i><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete",class:'more_btn_sup text-red' %></td>
+                          <td class="text-red"><i class="mr-4 fa fa-trash" aria-hidden="true"></i><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete", :data => {:confirm => 'Etes-vous sûres de supprimer un commune ?'} ,class:'more_btn_sup text-red' %></td>
                         <% end %>
                       <% end %>
                     </tr>
