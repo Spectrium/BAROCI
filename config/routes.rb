@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get '/résultat', to: 'searchs#index',as: "searchs"
   post 'searchs/create',as: "search"
   get '/mon_profil', to: 'users#show',as: "user"
@@ -53,8 +54,8 @@ Rails.application.routes.draw do
   resources :promesses, only: [:show], path: '/promesses' do
     resources :pictures, only: [:create]
   end
-
   # resources :users, only: [:show], path: '/mon_profil'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  #get '*path' => redirect('/404.html')
 end
+
