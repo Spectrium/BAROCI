@@ -14,7 +14,8 @@ class CommunesController < ApplicationController
   def create
   	@region = Region.find(params[:region_id])
   	@commune = Commune.new(name: params[:name].downcase, region: @region)
-  	if @commune.save
+    if @commune.save
+      flash[:success] = "Un commune a été ajouter avec succes!"
   		redirect_to region_communes_path(@region.id)
   	else
   		render "new"
@@ -29,7 +30,8 @@ class CommunesController < ApplicationController
   	@region = Region.find(params[:region_id])
   	@commune = Commune.find(params[:id])
   	@commune.update(name: params[:name].downcase,region: @region)
-  	if @commune.save
+    if @commune.save
+      flash[:success] = "Modification commune avec succes!"
   		redirect_to region_communes_path(@region.id)
   	else
   		render "edit"
@@ -40,7 +42,8 @@ class CommunesController < ApplicationController
   	@commune = Commune.find(params[:id])
   	@candidat = Candidat.where(commune: @commune)
   	@candidat.destroy_all
-  	@commune.destroy
+    @commune.destroy
+    flash[:success] = "Suppression commune avec succes!"
   	redirect_to region_communes_path(params[:region_id])
   end
 

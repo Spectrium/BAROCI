@@ -19,6 +19,7 @@ class ActualitiesController < ApplicationController
   def create
     @actualite = Actuality.new(title: params[:title], description: params[:description])
     if @actualite.save
+      flash[:success] = "Nouvelle actualiter ajouter avec succes!"
       redirect_to actuality_path(@actualite.id)
     else
       render "new"
@@ -33,6 +34,7 @@ class ActualitiesController < ApplicationController
     @actualite = Actuality.find(params[:id])
     @actualite.update(title: params[:title], description: params[:description])
     if @actualite.save
+      flash[:success] = "Modification fait"
       redirect_to actuality_path(params[:id])
     else
       render "new"
@@ -42,6 +44,7 @@ class ActualitiesController < ApplicationController
   def destroy
     @actualite = Actuality.find(params[:id])
     @actualite.destroy
+    flash[:success] = "Actualiter supprimer!"
     redirect_to home_path
   end
 

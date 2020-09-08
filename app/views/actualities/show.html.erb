@@ -31,7 +31,7 @@
               <%= file_field_tag :actuphoto %> <%= submit_tag "mettre à jour" , class:"btn btn-success" %> 
               <% end %> 
               <%= link_to "Editer", edit_actuality_path(@actualite.id) %>
-                <%= link_to "Supprimer", actuality_path(@actualite.id), method:"delete" %> 
+                <%= link_to "Supprimer", actuality_path(@actualite.id), method:"delete", :data => {:confirm => 'Voulez-vous supprimer cette actualiter ?'} %> 
             <%end%> 
           <%end%>
         </div>
