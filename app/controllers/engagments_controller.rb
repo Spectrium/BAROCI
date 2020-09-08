@@ -14,7 +14,8 @@ class EngagmentsController < ApplicationController
   def create
     @promesse = Promess.find(params[:promess_id])
   	@engagement = Engagment.new(content: params[:content], promess_id: @promesse.id)
-	if @engagement.save
+  if @engagement.save
+    flash[:success] = "Engagement ajouter!"
 		redirect_to promess_engagments_path(@promesse.id)
 	else
 		render "new"
@@ -29,7 +30,8 @@ class EngagmentsController < ApplicationController
   	@engagement = Engagment.find(params[:id])
     @promesse = Promess.find(params[:promess_id])
   	@engagement.update(content: params[:content], promess_id: @promesse.id)
-	if @engagement.save
+  if @engagement.save
+    flash[:success] = "Engagement mis à jours!"
 		redirect_to promess_engagments_path(@promesse.id)
 	else
 		render "edit"
@@ -43,7 +45,8 @@ class EngagmentsController < ApplicationController
   	@comment = Comment.where(engagment_id: @engagement.id)
   	@survey.destroy_all
   	@comment.destroy_all
-  	@engagement.destroy
+    @engagement.destroy
+    flash[:success] = "Engagement supprimer!"
   	redirect_to promess_engagments_path(@promesse.id)
   end
 

@@ -12,7 +12,8 @@ class RegionsController < ApplicationController
 
   def create
   	@region = Region.new(name: params[:name])
-  	if @region.save
+    if @region.save
+      flash[:success] = "Nouvelle Region ajouter avec succes!"
   		redirect_to regions_path
   	else
   		render "new"
@@ -20,13 +21,14 @@ class RegionsController < ApplicationController
   end
 
   def edit
-  	@region = Region.find(params[:id])
+    @region = Region.find(params[:id])
   end
 
   def update
   	@region = Region.find(params[:id])
   	@region.update(name: params[:name])
-  	if @region.save
+    if @region.save
+      flash[:success] = "Region modifier avec succes!"
   		redirect_to regions_path
   	else
   		render "edit"
@@ -39,7 +41,8 @@ class RegionsController < ApplicationController
   	@candidat = Candidat.where(region: @region)
   	@commune.destroy_all
   	@candidat.destroy_all
-  	@region.destroy
+    @region.destroy
+    flash[:success] = "Suppression region avec succes!"
   	redirect_to regions_path
   end
 

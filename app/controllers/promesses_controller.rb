@@ -23,7 +23,8 @@ class PromessesController < ApplicationController
     @candidat = @commune.candidats.find(params[:candidat_id])
 
   	@promesse = Promess.new(content: params[:content], candidat_id: @candidat.id)
-  	if @promesse.save
+    if @promesse.save
+      flash[:success] = "Nouveau promesse ajouter!"
       @suivi = Suivi.create(start: false, transition: true, finished: false, promess_id: @promesse.id)
       redirect_to commune_candidat_path(@commune.id, @candidat.id)
   	else
@@ -38,7 +39,8 @@ class PromessesController < ApplicationController
   def update
   	@promesse = Promess.find(params[:id])
   	@promesse.update(content: params[:content], candidat_id: params[:candidat_id])
-  	if @promesse.save
+    if @promesse.save
+      flash[:success] = "Promesse mis à jours!"
   		redirect_to candidat_path(params[:candidat_id])
   	else
   		render "edit"
@@ -55,6 +57,7 @@ class PromessesController < ApplicationController
     @engagement.destroy_all
     @suivi.destroy_all
     @promesse.destroy
+    flash[:success] = "Promesse supprimer!"
     redirect_to commune_candidat_path(params[:commune_id], params[:candidat_id])
   end
 

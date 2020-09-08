@@ -16,9 +16,10 @@ class DatiesController < ApplicationController
 
   def create
   	@date = Daty.new(start_date: params[:start_date], end_date: params[:end_date])
-  	if @date.save
+    if @date.save
+      flash[:success] = "Date enregitrer avec succes!"
   		redirect_to daty_path(@date.id)
-  	else
+    else
   		render "new"
   	end
   end
@@ -30,7 +31,8 @@ class DatiesController < ApplicationController
   def update
   	@date = Daty.find(params[:id])
   	@date.update(start_date: params[:start_date], end_date: params[:end_date])
-  	if @date.save
+    if @date.save
+      flash[:success] = "Mise à jours du date avec succes!"
   		redirect_to daty_path(@date.id)
   	else
   		render "edit"
@@ -39,7 +41,8 @@ class DatiesController < ApplicationController
 
   def destroy
   	@date = Daty.find(params[:id])
-  	@date.destroy
+    @date.destroy
+    flash[:success] = "Date supprimer!"
   	redirect_to home_path
   end
 

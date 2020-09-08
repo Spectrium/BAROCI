@@ -11,11 +11,11 @@
     <div class="text-left pl-2">
       <%= f.label :email, class:"pos" %><br />
     </div>
-    <%= f.email_field :email, autofocus: true, id:"inputEmail choose", class:"form-control vo text-center neo-form",placeholder:"Adresse email" ,autocomplete: "email",:required => true, :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
+    <%= f.email_field :email, autofocus: true, id:"inputEmail choose", class:"form-control vo text-center neo-form",placeholder:"Adresse email" ,autocomplete: "email" %>
     <div class="text-left pl-2">
       <%= f.label :mot_de_passe, class:"pos" %><br />
     </div>
-    <%= f.password_field :password, autocomplete: "current-password", id:"inputPassword", class:"form-control vo text-center neo-form", placeholder:"Mot de passe", :required => true,:minlength => 5 %> <% if devise_mapping.rememberable? %>
+    <%= f.password_field :password, autocomplete: "current-password", id:"inputPassword", class:"form-control vo text-center neo-form", placeholder:"Mot de passe"%> <% if devise_mapping.rememberable? %>
        <div class="d-flex m-3">
         <div class="primary-switch mr-2">
         <input type="checkbox" value= "1" name="user[remember_me]" id="default-switch">
@@ -30,18 +30,6 @@
     <%= render "devise/shared/links" %>
   </div>
   </div>
-</div>
-  
-<!-- Flash message  -->
-<div class="flash">
-  <div class="flash__icon">
-    <i class="icon fa fa-info"></i>
-  </div>
-  <% if flash.each do |type, msg| %>
-    <p class="flash__body font-weight-bold"><%= msg %></p>     
-  <% end.empty? %>
-    <p class="font-weight-bold">Remplir les formulaires pour se connecter!</p>    
-  <% end %>
 </div>
 
 

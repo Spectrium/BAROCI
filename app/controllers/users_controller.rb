@@ -18,10 +18,12 @@ class UsersController < ApplicationController
     	if @user == User.first
     		@user.update(is_admins: true)
     	end
-    	@user.update(full_name: params[:name], age: params[:age], cin: params[:cin], adress: params[:adress] )
-    	if @user.save
+		@user.update(full_name: params[:name], age: params[:age], cin: params[:cin], adress: params[:adress] )
+		if @user.save
+			flash[:success] = "Votre profil est à jours!"
     		redirect_to user_path
-    	else
+		else
+			flash[:error] = "error"
     		render 'new'
     	end
     end
@@ -47,7 +49,7 @@ class UsersController < ApplicationController
     end
     def is_admin
     	if user_signed_in?
-    		if current_user.is_admins == true
+			if current_user.is_admins == true
     			return true
     		else
     			redirect_to "/"
