@@ -32,7 +32,7 @@ class DatiesController < ApplicationController
   	@date = Daty.find(params[:id])
   	@date.update(start_date: params[:start_date], end_date: params[:end_date])
     if @date.save
-      flash[:success] = "Mise à jours du date avec succes!"
+      flash[:success] = "Date mis à jours!"
   		redirect_to daty_path(@date.id)
   	else
   		render "edit"

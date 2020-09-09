@@ -54,8 +54,7 @@ Rails.application.routes.draw do
   resources :promesses, only: [:show], path: '/promesses' do
     resources :pictures, only: [:create]
   end
-  get '*path' => redirect('/404.html')
   # resources :users, only: [:show], path: '/mon_profil'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
