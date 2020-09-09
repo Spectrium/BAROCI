@@ -140,7 +140,8 @@ class CandidatsController < ApplicationController
   	@candidat = Candidat.find(params[:id])
   	@promesse = Promess.where(candidat_id: @candidat.id)
   	@promesse.destroy_all
-  	@candidat.destroy
+	  @candidat.destroy
+	flash[:success] = "Candidat supprimer!"
   	redirect_to home_path
   end
   private
