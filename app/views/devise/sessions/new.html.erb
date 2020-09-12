@@ -16,13 +16,13 @@
       <%= f.label :mot_de_passe, class:"pos" %><br />
     </div>
     <%= f.password_field :password, autocomplete: "current-password", id:"inputPassword", class:"form-control vo text-center neo-form", placeholder:"Mot de passe"%> <% if devise_mapping.rememberable? %>
-       <div class="d-flex m-3">
+      <div class="d-flex m-3">
         <div class="primary-switch mr-2">
-        <input type="checkbox" value= "1" name="user[remember_me]" id="default-switch">
-        <label for="default-switch"></label>
+          <input type="checkbox" value= "1" name="user[remember_me]" id="default-switch">
+          <label for="default-switch"></label>
         </div>
         <%= f.label :Rester_connecter %>
-    </div>
+      </div>
     <% end %> 
   <div class="text-center">
     <%= f.submit "Se connecter", class:"btn btn-primary" %> <% end %> 
