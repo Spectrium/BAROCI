@@ -3,11 +3,12 @@
     <div class="border_bottom">
       <div class="row ">
         <div class="col-xl-12">
-          <div class="details_title">
+          <div class="text-center details_title">
               <span>A propos de cette actualitée</span>
               <h3><%= @actualite.title %></h3>
           </div>
         </div>
+        
         <div class="col-xl-12">
           <%if @actualite.actuphotos.attached?%>
             <div class="case_thumb width-card">
@@ -22,21 +23,27 @@
 				      </div>
 			      </div>
           <%end%> 
+          <div class="mb-5">
             <button type="button" class="btn btn-labeled btn-danger float-right" onclick= window.location.href='<%= actualities_path %>'; value="Retour vers la page Actualité" >
               <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
             </button>
+          </div>
           <% if user_signed_in?%> <% if current_user.is_admins == true%>
-            <h3>Ajouter des photos</h3>
-            <%= form_tag actuality_actuphotos_path(@actualite), multipart: true do %> 
-              <%= file_field_tag :actuphoto %> <%= submit_tag "mettre à jour" , class:"btn btn-success" %> 
-              <% end %> 
-              <%= link_to "Editer", edit_actuality_path(@actualite.id) %>
-                <%= link_to "Supprimer", actuality_path(@actualite.id), method:"delete", :data => {:confirm => 'Voulez-vous supprimer cette actualiter ?'} %> 
-            <%end%> 
+           <div class="d-flex justify-content-center">
+                  <%= link_to "Editer", edit_actuality_path(@actualite.id), class: "btn btn-info m-2 edit" %>
+                  <%= link_to "Supprimer", actuality_path(@actualite.id),class: "btn btn-danger m-2 del", method:"delete", :data => {:confirm => 'Voulez-vous supprimer cette actualiter ?'} %> 
+                </div>
+            <div style="text-align: -webkit-center;">
+              <%= form_tag actuality_actuphotos_path(@actualite), multipart: true do %> 
+                <%= file_field_tag :actuphoto %><%= submit_tag "Telecharger l'image" , class:"w-100 boxed-btn3 mt-4 mb-4 p-4" %> 
+                <% end %> 
+              <%end%>
+            </div>
           <%end%>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 

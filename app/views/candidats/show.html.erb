@@ -1,36 +1,57 @@
 <!-- call css  -->
 <link rel="stylesheet" href="/css/show_candidat.css">
-<!-- html body  -->
-<div class="show-candidat">
-  <div class="sc-head">
-    <div class="sc-head-item1">
-      <div class="sc-image">
-        <% if @candidat.avatars.attached?%> 
-          <%= image_tag @candidat.avatars.last, alt: 'avatar', class: 'sc-profil' %>
-        <%else%>
-          <img src="//placehold.it/150" class="img-fluid" alt="avatar" />
-        <%end%>
-      </div>
-      <div>
-        <% if user_signed_in? %> 
-          <% if current_user.is_admins == true %> 
-            <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %> <%= file_field_tag :avatar, class: "btn choice" %>
-              <div class="col-12"><%= submit_tag "mettre à jour", class:"btn btn-success" %></div>
-            <% end %> 
-          <% end %>
-        <% end %>
+
+<!--  1 section   -->
+  <div class="show-candidat">
+    <div class="sc-head">
+      <div class="sc-head-item1">
+        <div class="container">
+          <div class="row">
+            <div class="col"><div class="sc-image">
+              <% if @candidat.avatars.attached?%> 
+                <%= image_tag @candidat.avatars.last, alt: 'avatar', class: 'sc-profil' %>
+              <%else%>
+                <img src="//placehold.it/150" class="img-fluid" alt="avatar" />
+              <%end%>
+            </div>
+          </div>
+          <div class="col"> <div>
+            <% if user_signed_in? %> 
+              <% if current_user.is_admins == true %> 
+                <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %> <%= file_field_tag :avatar, class: "btn choice" %>
+                  <div class="col-12"><%= submit_tag "Telecharger l'image", class:"w-100 boxed-btn3 mt-4 mb-4 p-4" %></div>
+                <% end %> 
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">  
+          <div class="sc-head-item2">
+            <p>
+              <strong>Nom de l'élue :</strong> <%= @candidat.name %> <br />
+              <strong>Mouvence :</strong> <%= @candidat.parti %> <br />
+              <strong>Résultat :</strong> <%= @candidat.resultat %> % <br />
+              <strong>Commune :</strong> <%= @candidat.commune.name.capitalize %> <br />
+              <strong>Région :</strong> <%= @candidat.region.name.capitalize %> <br />
+            </p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="text-center">
+            <% if user_signed_in? %>
+              <% if current_user.is_admins == true %>
+                <%= link_to "Editer ce candidat", edit_commune_candidat_path(@commune.id, @candidat.id), class:"edit btn btn-info mr-3" %>
+                <%= link_to "Enlever ce candidat", commune_candidat_path(@commune.id, @candidat.id), method:"delete", class:"del btn btn-danger" %>
+              <% end %>
+            <% end %>   
+          </div>
+        </div>
       </div>
     </div>
-    <div class="sc-head-item2">
-      <p>
-        <strong>Nom de l'élue :</strong> <%= @candidat.name %> <br />
-        <strong>Mouvence :</strong> <%= @candidat.parti %> <br />
-        <strong>Résultat :</strong> <%= @candidat.resultat %> % <br />
-        <strong>Commune :</strong> <%= @candidat.commune.name.capitalize %> <br />
-        <strong>Région :</strong> <%= @candidat.region.name.capitalize %> <br />
-      </p>
-    </div>
-  </div>
+  </div>  
+ </div> 
+
   <div class="sc-button">
     <div class="sc-btn1 sc-button-item ">
       Promesses et engagements
@@ -51,7 +72,7 @@
             <div class="single-defination mb-5">
               <h4 class="mb-20"><%= link_to promesse.content, promess_engagments_path(promesse.id) %></h4>
                 <% if @candidat == @candidat_valid %>
-                  <p><%= link_to "Voir les progressions", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id), class: 'btn btn-outline-info' %></p>
+                  <p><%= link_to "Voir les progressions", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id), class: 'btn btn-outline-primary graph' %></p>
                     <% if user_signed_in? %>
                       <% if current_user.is_admins == true %> | <%= link_to "Créer des engagements", new_promess_engagment_path(promesse.id) %> | <%= link_to "Modifier la promesse", edit_commune_candidat_promess_path(@commune.id, @candidat.id,promesse.id) %> | <%= link_to "Supprimer la promesse", commune_candidat_promess_path(@commune.id,@candidat.id, promesse.id), method:"delete" %> <br>
                         <% if @candidat.resultat == @tab %>
@@ -93,22 +114,17 @@
     </div>
   </div>
 
-<div class="boutton-flex mb-5 text-center">
-  <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"btn btn-info " %>
- 
-  <a class="btn btn-danger" href="javascript:history.back()">
-    <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
-  </a>
-
-  <% if user_signed_in? %>
-  <% if current_user.is_admins == true %>
-  <%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id), class:"btn btn-outline-primary" %>
-  <%= link_to "Editer ce candidat", edit_commune_candidat_path(@commune.id, @candidat.id), class:"btn btn-outline-primary" %>
-  <%= link_to "Enlever ce candidat", commune_candidat_path(@commune.id, @candidat.id), method:"delete", class:"btn btn-outline-danger" %>
-  <% end %>
-  <% end %>
-</div>
-
+  <div class="boutton-flex mb-5 text-center">
+    <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"chart btn btn-secondary mr-3" %>
+      <% if user_signed_in? %>
+        <% if current_user.is_admins == true %>
+          <%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id), class:"add btn btn-outline-info mr-3" %>
+        <% end %>
+      <% end %>
+      <a class="btn btn-danger" href="javascript:history.back()">
+        <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
+      </a>
+  </div>
 
 <!-- call js  -->
 <script src="/js/show_candidat.js"></script>

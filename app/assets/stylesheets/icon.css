@@ -1,0 +1,131 @@
+
+#actuphoto{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem;
+    margin-top: 2rem;
+    border: 3px dashed #9dceff;
+    border-radius: .5rem;
+    transition: background-color .25s ease-out;
+    width: 100%;
+    color: rgb(3, 87, 24);
+  }
+  
+  #actuphoto:hover {
+    background-color: #dbedff;
+    cursor: pointer;
+  }
+  
+  #actuphoto:focus{
+    outline:none;
+  }
+  
+  #actuphoto::after{
+    font-family: "FontAwesome";
+    content:"\f093  Upload Image here";
+    text-align: center;
+    color: #258f90;
+    font-weight: bold;
+    font-size: x-large;
+    text-transform: uppercase;
+  }
+
+
+  #avatar{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem;
+    margin-top: 2rem;
+    border: 3px dashed #9dceff;
+    border-radius: .5rem;
+    transition: background-color .25s ease-out;
+    width: 100%;
+    color: rgb(3, 87, 24);
+  }
+
+  #avatar:hover{
+    background-color: #dbedff;
+    cursor: pointer;
+  }
+
+  #avatar:focus{
+    outline:none;
+  }
+  
+  #avatar::after{
+    font-family: "FontAwesome";
+    content:"\f093  Upload Image here";
+    text-align: center;
+    color: #258f90;
+    font-weight: bold;
+    font-size: x-large;
+    text-transform: uppercase;
+  }
+
+.save::before{
+    font-family: "FontAwesome";
+    content:"\f0c7  ";
+} 
+
+.graph::before{
+    font-family: "FontAwesome";
+    content:"\f201  ";
+} 
+
+
+.add::before{
+    font-family: "FontAwesome";
+    content:"\f055  ";
+}  
+
+.actu::before{
+    font-family: "FontAwesome";
+    content:"\f2d9  ";
+}
+
+.globe::before{
+    font-family: "FontAwesome";
+    content:"\f0ac  ";
+}  
+
+.home::before{
+    font-family: "FontAwesome";
+    content:"\f015  ";
+}  
+
+.new::before{
+    font-family: "FontAwesome";
+    content:"\f1ea  ";
+}  
+
+.user::before{
+    font-family: "FontAwesome";
+    content:"\f007  ";
+}  
+
+
+.del::before{
+    font-family: "FontAwesome";
+    content:"\f014  ";
+}
+
+.edit::before{
+    font-family: "FontAwesome";
+    content:"\f040  ";
+}
+
+.dateModif::before{
+    font-family: "FontAwesome";
+    content:"\f271  ";
+}
+
+.chart::before{
+  font-family: "FontAwesome";
+  content:"\f200  ";
+}

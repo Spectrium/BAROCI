@@ -16,10 +16,11 @@
                     <nav>
                       <ul id="navigation">
                         <!-- bar de recherche -->
-                          <li><a class="Nbr active" href="<%= home_path %>">Accueil</a></li>
-                          <li><a class="Nbr" href="<%= actualities_path %>">Actualité</a></li>
-                          <li><a class="Nbr" href="<%= regions_path %>">Région</a></li>
-                          <li><a class="Nbr" href="#"> 
+                          <li class="home text-white"><a class="Nbr active" href="<%= home_path %>">Accueil</a></li>
+                          <li class="new text-white"><a class="Nbr" href="<%= actualities_path %>">Actualité</a></li>
+                          <li class="globe text-white"><a class="Nbr" href="<%= regions_path %>">Région</a></li>
+                          <li><a class="Nbr" href="#">
+                             
                                 <% if user_signed_in? %> Mon profil 
                                 <% else %> Connexion 
                                 <% end %>
@@ -38,7 +39,7 @@
                             
                           <% if user_signed_in?%> 
                             <% if current_user.is_admins == true%>
-                              <li><a>Ajouter<i class="ti-angle-down"></i></a>
+                              <li class="add text-white"><a>Ajouter <i class="ti-angle-down"></i></a>
                                   <ul class="submenu">
                                     <li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">une actualité</a></li>
                                     <%if Daty.last == nil %>
