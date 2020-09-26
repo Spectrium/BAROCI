@@ -26,8 +26,8 @@
                       <td><%= link_to commune.name.titleize, commune_candidats_path(commune.id) %></td>
                       <% if user_signed_in? %>
                         <% if current_user.is_admins == true %>
-                          <td class="text-blue"><i class="mr-4 fa fa-pencil-square-o" aria-hidden="true"></i><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'more_btn_edi text-blue' %></td>
-                          <td class="text-red"><i class="mr-4 fa fa-trash" aria-hidden="true"></i><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete", :data => {:confirm => 'Etes-vous sûres de supprimer un commune ?'} ,class:'more_btn_sup text-red' %></td>
+                          <td class="text-blue"><%= link_to "edit", edit_region_commune_path(@region.id,commune.id),class:'more_btn_edi text-blue edit' %></td>
+                          <td class="text-red"><%= link_to "supprimé", region_commune_path(@region.id,commune.id) , method: "delete", :data => {:confirm => 'Etes-vous sûres de supprimer un commune ?'} ,class:'more_btn_sup text-red del' %></td>
                         <% end %>
                       <% end %>
                     </tr>
@@ -43,7 +43,7 @@
         <% if current_user.is_admins == true %>
             <div class="col-xl-10">
               <div class="btn-lg btn-block text-center">
-                <button onclick="document.getElementById('id01').style.display='block'" class="w-50 boxed-btn3">Ajouter Commune</button>
+                <button onclick="document.getElementById('id01').style.display='block'" class="w-50 boxed-btn3 add">&nbsp; Ajouter Commune</button>
               </div>
             </div>
         <% end %>

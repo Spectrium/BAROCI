@@ -71,22 +71,26 @@
 .save::before{
     font-family: "FontAwesome";
     content:"\f0c7  ";
+    font-size: 20px;
 } 
 
 .graph::before{
     font-family: "FontAwesome";
     content:"\f201  ";
+    font-size: 20px;
 } 
 
 
 .add::before{
     font-family: "FontAwesome";
     content:"\f055  ";
+    
 }  
 
 .actu::before{
     font-family: "FontAwesome";
     content:"\f2d9  ";
+    font-size: 20px;
 }
 
 .globe::before{
@@ -97,27 +101,32 @@
 .home::before{
     font-family: "FontAwesome";
     content:"\f015  ";
+    font-size: 20px;
 }  
 
 .new::before{
     font-family: "FontAwesome";
     content:"\f1ea  ";
+  
 }  
 
 .user::before{
     font-family: "FontAwesome";
     content:"\f007  ";
+    font-size: 20px;
 }  
 
 
 .del::before{
     font-family: "FontAwesome";
     content:"\f014  ";
+    font-size: 20px;
 }
 
 .edit::before{
     font-family: "FontAwesome";
     content:"\f040  ";
+    font-size: 20px;
 }
 
 .dateModif::before{
@@ -128,4 +137,5 @@
 .chart::before{
   font-family: "FontAwesome";
   content:"\f200  ";
+  font-size: 20px;
 }

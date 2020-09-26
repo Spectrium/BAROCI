@@ -11,7 +11,7 @@
               <% if @candidat.avatars.attached?%> 
                 <%= image_tag @candidat.avatars.last, alt: 'avatar', class: 'sc-profil' %>
               <%else%>
-                <img src="//placehold.it/150" class="img-fluid" alt="avatar" />
+                <img src="//placehold.it/150" class="img-fluid" style="height:auto;" alt="avatar" />
               <%end%>
             </div>
           </div>
@@ -19,7 +19,7 @@
             <% if user_signed_in? %> 
               <% if current_user.is_admins == true %> 
                 <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %> <%= file_field_tag :avatar, class: "btn choice" %>
-                  <div class="col-12"><%= submit_tag "Telecharger l'image", class:"w-100 boxed-btn3 mt-4 mb-4 p-4" %></div>
+                  <div class="col-12"><%= submit_tag "Telecharger l'image", class:"w-100 btn btn-secondary mt-4 mb-4 p-4" %></div>
                 <% end %> 
               <% end %>
             <% end %>
