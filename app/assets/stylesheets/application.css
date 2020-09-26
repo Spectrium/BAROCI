@@ -29,6 +29,7 @@
  *= require search
  *= require alert
  *= require candidat
+ *= require icon
 
  *= require_tree .
  *= require_self

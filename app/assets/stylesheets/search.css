@@ -46,27 +46,3 @@
 
 @media screen and (min-width: 200px) and (max-width: 420px) {
 }
-
-#actuphoto{
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 5rem;
-  margin-top: 2rem;
-  border: 3px dashed #9dceff;
-  border-radius: .5rem;
-  transition: background-color .25s ease-out;
-  width: 100%;
-  color: rgb(19, 146, 163);
-}
-
-#actuphoto:hover {
-  background-color: #dbedff;
-}
-
-.w-2{
-  width: 3em;
-}
-

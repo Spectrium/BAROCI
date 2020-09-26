@@ -137,7 +137,7 @@
                   <% if user_signed_in?%> 
                     <% if current_user.is_admins == true%>
                     <%if Daty.last == nil %>
-                      <a href="<%= new_daty_path %>" class="boxed-btn3">Ajout date Mandat</a></li>
+                      <a href="<%= new_daty_path %>" class="boxed-btn3 dateModif">Ajout date Mandat</a></li>
                     <% else %>
                       <a href="<%= daty_path(Daty.last.id) %>" class="boxed-btn3">Modifier la date</a>
                     <% end %> 
@@ -197,7 +197,7 @@
       <div class="row">
         <div class="col-xl-12">
           <div class="btn-lg btn-block">
-            <a href="<%= actualities_path %>" class="w-100 boxed-btn3">Plus d'actualité</a>
+            <a href="<%= actualities_path %>" class="w-100 boxed-btn3 actu">Plus d'actualité</a>
           </div>
         </div>
       </div>
