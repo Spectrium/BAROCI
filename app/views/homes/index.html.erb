@@ -139,7 +139,7 @@
                     <%if Daty.last == nil %>
                       <a href="<%= new_daty_path %>" class="boxed-btn3 dateModif">Ajout date Mandat</a></li>
                     <% else %>
-                      <a href="<%= daty_path(Daty.last.id) %>" class="boxed-btn3">Modifier la date</a>
+                      <a href="<%= daty_path(Daty.last.id) %>" class="edit boxed-btn3">&nbsp; Modifier la date</a>
                     <% end %> 
                       <% end %> 
                   <% end %>

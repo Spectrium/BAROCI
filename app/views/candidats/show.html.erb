@@ -72,7 +72,7 @@
             <div class="single-defination mb-5">
               <h4 class="mb-20"><%= link_to promesse.content, promess_engagments_path(promesse.id) %></h4>
                 <% if @candidat == @candidat_valid %>
-                  <p><%= link_to "Voir les progressions", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id), class: 'btn btn-outline-info graph' %></p>
+                  <p><%= link_to "Voir les progressions", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id), class: 'btn btn-outline-primary graph' %></p>
                     <% if user_signed_in? %>
                       <% if current_user.is_admins == true %> | <%= link_to "Créer des engagements", new_promess_engagment_path(promesse.id) %> | <%= link_to "Modifier la promesse", edit_commune_candidat_promess_path(@commune.id, @candidat.id,promesse.id) %> | <%= link_to "Supprimer la promesse", commune_candidat_promess_path(@commune.id,@candidat.id, promesse.id), method:"delete" %> <br>
                         <% if @candidat.resultat == @tab %>
@@ -115,10 +115,10 @@
   </div>
 
   <div class="boutton-flex mb-5 text-center">
-    <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"chart btn btn-info mr-3" %>
+    <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"chart btn btn-secondary mr-3" %>
       <% if user_signed_in? %>
         <% if current_user.is_admins == true %>
-          <%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id), class:"add btn btn-outline-primary mr-3" %>
+          <%= link_to "Créer des promesses", new_commune_candidat_promess_path(@commune.id, @candidat.id), class:"add btn btn-outline-info mr-3" %>
         <% end %>
       <% end %>
       <a class="btn btn-danger" href="javascript:history.back()">
