@@ -16,13 +16,16 @@
             </div>
           </div>
           <div class="col"> <div>
-            <% if user_signed_in? %> 
-              <% if current_user.is_admins == true %> 
-                <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %> 
-                  <div class="col-12"><%= file_field_tag :avatar, class: "btn choice" %><%= submit_tag "Telecharger l'image", class:"reload w-100 btn btn-secondary mt-4 mb-4 p-4" %></div>
-                <% end %> 
+            <div class="col-12">
+              <% if user_signed_in? %> 
+                <% if current_user.is_admins == true %> 
+                  <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %> 
+                    <%= file_field_tag :avatar, class: "btn choice" %>
+                    <%= submit_tag "Telecharger l'image", class:"reload w-100 btn btn-secondary mt-4 mb-4 p-4" %>
+                  <% end %> 
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
         </div>
         <div class="w-100"></div>
