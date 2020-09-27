@@ -9,7 +9,7 @@
           <div class="row">
             <div class="col"><div class="sc-image">
               <% if @candidat.avatars.attached?%> 
-                <%= image_tag @candidat.avatars.last, alt: 'avatar', class: 'sc-profil' %>
+                <%= image_tag @candidat.avatars.last, alt:'avatar', class:'sc-profil' %>
               <%else%>
                 <img src="//placehold.it/150" class="img-fluid" style="height:auto;" alt="avatar" />
               <%end%>

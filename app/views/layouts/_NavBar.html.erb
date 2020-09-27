@@ -6,16 +6,15 @@
         <div class="header_bottom_border">
           <div class="row align-items-center">
               <div class="col-xl-3 col-lg-2">
-                  <a id="logo" href="<%= home_path %>">
-                      <%= image_tag  "logo2.png", class:'w-60' %>
-                  </a>
-          
+                <a id="logo" href="<%= home_path %>">
+                    <%= image_tag  "logo2.png", class:'w-60' %>
+                </a>
               </div>
               <div class="col-xl-6 col-lg-7">
                 <div class="main-menu d-none d-lg-block">
                     <nav>
                       <ul id="navigation">
-                        <!-- bar de recherche -->
+                        <!-- Begin NavMenu -->
                           <li class="home text-white"><a class="Nbr active" href="<%= home_path %>">Accueil</a></li>
                           <li class="new text-white"><a class="Nbr" href="<%= actualities_path %>">Actualité</a></li>
                           <li class="globe text-white"><a class="Nbr" href="<%= regions_path %>">Région</a></li>
@@ -36,7 +35,8 @@
                                   <% end %>
                               </ul>
                           </li>   
-                            
+
+                        <!-- Admin Menu -->    
                           <% if user_signed_in?%> 
                             <% if current_user.is_admins == true%>
                               <li class="add text-white"><a>Ajouter <i class="ti-angle-double-down"></i></a>
@@ -52,11 +52,11 @@
                               </li>
                             <% end %> 
                           <% end %>
-                        
                     </nav>
                   </div>
                 </div>
-                        
+
+              <!-- Search Bar -->
               <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                 <div class="Appointment">
                   <li>
