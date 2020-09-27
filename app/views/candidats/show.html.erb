@@ -18,8 +18,8 @@
           <div class="col"> <div>
             <% if user_signed_in? %> 
               <% if current_user.is_admins == true %> 
-                <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %> <%= file_field_tag :avatar, class: "btn choice" %>
-                  <div class="col-12"><%= submit_tag "Telecharger l'image", class:"w-100 btn btn-secondary mt-4 mb-4 p-4" %></div>
+                <%= form_tag commune_candidat_avatars_path(@commune.id, @candidat.id), multipart: true do %> 
+                  <div class="col-12"><%= file_field_tag :avatar, class: "btn choice" %><%= submit_tag "Telecharger l'image", class:"reload w-100 btn btn-secondary mt-4 mb-4 p-4" %></div>
                 <% end %> 
               <% end %>
             <% end %>
@@ -125,6 +125,6 @@
         <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
       </a>
   </div>
-
+</div>
 <!-- call js  -->
 <script src="/js/show_candidat.js"></script>

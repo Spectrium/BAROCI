@@ -1,12 +1,12 @@
 <div class="card-center p-5">
-  <h1 class="text-center mb-3 ">Ajouter une Region</h1>
-  <div class="date text-center"> 
+  <h1 class="text-center mb-4 ">Ajouter une Region</h1>
+  <div class="date text-center mb-3 mt-3"> 
     <%= form_tag url_for(action:'create'), method:'post' do %>
       <div class="mb-2">Nom de la region</div>
         <input type="text" name="name" placeholder ="Nom de la région" class="neo-form content-modal mb-2" required>
+  </div>    
       <div class="text-center">
-        <input type="submit" value="Ajouter" class="btn-modal btn btn-success">
+        <input type="submit" value="Enregistrer" class="boxed-btn3 btn-modal">
       </div>
     <%end%>
-  </div>
 </div>
