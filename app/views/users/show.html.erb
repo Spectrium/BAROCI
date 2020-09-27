@@ -1,46 +1,65 @@
-<div class="container mb-4">
-  <div class="row text-center m-4">
-    <div class="col-md-12">
-      <h1>Votre profil</h1>
+<div class="container">
+    <h1 class="text-center m-3 p-3">Profil d'utilisateur</h1>
+  
+  <!-- Image Profil -->
+  <div class="row">
+    <div class="col">  
+    <%if @user.portrait.attached?%>
+      <%= image_tag @user.portrait, width:'500px', class:"imagauto", alt: 'avatar' %>
+    <%else%>
+      <img src="https://robohash.org/68.186.255.198.png" alt="" class="imagauto">
+    <%end%>
+  </div>
+
+  <!-- Upload Image -->
+  <div class="col"> 
+    <div style="text-align: -webkit-center;">
+      <%= form_tag user_portraits_path(@user), class:'m-4', multipart: true do %>
+        <%= file_field_tag :portrait %>
+        <%= submit_tag "Changer ma photo de profil", class:"w-100 btn btn-secondary mt-4 mb-4 p-4" %>
+      <% end %> 
     </div>
   </div>
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="profile-image">
-        <%if @user.portrait.attached?%>
-            <%= image_tag @user.portrait, width:'350px', class:"imagauto", alt: 'avatar' %>
-        <%else%>
-            <img src="https://robohash.org/68.186.255.198.png" alt="" class="imagauto">
-        <%end%>
-        <%= form_tag user_portraits_path(@user), class:'m-4', multipart: true do %>
-          <%= file_field_tag :portrait %>
-          <%= submit_tag "changer ma photo de profil", class:'more_btn_edi mt-2' %>
-        <% end %>  
+
+  <div class="w-100"></div>
+  <!-- Details profil -->
+    <div class="col mt-5">
+      <div class="text-secondary">
+        <strong class="mr-2">Nom: </strong><%= @user.full_name  %>
       </div>
+      <div class="text-secondary">
+        <strong class="mr-2">Email:</strong> <%= @user.email %>
+      </div>
+
+      <% if @user.age != nil && @user.age !="" %>
+        <div class="text-secondary">
+          <strong class="mr-2">Age:</strong> <%= @user.age  %> ans
+        </div>
+      <% end %> 
+      <% if @user.cin != nil && @user.cin !="" %>
+        <div class="text-secondary">
+          <strong class="mr-2">CIN:</strong> <%= @user.cin %>
+        </div>
+      <% end %> 
+      <% if @user.adress != nil && @user.adress !="" %>
+        <div class="text-secondary"><strong>Adresse : </strong>
+          <%= @user.adress %>
+        </div>
+      <% end %> 
     </div>
-      <div class="col-md-3 pr-0 pt-5">
-        <h5>À propos</h5>
-        <p><span class="text-secondary">Nom : </span><%= @user.full_name  %></p>
-        <p><span class="text-secondary">Email : </span><%= @user.email %></p>
-        <% if @user.age != nil && @user.age !="" %>
-          <p><span class="text-secondary">Age : </span><%= @user.age  %> ans</p>
-        <% end %> 
-        <% if @user.cin != nil && @user.cin !="" %>
-          <p><span class="text-secondary">CIN : </span><%= @user.cin %></p>
-        <% end %> 
-        <% if @user.adress != nil && @user.adress !="" %>
-          <p><span class="text-secondary">Adresse : </span><%= @user.adress %></p>
-        <% end %> 
-        <% if @user == current_user %>
-          <div class="m-2">
-            <%= link_to 'Modifier profil', edit_user_path(@user.id),class:"more_btn_edi"  %>
-          </div>
-        <% end %>
-        <% if current_user.is_admins == true %>
-          <div class="m-2">
-              <%= link_to 'Supprimer ce compte', user_path(@user.id) , method:'delete', class:"more_btn_sup" , data:{confirm:'Vous voulez supprimer votre compte?'} %>              
-          </div>
-        <% end %>
-      </div>  
+
+    <!-- Button -->
+    <div class="col d-flex flex-wrap justify-content-center mt-5">    
+      <% if @user == current_user %>
+        <div class="m-2">
+          <%= link_to 'Modifier profil', edit_user_path(@user.id),class:"edit btn btn-info mr-3"  %>
+        </div>
+      <% end %>
+      <% if current_user.is_admins == true %>
+        <div class="m-2">
+            <%= link_to 'Supprimer ce compte', user_path(@user.id) , method:'delete', class:"del btn btn-danger" , data:{confirm:'Vous voulez supprimer votre compte?'} %>              
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
