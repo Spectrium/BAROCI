@@ -183,7 +183,7 @@
                       <%= image_tag (@actualite[i].actuphotos.last) %> 
                     <%end%>    
                   </div>
-                  <div class="case_heading">
+                  <div class="case_heading mt-3">
                     <h4><%= @actualite[i].title%></h4>
                     <p id="case-paragraph"><% for a in 0..15 do %><%= @actualite[i].description.split[a] %> <%end%><% if @actualite[i].description.split.length-1 > 15 %>... <%end%></p> 
                   </div>

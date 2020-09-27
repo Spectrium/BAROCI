@@ -3,7 +3,7 @@
     <div class="border_bottom">
       <div class="row ">
         <div class="col-xl-12">
-          <div class="text-center details_title">
+          <div class="details_title">
               <span>A propos de cette actualitée</span>
               <h3><%= @actualite.title %></h3>
           </div>
@@ -11,8 +11,8 @@
         
         <div class="col-xl-12">
           <%if @actualite.actuphotos.attached?%>
-            <div class="case_thumb width-card">
-              <% @actuphoto.each do |photo|%> <%= image_tag photo, class:"tailimg" %> <%end%>
+            <div class="case_thumb width-card text-center">
+              <% @actuphoto.each do |photo|%> <%= image_tag photo, class:"tailimg", style:"max-width:100%;" %> <%end%>
             </div>
             <div class="section-top-border">
 				      <h3 class="">Description</h3>
@@ -35,7 +35,7 @@
                 </div>
             <div style="text-align: -webkit-center;">
               <%= form_tag actuality_actuphotos_path(@actualite), multipart: true do %> 
-                <%= file_field_tag :actuphoto %><%= submit_tag "Telecharger l'image" , class:"w-100 boxed-btn3 mt-4 mb-4 p-4" %> 
+                <%= file_field_tag :actuphoto %><%= submit_tag "Telecharger l'image" , class:"w-100 btn btn-secondary mt-4 mb-4 p-4" %> 
                 <% end %> 
               <%end%>
             </div>

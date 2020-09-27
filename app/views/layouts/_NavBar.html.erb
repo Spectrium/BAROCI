@@ -24,7 +24,7 @@
                                 <% if user_signed_in? %> Mon profil 
                                 <% else %> Connexion 
                                 <% end %>
-                                <i class="ti-angle-down"></i>
+                                <i class="ti-angle-double-down"></i>
                               </a>
                               <ul class="submenu">
                                   <% if user_signed_in?%>
@@ -39,7 +39,7 @@
                             
                           <% if user_signed_in?%> 
                             <% if current_user.is_admins == true%>
-                              <li class="add text-white"><a>Ajouter <i class="ti-angle-down"></i></a>
+                              <li class="add text-white"><a>Ajouter <i class="ti-angle-double-down"></i></a>
                                   <ul class="submenu">
                                     <li class="nav-item type"><a class="nav-link" href="<%= new_actuality_path %>">une actualité</a></li>
                                     <%if Daty.last == nil %>
