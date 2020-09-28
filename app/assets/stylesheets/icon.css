@@ -175,6 +175,7 @@ text-transform: uppercase;
 .dateModif::before{
     font-family: "FontAwesome";
     content:"\f271  ";
+    font-size: 20px;
 }
 
 .chart::before{
