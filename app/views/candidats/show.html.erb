@@ -69,9 +69,9 @@
   <div class="whole-wrap sc-promess">
     <div class="box_1170">
       <h3 class="mb-30 text-center">Promesses et engagements</h3>
-      <div class="d-flex flex-wrap mt-5 mb-5">
+      <div class="d-flex flex-wrap justify-content-center mt-5 mb-5">
         <% @candidat.promesses.each do |promesse| %>
-          <div class="col text-center m-2 shadow">
+          <div class="col-md-4 text-center m-2 shadow">
             <div class="single-defination mb-5">
               <h4 class="mb-20 pt-5"><%= link_to promesse.content, promess_engagments_path(promesse.id) %></h4>
                 <% if @candidat == @candidat_valid %>
@@ -106,7 +106,7 @@
       
   <div class="sc-body-photo container" id="edit" style="display: none;">
     <h3 class="mb-30 text-center">Image Gallery</h3>
-    <div class="row gallery-item mb-5">
+    <div class="d-flex flex-wrap gallery-item mb-5">
       <div class="col-md-4">
         <a href="img/elements/g1.jpg" class="img-pop-up">
           <div class="d-flex justify-content-between">
