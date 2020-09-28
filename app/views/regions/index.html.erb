@@ -26,8 +26,8 @@
                   <td><%= link_to region.name.titleize,region_communes_path(region.id)%><br></td>
                   <% if user_signed_in? %>
                     <% if current_user.is_admins == true %>
-                      <td class="text-blue"><%= link_to "Editer", edit_region_path(region.id),class:'more_btn_edi text-blue edit' %></td>
-                      <td class="text-red"><%= link_to "Supprimer", region_path(region.id) , method: "delete", :data => {:confirm => 'Etes-vous sûres de supprimer un région ?'}, class:'more_btn_sup text-red del' %></td>
+                      <td class="text-edit"><%= link_to "Editer", edit_region_path(region.id),class:'more_btn_edi edit' %></td>
+                      <td class="text-del"><%= link_to "Supprimer", region_path(region.id) , method: "delete", :data => {:confirm => 'Etes-vous sûres de supprimer un région ?'}, class:'more_btn_sup del' %></td>
                     <% end %>
                   <% end %>
                 </tr>     

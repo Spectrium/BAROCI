@@ -231,5 +231,11 @@ text-transform: uppercase;
   color: white!important;
 }
 
+.text-edit{
+  color: #0d5f88;
+}
 
+.text-del{
+  color: red;
+}
 

@@ -7,14 +7,14 @@
             <div class="single-defination">
               <div class="d-flex flex-wrap justify-content-center">
                 <div class="single_case bg-white">
-                  <div class="case_thumb text-center">
+                  <div class="case_thumb text-center p-2">
                     <%if @candidat_valid.avatars.attached?%>
-                      <%= image_tag  @candidat_valid.avatars.last, class:"image-width", width: '165', height: '165' %>
+                      <%= image_tag  @candidat_valid.avatars.last, class:"image-width", width: '259', height: 'auto' %>
                     <%else%>
                       <img src="//placehold.it/150" alt="avatar", class="mb-3 rounded-circle", style="width:87%">
                     <%end%>
                   </div>
-                  <div class="case_heading">
+                  <div class="case_heading mt-3">
                     <h4><%= @candidat_valid.name %></h4>
                     <span id="case-paragraph">Mouvance : <%= @candidat_valid.parti %>                 
                       <div class="wrapper mb-3">
