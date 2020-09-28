@@ -10,7 +10,7 @@ class AvatarsController < ApplicationController
   end
   private
   def test
-    if (params[:avatar] != '') 
+    if (params[:avatar] == '') 
       @commune = Commune.find(params[:commune_id])
       @candidat = @commune.candidats.find(params[:candidat_id])
       redirect_to(commune_candidat_path(@commune.id, @candidat.id))
