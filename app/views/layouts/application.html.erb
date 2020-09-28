@@ -13,13 +13,15 @@
   </head>
 
   <body>
-
+    <!-- NavBar display -->
     <%= render "layouts/NavBar.html.erb" %> 
-      <!-- Flash message  -->
-<div class="flash-popup">
-   <%= flash_messages %>   
-</div>
+    <!-- Flash message display -->
+        <div class="flash-popup">
+          <%= flash_messages %>   
+        </div>
+    <!-- Content display -->
     <%= yield %>
+    <!-- Footer display -->
     <%= render "layouts/footer.html.erb" %>
   </body>
 </html>

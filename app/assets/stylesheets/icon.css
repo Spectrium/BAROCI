@@ -1,3 +1,106 @@
+/* Upload Image */
+#actuphoto{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5rem;
+  margin-top: 2rem;
+  border: 3px dashed #9dceff;
+  border-radius: .5rem;
+  transition: background-color .25s ease-out;
+  width: 100%;
+  color: rgb(3, 87, 24);
+}
+
+#actuphoto:hover {
+  background-color: #dbedff;
+  cursor: pointer;
+}
+
+#actuphoto:focus{
+  outline:none;
+}
+
+#actuphoto::after{
+  font-family: "FontAwesome";
+  content:"\f093  Deplacer l'image ici";
+  text-align: center;
+  color: #258f90;
+  font-weight: bold;
+  font-size: x-large;
+  text-transform: uppercase;
+}
+
+#portrait{
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding: 5rem;
+margin-top: 2rem;
+border: 3px dashed #9dceff;
+border-radius: .5rem;
+transition: background-color .25s ease-out;
+width: 100%;
+color: rgb(3, 87, 24);
+}
+
+#portrait:hover {
+background-color: #dbedff;
+cursor: pointer;
+}
+
+#portrait:focus{
+outline:none;
+}
+
+#portrait::after{
+font-family: "FontAwesome";
+content:"\f093  Deplacer l'image ici";
+text-align: center;
+color: #258f90;
+font-weight: bold;
+font-size: x-large;
+text-transform: uppercase;
+}
+
+#avatar{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5rem;
+  margin-top: 2rem;
+  border: 3px dashed #9dceff;
+  border-radius: .5rem;
+  transition: background-color .25s ease-out;
+  width: 100%;
+  color: rgb(3, 87, 24);
+}
+
+#avatar:hover{
+  background-color: #dbedff;
+  cursor: pointer;
+}
+
+#avatar:focus{
+  outline:none;
+}
+
+#avatar::after{
+  font-family: "FontAwesome";
+  content:"\f093  Deplacer l'image ici";
+  text-align: center;
+  color: #258f90;
+  font-weight: bold;
+  font-size: x-large;
+  text-transform: uppercase;
+}
+
 
 @font-face {
   font-family: 'themify';
@@ -22,88 +125,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-#actuphoto{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 5rem;
-    margin-top: 2rem;
-    border: 3px dashed #9dceff;
-    border-radius: .5rem;
-    transition: background-color .25s ease-out;
-    width: 100%;
-    color: rgb(3, 87, 24);
-  }
-  
-  #actuphoto:hover {
-    background-color: #dbedff;
-    cursor: pointer;
-  }
-  
-  #actuphoto:focus{
-    outline:none;
-  }
-  
-  #actuphoto::after{
-    font-family: "FontAwesome";
-    content:"\f093  Upload Image here";
-    text-align: center;
-    color: #258f90;
-    font-weight: bold;
-    font-size: x-large;
-    text-transform: uppercase;
-  }
-
-
-  #avatar{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 5rem;
-    margin-top: 2rem;
-    border: 3px dashed #9dceff;
-    border-radius: .5rem;
-    transition: background-color .25s ease-out;
-    width: 100%;
-    color: rgb(3, 87, 24);
-  }
-
-  #avatar:hover{
-    background-color: #dbedff;
-    cursor: pointer;
-  }
-
-  #avatar:focus{
-    outline:none;
-  }
-  
-  #avatar::after{
-    font-family: "FontAwesome";
-    content:"\f093  Upload Image here";
-    text-align: center;
-    color: #258f90;
-    font-weight: bold;
-    font-size: x-large;
-    text-transform: uppercase;
-  }
-
-.reload::before{
-    font-family: "FontAwesome";
-    content:"\f021  ";
-    font-size: 20px;
-} 
-
 .graph::before{
     font-family: "FontAwesome";
     content:"\f201  ";
     font-size: 20px;
 } 
-
 
 .add::before{
     font-family: "FontAwesome";
@@ -134,13 +160,6 @@
   
 }  
 
-.user::before{
-    font-family: "FontAwesome";
-    content:"\f007  ";
-    font-size: 20px;
-}  
-
-
 .del::before{
     font-family: "FontAwesome";
     content:"\f014  ";
@@ -167,3 +186,49 @@
 .ti-angle-double-down:before {
   content: '\e663';
 }
+
+.coms::before{
+  font-family: "FontAwesome";
+  content:"\f086  ";
+  font-size: 20px;
+}
+
+.like::before{
+  font-family: "FontAwesome";
+  content:"\f087  ";
+  font-size: 20px;
+}
+
+.none{
+  background-color: transparent;
+  color: white;
+  border:none;
+  outline: none;
+}
+
+.text-blue{
+  color: #17a2b8;
+}
+
+.text-blue:hover{
+  color:white;
+}
+
+.text-red{
+  color:#dc3545;
+}
+
+.text-red:hover{
+  color:white;
+}
+
+.text-secondary{
+  color: #6c757d;
+}
+
+.text-secondary:hover{
+  color: white!important;
+}
+
+
+

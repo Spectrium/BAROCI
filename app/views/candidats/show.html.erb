@@ -9,7 +9,7 @@
           <div class="row">
             <div class="col"><div class="sc-image">
               <% if @candidat.avatars.attached?%> 
-                <%= image_tag @candidat.avatars.last, alt: 'avatar', class: 'sc-profil' %>
+                <%= image_tag @candidat.avatars.last, alt:'avatar', class:'sc-profil' %>
               <%else%>
                 <img src="//placehold.it/150" class="img-fluid" style="height:auto;" alt="avatar" />
               <%end%>
@@ -109,9 +109,12 @@
     <div class="row gallery-item">
       <div class="col-md-4">
         <a href="img/elements/g1.jpg" class="img-pop-up">
-          <% @avatar.each do |candidat|%>
-            <%= image_tag  candidat, class:"tailimg" %>
-          <%end%>
+          <div class="d-flex justify-content-between">
+
+            <% @avatar.each do |candidat|%>
+              <%= image_tag  candidat, class:"tailimg",style:'width:400px;heigth: 500px;margin-right:5px' %>
+            <%end%>
+          </div>
         </a>
       </div>
     </div>
