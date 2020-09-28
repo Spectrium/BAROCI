@@ -4,8 +4,7 @@
     <% @comment.each do |comment| %>
     <div id="<%=comment.id%>">
       <%= comment.user.full_name %><br />
-      <%= comment.content %> <% if user_signed_in? %> <% if comment.user == current_user || current_user.is_admins == true %> | <%= link_to "Modifier", edit_engagment_comment_path(@engagement.id, comment.id) %> | <%= link_to "Supprimer", engagment_comment_path(@engagement.id, comment.id),
-      method:"delete" ,remote: true%> <br />
+      <%= comment.content %> <% if user_signed_in? %> <% if comment.user == current_user || current_user.is_admins == true %> | <%= link_to "Modifier", edit_engagment_comment_path(@engagement.id, comment.id), class:"edit btn btn-primary" %> | <%= link_to "Supprimer", engagment_comment_path(@engagement.id, comment.id),method:"delete" ,remote: true, class:"del btn btn-danger"%> <br />
       <% end %> <% end %>
     </div>
     <% end %>

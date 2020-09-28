@@ -67,19 +67,19 @@
   </div>
 
   <div class="whole-wrap sc-promess">
-    <div class="container box_1170">
+    <div class="box_1170">
       <h3 class="mb-30 text-center">Promesses et engagements</h3>
-      <div class="d-flex flex-wrap mt-5">
+      <div class="d-flex flex-wrap mt-5 justify-content-center">
         <% @candidat.promesses.each do |promesse| %>
-          <div class="col-md-4">
+          <div class="col-md-4 text-center card m-2 shadow">
             <div class="single-defination mb-5">
-              <h4 class="mb-20"><%= link_to promesse.content, promess_engagments_path(promesse.id) %></h4>
+              <h4 class="mb-20 pt-5"><%= link_to promesse.content, promess_engagments_path(promesse.id) %></h4>
                 <% if @candidat == @candidat_valid %>
                   <p><%= link_to "Voir les progressions", commune_candidat_promess_path(@commune.id,@candidat.id,promesse.id), class: 'btn btn-outline-primary graph' %></p>
                     <% if user_signed_in? %>
                       <% if current_user.is_admins == true %> | <%= link_to "Créer des engagements", new_promess_engagment_path(promesse.id) %> | <%= link_to "Modifier la promesse", edit_commune_candidat_promess_path(@commune.id, @candidat.id,promesse.id) %> | <%= link_to "Supprimer la promesse", commune_candidat_promess_path(@commune.id,@candidat.id, promesse.id), method:"delete" %> <br>
                         <% if @candidat.resultat == @tab %>
-                          <div class="d-flex">
+                          <div class="d-flex justify-content-center">
                             <%= form_tag promess_suivis_path(promesse.id), method:'post' do %>
                               <input type="text" name="candidat" value="<%= @candidat.id %>" hidden>
                               <input type="text" name="commune" value="<%= @commune.id %>" hidden>

@@ -1,8 +1,12 @@
-<div class="container p-5 text-center">
-  <h2>Modifier votre commentaire sur l'engagement "<%= @engagement.content %>"</h2>
-
-  <%= form_tag url_for(engagment_comment_path(@engagement.id,@comment.id)), method:'PUT' do %> Votre commentaire
-  <input type="text" name="content" value="<%= @comment.content %>" />
-  <input type="submit" value="Enregistrer" />
-  <%end%>
+<div class="card-center p-5">
+  <h1 class="text-center mb-5">Modifier votre commentaire sur l'engagement</h1>
+  <div class="date">
+    <%= form_tag url_for(engagment_comment_path(@engagement.id,@comment.id)), method:'PUT' do %> Votre commentaire
+      <input type="text" name="content" value="<%= @comment.content %>" class="form-control neo-form text-center"/>
+      
+      <div class="text-center m-4">
+        <input type="submit" value="Enregistrer" class="boxed-btn3 btn-modal" />
+      </div>
+    <%end%>
+  </div>
 </div>

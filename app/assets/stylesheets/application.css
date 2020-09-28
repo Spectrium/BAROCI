@@ -28,6 +28,7 @@
  *= require alert
  *= require candidat
  *= require icon
+ *= require neomorphisme
 
  *= require_tree .
  *= require_self
