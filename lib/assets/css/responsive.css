@@ -355,3 +355,31 @@
         min-height: 575px;
     }
 }
+
+/*  COUNT-NUMBER SECTION    */
+
+.bloc{
+    width: 100px;
+    height: 100px;
+   
+}
+
+.numbers{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+em{
+    font-size: 5em;
+}
+
+.cpt{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 991px){
+    em {
+        font-size: 3em;
+    }
+}

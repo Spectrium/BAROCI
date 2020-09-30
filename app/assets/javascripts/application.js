@@ -15,7 +15,6 @@
 
 //= require vendor/modernizr-3.5.0.min
 //= require vendor/jquery-1.12.4.min
-//= require owl.carousel.min
 //= require imagesloaded.pkgd.min
 //= require scrollIt
 //= require jquery.scrollUp.min
