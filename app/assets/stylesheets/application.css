@@ -19,8 +19,6 @@
  *= require slicknav
  *= require style
  *= require app
- *= require comptes
- *= require devise
  *= require responsive
  *= require countdown
  *= require footer

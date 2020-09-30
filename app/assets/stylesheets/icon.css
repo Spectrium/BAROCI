@@ -223,11 +223,11 @@ text-transform: uppercase;
   color:white;
 }
 
-.text-secondary{
+.text-second{
   color: #6c757d;
 }
 
-.text-secondary:hover{
+.text-second:hover{
   color: white!important;
 }
 
