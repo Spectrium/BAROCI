@@ -30,22 +30,22 @@
         </div>
         <div class="w-100"></div>
         <div class="col">  
-          <div class="sc-head-item2">
-            <p>
-              <strong>Nom de l'élue :</strong> <%= @candidat.name %> <br />
-              <strong>Mouvence :</strong> <%= @candidat.parti %> <br />
-              <strong>Résultat :</strong> <%= @candidat.resultat %> % <br />
-              <strong>Commune :</strong> <%= @candidat.commune.name.capitalize %> <br />
-              <strong>Région :</strong> <%= @candidat.region.name.capitalize %> <br />
-            </p>
+          <div class="sc-head-item2 ml-3">
+            
+              <div class="text-left"><strong>Nom de l'élue :</strong> <%= @candidat.name %></div>
+              <div class="text-left"><strong>Mouvence :</strong> <%= @candidat.parti %></div>
+              <div class="text-left"><strong>Résultat :</strong> <%= @candidat.resultat %> %</div>
+              <div class="text-left"><strong>Commune :</strong> <%= @candidat.commune.name.capitalize %></div>
+              <div class="text-left"><strong>Région :</strong> <%= @candidat.region.name.capitalize %></div>
+
           </div>
         </div>
         <div class="col">
           <div class="text-center">
             <% if user_signed_in? %>
               <% if current_user.is_admins == true %>
-                <%= link_to "Editer ce candidat", edit_commune_candidat_path(@commune.id, @candidat.id), class:"edit btn btn-info mr-3" %>
-                <%= link_to "Enlever ce candidat", commune_candidat_path(@commune.id, @candidat.id), method:"delete", class:"del btn btn-danger" %>
+                <%= link_to "Editer ce candidat", edit_commune_candidat_path(@commune.id, @candidat.id), class:"edit btn btn-info m-3" %>
+                <%= link_to "Enlever ce candidat", commune_candidat_path(@commune.id, @candidat.id), method:"delete", class:"del btn btn-danger m-3" %>
               <% end %>
             <% end %>   
           </div>
@@ -103,22 +103,24 @@
       </div>
     </div>   
   </div>   
-      
+  <!-- Grid row -->
   <div class="sc-body-photo container" id="edit" style="display: none;">
     <h3 class="mb-30 text-center">Image Gallery</h3>
-    <div class="d-flex flex-wrap gallery-item mb-5">
-      <div class="col-md-4">
-        <a href="img/elements/g1.jpg" class="img-pop-up">
-          <div class="d-flex justify-content-between">
-
-            <% @avatar.each do |candidat|%>
-              <%= image_tag  candidat, class:"tailimg",style:'width:400px;heigth: 500px;margin-right:5px' %>
-            <%end%>
+        <div class="row">
+          <div class="gallery text-center" id="gallery">
+            <div class="mb-3 pics animation all 2">
+              <a href="img/elements/g1.jpg" class="img-pop-up">
+                <% @avatar.each do |candidat|%>
+                  <%= image_tag  candidat, class:"tailimg",style:'width:300px;heigth: 400px;margin-right:5px' %>
+                <%end%>
+              </a>
+            </div>
           </div>
-        </a>
-      </div>
+        </div>
     </div>
-  </div>
+  <!-- Grid row -->
+
+</div>
 
   <div class="boutton-flex mb-5 text-center">
     <%= link_to "Sondage sur le candidat élu", commune_surveys_path(@commune.id), class:"chart btn btn-secondary mr-3" %>

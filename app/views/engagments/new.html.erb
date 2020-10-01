@@ -1,10 +1,16 @@
-<div class="container text-center pt-5 pb-5">
-  <h1>Création d'un engagement</h1>
-  <div>
-    <%= form_tag url_for(action:'create'), method:'post' do %><br />
-    Contenu de l'engagement<br />
-    <input type="text" name="content" class="m-1" /><br />
-    <input type="submit" value="Ajouter" class="m-1" /><br />
-    <%end%>
-  </div>
+<div class="card-center p-5">
+  <h1 class="text-center mb-5">Création d'un engagement</h1>
+    <div class="date">
+      <%= form_tag url_for(action:'create'), method:'post' do %>
+        <div class="text-center mb-2">Contenu de l'engagement</div>
+        <input type="text" name="content" class="form-control neo-form text-center mb-3" />
+        <div class="text-center"><input type="submit" value="Ajouter" class="boxed-btn3 btn-modal"></div>
+      <%end%>
+      <div class="float-right">
+        <a class="btn btn-danger" href="javascript:history.back()">
+          <span class="btn-label mr-2"><i class="fa fa-arrow-left"></i></span>Retour
+        </a>
+      </div>
+    </div>
 </div>
+ 
