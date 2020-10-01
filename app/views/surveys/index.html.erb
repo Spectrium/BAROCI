@@ -5,237 +5,236 @@
     <% totalhesitate = 0 %>
     <% totaldisagree = 0 %>
     <ul>
+     <li>
       <% @promesse.each do |promesse| %>
         <% totalegagement += promesse.engagments.count %>
         Promesse :
-        <li>
-          <p class="promesse-content h4"><%= promesse.content %></p>
-          <div class="mb-5">
-            <ul id="prommess-ul">
-                <%i = 0 %>
-                  <% promesse.engagments.each do |engagement| %>
-
-                    <li class="container">
-                      <div class="head-center h6 ">Engagements n° <%= engagement.id %> : <br>
-                      <p class="engagement"><%= engagement.content %></p>	</div>	
-                    </li>
-                    <% number = engagement.surveys.all %>
-                    <% total = engagement.surveys.count %>
-                    <% survey = Survey.where(engagment: engagement) %>
-                    <% surveyagree = survey.where(agree: true) %>
-                    <% surveydisagree = survey.where(disagree: true) %>
-                    <% surveyhes = survey.where(hesitat: true) %>
-                    
-                    <% if total != 0 %>
-                      <% (surveyagree.count * 100)/total %> 
-                      <% (surveydisagree.count * 100)/total %>
-                      <% (surveyhes.count * 100)/total %>
-                      <% totalagree += (surveyagree.count * 100)/total %>
-                      <% totalhesitate += (surveyhes.count * 100)/total %>
-                      <% totaldisagree += (surveydisagree.count * 100)/total %>
-                    <!-- SECTION 1 -->
-                      <!-- GRAPH SUR LE SONDAGE -->
-                      <div class="card shadow mb-4 p-3">
-                        <div class="card-body">      
-                          <div class="row">
-                            <div class="col mr-3">
-                              <div class="wrapper mb-3">
-                                <% if @total != 0 %>
+            <p class="promesse-content h4"><%= promesse.content %></p>
+              <ul id="prommess-ul">
+                  <%i = 0 %>
+                  
+                    <% promesse.engagments.each do |engagement| %>
+                    <div class="card shadow-card mb-4 p-3">
+                      <li class="container">
+                        <div class="text-center h3 ">Engagements n° <%= engagement.id %> : <br>
+                        <p class="engagement"><%= engagement.content %></p>	</div>	
+                      </li>
+                      <% number = engagement.surveys.all %>
+                      <% total = engagement.surveys.count %>
+                      <% survey = Survey.where(engagment: engagement) %>
+                      <% surveyagree = survey.where(agree: true) %>
+                      <% surveydisagree = survey.where(disagree: true) %>
+                      <% surveyhes = survey.where(hesitat: true) %>
+                      
+                      <% if total != 0 %>
+                        <% (surveyagree.count * 100)/total %> 
+                        <% (surveydisagree.count * 100)/total %>
+                        <% (surveyhes.count * 100)/total %>
+                        <% totalagree += (surveyagree.count * 100)/total %>
+                        <% totalhesitate += (surveyhes.count * 100)/total %>
+                        <% totaldisagree += (surveydisagree.count * 100)/total %>
+                        <!-- SECTION 1 -->
+                        <!-- GRAPH SUR LE SONDAGE -->
+                        <div class="card shadow mb-4 p-3">
+                          <div class="card-body">      
+                            <div class="row">
+                              <div class="col mr-3">
+                                <div class="wrapper mb-3">
+                                  <% if @total != 0 %>
+                                    <div class="progress-tooltip">
+                                      <span class="progress-tooltip-info" style="left: <%= (@suivi*100)/@total %>%;"><%= (@suivi*100)/@total %>%</span>
+                                      <progress class="progress" value="<%= (@suivi*100)/@total %>" max="100"><%= (@suivi*100)/@total %></progress>
+                                    </div>
+                                  <% end %>
+                                  <div class="font-weight-bold mt-2"> Projet Faits :</div>
+                                </div>
+                                      
+                                <div class="wrapper mb-3">
                                   <div class="progress-tooltip">
-                                    <span class="progress-tooltip-info" style="left: <%= (@suivi*100)/@total %>%;"><%= (@suivi*100)/@total %>%</span>
-                                    <progress class="progress" value="<%= (@suivi*100)/@total %>" max="100"><%= (@suivi*100)/@total %></progress>
+                                    <span class="progress-tooltip-info" style="left: <%= (surveyagree.count * 100)/total %>%;"><%= (surveyagree.count * 100)/total %>%</span>
+                                    <progress class="progress" value="<%= (surveyagree.count * 100)/total %>" max="100"><%= (surveyagree.count * 100)/total %></progress>
                                   </div>
-                                <% end %>
-                                <div class="font-weight-bold mt-2"> Projet Faits :</div>
-                              </div>
-                                    
-                              <div class="wrapper mb-3">
-                                <div class="progress-tooltip">
-                                  <span class="progress-tooltip-info" style="left: <%= (surveyagree.count * 100)/total %>%;"><%= (surveyagree.count * 100)/total %>%</span>
-                                  <progress class="progress" value="<%= (surveyagree.count * 100)/total %>" max="100"><%= (surveyagree.count * 100)/total %></progress>
+                                  <div class="font-weight-bold mt-2"> D'accord :</div>
                                 </div>
-                                <div class="font-weight-bold mt-2"> D'accord :</div>
                               </div>
-                            </div>
-                                    
-                            <div class="col ml-3">
-                              <div class="wrapper mb-3">
-                                <div class="progress-tooltip">
-                                  <span class="progress-tooltip-info" style="left: <%= (surveydisagree.count * 100)/total %>%;"><%= (surveydisagree.count * 100)/total %>%</span>
-                                  <progress class="progress" value="<%= (surveydisagree.count * 100)/total %>" max="100"><%= (surveydisagree.count * 100)/total %></progress>
+                                      
+                              <div class="col ml-3">
+                                <div class="wrapper mb-3">
+                                  <div class="progress-tooltip">
+                                    <span class="progress-tooltip-info" style="left: <%= (surveydisagree.count * 100)/total %>%;"><%= (surveydisagree.count * 100)/total %>%</span>
+                                    <progress class="progress" value="<%= (surveydisagree.count * 100)/total %>" max="100"><%= (surveydisagree.count * 100)/total %></progress>
+                                  </div>
+                                  <div class="font-weight-bold mt-2"> Pas d'accord :</div>
                                 </div>
-                                <div class="font-weight-bold mt-2"> Pas d'accord :</div>
-                              </div>
 
-                              <div class="wrapper mb-3">
-                                <div class="progress-tooltip">
-                                  <span class="progress-tooltip-info" style="left: <%= (surveyhes.count * 100)/total %>%;"><%= (surveyhes.count * 100)/total %>%</span>
-                                  <progress class="progress" value="<%= (surveyhes.count * 100)/total %>" max="100"><%= (surveyhes.count * 100)/total %></progress>
+                                <div class="wrapper mb-3">
+                                  <div class="progress-tooltip">
+                                    <span class="progress-tooltip-info" style="left: <%= (surveyhes.count * 100)/total %>%;"><%= (surveyhes.count * 100)/total %>%</span>
+                                    <progress class="progress" value="<%= (surveyhes.count * 100)/total %>" max="100"><%= (surveyhes.count * 100)/total %></progress>
+                                  </div>
+                                  <div class="font-weight-bold mt-2"> Hésité :</div>
                                 </div>
-                                <div class="font-weight-bold mt-2"> Hésité :</div>
                               </div>
-                            </div>
-                          </div>                       
-                        </div>
-                      </div>
-                    <% end %>
-
-                    <!-- BOUTTON D ACCORD -->
-                    <div class="d-flex justify-content-around mb-4">
-                      <%= form_tag url_for(action:'create'), method:'post' do %>
-                        <input type="text" name="engagement" value="<%= engagement.id %>" hidden>
-                        <input type="text" name="name" value="1" hidden>
-                        <%if current_user.surveys.find_by(engagment_id: engagement.id).nil? %>
-                          <div class="btn btn-outline-info">
-                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><input type="submit" class="none text-blue" value="D'accord (<%= number.where(agree: true).count %>)">
+                            </div>                       
                           </div>
-                        <% else%>
-                          <%if current_user.surveys.find_by(engagment_id: engagement.id).agree %>
-                            <div class="btn btn-info">
-                              <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><input type="submit" class="none" value="D'accord (<%= number.where(agree: true).count %>)">
+                        </div>
+                      <% end %>
+
+                      <!-- BOUTTON D ACCORD -->
+                      <div class="d-flex justify-content-around flex-wrap mb-4">
+                        <%= form_tag url_for(action:'create'), method:'post' do %>
+                          <input type="text" name="engagement" value="<%= engagement.id %>" hidden>
+                          <input type="text" name="name" value="1" hidden>
+                          <%if current_user.surveys.find_by(engagment_id: engagement.id).nil? %>
+                            <div class="btn btn-outline-info">
+                              <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><input type="submit" class="none text-blue" value="D'accord (<%= number.where(agree: true).count %>)">
                             </div>
                           <% else%>
-                          <div class="btn btn-outline-info">
-                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><input type="submit" class="none text-blue" value="D'accord (<%= number.where(agree: true).count %>)">
-                          </div>
+                            <%if current_user.surveys.find_by(engagment_id: engagement.id).agree %>
+                              <div class="btn btn-info">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><input type="submit" class="none" value="D'accord (<%= number.where(agree: true).count %>)">
+                              </div>
+                            <% else%>
+                              <div class="btn btn-outline-info">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><input type="submit" class="none text-blue" value="D'accord (<%= number.where(agree: true).count %>)">
+                              </div>
+                            <% end%>
                           <% end%>
-                        <% end%>
-                      <%end%>
-                                    
-                    <!-- BOUTTON HESITER -->  
-                      <%= form_tag url_for(action:'create'), method:'post' do %>
-                        <input type="text" name="engagement" value="<%= engagement.id %>" hidden>
-                          <input type="text" name="name" value="3" hidden>
-                        <%if current_user.surveys.find_by(engagment_id: engagement.id).nil? %>
-                            
-                          <div class="btn btn-outline-secondary">
-                            <i class="fa fa-meh-o" aria-hidden="true"></i>
-                            <input type="submit" class="none text-second" value="Hesiter (<%= number.where(hesitat: true).count %>)">
-                          </div>
-
-                        <% else%>
-                          <%if current_user.surveys.find_by(engagment_id: engagement.id).hesitat %>	
-                            
-                            <div class="btn btn-secondary">
+                        <%end%>
+                                      
+                      <!-- BOUTTON HESITER -->  
+                        <%= form_tag url_for(action:'create'), method:'post' do %>
+                            <input type="text" name="engagement" value="<%= engagement.id %>" hidden>
+                            <input type="text" name="name" value="3" hidden>
+                          <%if current_user.surveys.find_by(engagment_id: engagement.id).nil? %>
+                              
+                            <div class="btn btn-outline-secondary">
                               <i class="fa fa-meh-o" aria-hidden="true"></i>
-                              <input type="submit" class="none" value="Hesiter (<%= number.where(hesitat: true).count %>)">
+                              <input type="submit" class="none text-second" value="Hesiter (<%= number.where(hesitat: true).count %>)">
                             </div>
 
+                          <% else%>
+                            <%if current_user.surveys.find_by(engagment_id: engagement.id).hesitat %>	
+                              
+                              <div class="btn btn-secondary">
+                                <i class="fa fa-meh-o" aria-hidden="true"></i>
+                                <input type="submit" class="none" value="Hesiter (<%= number.where(hesitat: true).count %>)">
+                              </div>
+
+                            <% else%>
+                              
+                              <div class="btn btn-outline-secondary">
+                                <i class="fa fa-meh-o" aria-hidden="true"></i>
+                                  <input type="submit" class="none text-second" value="Hesiter (<%= number.where(hesitat: true).count %>)">
+                              </div>
+                            <% end%>
+                          <% end%>
+                        <%end%>
+
+                      <!-- BOUTON PAS D ACCORD -->  
+                        <%= form_tag url_for(action:'create'), method:'post' do %>
+                          <input type="text" name="engagement" value="<%= engagement.id %>" hidden>
+                          <input type="text" name="name" value="2" hidden>
+                          <%if current_user.surveys.find_by(engagment_id: engagement.id).nil? %>
+                          
+                            <div class="btn btn-outline-danger">
+                              <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                              <input type="submit" class="none text-red" value="Pas d'accord (<%= number.where(disagree: true).count %>)">
+                            </div>
                           <% else%>
                           
-                          <div class="btn btn-outline-secondary">
-                            <i class="fa fa-meh-o" aria-hidden="true"></i>
-                              <input type="submit" class="none text-second" value="Hesiter (<%= number.where(hesitat: true).count %>)">
-                          </div>
+                            <%if current_user.surveys.find_by(engagment_id: engagement.id).disagree %>	
+                              <div class="btn btn-danger">
+                                <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                                <input type="submit" class="none" value="Pas d'accord (<%= number.where(disagree: true).count %>)">
+                              </div>
+                            <% else%>
+                              <div class="btn btn-outline-danger">
+                                <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                                <input type="submit" class="none text-red" value="Pas d'accord (<%= number.where(disagree: true).count %>)">
+                              </div>
+                            <% end%>
                           <% end%>
-                        <% end%>
-                      <%end%>
-
-                    <!-- BOUTON PAS D ACCORD -->  
-                      <%= form_tag url_for(action:'create'), method:'post' do %>
-                        <input type="text" name="engagement" value="<%= engagement.id %>" hidden>
-                        <input type="text" name="name" value="2" hidden>
-                        <%if current_user.surveys.find_by(engagment_id: engagement.id).nil? %>
-                        
-                          <div class="btn btn-outline-danger">
-                            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                            <input type="submit" class="none text-red" value="Pas d'accord (<%= number.where(disagree: true).count %>)">
-                          </div>
-                        <% else%>
-                        
-                        <%if current_user.surveys.find_by(engagment_id: engagement.id).disagree %>	
-                          <div class="btn btn-danger">
-                            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                            <input type="submit" class="none" value="Pas d'accord (<%= number.where(disagree: true).count %>)">
-                          </div>
-                        <% else%>
-                          <div class="btn btn-outline-danger">
-                            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                            <input type="submit" class="none text-red" value="Pas d'accord (<%= number.where(disagree: true).count %>)">
-                          </div>
-                        <% end%>
-                      <% end%>
-                  <%end%> 
-                  </div>
-
-                  <!-- COMMENTAIRE COLLAPSE BUTTON --> 
-                  <div class="shadow comment-engagement border p-4 mb-4" id="comment-engagement<%= engagement.id %>">
-                    <div class="text-center">
-                      <%= form_tag url_for(engagment_comments_path(engagement.id)), method:'post',remote: true do %>
-                        <h2>Votre commentaire</h2>
-                          <input type="text" name="content" id="btn-content" placeholder="Commentaire .. "  class="form-control neo-form"/>
-                          <input type="submit" value="Ajouter" id="btn-submit" class="boxed-btn3 btn-modal mt-3" />
-                      <%end%>
-                    </div>
-                 
-                <button class="coms btn btn-secondary" id="<%= engagement.id %>" data-toggle="collapse" data-target="#demo">Voir les commentaires(<%= engagement.comments.all.count %>)</button>
-                
-                <div id="demo" class="collapse">
-                  <!-- SECTION COMMENTAIRE -->
-                  <div id="commentss" class="container p-2 mb-2">
-                    <%if engagement.comments.length > 7 %>
-                      <div>
-                        <%= link_to "Voir plus ...", new_engagment_comment_path(engagement.id), class: 'btn btn-info' %>
+                        <%end%> 
                       </div>
+                    <!-- COMMENTAIRE COLLAPSE BUTTON --> 
+                    <div class="shadow comment-engagement border p-4 mb-4" id="comment-engagement<%= engagement.id %>">
+                      <div class="text-center">
+                        <%= form_tag url_for(engagment_comments_path(engagement.id)), method:'post',remote: true do %>
+                          <h2>Votre commentaire</h2>
+                            <input type="text" name="content" id="btn-content" placeholder="Commentaire .. "  class="form-control neo-form"/>
+                            <input type="submit" value="Ajouter" id="btn-submit" class="boxed-btn3 btn-modal mt-3" />
+                        <%end%>
+                      </div>
+                  
+                      <button class="coms btn btn-secondary" id="<%= engagement.id %>" data-toggle="collapse" data-target="#demo">Voir les commentaires(<%= engagement.comments.all.count %>)</button>
+                      
+                      <div id="demo" class="collapse">
+                        <!-- SECTION COMMENTAIRE -->
+                        <div id="commentss" class="container p-2 mb-2">
+                          <%if engagement.comments.length > 7 %>
+                            <div>
+                              <%= link_to "Voir plus ...", new_engagment_comment_path(engagement.id), class: 'btn btn-info' %>
+                            </div>
 
-                      <% for i in engagement.comments.length-5..engagement.comments.length-1 do %>
-                      <div class="m-4">
-                        <!-- FULL NAME -->
-                        <div id="<%=engagement.comments[i].id%>">
-                          <div>
-                            <strong class="h4">
-                              <%= engagement.comments[i].user.full_name %><br />
-                            </strong>
-                          </div>
-                          <!-- COMMENTAIRE -->
-                          <div>
-                            <%= engagement.comments[i].content %> 
-                          </div>
-                          <!-- BUTTOM -->
-                          <div>
-                            <% if user_signed_in? %> 
-                              <% if engagement.comments[i].user == current_user || current_user.is_admins == true %> 
-                                <%= link_to "Modifier", edit_engagment_comment_path(engagement.id, engagement.comments[i].id), class:"edit btn btn-success" %>
-                                <%= link_to "Supprimer", engagment_comment_path(engagement.id, engagement.comments[i].id), method:"delete" ,remote: true, class:"del btn btn-danger" %> <br />
-                              <% end %> 
+                            <% for i in engagement.comments.length-5..engagement.comments.length-1 do %>
+                              <div class="m-4">
+                                <!-- FULL NAME -->
+                                <div id="<%=engagement.comments[i].id%>">
+                                  <div>
+                                    <strong class="h4">
+                                      <%= engagement.comments[i].user.full_name %><br />
+                                    </strong>
+                                  </div>
+                                  <!-- COMMENTAIRE -->
+                                  <div>
+                                    <%= engagement.comments[i].content %> 
+                                  </div>
+                                  <!-- BUTTOM -->
+                                  <div>
+                                    <% if user_signed_in? %> 
+                                      <% if engagement.comments[i].user == current_user || current_user.is_admins == true %> 
+                                        <%= link_to "Modifier", edit_engagment_comment_path(engagement.id, engagement.comments[i].id), class:"edit btn btn-success" %>
+                                        <%= link_to "Supprimer", engagment_comment_path(engagement.id, engagement.comments[i].id), method:"delete" ,remote: true, class:"del btn btn-danger" %> <br />
+                                      <% end %> 
+                                    <% end %>
+                                  </div>
+                                </div>
+                              </div>
                             <% end %>
-                          </div>
-                        </div>
-                      </div>
-                      <% end %>
-                    <% else %>
+                          <% else %>
 
-                      <% engagement.comments.each do |comment| %>  
-                        <div id="<%=comment.id%>" class="m-4">
-                        <!-- FULL NAME -->
-                          <strong><%= comment.user.full_name %></strong>
+                            <% engagement.comments.each do |comment| %>  
+                              <div id="<%=comment.id%>" class="m-4">
+                              <!-- FULL NAME -->
+                                <strong><%= comment.user.full_name %></strong>
 
-                        <!-- COMMENTAIRE -->
-                        <div><%= comment.content %></div>
+                                <!-- COMMENTAIRE -->
+                                <div><%= comment.content %></div>
 
-                        <!-- BUTTOM -->
-                        <div> 
-                          <% if user_signed_in? %> 
-                            <% if comment.user == current_user || current_user.is_admins == true %> 
-                              <%= link_to "Modifier", edit_engagment_comment_path(engagement.id, comment.id), class:"edit btn btn-success" %> 
-                              <%= link_to "Supprimer", engagment_comment_path(engagement.id, comment.id),method:"delete" ,remote: true, class:"del btn btn-danger" %>
-                            <% end %> 
+                                <!-- BUTTOM -->
+                                <div> 
+                                  <% if user_signed_in? %> 
+                                    <% if comment.user == current_user || current_user.is_admins == true %> 
+                                      <%= link_to "Modifier", edit_engagment_comment_path(engagement.id, comment.id), class:"edit btn btn-success" %> 
+                                      <%= link_to "Supprimer", engagment_comment_path(engagement.id, comment.id),method:"delete" ,remote: true, class:"del btn btn-danger" %>
+                                    <% end %> 
+                                  <% end %>
+                                </div>
+                              </div>
+                            <% end %>
                           <% end %>
                         </div>
-                      </div>
-                      <% end %>
-                    <% end %>
-                    </div>
-                  </div>   
-                  </div> 
-                </div>
-              </div>
+                      </div>   
+                    </div> 
+               </div>
 
-                <%i += 1 %>
-              <% end %>
-            </ul>
-          </div>
-        </li>
+                  <%i += 1 %>
+                <% end %>
+              </ul>
+            </div>
+          </li>
+        </div>
       <% end %>
     </ul>
 
